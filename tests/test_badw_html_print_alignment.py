@@ -97,8 +97,8 @@ def test_real_batch_is_bounded_explicit_and_contains_negative_controls():
     assert generated['certificate_sha256'] == a.object_digest(cert)
     assert cert['inspected_pages'] == 40
     assert len(generated['pages']) == 38
-    assert len(generated['witnesses']) == 131
-    assert len({(r['source_url'], r['html_sha256']) for r in generated['witnesses']}) == 131
+    assert len(generated['witnesses']) == 149
+    assert len({(r['source_url'], r['html_sha256']) for r in generated['witnesses']}) == 149
     assert {p['source'] for p in cert['pages']} == {'WtS_1-34','WtS_35-51','WtS_8-b','WtS_9-m'}
     assert all('printed_homonym' in r for p in cert['pages'] for r in p['accepted'])
     assert any('continu' in r['reason'] for r in cert['decisions'])
@@ -109,6 +109,50 @@ def test_real_batch_is_bounded_explicit_and_contains_negative_controls():
 def compile_fixture(evidence):
     body, anchor, _, edges, cert = evidence
     return a.compile_records(cert, {body['inspection_id']:body}, {anchor['anchor_id']:anchor}, edges, {'WtS_1-34':dict(sha256='b'*64)}, qa_rows=fixture_rows())
+
+
+def test_legacy_provenance_output_is_unchanged(evidence):
+    generated = compile_fixture(evidence)
+    assert generated['witnesses'][0]['review_basis'] == a.REVIEW_BASIS
+    assert 'review_basis' not in generated['witnesses'][0]['evidence']['certificate']
+    assert a.witness_record('v1-p16', evidence[2]) == generated['witnesses'][0]
+
+
+def test_agent_review_is_explicit_and_generated_provenance_is_bound(evidence):
+    evidence[2]['review_basis'] = a.AGENT_REVIEW_BASIS
+    generated = compile_fixture(evidence)
+    assert generated['witnesses'][0]['review_basis'] == a.AGENT_REVIEW_BASIS
+    a.validate_expansion(evidence[4], generated)
+    generated['witnesses'][0]['review_basis'] = a.REVIEW_BASIS
+    generated['content_sha256'] = a.object_digest({k:v for k,v in generated.items() if k != 'content_sha256'})
+    with pytest.raises(ValueError, match='witness differs'):
+        a.validate_expansion(evidence[4], generated)
+
+
+@pytest.mark.parametrize('basis', ['', None, 'automatic', 'Human adjudication', 'Agent inspected; human approved'])
+def test_arbitrary_provenance_is_rejected_in_compilation_and_expansion(evidence, basis):
+    generated = compile_fixture(evidence)
+    evidence[2]['review_basis'] = basis
+    generated['certificate_sha256'] = a.object_digest(evidence[4])
+    generated['content_sha256'] = a.object_digest({k:v for k,v in generated.items() if k != 'content_sha256'})
+    with pytest.raises(ValueError, match='unknown review basis'):
+        a.validate_expansion(evidence[4], generated)
+    with pytest.raises(ValueError, match='unknown review basis'):
+        compile_fixture(evidence)
+    with pytest.raises(ValueError, match='unknown review basis'):
+        a.witness_record('v1-p16', evidence[2])
+
+
+@pytest.mark.parametrize('basis', [a.REVIEW_BASIS, a.AGENT_REVIEW_BASIS])
+@pytest.mark.parametrize('field,value,message', [
+    ('scan_review', '', 'scan identity'),
+    ('definition_evidence', 'a neighbouring article', 'not present'),
+    ('anchor', 'wrong', 'pinned candidate'),
+])
+def test_provenance_never_substitutes_for_identity_review(evidence, basis, field, value, message):
+    evidence[2].update(review_basis=basis, **{field:value})
+    with pytest.raises(ValueError, match=message):
+        a.validate_assertion(evidence[2], evidence[0], evidence[1], evidence[3])
 
 
 def test_short_generic_definition_requires_independent_context_not_length(evidence):

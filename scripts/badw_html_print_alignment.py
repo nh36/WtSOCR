@@ -43,6 +43,19 @@ def proof_key(text):
 
 
 REVIEW_BASIS = 'Human visual transcription and identity adjudication, not automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.'
+AGENT_REVIEW_BASIS = 'Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.'
+
+
+def review_basis(assertion):
+    """Closed provenance vocabulary; absent labels preserve legacy certificates.
+
+    A label describes the reviewer, never supplies article or identity evidence.
+    Both modes pass precisely the same certificate gates.
+    """
+    basis = assertion.get('review_basis', REVIEW_BASIS)
+    if basis not in (REVIEW_BASIS, AGENT_REVIEW_BASIS):
+        raise ValueError('unknown review basis; use a fixed human or agent visual review label')
+    return basis
 
 
 def witness_record(page_key, assertion):
@@ -52,11 +65,11 @@ def witness_record(page_key, assertion):
         headword=editorial['headword'], homonym=editorial['homonym'], page=page_key,
         printed_heading=observed['heading'], printed_homonym=observed['homonym'],
         evidence=dict(certificate=assertion, anchor_sha256=assertion['anchor_sha256'],
-            definition_component_sha256=assertion['definition_component_sha256']), review_basis=REVIEW_BASIS)
+            definition_component_sha256=assertion['definition_component_sha256']), review_basis=review_basis(assertion))
 
 
 def validate_boundary(assertion, anchor, qa_rows):
-    """Validate source bindings of a HUMAN article-boundary adjudication.
+    """Validate source bindings of a visual article-boundary adjudication.
 
     QA headword_line includes running headers and is not an article classifier.
     Selected lines may be noncontiguous because QA reading order interleaves columns.
@@ -76,6 +89,7 @@ def validate_boundary(assertion, anchor, qa_rows):
 
 
 def validate_assertion(assertion, body, anchor, edges):
+    review_basis(assertion)
     if body['source_kind'] != 'html' or assertion['source_id'] != body['inspection_id']:
         raise ValueError('not an exact HTML witness')
     if assertion['anchor'] != anchor['anchor_id']:
@@ -109,7 +123,7 @@ def validate_assertion(assertion, body, anchor, edges):
     if not assertion.get('scan_review'):
         raise ValueError('scan identity review required, especially for unnumbered print')
     observation = assertion.get('print_observation', {})
-    # These are human transcriptions, NOT an OCR verification of printed wording.
+    # These are reviewer transcriptions, NOT an OCR verification of printed wording.
     # Bind the observed heading and evidence to the same inspected entry. The
     # compiler can reject a different anchor; only a reviewer can detect a false
     # transcription or a definition borrowed from a neighbour within the image.

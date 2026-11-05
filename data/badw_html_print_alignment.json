@@ -190,6 +190,138 @@
             "qa_rows_sha256": "ea30df9eedfdff05c9f1d3967f5ff70a52dcb4ff9322855896a93eac2bdf3dcd",
             "review_reason": "Visual article-start adjudication; heading and definition/citation are in the same printed article. QA headword_line alone is not proof. Right column between end of ka ma la and ka ma la gar bha."
           }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ma%20la%20gar%20bha/1",
+          "anchor": "wts_1_34:41:78",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "npr. ein Madhyamaka-Lehrer; skt. kamalagarbha.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Separate heading below ka ma la ku li śa and above ka ma la go mi; no printed homonym numeral. The quotation identifies the Madhyamaka teacher and cites Tār 53,15, matching the exact HTML article; dbu ma’i tshul lugs is embedded in this quotation, not another article.",
+          "html_sha256": "9b37482918102bb5108c9c7cf19fdd3c0db287d347f29a14a176cb6340677532",
+          "anchor_sha256": "9e08f842c0536c7566de5fab7239459cdbe0aac4b43eb4a92ccca82346f87280",
+          "definition_component_sha256": "f30252bd0085b491058ceb91d94be29a38b624802aa962a0d93e60d3e8caaba9",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka ma la gar bha",
+            "homonym": null,
+            "evidence": "npr., ein Madhyamaka-Lehrer. – skt. kamalagarbha.",
+            "identity_context": "Separate heading below ka ma la ku li śa and above ka ma la go mi; no printed homonym numeral. The quotation identifies the Madhyamaka teacher and cites Tār 53,15, matching the exact HTML article; dbu ma’i tshul lugs is embedded in this quotation, not another article.",
+            "heading_anchor": "wts_1_34:41:78",
+            "evidence_anchor": "wts_1_34:41:78",
+            "column": "right column",
+            "page_sha256": "02f6c10216d0ae4d40c4dbfcd5ea52c1ca5e687d1e54149353654d216fadabb5",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20ma%20la%20gar%20bha/1",
+            "headword": "ka ma la gar bha",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              78
+            ],
+            "evidence_lines": [
+              78,
+              79,
+              80,
+              81
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "ffde899f949d6996aea705627e585d966e242a93e323d379d36f331f29a36c90",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Separate heading below ka ma la ku li śa and above ka ma la go mi; no printed homonym numeral. The quotation identifies the Madhyamaka teacher and cites Tār 53,15, matching the exact HTML article; dbu ma’i tshul lugs is embedded in this quotation, not another article."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ma%20la%20buddhi/1",
+          "anchor": "wts_1_34:41:93",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "npr. ein Gelehrter; skt. kamalabuddhi.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Separate heading below ka ma la can and above ka ma la rakṣi ta; no printed homonym numeral. Its quotation identifies the pupil of Buddhapālita (Tār 113,12), matching the exact HTML witness and distinguishing the neighbouring Kamala names.",
+          "html_sha256": "f732f6b81fba9db0489d1d14dc7f30cccec61799afc93c549b20b9eacafbea2f",
+          "anchor_sha256": "0f56a9ebaf203965f4d4472975be3a363cf3231bfe0d31a5ba1aa19b20fa4b35",
+          "definition_component_sha256": "c2ce0d6d1a653f6e9c0ba38cb83570294b9b7e185734d9d9120f2bfeb7b374b8",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka ma la buddhi",
+            "homonym": null,
+            "evidence": "npr., ein Gelehrter. – skt. kamalabuddhi.",
+            "identity_context": "Separate heading below ka ma la can and above ka ma la rakṣi ta; no printed homonym numeral. Its quotation identifies the pupil of Buddhapālita (Tār 113,12), matching the exact HTML witness and distinguishing the neighbouring Kamala names.",
+            "heading_anchor": "wts_1_34:41:93",
+            "evidence_anchor": "wts_1_34:41:93",
+            "column": "right column",
+            "page_sha256": "02f6c10216d0ae4d40c4dbfcd5ea52c1ca5e687d1e54149353654d216fadabb5",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20ma%20la%20buddhi/1",
+            "headword": "ka ma la buddhi",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              93
+            ],
+            "evidence_lines": [
+              93,
+              94,
+              96,
+              98,
+              100
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "2d00537d2a3beec9dc151a4ca7cfb2af6b0bc9c5b3d5c1b05e329d08ccbe3e76",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Separate heading below ka ma la can and above ka ma la rakṣi ta; no printed homonym numeral. Its quotation identifies the pupil of Buddhapālita (Tār 113,12), matching the exact HTML witness and distinguishing the neighbouring Kamala names."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ma%20la%20go%20mi/1",
+          "anchor": "wts_1_34:41:83",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "npr. ein gelehrter Mönch im Süden Indiens; skt. kamalagomin.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading between ka ma la gar bha and ka ma la can, without a printed homonym. The southern-India quotation and Tār 148,4 identify the exact HTML witness.",
+          "html_sha256": "407d4863fa3a0963ab5a7d85e95feb52ed2735a0878243bbbef30d4ebe64cf45",
+          "anchor_sha256": "22918a0b7f6e2c9765d5206fef37990751be241415f3df381a1f5f8cb79751e2",
+          "definition_component_sha256": "a147e2ff00f68c797d09ee63c5edcaf536501fc2a27ce6eaeacc159305858691",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka ma la go mi",
+            "homonym": null,
+            "evidence": "npr., ein gelehrter Mönch im Süden Indiens. – skt. kamalagomin.",
+            "identity_context": "Independent heading between ka ma la gar bha and ka ma la can, without a printed homonym. The southern-India quotation and Tār 148,4 identify the exact HTML witness.",
+            "heading_anchor": "wts_1_34:41:83",
+            "evidence_anchor": "wts_1_34:41:83",
+            "column": "right column",
+            "page_sha256": "02f6c10216d0ae4d40c4dbfcd5ea52c1ca5e687d1e54149353654d216fadabb5",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20ma%20la%20go%20mi/1",
+            "headword": "ka ma la go mi",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              83
+            ],
+            "evidence_lines": [
+              83,
+              84,
+              85,
+              86,
+              87,
+              88
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "29fc82d0f348aebb0ac6de245df46befd8f50ac7afef41cb04a2b62f405e2e5c",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading between ka ma la gar bha and ka ma la can, without a printed homonym. The southern-India quotation and Tār 148,4 identify the exact HTML witness."
+          }
         }
       ]
     },
@@ -289,6 +421,383 @@
             "excluded_lines": [],
             "qa_rows_sha256": "521112be16ab6beae4614faad186d5c197c13d75dbb602821d58ef4153b748d2",
             "review_reason": "Visual article-start adjudication; heading and definition/citation are in the same printed article. QA headword_line alone is not proof. Left column between ka ma la siṅ ha and ka ma so ka; editorial wording omits des."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20ma%20log/1",
+          "anchor": "wts_1_34:41:121",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "definition_evidence": "npr. ein Kloster in A-mdo.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading below kā ma śī la and above ka ma sa, without a printed homonym. The monastery in A-mdo and ’Dzam 49,13 distinguish this article and match its HTML witness.",
+          "html_sha256": "ef0e36713236bd5ab9a5279ea8ed1e0b213d0dd77c1589e8268a491990eefed0",
+          "anchor_sha256": "e41f18c0388e5ccb7ab759877c1ac031e8d1255d17ca986df178e4a7c704ee16",
+          "definition_component_sha256": "75db53bdf824062dc7e8b687929c0f2b72710761f5fb41f1de5b878e237fb57b",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "kā ma log",
+            "homonym": null,
+            "evidence": "ein Kloster in A-mdo.",
+            "identity_context": "Independent heading below kā ma śī la and above ka ma sa, without a printed homonym. The monastery in A-mdo and ’Dzam 49,13 distinguish this article and match its HTML witness.",
+            "heading_anchor": "wts_1_34:41:121",
+            "evidence_anchor": "wts_1_34:41:121",
+            "column": "left column",
+            "page_sha256": "bb423d079171f1cb6214973408d5a2cb5cec4acc6ecc0f8d60eaffcc223adc44",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/k%C4%81%20ma%20log/1",
+            "headword": "kā ma log",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              121
+            ],
+            "evidence_lines": [
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "fa1b4f380d57e33e1e11ffe71fd4466c02d58b7477b946a6f025da2942727f8a",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading below kā ma śī la and above ka ma sa, without a printed homonym. The monastery in A-mdo and ’Dzam 49,13 distinguish this article and match its HTML witness."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20ma%20a%20%C5%9Bo%20ka/1",
+          "anchor": "wts_1_34:41:132",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "definition_evidence": "„Begierden-Aśoka“, Bez. des Königs Aśoka in seinen jungen Jahren; skt. kāmāśoka.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading above ka maṅ, without a printed homonym. The young Aśoka epithet and Tār 22,15 match the exact HTML article.",
+          "html_sha256": "b716fed283c3ee8c1c13e589d95548cd84ad98947e0a1ad42761dfe31ed0bc4a",
+          "anchor_sha256": "bf637fdce237ccd881ed481205868a97940928178efecfec0dca84e69d943bd8",
+          "definition_component_sha256": "a8a2a1145491db54e27e6a7bf3237675baca306b2915c4ec9c82376299d9d4d3",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "kā ma a śo ka",
+            "homonym": null,
+            "evidence": "„Begierden-Aśoka“, Bez. des Königs Aśoka in seinen jungen Jahren. – skt. kāmāśoka.",
+            "identity_context": "Independent heading above ka maṅ, without a printed homonym. The young Aśoka epithet and Tār 22,15 match the exact HTML article.",
+            "heading_anchor": "wts_1_34:41:132",
+            "evidence_anchor": "wts_1_34:41:132",
+            "column": "left column",
+            "page_sha256": "bb423d079171f1cb6214973408d5a2cb5cec4acc6ecc0f8d60eaffcc223adc44",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/k%C4%81%20ma%20a%20%C5%9Bo%20ka/1",
+            "headword": "kā ma a śo ka",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              132
+            ],
+            "evidence_lines": [
+              132,
+              134,
+              136,
+              137,
+              138,
+              140,
+              141
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "a24e21d9c47d8cffdd8275bf5d425805b35c568aeb713f168b48387aa8533874",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading above ka maṅ, without a printed homonym. The young Aśoka epithet and Tār 22,15 match the exact HTML article."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mad/1",
+          "anchor": "wts_1_34:41:145",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "definition_evidence": "„der [Buchstabe] ka und die folgenden“, die 30 Buchstaben, das Alphabet.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading at the foot of the left column, continuing with Lex. at the top of the right column. The parenthetical ¹ka is a lemma reference, not a homonym of ka mad. The thirty-letter alphabet definition, PhB 11:102,2 and KhB 4:26,6 match the HTML witness.",
+          "html_sha256": "956cbf13af0ebc60b571ef6050f98e383e77a80485364faebf3d2a3581a22854",
+          "anchor_sha256": "927a139ac490071a66e079bb59fe3de4f9a3901fa21d522695828f4e9e990a1f",
+          "definition_component_sha256": "eaebd76ab4ebb46d9e1a25cec2ab5984e1913e5492d13e282a4141474d35a2f8",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka mad",
+            "homonym": null,
+            "evidence": "auch ka smad (¹ka) „der [Buchstabe] ka und die folgenden“, die 30 Buchstaben, das Alphabet.",
+            "identity_context": "Independent heading at the foot of the left column, continuing with Lex. at the top of the right column. The parenthetical ¹ka is a lemma reference, not a homonym of ka mad. The thirty-letter alphabet definition, PhB 11:102,2 and KhB 4:26,6 match the HTML witness.",
+            "heading_anchor": "wts_1_34:41:145",
+            "evidence_anchor": "wts_1_34:41:145",
+            "column": "left column",
+            "page_sha256": "bb423d079171f1cb6214973408d5a2cb5cec4acc6ecc0f8d60eaffcc223adc44",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20mad/1",
+            "headword": "ka mad",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              145
+            ],
+            "evidence_lines": [
+              145,
+              146,
+              147,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154,
+              155,
+              156
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "ca55677ca13c433206301bbaadc4765f7069cee79f3c148ff049ef8d0f289b23",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading at the foot of the left column, continuing with Lex. at the top of the right column. The parenthetical ¹ka is a lemma reference, not a homonym of ka mad. The thirty-letter alphabet definition, PhB 11:102,2 and KhB 4:26,6 match the HTML witness."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mi%20yam/1",
+          "anchor": "wts_1_34:41:165",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "Milz.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading below the continuation of ka mad and above ka mi log; no printed homonym. The spleen definition and Lex. mcher ba (brDa) match the exact HTML article.",
+          "html_sha256": "97ea3507ad96f8ca12efc66109b6eb97bce0195947f1fa694f4db1ff3cd1294c",
+          "anchor_sha256": "4e1a5a6174d0bc289d1dcb94acf999084848ff43203f200a16661089aca75dd9",
+          "definition_component_sha256": "b1745675444d55a3cc3dd8f94c54dde810c36bdae416b8785488afd310ed2fae",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka mi yam",
+            "homonym": null,
+            "evidence": "Milz. Lex. mcher ba (brDa).",
+            "identity_context": "Independent heading below the continuation of ka mad and above ka mi log; no printed homonym. The spleen definition and Lex. mcher ba (brDa) match the exact HTML article.",
+            "heading_anchor": "wts_1_34:41:165",
+            "evidence_anchor": "wts_1_34:41:165",
+            "column": "right column",
+            "page_sha256": "bb423d079171f1cb6214973408d5a2cb5cec4acc6ecc0f8d60eaffcc223adc44",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20mi%20yam/1",
+            "headword": "ka mi yam",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              165
+            ],
+            "evidence_lines": [
+              165,
+              166
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "f6e3b52957a9beb1d3553e4ea904fc1685c0d36944ec1b60e6f389331f5a6445",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading below the continuation of ka mad and above ka mi log; no printed homonym. The spleen definition and Lex. mcher ba (brDa) match the exact HTML article."
+          },
+          "reconsideration": {
+            "decision_sha256": "4d452b27495f04494f5233379e08c9027c498a65b91904fa45ae9371907cbd1f",
+            "reason": "Agent inspected the independent heading and complete short article on printed page 17, right column: Milz and Lex. mcher ba (brDa) match the exact HTML definition and lexical citation. This supplies the identity discriminator missing from the earlier deferral; unnumbered print remains distinct from editorial homonym 1."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mi%20log/1",
+          "anchor": "wts_1_34:41:167",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "npr. ein Land.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading between ka mi yam and ka mig; no printed homonym. The named-country list Mi ñag, Uigur, Ka mi log, Khitan and Ñaṅ 64,1.4 distinguish the HTML witness.",
+          "html_sha256": "788e7c0b19f877be705b36a6bb8c8ff5981ff6ce798ecbfef607b7cb5c80e3c8",
+          "anchor_sha256": "1c7c34fbd432be2ea19aecb8e7fef2cc0a01efdef60bb0aa8a3c2342d843ecb5",
+          "definition_component_sha256": "ba7d4631b7de19c4f39875cc98bf807aa84d50485be368883f71bd17e272aaf6",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka mi log",
+            "homonym": null,
+            "evidence": "npr., ein Land.",
+            "identity_context": "Independent heading between ka mi yam and ka mig; no printed homonym. The named-country list Mi ñag, Uigur, Ka mi log, Khitan and Ñaṅ 64,1.4 distinguish the HTML witness.",
+            "heading_anchor": "wts_1_34:41:167",
+            "evidence_anchor": "wts_1_34:41:167",
+            "column": "right column",
+            "page_sha256": "bb423d079171f1cb6214973408d5a2cb5cec4acc6ecc0f8d60eaffcc223adc44",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20mi%20log/1",
+            "headword": "ka mi log",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              167
+            ],
+            "evidence_lines": [
+              167,
+              168,
+              170,
+              171
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "7589690a4b8b7a8793647fb4635e9c2326b194ddf214e5c7052ee5ce9f006802",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading between ka mi yam and ka mig; no printed homonym. The named-country list Mi ñag, Uigur, Ka mi log, Khitan and Ñaṅ 64,1.4 distinguish the HTML witness."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mig/1",
+          "anchor": "wts_1_34:41:173",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "„Säulenquadrat“, arch., ein [Flächen]maß, das in Relation zur Tragfähigkeit einer Säule steht.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading between ka mi log and ka me ka me. The parenthetical ²ka refers to another lemma, not a homonym of ka mig. The architectural area measure, PhB Nth 2:47,4 and the Lex. explanation of one or more column squares (Dagy) identify the HTML witness; its expanded editorial wording is not substituted for the print.",
+          "html_sha256": "0b78990196c0c3109274ff16e098c7f4931417eb1450b8b721a3d8f6e88ba239",
+          "anchor_sha256": "a5b931612492ef6666955193acb63ce5addba58682a4e2473a86265a83c7c510",
+          "definition_component_sha256": "67344f5dc88231718f4ce2b3665e8e153e82c7cee6c114bdc1ca698b2e88beea",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka mig",
+            "homonym": null,
+            "evidence": "„Säulenquadrat“, arch., best. [Flächen]maß, das in Relation zur Tragfähigkeit einer Säule steht.",
+            "identity_context": "Independent heading between ka mi log and ka me ka me. The parenthetical ²ka refers to another lemma, not a homonym of ka mig. The architectural area measure, PhB Nth 2:47,4 and the Lex. explanation of one or more column squares (Dagy) identify the HTML witness; its expanded editorial wording is not substituted for the print.",
+            "heading_anchor": "wts_1_34:41:173",
+            "evidence_anchor": "wts_1_34:41:173",
+            "column": "right column",
+            "page_sha256": "bb423d079171f1cb6214973408d5a2cb5cec4acc6ecc0f8d60eaffcc223adc44",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20mig/1",
+            "headword": "ka mig",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              173
+            ],
+            "evidence_lines": [
+              173,
+              174,
+              175,
+              177,
+              178,
+              179,
+              180,
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "070a8643958fb736e4a958daf5e91f6edce71620a0893a25859d17f98d8b7b59",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading between ka mi log and ka me ka me. The parenthetical ²ka refers to another lemma, not a homonym of ka mig. The architectural area measure, PhB Nth 2:47,4 and the Lex. explanation of one or more column squares (Dagy) identify the HTML witness; its expanded editorial wording is not substituted for the print."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20me%20ka%20me/1",
+          "anchor": "wts_1_34:41:190",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "„da und dort gebückt“, „da und dort sich bückend“.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading below ka mu gnas and above numbered ka med; no printed homonym. The variants, dPe 277,1 and dPe D 195,6 identify the HTML article, whose expanded editorial translation is kept distinct from the printed wording.",
+          "html_sha256": "d907f23d69f110d75a737cd98127a00efd60b083aa4b5e1708f5f3b2597ee204",
+          "anchor_sha256": "621dbd946689fd03c7bc50250299ca2b35552212c4a7c9351af1b841d502c9f9",
+          "definition_component_sha256": "0cae1e54d2871945f68d38c03d5817abefa01e75c778cd96e8d668fd1848f356",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka me ka me",
+            "homonym": null,
+            "evidence": "auch kam me kam me, skam me skum me (vgl. skum pa) „da und dort gebückt“, „da und dort sich bückend“.",
+            "identity_context": "Independent heading below ka mu gnas and above numbered ka med; no printed homonym. The variants, dPe 277,1 and dPe D 195,6 identify the HTML article, whose expanded editorial translation is kept distinct from the printed wording.",
+            "heading_anchor": "wts_1_34:41:190",
+            "evidence_anchor": "wts_1_34:41:190",
+            "column": "right column",
+            "page_sha256": "bb423d079171f1cb6214973408d5a2cb5cec4acc6ecc0f8d60eaffcc223adc44",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20me%20ka%20me/1",
+            "headword": "ka me ka me",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              190
+            ],
+            "evidence_lines": [
+              190,
+              192,
+              194,
+              195,
+              197,
+              198,
+              199,
+              200,
+              202,
+              203,
+              204
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "ae8c41ae9da2c93b229709106d64fe5ee3af698a7534a1865fe386c195d648ce",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading below ka mu gnas and above numbered ka med; no printed homonym. The variants, dPe 277,1 and dPe D 195,6 identify the HTML article, whose expanded editorial translation is kept distinct from the printed wording."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20med/1",
+          "anchor": "wts_1_34:41:206",
+          "heading_position": "right column",
+          "printed_homonym": 1,
+          "definition_evidence": "„unvermeidbar“, „unausweichlich“, „unbedingt notwendig“; in Verbindung mit vorausgehendem negiertem vb. und nachgestelltem Hilfsvb. „etwas unbedingt tun müssen“; vgl. ↓kha med.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Actual numbered 1 ka med article begins at the foot of the right column, below ka me ka me, and continues on printed page 18. It is not the running header at the top of page 17. The necessity definition and negated-verb construction distinguish the exact HTML homonym 1.",
+          "html_sha256": "16430dc5c5ba507361a528ae87812a9aa6af3e928c7cb3a3aad93f883ca01d70",
+          "anchor_sha256": "619349c5641fd0e65ec177f4a853e32a73d1a2276d1d37467f053bf4fa719a70",
+          "definition_component_sha256": "5b8f092e426871bd8ca050054790a6a2ce1009219d1a2d319e7dcbba43a86042",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka med",
+            "homonym": 1,
+            "evidence": "„unvermeidbar“, „unausweichlich“, „unbedingt notwendig“; in Verbindung mit vorausgehendem negiertem vb. und nachgestelltem Hilfsvb. „etwas unbedingt tun müssen“.",
+            "identity_context": "Actual numbered 1 ka med article begins at the foot of the right column, below ka me ka me, and continues on printed page 18. It is not the running header at the top of page 17. The necessity definition and negated-verb construction distinguish the exact HTML homonym 1.",
+            "heading_anchor": "wts_1_34:41:206",
+            "evidence_anchor": "wts_1_34:41:206",
+            "column": "right column",
+            "page_sha256": "bb423d079171f1cb6214973408d5a2cb5cec4acc6ecc0f8d60eaffcc223adc44",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20med/1",
+            "headword": "ka med",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              206
+            ],
+            "evidence_lines": [
+              206,
+              208,
+              210,
+              212,
+              213
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "c20e80ef3789e48422abe5518fa6640e9d08d995bdb4037664a2e03077ae3ac0",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Actual numbered 1 ka med article begins at the foot of the right column, below ka me ka me, and continues on printed page 18. It is not the running header at the top of page 17. The necessity definition and negated-verb construction distinguish the exact HTML homonym 1."
           }
         }
       ]
@@ -391,6 +900,185 @@
             "excluded_lines": [],
             "qa_rows_sha256": "940c2c6e32aa393da342cebe423a03c7c2c34733ce64cc94108d1141df5d4c5e",
             "review_reason": "Visual article-start adjudication; heading and definition/citation are in the same printed article. QA headword_line alone is not proof. Right column above ka tsun: named ka lā pa, tsāndra byā ka ra ṇa, dbyaṅs can sgra mdo."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20tsa%20lin%20da/1",
+          "anchor": "wts_1_34:42:43",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "definition_evidence": "ein sehr weicher Stoff; skt. kācalindika, kācilindika.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading at the foot of the left column, continuing at the top of the right column; no printed homonym. The soft textile, Sanskrit forms and K95 11b6 quotation identify the exact HTML witness.",
+          "html_sha256": "acca869d4a30ae066d0864681ed72e09c644ab6ab2113b6bc52d4649513b3733",
+          "anchor_sha256": "587087034810bb11ee4030fd544171f23a80074d403d97b52317e8bef80771eb",
+          "definition_component_sha256": "3ea2e3c4221f6f981158ca3e922d560f996df9b4b6a37228602b6ca438fa6c4d",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "kā tsa lin da",
+            "homonym": null,
+            "evidence": "auch ka tsa linda ein best. sehr weicher Stoff. – zu skt. kācalindika, kācilindika.",
+            "identity_context": "Independent heading at the foot of the left column, continuing at the top of the right column; no printed homonym. The soft textile, Sanskrit forms and K95 11b6 quotation identify the exact HTML witness.",
+            "heading_anchor": "wts_1_34:42:43",
+            "evidence_anchor": "wts_1_34:42:43",
+            "column": "left column",
+            "page_sha256": "68f276f97920dca8f252db0e29d40f8508c0b1455dc5ec3e322898787f474d79",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/k%C4%81%20tsa%20lin%20da/1",
+            "headword": "kā tsa lin da",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              43
+            ],
+            "evidence_lines": [
+              43,
+              44,
+              46,
+              47,
+              49,
+              51
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "ea0596cc0d42865719bbc615db63c2e5701c5c8922ce296097d3d2e6ec228362",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading at the foot of the left column, continuing at the top of the right column; no printed homonym. The soft textile, Sanskrit forms and K95 11b6 quotation identify the exact HTML witness."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rtsam/1",
+          "anchor": "wts_1_34:42:93",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "Hafer.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent short article between ka tsi li ban and ka rtsal, without a printed homonym. The oats definition and the two Lex. sources (Sch) and (J) match the exact HTML witness.",
+          "html_sha256": "1575c2e7b8c444331153798af7037b250ab1f70466fc8fc9eb699d8db38bace6",
+          "anchor_sha256": "cff04de45ad2924370c9dfaa4e0354c1c7a4e050050d40f4070ddec7d3fe93bd",
+          "definition_component_sha256": "598c071698632434df8d73a53e2bcbd89cba27f70e06395f3d7fedd884ae911c",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka rtsam",
+            "homonym": null,
+            "evidence": "Hafer. Lex. Hafer (Sch); probably a sort of oats (J).",
+            "identity_context": "Independent short article between ka tsi li ban and ka rtsal, without a printed homonym. The oats definition and the two Lex. sources (Sch) and (J) match the exact HTML witness.",
+            "heading_anchor": "wts_1_34:42:93",
+            "evidence_anchor": "wts_1_34:42:93",
+            "column": "right column",
+            "page_sha256": "68f276f97920dca8f252db0e29d40f8508c0b1455dc5ec3e322898787f474d79",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20rtsam/1",
+            "headword": "ka rtsam",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              93
+            ],
+            "evidence_lines": [
+              93,
+              94
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "36484c2c3dcd3498f18ba73f28ff807a9266740a2c6efecaa01a85c52a94687c",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent short article between ka tsi li ban and ka rtsal, without a printed homonym. The oats definition and the two Lex. sources (Sch) and (J) match the exact HTML witness."
+          },
+          "reconsideration": {
+            "decision_sha256": "9f1503126fa16b52d888d4d63b9a3d1224e68838fbb109a827a916c4b19a34ff",
+            "reason": "Agent inspected the independent heading and complete short article on printed page 18, right column: Hafer and the two lexical sources Hafer (Sch) and probably a sort of oats (J) match the exact HTML witness. These explicit lexical citations supply the identity discriminator missing from the earlier deferral; unnumbered print remains distinct from editorial homonym 1."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rtsal/1",
+          "anchor": "wts_1_34:42:96",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "npr. ein Vihāra in Mal-tro, der von Sroṅ-btsan sgam-po als ru-gnon-Tempel in dBu-ru gegründet worden sein soll.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading between ka rtsam and ka rtsom; no printed homonym. The Vihāra in Mal-tro, ru-gnon function, dBu-ru and Nel 8a5 distinguish the exact HTML article. Embedded mal tro remains a rejected independent-article candidate.",
+          "html_sha256": "fa335ca7cf6c945895a83ea43ee9ad8c5bea7d3629496da0c9b14ae4260345b7",
+          "anchor_sha256": "8c04dfb32d93e17100f6bec7548d42e90e091ff231d5d1ef9e4780ed4442459b",
+          "definition_component_sha256": "6f141543e954562e6694164b8d82c1dc9c5d9a0b17dea351c0d0c129d6a66edc",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka rtsal",
+            "homonym": null,
+            "evidence": "auch ka tshal, ska tshal ein Vihāra in Mal-tro, der von Sroṅ-btsan sgam-po als ru-gnon-Tempel in dBu-ru gegründet worden sein soll.",
+            "identity_context": "Independent heading between ka rtsam and ka rtsom; no printed homonym. The Vihāra in Mal-tro, ru-gnon function, dBu-ru and Nel 8a5 distinguish the exact HTML article. Embedded mal tro remains a rejected independent-article candidate.",
+            "heading_anchor": "wts_1_34:42:96",
+            "evidence_anchor": "wts_1_34:42:96",
+            "column": "right column",
+            "page_sha256": "68f276f97920dca8f252db0e29d40f8508c0b1455dc5ec3e322898787f474d79",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20rtsal/1",
+            "headword": "ka rtsal",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              96
+            ],
+            "evidence_lines": [
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "0b8494a18df786102c1ed0b9476cf0f6bb5142fc7c1da0bcb17ab198495a63ab",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading between ka rtsam and ka rtsom; no printed homonym. The Vihāra in Mal-tro, ru-gnon function, dBu-ru and Nel 8a5 distinguish the exact HTML article. Embedded mal tro remains a rejected independent-article candidate."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rtsom/1",
+          "anchor": "wts_1_34:42:105",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "an der Abfolge des Alphabets ausgerichtetes Gedicht.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading at the foot of the right column, below ka rtsal; the top-of-column ka rtsom is a running header. The parenthetical ¹ka is a lemma reference, not a homonym of ka rtsom. The alphabetic poem definition and Lex. ka bśad (Dagy) match the HTML article.",
+          "html_sha256": "dbc01005bca407f68186316395d3852e4dc06bd8830deffa530b401fd425c7c5",
+          "anchor_sha256": "07b59b4a8147cf62a81fb69f77b9041a8664a4fa23c0001a2c2d71c7f5a53eec",
+          "definition_component_sha256": "78817ad7a809a651d116e082c0b8219c5d59ce4c680c2a450587196de6dbd0cc",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka rtsom",
+            "homonym": null,
+            "evidence": "(¹ka) an der Abfolge des Alphabets ausgerichtetes Gedicht.",
+            "identity_context": "Independent heading at the foot of the right column, below ka rtsal; the top-of-column ka rtsom is a running header. The parenthetical ¹ka is a lemma reference, not a homonym of ka rtsom. The alphabetic poem definition and Lex. ka bśad (Dagy) match the HTML article.",
+            "heading_anchor": "wts_1_34:42:105",
+            "evidence_anchor": "wts_1_34:42:105",
+            "column": "right column",
+            "page_sha256": "68f276f97920dca8f252db0e29d40f8508c0b1455dc5ec3e322898787f474d79",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20rtsom/1",
+            "headword": "ka rtsom",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              105
+            ],
+            "evidence_lines": [
+              105,
+              106,
+              108
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "ef7955c38490fabb4cd28a6f0464c1b0c3c1d546ddb990a552c2f5ccd67a6037",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading at the foot of the right column, below ka rtsal; the top-of-column ka rtsom is a running header. The parenthetical ¹ka is a lemma reference, not a homonym of ka rtsom. The alphabetic poem definition and Lex. ka bśad (Dagy) match the HTML article."
           }
         }
       ]
@@ -529,6 +1217,148 @@
             "excluded_lines": [],
             "qa_rows_sha256": "429da8de76137284480b2375ed74598d2ff8f4189a8919715b855bac1899cbd0",
             "review_reason": "Visual article-start adjudication; heading and definition/citation are in the same printed article. QA headword_line alone is not proof. Right column between ka yi and ka yiṅ; Lex. rtse mo’am mchog Spitze oder Bestes corroborates short definition."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20yig/1",
+          "anchor": "wts_1_34:42:179",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "der Buchstabe ka.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Separate heading below the cross-reference ka yi and above ka ye. The parenthetical superscript 1 belongs to the lemma reference (ka), not a numbered homonym of ka yig. The consonants quotation ends at ha and cites T4283 22a5; Lex. kakāra (Tshe 2a2) independently matches the HTML witness.",
+          "html_sha256": "e6fc06394c0595ca41aa8614a326faff6166bb982bb3ed561686e7af23792917",
+          "anchor_sha256": "10ad2491bd155418784cae0d4666c6ebe20a26c06b7b144bc02061b49e652624",
+          "definition_component_sha256": "41f4ca48a657de2de878b6667ab441271538ae22c711a78523523023bf7eac58",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka yig",
+            "homonym": null,
+            "evidence": "der Buchstabe ka.",
+            "identity_context": "Separate heading below the cross-reference ka yi and above ka ye. The parenthetical superscript 1 belongs to the lemma reference (ka), not a numbered homonym of ka yig. The consonants quotation ends at ha and cites T4283 22a5; Lex. kakāra (Tshe 2a2) independently matches the HTML witness.",
+            "heading_anchor": "wts_1_34:42:179",
+            "evidence_anchor": "wts_1_34:42:179",
+            "column": "right column",
+            "page_sha256": "0b2950b74a211ca0aee4324565e2fbcd546f450634db5f091c6dc8fbd38fb1f9",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20yig/1",
+            "headword": "ka yig",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              179
+            ],
+            "evidence_lines": [
+              179,
+              181,
+              182,
+              183,
+              184,
+              186
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "4e32e94a1bb32b2e4c850919e9299dbfb417cc0dad4e4591c2f763e70ad9ae65",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Separate heading below the cross-reference ka yi and above ka ye. The parenthetical superscript 1 belongs to the lemma reference (ka), not a numbered homonym of ka yig. The consonants quotation ends at ha and cites T4283 22a5; Lex. kakāra (Tshe 2a2) independently matches the HTML witness."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kwa%20%E2%80%99od%20mchog%20grags%20pa/1",
+          "anchor": "wts_1_34:42:142",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "definition_evidence": "npr. ein Mönch aus der Zeit der frühen Verbreitung des Buddhismus.",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading at the foot of the left column, above ka ya; no printed homonym. The monk, abbreviation kwa, northern route quotation (Nel 15b3) and Nel 16a7 identify the exact HTML witness.",
+          "html_sha256": "66b98c31a409564ff09f02a5f658d99b25f6d2ac9bb6a2631904ef637cd13a45",
+          "anchor_sha256": "83c568c93c05173f7af6f508f9baf6b9c2fd6984dabd77f3701e4a3c4048ed7b",
+          "definition_component_sha256": "500eafc19c87519406919ad6f6919716acf8a4017e85d8ffc7e8150a76a9e28d",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "kwa ’od mchog grags pa",
+            "homonym": null,
+            "evidence": "auch Kurzf. kwa, „’Od-mchog grags-pa aus Kwa-cu“, ein Mönch aus der Zeit der frühen Verbreitung des Buddhismus.",
+            "identity_context": "Independent heading at the foot of the left column, above ka ya; no printed homonym. The monk, abbreviation kwa, northern route quotation (Nel 15b3) and Nel 16a7 identify the exact HTML witness.",
+            "heading_anchor": "wts_1_34:42:142",
+            "evidence_anchor": "wts_1_34:42:142",
+            "column": "left column",
+            "page_sha256": "0b2950b74a211ca0aee4324565e2fbcd546f450634db5f091c6dc8fbd38fb1f9",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/kwa%20%E2%80%99od%20mchog%20grags%20pa/1",
+            "headword": "kwa ’od mchog grags pa",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              142
+            ],
+            "evidence_lines": [
+              142,
+              143,
+              145,
+              146,
+              147,
+              148,
+              149,
+              151,
+              152,
+              153
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "071a8d59e0b45f1c61668483ee00b25cebf1c5a7b1a4bc6ca6781c31ed27d4d3",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading at the foot of the left column, above ka ya; no printed homonym. The monk, abbreviation kwa, northern route quotation (Nel 15b3) and Nel 16a7 identify the exact HTML witness."
+          }
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ya%20sta/1",
+          "anchor": "wts_1_34:42:162",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "definition_evidence": "eine Heilpflanze; skt. kayasthā, auch kāyasthā Ocimum sanctum (PW).",
+          "scan_review": "Agent inspected the registered scanned page and exact HTML witness. Independent heading at the top of the right column below the running header and above ka yaṅ rtse; no printed homonym. The medicinal plant, Ocimum sanctum and cold-remedy quotation Siddh 5.132 match the exact HTML witness.",
+          "html_sha256": "e52c635b0c09a8d0b931842434d80fe4e99027c95c12324f4303841977161e1a",
+          "anchor_sha256": "52621b5cfedbfd30c7cc83220c2a31d2fe42217e066775f27737c25cad9a9ffb",
+          "definition_component_sha256": "6a02ecbe24679865aa285daf3f1b68cbd43b0d5987cec7f7a7b3eda18e29af81",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "print_observation": {
+            "heading": "ka ya sta",
+            "homonym": null,
+            "evidence": "eine Heilpflanze. – skt. kayasthā, auch kāyasthā Ocimum sanctum (PW).",
+            "identity_context": "Independent heading at the top of the right column below the running header and above ka yaṅ rtse; no printed homonym. The medicinal plant, Ocimum sanctum and cold-remedy quotation Siddh 5.132 match the exact HTML witness.",
+            "heading_anchor": "wts_1_34:42:162",
+            "evidence_anchor": "wts_1_34:42:162",
+            "column": "right column",
+            "page_sha256": "0b2950b74a211ca0aee4324565e2fbcd546f450634db5f091c6dc8fbd38fb1f9",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20ya%20sta/1",
+            "headword": "ka ya sta",
+            "homonym": "1"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              162
+            ],
+            "evidence_lines": [
+              162,
+              163,
+              165,
+              166,
+              167,
+              168,
+              169,
+              170,
+              171
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "dd02f0ca76b683f959940b85448b855c42e630392fbfbd5ac2bc6701446db2e6",
+            "review_reason": "Agent visually adjudicated an independent article start, not a QA label or a running header. Independent heading at the top of the right column below the running header and above ka yaṅ rtse; no printed homonym. The medicinal plant, Ocimum sanctum and cold-remedy quotation Siddh 5.132 match the exact HTML witness."
           }
         }
       ]
@@ -6349,6 +7179,54 @@
         60
       ],
       "page": "v5-p359"
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ma%20la%20can/1",
+      "anchor": "wts_1_34:41:90",
+      "status": "deferred",
+      "reason": "Agent visual inspection of the registered scan: Printed heading and Viṣṇu definition agree with this HTML article, but this source has no registered candidate identity edge. There is no previous edge for the reviewed anchor-correction procedure; defer rather than bypass the candidate gate."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20tsi%20li%20ban/1",
+      "anchor": "wts_1_34:42:78",
+      "status": "deferred",
+      "reason": "Agent visual inspection of the registered scan: The visible independent article starts at QA line 78, but the registered anchor inventory has no matching heading anchor. Source identity alone does not satisfy the anchor gate; defer pending a separately reviewed anchor correction."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mu%20gnas/1",
+      "anchor": "wts_1_34:41:189",
+      "status": "deferred",
+      "reason": "Agent visual inspection of the registered scan: Printed entry is only a cross-reference to ka ’bur gnas naṅ, without a discriminating definition or citation to bind this HTML article."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rma/1",
+      "anchor": "wts_1_34:42:25",
+      "status": "deferred",
+      "reason": "Agent visual inspection of the registered scan: Candidate anchor line 25 belongs to the following ka rma śa tam article. Actual ka rma is at line 22 and contains only a cross-reference to karma. No acceptance or anchor-gate bypass."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20smad/1",
+      "anchor": "wts_1_34:42:26",
+      "status": "deferred",
+      "reason": "Agent visual inspection of the registered scan: Printed entry only refers back to ka mad, without a discriminating definition or citation for this separate HTML witness."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20tshal/1",
+      "anchor": "wts_1_34:42:112",
+      "status": "deferred",
+      "reason": "Agent visual inspection of the registered scan: Printed entry only refers back to ka rtsal, without a discriminating definition or citation; the running header is not an article start."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20dzi%20li%20ban/1",
+      "anchor": "wts_1_34:42:114",
+      "status": "deferred",
+      "reason": "Agent visual inspection of the registered scan: Printed entry only refers back to ka tsi li ban, without a discriminating definition or citation for this separate HTML witness."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ye/1",
+      "anchor": "wts_1_34:42:188",
+      "status": "deferred",
+      "reason": "Agent visual inspection of the registered scan: Printed entry gives kwa ye and a cross-reference to kwa’i, without a discriminating definition or citation for the HTML witness."
     }
   ],
   "inspected_pages": 40,
