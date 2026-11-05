@@ -6,13 +6,16 @@ const path=require('node:path');
 (async()=>{
  const base=process.env.BADW_READER_URL||'http://127.0.0.1:8765';
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+ let context;
  try{
- const page=await browser.newPage({viewport:{width:1440,height:1050}}),errors=[];
+ context=await browser.newContext({viewport:{width:1440,height:1050}});
+ const page=await context.newPage(),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  const data=await (await page.request.get(base+'/data.json')).json();
  const manifest=await (await page.request.get(base+'/manifest.json')).json();
  const catalog=data.entries;assert.equal(catalog.length,29877+(manifest.supplemental_witnesses||0));assert.equal(data.sharded,true);
  await require('./badw_reader_search.browser.cjs').validateSearch(browser,base,catalog);
+ assert.deepEqual(browser.contexts(),[context],'search journey releases its context');
  const fixture=JSON.parse(fs.readFileSync(process.env.BADW_READER_FIXTURE||'work/badw_connected_reader_20261020/run8/reader/data.json'));
  const entries=new Map(catalog.map(e=>[e.id,e]));
  data.entries=[];for(const e of fixture.entries){const meta=entries.get(e.id);assert(meta);const response=await page.request.get(base+'/'+meta.path);assert.equal(response.status(),200);data.entries.push(await response.json());}
@@ -681,5 +684,9 @@ const path=require('node:path');
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
  assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,reciprocal_perfect_journeys:7,reciprocal_perfect_future_journeys:2,reciprocal_perfect_imperative_journeys:2,grammatical_batch_journeys:grammaticalBatchJourneys,qualified_reciprocal_perfect_journeys:1,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
- }finally{await browser.close();}
+ }finally{
+  // Close pages (including PDF popups) and their request context gracefully
+  // before terminating Chromium. Always attempt browser teardown as well.
+  try{if(context)await context.close();}finally{await browser.close();}
+ }
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -6,7 +6,9 @@ const path=require('node:path');
 const {entryMatchesSearch,rankSearchResults,searchMatchRank,normalizeSearchKey}=require('../scripts/badw_dictionary_prototype/app.js');
 const root=path.resolve(__dirname,'..');
 async function validateSearch(browser,base,catalog){
- const page=await browser.newPage({viewport:{width:1440,height:1050}});
+ const context=await browser.newContext({viewport:{width:1440,height:1050}});
+ try{
+ const page=await context.newPage();
  const errors=[],bodies=[];page.on('pageerror',e=>errors.push(e.message));
  page.on('request',r=>{if(/\/entries\//.test(r.url()))bodies.push(r.url());});
  const load=performance.now();await page.goto(base);await page.waitForSelector('#entries a');
@@ -149,7 +151,8 @@ async function validateSearch(browser,base,catalog){
  }
  assert.deepEqual(errors,[]);
  const report={entries:catalog.length,apostropheMatches:expected.length,gyuMatches:filtered.length,indexLoadMs,meanFilterAndRenderMs:timings,searchBodyRequests:0,firstTen:expected.slice(0,10).map(e=>({headword:e.headword.loc,homonym:e.homonym,category:searchMatchRank(e,normalizeSearchKey("'gyur"))+1})),browserErrors:errors.length};
- console.log(JSON.stringify({searchValidation:report}));await page.close();return report;
+ console.log(JSON.stringify({searchValidation:report}));return report;
+ }finally{await context.close();}
 }
 module.exports={validateSearch};
 if(require.main===module)(async()=>{
