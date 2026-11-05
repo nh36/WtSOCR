@@ -61,11 +61,47 @@ def review_basis(assertion):
 def witness_record(page_key, assertion):
     editorial = assertion['editorial']
     observed = assertion['print_observation']
+    component_key = ('cross_reference_component_sha256' if assertion.get('evidence_kind') == 'cross_reference_only'
+                     else 'definition_component_sha256')
     return dict(source_url=editorial['source_url'], html_sha256=assertion['html_sha256'],
         headword=editorial['headword'], homonym=editorial['homonym'], page=page_key,
         printed_heading=observed['heading'], printed_homonym=observed['homonym'],
         evidence=dict(certificate=assertion, anchor_sha256=assertion['anchor_sha256'],
-            definition_component_sha256=assertion['definition_component_sha256']), review_basis=review_basis(assertion))
+            **{component_key: assertion[component_key]}), review_basis=review_basis(assertion))
+
+
+def validate_cross_reference(assertion, body):
+    """A separately headed reference article, never an embedded reference.
+
+    Exact component/target bindings supplement (and do not replace) the common
+    image, article-boundary, candidate-anchor, homonym and page gates.
+    """
+    if 'review_basis' not in assertion:
+        raise ValueError('cross-reference review provenance must be explicit')
+    allowed = {'headword', 'source_division', 'cross_reference', 'tibetan'}
+    components = body['components']
+    refs = [c for c in components if c['type'] == 'cross_reference']
+    if (len(refs) != 1 or any(c['type'] not in allowed for c in components) or
+        any(c['type'] == 'source_division' and c['source_form'].strip() for c in components)):
+        raise ValueError('not a cross-reference-only HTML article')
+    reference = refs[0]['source_form'].strip()
+    if len(reference) < 2 or reference[0] not in '↑↓' or not proof_key(reference[1:]):
+        raise ValueError('explicit cross-reference arrow and target required')
+    if (assertion.get('cross_reference_evidence') != reference or
+        assertion.get('cross_reference_component_sha256') != object_digest(refs[0]) or
+        assertion.get('print_observation', {}).get('cross_reference') != reference):
+        raise ValueError('cross-reference target or component differs from inspected evidence')
+    if assertion.get('print_observation', {}).get('heading') != body['headword']['loc']:
+        raise ValueError('cross-reference article requires the independently observed exact heading')
+    variants = [c for c in components if c['type'] == 'tibetan']
+    observed = assertion.get('print_observation', {})
+    if variants:
+        if (len(variants) != 1 or assertion.get('variant_component_sha256') != object_digest(variants[0]) or
+            observed.get('heading_variant') != variants[0]['source_form'].strip()):
+            raise ValueError('cross-reference heading variant requires exact source binding')
+    elif 'variant_component_sha256' in assertion or 'heading_variant' in observed:
+        raise ValueError('unexpected cross-reference heading variant')
+    return refs[0]
 
 
 def validate_boundary(assertion, anchor, qa_rows):
@@ -112,14 +148,21 @@ def validate_assertion(assertion, body, anchor, edges):
     printed = assertion['printed_homonym']
     if printed is not None and str(printed) != str(body.get('homonym')):
         raise ValueError('competing numbered homonym')
-    quote = assertion['definition_evidence']
-    if not proof_key(quote):
-        raise ValueError('empty HTML evidence')
-    components = [c for c in body['components'] if c['type'] == 'definition' and proof_key(quote) in proof_key(c['source_form'])]
-    if not components:
-        raise ValueError('reviewed definition not present in this HTML witness')
-    if assertion['definition_component_sha256'] != object_digest(components[0]):
-        raise ValueError('stale definition evidence')
+    kind = assertion.get('evidence_kind', 'definition')
+    if kind == 'cross_reference_only':
+        component = validate_cross_reference(assertion, body)
+    elif kind == 'definition':
+        quote = assertion['definition_evidence']
+        if not proof_key(quote):
+            raise ValueError('empty HTML evidence')
+        components = [c for c in body['components'] if c['type'] == 'definition' and proof_key(quote) in proof_key(c['source_form'])]
+        if not components:
+            raise ValueError('reviewed definition not present in this HTML witness')
+        if assertion['definition_component_sha256'] != object_digest(components[0]):
+            raise ValueError('stale definition evidence')
+        component = components[0]
+    else:
+        raise ValueError('unknown article evidence kind')
     if not assertion.get('scan_review'):
         raise ValueError('scan identity review required, especially for unnumbered print')
     observation = assertion.get('print_observation', {})
@@ -138,7 +181,7 @@ def validate_assertion(assertion, body, anchor, edges):
             raise ValueError('independent printed observation required: '+field)
     if observation.get('verification') != 'visual transcription; not machine-verified':
         raise ValueError('visual scholarship must be labelled explicitly')
-    return components[0]
+    return component
 
 
 def compile_records(certificate, bodies, anchors, edges, registry, qa_rows=None):

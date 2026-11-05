@@ -392,3 +392,17 @@ The existing 60-case PDF citation challenge (20 cases per volume) contains 60 ex
 A separate bounded cross-reference pilot covers nine HTML entries and eight PDF entries. `scripts/build_badw_entry_index.py` pins all actual acquired HTML entries and source-bound PDF article witnesses, not search results or hypothetical URL aliases. The complete acquired index contains 18,037 HTML and 11,840 PDF entries. It resolves 11/15 HTML references by exact URL and 12/12 individually reviewed printed targets by exact headword/homonym identity. The four remaining HTML URLs (`yod/1`, `yin/1`, `bgyid/1`, `mdzad/1`) explicitly report unreleased data in a bounded live check; no cross-witness equivalence is invented for them. Unique exact explicit URLs identify a safe broader candidate class, subject to the pinned index and fail-closed ambiguity handling; citation and gloss rules still require review.
 
 `scripts/build_badw_relationship_review_packet.py` freezes a fresh source-only 60-entry packet: 30 HTML and 30 PDF entries, ten from each PDF volume, enriched by ten source-text cue strata. Cues are sampling prompts, not asserted relationships or correct answers. Previously reviewed entries and existing holdouts are excluded. Source evidence, blank review fields, input hashes, index hash and frozen rule hashes are retained without predictions. Review must establish the exact supported endpoints (or ambiguity) before scoring; do not tune frozen rules against its answers. The older 120-packet independent review remains separate and unchanged. Independent accuracy evidence is required before broad citation assignment or production promotion.
+
+HTML original-page certificates may use `cross_reference_only` evidence for an
+independent printed reference article. This requires image inspection of the
+article start, explicit printed homonym (including absence), column, folio and
+source-bound QA boundary, the existing candidate edge or reviewed correction,
+and exact agreement with the HTML cross-reference arrow and target. The entire
+reference component is checksum-bound; any heading variant requires its own
+component binding and printed observation. Only headwords, one cross-reference,
+an optional bound heading variant and empty structural divisions are permitted;
+definitions, examples, quotations and substantive divisions cannot enter this
+path. Explicit review provenance is mandatory. Running headers, continuations
+and references embedded in another article remain ineligible. These certificates
+link pages; they do not modify cross-reference destinations or certify text
+corrections. Missing C6 anchors or C11 identity edges still require deferral.

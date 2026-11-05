@@ -349,3 +349,83 @@ def test_committed_next_queue_contains_no_new_assignments():
     assert queue['physical_pages'] == 48
     assert queue['candidates'] == 683
     assert all(p['printed_volume'] is None and p['printed_folio'] is None and p['geometry'] is None for p in queue['pages'])
+
+
+@pytest.fixture
+def reference_evidence(evidence):
+    body, _, assertion, _, _ = evidence
+    component = dict(type='cross_reference', source_form='↑another entry')
+    body['components'] = [component]
+    assertion.pop('definition_evidence')
+    assertion.pop('definition_component_sha256')
+    assertion.update(evidence_kind='cross_reference_only', review_basis=a.AGENT_REVIEW_BASIS,
+        cross_reference_evidence=component['source_form'], cross_reference_component_sha256=a.object_digest(component))
+    assertion['print_observation'].update(heading='test', cross_reference=component['source_form'])
+    return evidence
+
+
+def test_reference_certificate_uses_all_common_bindings_and_bound_projection(reference_evidence):
+    expanded = compile_fixture(reference_evidence)
+    a.validate_expansion(reference_evidence[4], expanded)
+    assert 'definition_component_sha256' not in expanded['witnesses'][0]['evidence']
+    expanded['witnesses'][0]['evidence']['cross_reference_component_sha256'] = 'f'*64
+    expanded['content_sha256'] = a.object_digest({k:v for k,v in expanded.items() if k != 'content_sha256'})
+    with pytest.raises(ValueError, match='witness differs'):
+        a.validate_expansion(reference_evidence[4], expanded)
+
+
+@pytest.mark.parametrize('classification', ['quotation', 'running header', 'reference embedded in another article', 'continuation'])
+def test_reference_cannot_substitute_for_independent_heading(reference_evidence, classification):
+    reference_evidence[2]['article_boundary']['classification'] = classification
+    with pytest.raises(ValueError, match='article beginning'): compile_fixture(reference_evidence)
+
+
+@pytest.mark.parametrize('component', [
+    dict(type='definition', source_form='a short definition'),
+    dict(type='example', source_form='test ↑another entry'),
+    dict(type='source_division', source_form='embedded prose'),
+    dict(type='cross_reference', source_form='↓second reference'),
+])
+def test_reference_path_rejects_mixed_or_embedded_articles(reference_evidence, component):
+    reference_evidence[0]['components'].append(component)
+    with pytest.raises(ValueError, match='not a cross-reference-only'): compile_fixture(reference_evidence)
+
+
+@pytest.mark.parametrize('field,value,message', [
+    ('cross_reference_evidence', '↓another entry', 'target or component'),
+    ('cross_reference_component_sha256', 'f'*64, 'target or component'),
+    ('anchor_sha256', 'f'*64, 'stale reviewed'),
+    ('printed_homonym', 1, 'competing numbered'),
+    ('heading_position', 'running header', 'not a heading'),
+    ('scan_review', '', 'scan identity'),
+])
+def test_reference_path_preserves_identity_gates(reference_evidence, field, value, message):
+    reference_evidence[2][field] = value
+    with pytest.raises(ValueError, match=message): compile_fixture(reference_evidence)
+
+
+def test_reference_requires_candidate_target_heading_variant_and_provenance(reference_evidence):
+    body, _, assertion, edges, _ = reference_evidence
+    saved = edges.pop()
+    with pytest.raises(ValueError, match='pinned candidate'): compile_fixture(reference_evidence)
+    edges.append(saved)
+    assertion['print_observation']['cross_reference'] = '↑neighbour'
+    with pytest.raises(ValueError, match='target or component'): compile_fixture(reference_evidence)
+    assertion['print_observation']['cross_reference'] = '↑another entry'
+    assertion['print_observation']['heading'] = 'a quotation'
+    with pytest.raises(ValueError, match='exact heading'): compile_fixture(reference_evidence)
+    assertion['print_observation']['heading'] = 'test'
+    variant = dict(type='tibetan', source_form='variant')
+    body['components'].append(variant)
+    with pytest.raises(ValueError, match='variant'): compile_fixture(reference_evidence)
+    assertion['variant_component_sha256'] = a.object_digest(variant)
+    assertion['print_observation']['heading_variant'] = 'variant'
+    assert len(compile_fixture(reference_evidence)['witnesses']) == 1
+    assertion.pop('review_basis')
+    with pytest.raises(ValueError, match='provenance must be explicit'): compile_fixture(reference_evidence)
+
+
+@pytest.mark.parametrize('text', ['', 'another entry', '↑', '↓ ...'])
+def test_reference_requires_arrow_and_target(reference_evidence, text):
+    reference_evidence[0]['components'][0]['source_form'] = text
+    with pytest.raises(ValueError, match='arrow and target'): compile_fixture(reference_evidence)
