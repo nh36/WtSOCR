@@ -7786,6 +7786,1473 @@
           }
         }
       ]
+    },
+    {
+      "key": "v6-p333",
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 682,
+      "volume": 6,
+      "printed_page": 333,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        469.0,
+        677.0
+      ],
+      "geometry_review": "Agent inspected the complete registered single-page scan, printed folio and both columns. Full MediaBox retained; no inferred spread crop or pagination offset.",
+      "page_evidence": "Agent image inspection: printed folio 333, volume 6; independent article headings in two columns. Printed homonyms are transcribed separately from editorial numbering.",
+      "accepted": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20sdo%E1%B9%85/1",
+          "anchor": "wts_35_51:682:2",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad sdoṅ and its article in the left column, below the running header. Kurzf. für ↓padma’i sdoṅ po; Lotusstengel. Padm 7a4 and 158b4 describe children on the lotus stem. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "432ea60dbe7144d9f140332c078dac9973e18fce4f7a01ba505491a15b2dc6a7",
+          "anchor_sha256": "bf933053d4807cb65c62fe2333993fc84995065768b239e3d699889c9b5957fb",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20sdo%E1%B9%85/1",
+            "headword": "pad sdoṅ",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad sdoṅ",
+            "homonym": null,
+            "evidence": "Kurzf. für ↓padma’i sdoṅ po; Lotusstengel. Padm 7a4 and 158b4 describe children on the lotus stem.",
+            "identity_context": "Agent read the independent printed heading pad sdoṅ and its article in the left column, below the running header. Kurzf. für ↓padma’i sdoṅ po; Lotusstengel. Padm 7a4 and 158b4 describe children on the lotus stem. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:2",
+            "evidence_anchor": "wts_35_51:682:2",
+            "column": "left column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              2
+            ],
+            "evidence_lines": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "524bfb952b11eb25664cbcfd8332ddfa12f7f9664b606c39e0717623efec9601",
+            "review_reason": "Agent read the independent printed heading pad sdoṅ and its article in the left column, below the running header. Kurzf. für ↓padma’i sdoṅ po; Lotusstengel. Padm 7a4 and 158b4 describe children on the lotus stem. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "Lotusstengel.",
+          "definition_component_sha256": "c6474f461ac8defd1ef73f6818ea487c7320955673e7af63bb0b54b2d497bb0d"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20pa/1",
+          "anchor": "wts_35_51:682:13",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad pa and its article in the left column, below the running header. Blutegel; vgl. ↓padma 5. Lex. khrag ’jibs pa’i srin bu’i rigs śig (Dagy). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "213094d2fbc5787e3118642c863092580983a4373581c4815607e1337e95ff25",
+          "anchor_sha256": "b305e6809b0c06c8966b3cc2472dbc1762ebabc78352aa3c9837727e5ba8fa87",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20pa/1",
+            "headword": "pad pa",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad pa",
+            "homonym": null,
+            "evidence": "Blutegel; vgl. ↓padma 5. Lex. khrag ’jibs pa’i srin bu’i rigs śig (Dagy).",
+            "identity_context": "Agent read the independent printed heading pad pa and its article in the left column, below the running header. Blutegel; vgl. ↓padma 5. Lex. khrag ’jibs pa’i srin bu’i rigs śig (Dagy). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:13",
+            "evidence_anchor": "wts_35_51:682:13",
+            "column": "left column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              13
+            ],
+            "evidence_lines": [
+              13,
+              14,
+              15
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "fc0eb6e5f02f47027c65d506f71e80bf3076e0ac54fcaf4836b72d599edc9433",
+            "review_reason": "Agent read the independent printed heading pad pa and its article in the left column, below the running header. Blutegel; vgl. ↓padma 5. Lex. khrag ’jibs pa’i srin bu’i rigs śig (Dagy). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "Blutegel; vgl. ↓padma 5.",
+          "definition_component_sha256": "d56d20ac46fb3565b404d46f9130fa9187a75c8ad7b24a3706e2db5b204f74e1"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20phor/1",
+          "anchor": "wts_35_51:682:16",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad phor and its article in the left column, below the running header. Almosenschale eines Bon-Mönchs; gZi 3:713,5 lists the hat, boots and alms bowl. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "397839b619ec2b8b6bd69390a77be7d5e1e009ce91f3a7a40f2a098b88fe327f",
+          "anchor_sha256": "709863b0c977f7e5d87e6ddd685e38eae9458b1313991b5e8da1fd8ba0badc12",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20phor/1",
+            "headword": "pad phor",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad phor",
+            "homonym": null,
+            "evidence": "Almosenschale eines Bon-Mönchs; gZi 3:713,5 lists the hat, boots and alms bowl.",
+            "identity_context": "Agent read the independent printed heading pad phor and its article in the left column, below the running header. Almosenschale eines Bon-Mönchs; gZi 3:713,5 lists the hat, boots and alms bowl. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:16",
+            "evidence_anchor": "wts_35_51:682:16",
+            "column": "left column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              16
+            ],
+            "evidence_lines": [
+              16,
+              17,
+              18,
+              19,
+              20
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "31728c7786838d797878fcbcc67dad376d980c1fb990dd3b24a7d8214af54161",
+            "review_reason": "Agent read the independent printed heading pad phor and its article in the left column, below the running header. Almosenschale eines Bon-Mönchs; gZi 3:713,5 lists the hat, boots and alms bowl. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "Almosenschale eines Bon-Mönchs.",
+          "definition_component_sha256": "534cc7611ea747608a427241a19e5aa43abac31081ff054ef535a55cdda233e9"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20phre%E1%B9%85%20ma/1",
+          "anchor": "wts_35_51:682:21",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad phreṅ ma and its article in the left column, below the running header. npr. eine Gottheit, Gefährtin des sByi-riṅ-khrid (Neb 119). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "c7bbf29eac9c359d8bc2c7bcb2b73e0af6584043051680796b138f34af6bae35",
+          "anchor_sha256": "1746006f84d9154263c30d8767b992fab08e88dcece1aa4c0442cfcb20e4d52d",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20phre%E1%B9%85%20ma/1",
+            "headword": "pad phreṅ ma",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad phreṅ ma",
+            "homonym": null,
+            "evidence": "npr. eine Gottheit, Gefährtin des sByi-riṅ-khrid (Neb 119).",
+            "identity_context": "Agent read the independent printed heading pad phreṅ ma and its article in the left column, below the running header. npr. eine Gottheit, Gefährtin des sByi-riṅ-khrid (Neb 119). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:21",
+            "evidence_anchor": "wts_35_51:682:21",
+            "column": "left column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              21
+            ],
+            "evidence_lines": [
+              21,
+              22,
+              23
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "56054df99b6dc0051c6ad4a8376c6037ca51b8182fc52dcdc765f6e9047dc864",
+            "review_reason": "Agent read the independent printed heading pad phreṅ ma and its article in the left column, below the running header. npr. eine Gottheit, Gefährtin des sByi-riṅ-khrid (Neb 119). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "npr. eine Gottheit, Gefährtin des sByi-riṅ-khrid (Neb 119).",
+          "definition_component_sha256": "793076719ed4ee7a07a3a6a1caf04ff2af19c607f62929cbc946aae094318bb2"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20%E2%80%99byu%E1%B9%85/1",
+          "anchor": "wts_35_51:682:24",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ’byuṅ and its article in the left column, below the running header. Beiname des Padmasambhava; Gar 191,17 and KTh 1:389,5 quote his incarnation. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "21f5e5ab531ee46c77f55900ffc241e1da95f6b4569b6660082e8cb5245bc917",
+          "anchor_sha256": "40fbd95ef3eaa80defa46298b0a70e4cd3026d32754b5ee35587def54a028c25",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20%E2%80%99byu%E1%B9%85/1",
+            "headword": "pad ’byuṅ",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ’byuṅ",
+            "homonym": null,
+            "evidence": "Beiname des Padmasambhava; Gar 191,17 and KTh 1:389,5 quote his incarnation.",
+            "identity_context": "Agent read the independent printed heading pad ’byuṅ and its article in the left column, below the running header. Beiname des Padmasambhava; Gar 191,17 and KTh 1:389,5 quote his incarnation. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:24",
+            "evidence_anchor": "wts_35_51:682:24",
+            "column": "left column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              24
+            ],
+            "evidence_lines": [
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "4d7e65c633efe45a3ebd9b6655f43ff442b52df301aee2b327e95538362d711d",
+            "review_reason": "Agent read the independent printed heading pad ’byuṅ and its article in the left column, below the running header. Beiname des Padmasambhava; Gar 191,17 and KTh 1:389,5 quote his incarnation. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "npr. Beiname des Padmasambhava.",
+          "definition_component_sha256": "b3f058a10e77e5b37f7f16d2468446959aa66f85fc3b2508d68b1a1c0328ca18"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma/1",
+          "anchor": "wts_35_51:682:33",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma and its article in the left column, below the running header. ↓padma These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "a0dc79c8998fd8f6c3500532a64cb58467cf926be367f75f12e6f6392b5c23dc",
+          "anchor_sha256": "f5c6bf23cef306e8aeef87bf80ef5b312e48521e99340386615b7e9029440c1c",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma/1",
+            "headword": "pad ma",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma",
+            "homonym": null,
+            "evidence": "↓padma",
+            "identity_context": "Agent read the independent printed heading pad ma and its article in the left column, below the running header. ↓padma These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:33",
+            "evidence_anchor": "wts_35_51:682:33",
+            "column": "left column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              33
+            ],
+            "evidence_lines": [
+              33
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "206e8891a4e237f89c732666c62a1e90419af402c9e098153325e574b382e0b4",
+            "review_reason": "Agent read the independent printed heading pad ma and its article in the left column, below the running header. ↓padma These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma",
+          "cross_reference_component_sha256": "b5950d8e2d2b75d221fc3b7d6a09e1fe437061b1a781b1469eda850a048f5d0b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20dkar%20po/1",
+          "anchor": "wts_35_51:682:34",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma dkar po and its article in the left column, below the running header. ↓padma dkar po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "e6daf5cfccbed417f006bd31073c911e625ba163fe64919f9216519b8067cddb",
+          "anchor_sha256": "e86cead7946442f09d0fb4a90cd17586aa2cc771a8164da90e4376922edfb129",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20dkar%20po/1",
+            "headword": "pad ma dkar po",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma dkar po",
+            "homonym": null,
+            "evidence": "↓padma dkar po",
+            "identity_context": "Agent read the independent printed heading pad ma dkar po and its article in the left column, below the running header. ↓padma dkar po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:34",
+            "evidence_anchor": "wts_35_51:682:34",
+            "column": "left column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma dkar po"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              34
+            ],
+            "evidence_lines": [
+              34
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "33eaf3b1492d2e543bd83cb7240c8cec5a4e1016ffa06907014a031f89541744",
+            "review_reason": "Agent read the independent printed heading pad ma dkar po and its article in the left column, below the running header. ↓padma dkar po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma dkar po",
+          "cross_reference_component_sha256": "790dc4b17e4a5a5098c5eca19cf718e5c9d4a2f59e17723b726372269c589dd4"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20bkod%20pa/1",
+          "anchor": "wts_35_51:682:35",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma bkod pa and its article in the left column, below the running header. Bez. eines Samādhi; padmavyūhā (Mvy 753, Abt. byaṅ chub sems dpa’i gzuṅs bcu gñis kyi miṅ). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "a03cf1de87aa60dd5140e7cf35641816e5d3dd2297b9eed04955a3071170f15c",
+          "anchor_sha256": "5d9d1cf33ea821cc0f317935939ff3181ee80bf667c9bbc4cf51fc8c98a75160",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20bkod%20pa/1",
+            "headword": "pad ma bkod pa",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma bkod pa",
+            "homonym": null,
+            "evidence": "Bez. eines Samādhi; padmavyūhā (Mvy 753, Abt. byaṅ chub sems dpa’i gzuṅs bcu gñis kyi miṅ).",
+            "identity_context": "Agent read the independent printed heading pad ma bkod pa and its article in the left column, below the running header. Bez. eines Samādhi; padmavyūhā (Mvy 753, Abt. byaṅ chub sems dpa’i gzuṅs bcu gñis kyi miṅ). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:35",
+            "evidence_anchor": "wts_35_51:682:35",
+            "column": "left column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              35
+            ],
+            "evidence_lines": [
+              35,
+              36,
+              37,
+              38
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "44efbe3f5d2e3e169141bf7896ac652dd38b9ffd8061a017b27b87e29cc5d02b",
+            "review_reason": "Agent read the independent printed heading pad ma bkod pa and its article in the left column, below the running header. Bez. eines Samādhi; padmavyūhā (Mvy 753, Abt. byaṅ chub sems dpa’i gzuṅs bcu gñis kyi miṅ). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "Bez. eines Samādhi.",
+          "definition_component_sha256": "34227e77007c8a001f33f893c3cffab9ffe99be2dab2c17dcd23792b83969b21"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20ge%20sar/1",
+          "anchor": "wts_35_51:682:40",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma ge sar and its article in the right column, below the running header. auch padma’i ge sar; Staubgefäße der Lotusblüte. Srkk 116.5 and gYu 290,14; 294,5 distinguish the flower stamens. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "2947f2ecd46e237e54fde37c816d338ad8bff4e0ff3e24cf2ff2777beea62770",
+          "anchor_sha256": "a7d5a45db0e39bf0c9e70791a10f458ad081a51bd95c3e26d2683b240fffb5eb",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20ge%20sar/1",
+            "headword": "pad ma ge sar",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma ge sar",
+            "homonym": null,
+            "evidence": "auch padma’i ge sar; Staubgefäße der Lotusblüte. Srkk 116.5 and gYu 290,14; 294,5 distinguish the flower stamens.",
+            "identity_context": "Agent read the independent printed heading pad ma ge sar and its article in the right column, below the running header. auch padma’i ge sar; Staubgefäße der Lotusblüte. Srkk 116.5 and gYu 290,14; 294,5 distinguish the flower stamens. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:40",
+            "evidence_anchor": "wts_35_51:682:40",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              40
+            ],
+            "evidence_lines": [
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "9028a40104fe6ce916ba636a69264a87a857d37af825a87ed3bb9fb4ba2887b0",
+            "review_reason": "Agent read the independent printed heading pad ma ge sar and its article in the right column, below the running header. auch padma’i ge sar; Staubgefäße der Lotusblüte. Srkk 116.5 and gYu 290,14; 294,5 distinguish the flower stamens. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "Staubgefäße der Lotusblüte.",
+          "definition_component_sha256": "aed2ef22286a2831fb414d1534f7eb411065cab0b28d637e89707c6196b218f0"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20rgya%20mtsho/1",
+          "anchor": "wts_35_51:682:51",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma rgya mtsho and its article in the right column, below the running header. npr. ein Buddha; padmasāgara (Bhad 387). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "7b07e4410bd093c45a671ca1b2eede3806159af1ca2fed003e4bb6e44205df45",
+          "anchor_sha256": "554519024b71707faed16d2103e57775e34005c09d20851e781bdc815d80ab49",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20rgya%20mtsho/1",
+            "headword": "pad ma rgya mtsho",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma rgya mtsho",
+            "homonym": null,
+            "evidence": "npr. ein Buddha; padmasāgara (Bhad 387).",
+            "identity_context": "Agent read the independent printed heading pad ma rgya mtsho and its article in the right column, below the running header. npr. ein Buddha; padmasāgara (Bhad 387). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:51",
+            "evidence_anchor": "wts_35_51:682:51",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              51
+            ],
+            "evidence_lines": [
+              51,
+              52,
+              53
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "cd4cbc4d02b19aa734357db554d15fc00f68b993c8fa678fccea57fa346b59e0",
+            "review_reason": "Agent read the independent printed heading pad ma rgya mtsho and its article in the right column, below the running header. npr. ein Buddha; padmasāgara (Bhad 387). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "npr. ein Buddha.",
+          "definition_component_sha256": "f79b5e968ac834eefa7d9d4df3bdc6e202b255fba126ecf0e74ba998db303302"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20can/1",
+          "anchor": "wts_35_51:682:54",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma can and its article in the right column, below the running header. ↓padma can These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "a5ed342cd5b60dc40aed942ae11d1d351f61019a23d53b456bdbe8aed4d09b9b",
+          "anchor_sha256": "1c7ad938da56b0ea620a4c59b3d2e438eefc79092aa1fa56a79bfa9a8f17c45f",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20can/1",
+            "headword": "pad ma can",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma can",
+            "homonym": null,
+            "evidence": "↓padma can",
+            "identity_context": "Agent read the independent printed heading pad ma can and its article in the right column, below the running header. ↓padma can These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:54",
+            "evidence_anchor": "wts_35_51:682:54",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma can"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              54
+            ],
+            "evidence_lines": [
+              54
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "e3450f86cd1ac91dbcab739a56d783a1a4c47957e0af0ef6562d79b07bd7d2a9",
+            "review_reason": "Agent read the independent printed heading pad ma can and its article in the right column, below the running header. ↓padma can These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma can",
+          "cross_reference_component_sha256": "4db61739fc47a28d9e19fe210dd23e0952b994dbd874cb5c8b2ab658fdee4b40"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20ltar%20cher%20gas/1",
+          "anchor": "wts_35_51:682:55",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma ltar cher gas and its article in the right column, below the running header. ↓padma ltar cher gas pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "23376af8c17d901920d23f7e466bcfeea688faf2a90a5aa59b855f4f1489f4ef",
+          "anchor_sha256": "d3dac8c0d6c18ca2c6a0f377bbac5641a2f45c6b7fdddbd76abdb8a0f534d57c",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20ltar%20cher%20gas/1",
+            "headword": "pad ma ltar cher gas",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma ltar cher gas",
+            "homonym": null,
+            "evidence": "↓padma ltar cher gas pa",
+            "identity_context": "Agent read the independent printed heading pad ma ltar cher gas and its article in the right column, below the running header. ↓padma ltar cher gas pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:55",
+            "evidence_anchor": "wts_35_51:682:55",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma ltar cher gas pa"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              55
+            ],
+            "evidence_lines": [
+              55,
+              56
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "e9c497c9779f44a07146ca297e4e48c73277f07ef25d0669bf178d58902f5816",
+            "review_reason": "Agent read the independent printed heading pad ma ltar cher gas and its article in the right column, below the running header. ↓padma ltar cher gas pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma ltar cher gas pa",
+          "cross_reference_component_sha256": "7afc395278a0ad9ade575095d2e1a0ba4fd1199be0694ae1a0e620a0c9257ccf"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20%E2%80%99dab%20brgyad/1",
+          "anchor": "wts_35_51:682:57",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma ’dab brgyad and its article in the right column, below the running header. ↓padma ’dab brgyad These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "83286c00d15b0c20201a2a9ba61f24fdf707706d9ab8c5fd21533b92fdec9fb9",
+          "anchor_sha256": "aaa1ae08f132662ba97bed80baa549992a0c6f8c0225a7186c355988ce8031d3",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20%E2%80%99dab%20brgyad/1",
+            "headword": "pad ma ’dab brgyad",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma ’dab brgyad",
+            "homonym": null,
+            "evidence": "↓padma ’dab brgyad",
+            "identity_context": "Agent read the independent printed heading pad ma ’dab brgyad and its article in the right column, below the running header. ↓padma ’dab brgyad These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:57",
+            "evidence_anchor": "wts_35_51:682:57",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma ’dab brgyad"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              57
+            ],
+            "evidence_lines": [
+              57,
+              58
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "9f2980356c5fb91c80afd8a46dab00be8f1ce510a3a625f960dd7c48511b2bac",
+            "review_reason": "Agent read the independent printed heading pad ma ’dab brgyad and its article in the right column, below the running header. ↓padma ’dab brgyad These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma ’dab brgyad",
+          "cross_reference_component_sha256": "5ea5395fae8e2bda9f00a58086dc46f9e7de52bd53899b5117ce2f3a042f4d02"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20ldan%20ma/1",
+          "anchor": "wts_35_51:682:59",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma ldan ma and its article in the right column, below the running header. ↓padma ldan pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "a1fc4b0bf42d751855a6153656cc833768f5d9e11cbc4fb99fcfdba07e6f7467",
+          "anchor_sha256": "a2de1490ce3810f34f93c70739968947740d66a673430660304c70ec40f107a6",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20ldan%20ma/1",
+            "headword": "pad ma ldan ma",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma ldan ma",
+            "homonym": null,
+            "evidence": "↓padma ldan pa",
+            "identity_context": "Agent read the independent printed heading pad ma ldan ma and its article in the right column, below the running header. ↓padma ldan pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:59",
+            "evidence_anchor": "wts_35_51:682:59",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma ldan pa"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              59
+            ],
+            "evidence_lines": [
+              59
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "f9e9bc00ad644129f6c10e39548034efbe719af850d4b827c76621a9fdb29835",
+            "review_reason": "Agent read the independent printed heading pad ma ldan ma and its article in the right column, below the running header. ↓padma ldan pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma ldan pa",
+          "cross_reference_component_sha256": "4d654a59321c40b65801e8961983ad57961936316f3fd1c9cf7c10e7b2f38674"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20ris/1",
+          "anchor": "wts_35_51:682:61",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma ris and its article in the right column, below the running header. Muster in Form eines Lotus. Glr 89,16 contrasts a cube on one cheek with a lotus pattern on the other. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "ce895f14c741cf0441f7563a27b2e899fbcb7cf7876aee47de3c6e72d4f0dfb7",
+          "anchor_sha256": "db82b9b4dc76eacd7818b66595a07f96bd91337a7d249e30f842d16d95727f90",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20ris/1",
+            "headword": "pad ma ris",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma ris",
+            "homonym": null,
+            "evidence": "Muster in Form eines Lotus. Glr 89,16 contrasts a cube on one cheek with a lotus pattern on the other.",
+            "identity_context": "Agent read the independent printed heading pad ma ris and its article in the right column, below the running header. Muster in Form eines Lotus. Glr 89,16 contrasts a cube on one cheek with a lotus pattern on the other. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:61",
+            "evidence_anchor": "wts_35_51:682:61",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              61
+            ],
+            "evidence_lines": [
+              61,
+              62,
+              63,
+              64,
+              65,
+              66
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "bf4a481074c3515af827db01b1d93c85f7962ba6f9998ea0ead52682e2a4def2",
+            "review_reason": "Agent read the independent printed heading pad ma ris and its article in the right column, below the running header. Muster in Form eines Lotus. Glr 89,16 contrasts a cube on one cheek with a lotus pattern on the other. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "Muster in Form eines Lotus.",
+          "definition_component_sha256": "63a385fb2cf70a51e7f7a13813c9382a100da90c82134d73692a3a8d3c3e1cc5"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%20%C5%9Bo%E1%B9%85s/1",
+          "anchor": "wts_35_51:682:67",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma śoṅs and its article in the right column, below the running header. npr. ein Ort in Khams; Glr 102,6 visits this place to summon Padmasambhava. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "4922d3ba07d15b33f3969751112bb527041e529393f1082cded7bff1e8f2c5ff",
+          "anchor_sha256": "df59249bd09a86b8fed4eb75cb1c1637da0de2cdf9e342e661ef9770972fbcb9",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%20%C5%9Bo%E1%B9%85s/1",
+            "headword": "pad ma śoṅs",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma śoṅs",
+            "homonym": null,
+            "evidence": "npr. ein Ort in Khams; Glr 102,6 visits this place to summon Padmasambhava.",
+            "identity_context": "Agent read the independent printed heading pad ma śoṅs and its article in the right column, below the running header. npr. ein Ort in Khams; Glr 102,6 visits this place to summon Padmasambhava. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:67",
+            "evidence_anchor": "wts_35_51:682:67",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              67
+            ],
+            "evidence_lines": [
+              67,
+              68,
+              69,
+              70
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "8ac2176702fbacf3adce49189296ebf74e2d3fae3893456709f98431c361d99e",
+            "review_reason": "Agent read the independent printed heading pad ma śoṅs and its article in the right column, below the running header. npr. ein Ort in Khams; Glr 102,6 visits this place to summon Padmasambhava. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "npr. ein Ort in Khams.",
+          "definition_component_sha256": "c34106e8ac6a38e49e8f3d9be37630aed2860f9fec037a7431f45bf64b2509fc"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20skye%20gnas/1",
+          "anchor": "wts_35_51:682:71",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i skye gnas and its article in the right column, below the running header. ↓padmo’i skye gnas. The printed target agrees with the first HTML definition; the second editorial target is not substituted. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "03037f3fe1374d84822e43957945ba45754cd2070617230b13f0913abbd7a92d",
+          "anchor_sha256": "fa62bb90be2138ce4c64c14987a5ba20062637105adb4e0cdafe51af7f9d7340",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20skye%20gnas/1",
+            "headword": "pad ma’i skye gnas",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i skye gnas",
+            "homonym": null,
+            "evidence": "↓padmo’i skye gnas. The printed target agrees with the first HTML definition; the second editorial target is not substituted.",
+            "identity_context": "Agent read the independent printed heading pad ma’i skye gnas and its article in the right column, below the running header. ↓padmo’i skye gnas. The printed target agrees with the first HTML definition; the second editorial target is not substituted. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:71",
+            "evidence_anchor": "wts_35_51:682:71",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              71
+            ],
+            "evidence_lines": [
+              71,
+              72
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "422e034090756f7d2966d4163e511c941dcc1559a8b6a85f5989b21afeaa3531",
+            "review_reason": "Agent read the independent printed heading pad ma’i skye gnas and its article in the right column, below the running header. ↓padmo’i skye gnas. The printed target agrees with the first HTML definition; the second editorial target is not substituted. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "1.\n  ↓padmo’i skye gnas.",
+          "definition_component_sha256": "80de77d83b6a48ea029f31e8e72983423fd271dcbf175fcb897bd8d9bad6c2b8"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20skra/1",
+          "anchor": "wts_35_51:682:73",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i skra and its article in the right column, below the running header. ↓padma’i skra These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "fff71579bcc675ff0706bcd4e4ebfc474b50bb1b8e99a163426a878e2ab3848e",
+          "anchor_sha256": "3dd9c670389e4bfd4fd4ade894c7b9f2dc5e39f7dedc9e2b31c3cd1c3bd677b2",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20skra/1",
+            "headword": "pad ma’i skra",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i skra",
+            "homonym": null,
+            "evidence": "↓padma’i skra",
+            "identity_context": "Agent read the independent printed heading pad ma’i skra and its article in the right column, below the running header. ↓padma’i skra These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:682:73",
+            "evidence_anchor": "wts_35_51:682:73",
+            "column": "right column",
+            "page_sha256": "02e8e6c54d89c1460ecdb2435f46aa8230ecc7ea0c2393918807d2b46303202b",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i skra"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              73
+            ],
+            "evidence_lines": [
+              73
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "6dc98d6e9481ec920f21e5db9de9fc7ec0551d6d6dd5b16db6e935fcc4ad3a29",
+            "review_reason": "Agent read the independent printed heading pad ma’i skra and its article in the right column, below the running header. ↓padma’i skra These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i skra",
+          "cross_reference_component_sha256": "1411f3ac01764f4bde16ad969cbd9bda6be11a7f53157288bd7dc7d3059772d8"
+        }
+      ]
+    },
+    {
+      "key": "v6-p334",
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 683,
+      "volume": 6,
+      "printed_page": 334,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        472.0,
+        677.0
+      ],
+      "geometry_review": "Agent inspected the complete registered single-page scan, printed folio and both columns. Full MediaBox retained; no inferred spread crop or pagination offset.",
+      "page_evidence": "Agent image inspection: printed folio 334, volume 6; independent article headings in two columns. Printed homonyms are transcribed separately from editorial numbering.",
+      "accepted": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20grogs%20po/1",
+          "anchor": "wts_35_51:683:2",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i grogs po and its article in the left column, below the running header. ↓padma’i grogs po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "99113d5d21eade041543325ff494d5abb28e4e844a6a9abd081831ec26385ece",
+          "anchor_sha256": "d691bb1acc10815281cd1349c32d3d73187540ca6c35fb91502bf3ec244ca0fe",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20grogs%20po/1",
+            "headword": "pad ma’i grogs po",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i grogs po",
+            "homonym": null,
+            "evidence": "↓padma’i grogs po",
+            "identity_context": "Agent read the independent printed heading pad ma’i grogs po and its article in the left column, below the running header. ↓padma’i grogs po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:2",
+            "evidence_anchor": "wts_35_51:683:2",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i grogs po"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              2
+            ],
+            "evidence_lines": [
+              2,
+              3
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "24cd6daeacc5f85f2289d061f20a2fbaa6b2f27155e8e7de3d435d03aab015db",
+            "review_reason": "Agent read the independent printed heading pad ma’i grogs po and its article in the left column, below the running header. ↓padma’i grogs po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i grogs po",
+          "cross_reference_component_sha256": "a9dd373a3a9f1c27439f7eaf7694575fbbca0f6ddc0134e3153d1907a7d92e65"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20%E1%B9%85os/1",
+          "anchor": "wts_35_51:683:5",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i ṅos and its article in the left column, below the running header. ↓padma’i ṅo These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "9388e0488956d22e36455466921c02265185c4ff1b9804d4319ec0bb8b7f8888",
+          "anchor_sha256": "0df1f812cee57a28d1da14501b07383558e327f7f2a588d233a497c1772afe30",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20%E1%B9%85os/1",
+            "headword": "pad ma’i ṅos",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i ṅos",
+            "homonym": null,
+            "evidence": "↓padma’i ṅo",
+            "identity_context": "Agent read the independent printed heading pad ma’i ṅos and its article in the left column, below the running header. ↓padma’i ṅo These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:5",
+            "evidence_anchor": "wts_35_51:683:5",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i ṅo"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              5
+            ],
+            "evidence_lines": [
+              5
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "4deeee0c54044c3717b010fcb40d5c5116aad607c908b51e15001369793fb1cf",
+            "review_reason": "Agent read the independent printed heading pad ma’i ṅos and its article in the left column, below the running header. ↓padma’i ṅo These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i ṅo",
+          "cross_reference_component_sha256": "339e4a6c00e89ef77f22e56a50cada1a238c1024a405d6458f00f4655e3382d2"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20lte%20ba/1",
+          "anchor": "wts_35_51:683:10",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i lte ba and its article in the left column, below the running header. ↓padma’i lte ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "43e4c6ebaa5a1505c87753903f15107ae37358410dd42a262bf0c1c399b7c588",
+          "anchor_sha256": "8e854676ff9b2c11236bf030d0062849b6f3b31cbaca75d54d7e6ba7a7637a5f",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20lte%20ba/1",
+            "headword": "pad ma’i lte ba",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i lte ba",
+            "homonym": null,
+            "evidence": "↓padma’i lte ba",
+            "identity_context": "Agent read the independent printed heading pad ma’i lte ba and its article in the left column, below the running header. ↓padma’i lte ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:10",
+            "evidence_anchor": "wts_35_51:683:10",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i lte ba"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              10
+            ],
+            "evidence_lines": [
+              10
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "4d9bb56ede9f1064e6e3778bcbea5b23f4a2903ebc0a66c0a0ba43ba963a4644",
+            "review_reason": "Agent read the independent printed heading pad ma’i lte ba and its article in the left column, below the running header. ↓padma’i lte ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i lte ba",
+          "cross_reference_component_sha256": "b44bf7d2be2d73573e0257444f740f5de8723543bb91878191b93c8b90754238"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20bdag%20po/1",
+          "anchor": "wts_35_51:683:11",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i bdag po and its article in the left column, below the running header. ↓padma’i bdag po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "1c0239735dd7972470e6562149a83779ed33eddea354d37795e7bb99d59c00e5",
+          "anchor_sha256": "fc2a51c5af52b3054b54ffe695ff6de0c40119787b61d311e2bb51de9794ca95",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20bdag%20po/1",
+            "headword": "pad ma’i bdag po",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i bdag po",
+            "homonym": null,
+            "evidence": "↓padma’i bdag po",
+            "identity_context": "Agent read the independent printed heading pad ma’i bdag po and its article in the left column, below the running header. ↓padma’i bdag po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:11",
+            "evidence_anchor": "wts_35_51:683:11",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i bdag po"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              11
+            ],
+            "evidence_lines": [
+              11,
+              12
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "ba84afac420fa49a798a8704498df9cbafea3f515ba9273d44ed62c08667598d",
+            "review_reason": "Agent read the independent printed heading pad ma’i bdag po and its article in the left column, below the running header. ↓padma’i bdag po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i bdag po",
+          "cross_reference_component_sha256": "c0bf9b1a3a7a15bdeb2e14cc238bd0fdeab4e28446ea03207fcd789a34a9160e"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20sdo%E1%B9%85%20po/1",
+          "anchor": "wts_35_51:683:13",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i sdoṅ po and its article in the left column, below the running header. ↓padma’i sdoṅ po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "d30a2a1157383e9bc5ab40e618c39cbbfb34f85e204d1fd88c2582231d69fa26",
+          "anchor_sha256": "12c315a1bc8f994676bdd7774307e81e5d1febf49e15b92d6e5b5e2cfa02356f",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20sdo%E1%B9%85%20po/1",
+            "headword": "pad ma’i sdoṅ po",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i sdoṅ po",
+            "homonym": null,
+            "evidence": "↓padma’i sdoṅ po",
+            "identity_context": "Agent read the independent printed heading pad ma’i sdoṅ po and its article in the left column, below the running header. ↓padma’i sdoṅ po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:13",
+            "evidence_anchor": "wts_35_51:683:13",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i sdoṅ po"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              13
+            ],
+            "evidence_lines": [
+              13,
+              14
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "0f4c991d764508465e785acfd94b623016a46e985fb08c260093025d84323257",
+            "review_reason": "Agent read the independent printed heading pad ma’i sdoṅ po and its article in the left column, below the running header. ↓padma’i sdoṅ po These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i sdoṅ po",
+          "cross_reference_component_sha256": "a518c0103a6694c5d0cc83344f4277f3a3d6f46b2ef6ac7fe1b4093f81a788ad"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20dpal/1",
+          "anchor": "wts_35_51:683:15",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i dpal and its article in the left column, below the running header. npr. ein Buddha; padmaśrī (Bhad 499). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "ada83dc2efdb0db71d929e61a60e687582854b209b53d375d42caf99fce089d9",
+          "anchor_sha256": "35961608f2c942654c3b1549aa3a7858a75809dc627f8698f2af9c5e9e85f0bb",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20dpal/1",
+            "headword": "pad ma’i dpal",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i dpal",
+            "homonym": null,
+            "evidence": "npr. ein Buddha; padmaśrī (Bhad 499).",
+            "identity_context": "Agent read the independent printed heading pad ma’i dpal and its article in the left column, below the running header. npr. ein Buddha; padmaśrī (Bhad 499). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:15",
+            "evidence_anchor": "wts_35_51:683:15",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              15
+            ],
+            "evidence_lines": [
+              15,
+              16
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "fd4358a5af4298fc631bdf4fcb61c6c408471a10ddcd1976f70a790425cfe6c7",
+            "review_reason": "Agent read the independent printed heading pad ma’i dpal and its article in the left column, below the running header. npr. ein Buddha; padmaśrī (Bhad 499). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "npr. ein Buddha.",
+          "definition_component_sha256": "76a009dcb49869dbbff0e713031e310458b4c36765dcdeb247fbd1551395becb"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20spyan/1",
+          "anchor": "wts_35_51:683:17",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i spyan and its article in the left column, below the running header. auch pa dma’i spyan; npr. ein Buddha; padmākṣa (Bhad 51), padmanetraḥ (Mvy 96). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "3ee63274fdcbeee917dce869ab67f7ebaffd5ac9ed91b125c2f63d77ce1854a6",
+          "anchor_sha256": "0985a2221a949b567af75a28e53d7bd3d3a77f47f71fb53784d4b1ebcd190368",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20spyan/1",
+            "headword": "pad ma’i spyan",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i spyan",
+            "homonym": null,
+            "evidence": "auch pa dma’i spyan; npr. ein Buddha; padmākṣa (Bhad 51), padmanetraḥ (Mvy 96).",
+            "identity_context": "Agent read the independent printed heading pad ma’i spyan and its article in the left column, below the running header. auch pa dma’i spyan; npr. ein Buddha; padmākṣa (Bhad 51), padmanetraḥ (Mvy 96). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:17",
+            "evidence_anchor": "wts_35_51:683:17",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              17
+            ],
+            "evidence_lines": [
+              17,
+              18,
+              19,
+              20,
+              21,
+              22
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "e8f2b3354f7e575e29a8166368e50de264c972bb3e8af9a9fe06f3a42cb6bfc6",
+            "review_reason": "Agent read the independent printed heading pad ma’i spyan and its article in the left column, below the running header. auch pa dma’i spyan; npr. ein Buddha; padmākṣa (Bhad 51), padmanetraḥ (Mvy 96). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "npr. ein Buddha.",
+          "definition_component_sha256": "887bcb6db70bddf5eed65e88c1fd0a3ffa5c8c5d22276488b6986d837dd3c4c1"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20mig/1",
+          "anchor": "wts_35_51:683:25",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i mig and its article in the left column, below the running header. ↓padma’i mig These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "814145a53c346dd66c6a7f99a39413c392db764b7d4ee16575570dbf23a886b4",
+          "anchor_sha256": "0faeb6860f43580b65ccb7b1e70a53fe77ed5ebc99af3834a0a27a7b17a78402",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20mig/1",
+            "headword": "pad ma’i mig",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i mig",
+            "homonym": null,
+            "evidence": "↓padma’i mig",
+            "identity_context": "Agent read the independent printed heading pad ma’i mig and its article in the left column, below the running header. ↓padma’i mig These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:25",
+            "evidence_anchor": "wts_35_51:683:25",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i mig"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              25
+            ],
+            "evidence_lines": [
+              25
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "eacbf67a446206b1edf5a0f0e32cd1d70008e8bd1fb76831b945aaf330d0f85e",
+            "review_reason": "Agent read the independent printed heading pad ma’i mig and its article in the left column, below the running header. ↓padma’i mig These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i mig",
+          "cross_reference_component_sha256": "8e60c59e723e6f4dc93fedcf2d010c619543a3efed262e42b5f4b6533691b01b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20mi%E1%B9%85/1",
+          "anchor": "wts_35_51:683:26",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i miṅ and its article in the left column, below the running header. ↓padma’i miṅ These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "365ce3010d8784ae010cbec68b453722b25c97469c842409157cde2894344c1f",
+          "anchor_sha256": "c022755c36c13f4f17fcfe67f3590f45dcad1aa196f8c0368ed247b26c2418f6",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20mi%E1%B9%85/1",
+            "headword": "pad ma’i miṅ",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i miṅ",
+            "homonym": null,
+            "evidence": "↓padma’i miṅ",
+            "identity_context": "Agent read the independent printed heading pad ma’i miṅ and its article in the left column, below the running header. ↓padma’i miṅ These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:26",
+            "evidence_anchor": "wts_35_51:683:26",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i miṅ"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              26
+            ],
+            "evidence_lines": [
+              26
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "7dd556b7acd8228456e43367fa350071d9f9dc08891651b4ca970ec12635eb6a",
+            "review_reason": "Agent read the independent printed heading pad ma’i miṅ and its article in the left column, below the running header. ↓padma’i miṅ These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i miṅ",
+          "cross_reference_component_sha256": "ee7ad4db514ed4ecbb3a0c8f54e9c1753cc56956b8090b5bf96c8e993ba242c0"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20rtsa%20ba/1",
+          "anchor": "wts_35_51:683:27",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i rtsa ba and its article in the left column, below the running header. ↓padma’i rtsa ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "8077a7492b65c8919dfd0347fd13bf79847972c06376d5f0bcda9a7398a9832b",
+          "anchor_sha256": "6c87686c42809377d53684e43d24dbf445ae6e4cf2bb455f92cf4fd9e95e0d39",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20rtsa%20ba/1",
+            "headword": "pad ma’i rtsa ba",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i rtsa ba",
+            "homonym": null,
+            "evidence": "↓padma’i rtsa ba",
+            "identity_context": "Agent read the independent printed heading pad ma’i rtsa ba and its article in the left column, below the running header. ↓padma’i rtsa ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:27",
+            "evidence_anchor": "wts_35_51:683:27",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i rtsa ba"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              27
+            ],
+            "evidence_lines": [
+              27
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "af63f66bea77428649ecfe3cc9ba0d97e433796a949a48eb74800d36c379a177",
+            "review_reason": "Agent read the independent printed heading pad ma’i rtsa ba and its article in the left column, below the running header. ↓padma’i rtsa ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i rtsa ba",
+          "cross_reference_component_sha256": "77df98a3aeee73693976dca774a45aa46366c32dda4138df31680c90f0656d31"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20rtsa%20lag/1",
+          "anchor": "wts_35_51:683:28",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i rtsa lag and its article in the left column, below the running header. ↓padma’i rtsa lag These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "bb67d3e99e3dd6d83051d89d7a4ac944494b35b498077f376bca64d688e6fd42",
+          "anchor_sha256": "53831f3e2764163ef9e603c135ebbe989d8afddf1fb1b2c004bae42eed99de4b",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20rtsa%20lag/1",
+            "headword": "pad ma’i rtsa lag",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i rtsa lag",
+            "homonym": null,
+            "evidence": "↓padma’i rtsa lag",
+            "identity_context": "Agent read the independent printed heading pad ma’i rtsa lag and its article in the left column, below the running header. ↓padma’i rtsa lag These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:28",
+            "evidence_anchor": "wts_35_51:683:28",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i rtsa lag"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              28
+            ],
+            "evidence_lines": [
+              28,
+              29
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "2632b1545e0788975343fe112afc8b8eb88bd479dc7e7533551768805d1acde3",
+            "review_reason": "Agent read the independent printed heading pad ma’i rtsa lag and its article in the left column, below the running header. ↓padma’i rtsa lag These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i rtsa lag",
+          "cross_reference_component_sha256": "413959580da4d5a960f09ef2624e4cbcae2d53259de661d7fda78b45890e31a5"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20mdzod/1",
+          "anchor": "wts_35_51:683:30",
+          "heading_position": "left column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i mdzod and its article in the left column, below the running header. npr. ein Buddha; padmakośa (Bhad 730A). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "c641e5023d1eb67dec371d6bf4c9f6dccb662deb3acab06d1d7acff1c86ef449",
+          "anchor_sha256": "f5bdb3fb84cf5ae719cc6c44a3a9d32bc35b81ed12a3e02f5ce76d4ff2a2a7e5",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20mdzod/1",
+            "headword": "pad ma’i mdzod",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i mdzod",
+            "homonym": null,
+            "evidence": "npr. ein Buddha; padmakośa (Bhad 730A).",
+            "identity_context": "Agent read the independent printed heading pad ma’i mdzod and its article in the left column, below the running header. npr. ein Buddha; padmakośa (Bhad 730A). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:30",
+            "evidence_anchor": "wts_35_51:683:30",
+            "column": "left column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              30
+            ],
+            "evidence_lines": [
+              30,
+              31,
+              32
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "af9dedb1b3fbd1e124c1aae90c15bf9ed4d406c7e0c7760d3c0ff71a0f0e2063",
+            "review_reason": "Agent read the independent printed heading pad ma’i mdzod and its article in the left column, below the running header. npr. ein Buddha; padmakośa (Bhad 730A). These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "npr. ein Buddha.",
+          "definition_component_sha256": "775a772ecc43c4c4976ecda9ee2bb2de0dea86d20cda17d2e157b6e6d4678c4b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20%E2%80%99od/1",
+          "anchor": "wts_35_51:683:35",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i ’od and its article in the right column, below the running header. npr. ein Buddha; K 111 327b6 predicts Śāriputra becoming Padmaprabha. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "123e3b8d25e4bd77509e20d806b212e17b0490ad0008cd05574340e47c447b45",
+          "anchor_sha256": "0a29e269f3fc275d8767a1da16aa227db422034fe2d88964c74831fdc2dc5244",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20%E2%80%99od/1",
+            "headword": "pad ma’i ’od",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i ’od",
+            "homonym": null,
+            "evidence": "npr. ein Buddha; K 111 327b6 predicts Śāriputra becoming Padmaprabha.",
+            "identity_context": "Agent read the independent printed heading pad ma’i ’od and its article in the right column, below the running header. npr. ein Buddha; K 111 327b6 predicts Śāriputra becoming Padmaprabha. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:35",
+            "evidence_anchor": "wts_35_51:683:35",
+            "column": "right column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              35
+            ],
+            "evidence_lines": [
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "64a0ef7f77934699644082fc03ecc511f1e77e7d740f82fe2c286f2c291c53bb",
+            "review_reason": "Agent read the independent printed heading pad ma’i ’od and its article in the right column, below the running header. npr. ein Buddha; K 111 327b6 predicts Śāriputra becoming Padmaprabha. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "definition_evidence": "npr. ein Buddha.",
+          "definition_component_sha256": "4707c7d2456bea6aed2c2cd89a9563164e7cc71455b410327d36e9d0bf264210"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20lag/1",
+          "anchor": "wts_35_51:683:45",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad ma’i lag and its article in the right column, below the running header. ↓padma’i lag pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "92cded161992c0edbb0dc809a1a86fac5be6c9ff45c4654b57a4203533d52539",
+          "anchor_sha256": "a616b7dc24ad292e716ed80c01c70e6410d9b6edc7d724cf2843d8e25d697940",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20lag/1",
+            "headword": "pad ma’i lag",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad ma’i lag",
+            "homonym": null,
+            "evidence": "↓padma’i lag pa",
+            "identity_context": "Agent read the independent printed heading pad ma’i lag and its article in the right column, below the running header. ↓padma’i lag pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:45",
+            "evidence_anchor": "wts_35_51:683:45",
+            "column": "right column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i lag pa"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              45
+            ],
+            "evidence_lines": [
+              45,
+              46
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "1283470cba00bcdaf85c10b6a2d5db91211f2eda6524c065f8fe3f139f6113a2",
+            "review_reason": "Agent read the independent printed heading pad ma’i lag and its article in the right column, below the running header. ↓padma’i lag pa These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i lag pa",
+          "cross_reference_component_sha256": "24005aa4ef21ec8e16078d474b9f4ed1cd398ae54c52ae85412f498ab5983476"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20rtsa/1",
+          "anchor": "wts_35_51:683:51",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading pad rtsa and its article in the right column, below the running header. ↓padma’i rtsa ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+          "html_sha256": "3fe8bd68ebd98fbac53c62b886656d98290ce4f7cccffadc13844ea84a17402b",
+          "anchor_sha256": "7478f7ec374d65eaff7bd6336070b13de3219f363dfd666cc0c90bfcb36cc300",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/pad%20rtsa/1",
+            "headword": "pad rtsa",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "pad rtsa",
+            "homonym": null,
+            "evidence": "↓padma’i rtsa ba",
+            "identity_context": "Agent read the independent printed heading pad rtsa and its article in the right column, below the running header. ↓padma’i rtsa ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print.",
+            "heading_anchor": "wts_35_51:683:51",
+            "evidence_anchor": "wts_35_51:683:51",
+            "column": "right column",
+            "page_sha256": "cf5b19c3be0f64ed101850a90c82f5f31333f059520803de8151d0ace600ce0d",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓padma’i rtsa ba"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              51
+            ],
+            "evidence_lines": [
+              51
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "58abb263e11efb81a9383ad2ba29a9a5ad38ccfc0013ddfefe4f270adf110eef",
+            "review_reason": "Agent read the independent printed heading pad rtsa and its article in the right column, below the running header. ↓padma’i rtsa ba These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial homonym 1 is not inferred from print."
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓padma’i rtsa ba",
+          "cross_reference_component_sha256": "ce928578b04fa2fb3946ba3f432d4fcdd975a495175b06f834b4b9641c5651c2"
+        }
+      ]
     }
   ],
   "decisions": [
@@ -8139,9 +9606,45 @@
       "observed_evidence": "npr. Mohammed, arab. Muḥammad, der Gründer des Islams, vgl. ↓mā ma thar. ’Dzam 46,15: a large group of Muslims, followers of the teacher Mohammed.",
       "qa_rows_sha256": "5cfc3634712c73d098a30dc5b0fea9fb41f077d2af2989a35e50d749a9608742",
       "reason": "Agent inspected the registered scan and exact HTML witness: Independent heading at the top of the right column, below the ma ga dha running header and above ma khuṅs bźi. The founder of Islam, Arabic name and ’Dzam 46,15 followers quotation identify the HTML witness; distinct from ma kha Mekka in the preceding column. No printed homonym numeral. No C6 heading anchor exists at the actual article start. No C11 identity edge exists for this HTML witness. The existing reviewed anchor-correction procedure cannot create either missing input."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/pi/1",
+      "anchor": "wts_35_51:682:52",
+      "status": "rejected",
+      "html_sha256": "0fb69d30cc1c3f41374f02bcdad98868cb09bbcd931e5df68fd5fb500e6be0e4",
+      "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+      "qa_rows_sha256": "fccba738f908ddf895644a5c514e42521cb887ae3e6e2cc408210cdc52e49bc7",
+      "reason": "Agent inspected the registered source image and exact HTML witness. No independent pi article: this candidate is OCR within the pad ma rgya mtsho article; HTML Ziffer 43 is unrelated."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20m%E1%B9%85al%20byu%E1%B9%85/1",
+      "anchor": "wts_35_51:683:6",
+      "status": "deferred",
+      "html_sha256": "648126f1085e3efc40aca965d905dda2f93bfbe66acfe2cb1bca4bc18eb88199",
+      "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+      "qa_rows_sha256": "aa2f35f838443bff9e75539cfc2637b420bd986bd62932aecf54c7d715b82c88",
+      "reason": "Agent inspected the registered source image and exact HTML witness. Independent printed reference heading and target observed, but the exact HTML stores its reference as a Tibetan component rather than an explicit cross_reference component. Current source-bound cross-reference-only gate does not certify this structure; no definition is invented."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20%E2%80%99byu%E1%B9%85%20gnas/1",
+      "anchor": "wts_35_51:683:23",
+      "status": "deferred",
+      "html_sha256": "b369f290c821c322a532c2dc6cf3254ef554a51795bcc8f8da4e48d3bdca175b",
+      "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+      "qa_rows_sha256": "05ad8d2f080317acec9c4a02b26f630a84a03d4c79fcaf7827efea0eb641a9c5",
+      "reason": "Agent inspected the registered source image and exact HTML witness. Independent printed reference heading and target observed, but the exact HTML stores its reference as a Tibetan component rather than an explicit cross_reference component. Current source-bound cross-reference-only gate does not certify this structure; no definition is invented."
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/pad%20ma%E2%80%99i%20ze%20ba/1",
+      "anchor": "wts_35_51:683:34",
+      "status": "deferred",
+      "html_sha256": "c1c67d77911f47c524749072ac4c053e12c9260cd68c3f25a254633083ef6f74",
+      "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+      "qa_rows_sha256": "1b98fa3fbb6bc1c146b1e832946c19c8bf86c7bff1d8b57170df6f47b8315976",
+      "reason": "Agent inspected the registered source image and exact HTML witness. Independent printed reference heading and target observed, but the exact HTML stores its reference as a Tibetan component rather than an explicit cross_reference component. Current source-bound cross-reference-only gate does not certify this structure; no definition is invented."
     }
   ],
-  "inspected_pages": 41,
+  "inspected_pages": 43,
   "inspection_only": [
     {
       "source": "WtS_35-51",

@@ -161,7 +161,8 @@ def test_reviewed_real_pages_have_source_bound_evidence():
     generated = json.loads((Path(__file__).resolve().parents[1]/'data/badw_html_print_alignment.generated.json').read_text())
     assert 'ma12' not in reviewed['pages']
     assert generated['pages']['ma12']['physical_page'] == 16
-    assert len(set(reviewed['pages']) | set(generated['pages'])) == 48
+    baseline = json.loads((Path(__file__).parent/'fixtures/badw_print_199_baseline.json').read_text())
+    assert {r['page'] for r in baseline['generated']} <= set(generated['pages'])
     assert not set(reviewed['pages']) & set(generated['pages'])
     assert {(r['headword'], r['homonym']) for r in reviewed['witnesses']} >= {('ba', 1), ('ba', 2), ('ba', 3), ('ma', 1), ('ma', 2), ('ma', 5)}
     assert all(r['evidence'] and r['html_sha256'] and r['printed_heading'] for r in reviewed['witnesses'])

@@ -95,10 +95,18 @@ def test_real_batch_is_bounded_explicit_and_contains_negative_controls():
     cert = json.loads(a.CERTIFICATE.read_text())
     generated = json.loads(a.GENERATED.read_text())
     assert generated['certificate_sha256'] == a.object_digest(cert)
-    assert cert['inspected_pages'] == 41
-    assert len(generated['pages']) == 39
-    assert len(generated['witnesses']) == 167
-    assert len({(r['source_url'], r['html_sha256']) for r in generated['witnesses']}) == 167
+    baseline = json.loads((Path(__file__).parent/'fixtures/badw_print_199_baseline.json').read_text())
+    records = {(r['source_url'], r['html_sha256']): r for r in generated['witnesses']}
+    assert len(records) == len(generated['witnesses'])
+    for frozen in baseline['generated']:
+        record = records[frozen['source_url'], frozen['html_sha256']]
+        assert record['page'] == frozen['page']
+        assert a.object_digest(record) == frozen['record_sha256']
+        assert a.object_digest(generated['pages'][record['page']]) == frozen['page_sha256']
+    manual = json.loads((a.ROOT/'data/badw_html_print_pages.json').read_text())
+    assert a.object_digest(manual) == baseline['manual_manifest_sha256']
+    assert len(baseline['generated']) + len(manual['witnesses']) == 199
+    a.validate_expansion(cert, generated)
     assert {p['source'] for p in cert['pages']} == {'WtS_1-34','WtS_35-51','WtS_8-b','WtS_9-m'}
     assert all('printed_homonym' in r for p in cert['pages'] for r in p['accepted'])
     assert any('continu' in r['reason'] for r in cert['decisions'])
@@ -347,7 +355,7 @@ def test_committed_next_queue_contains_no_new_assignments():
     queue = json.loads((a.ROOT/'data/badw_html_print_review_queue.json').read_text())
     assert queue['certificate_sha256'] == a.object_digest(json.loads(a.CERTIFICATE.read_text()))
     assert queue['physical_pages'] == 48
-    assert queue['candidates'] == 683
+    assert queue['candidates'] == sum(p['candidate_count'] for p in queue['pages'])
     assert all(p['printed_volume'] is None and p['printed_folio'] is None and p['geometry'] is None for p in queue['pages'])
 
 
@@ -435,13 +443,14 @@ def test_committed_reference_articles_bind_exact_targets_and_preserve_deferrals(
     cert = json.loads(a.CERTIFICATE.read_text())
     references = {r['editorial']['headword']: r for p in cert['pages']
                   for r in p['accepted'] if r.get('evidence_kind') == 'cross_reference_only'}
-    assert {name: r['cross_reference_evidence'] for name, r in references.items()} == {
+    expected = {
         'ba glaṅ': '↓ba laṅ', 'ba ra dhwa dza': '↓bha ra dhwa dza',
         'ma ke na': '↓me ge na', 'ma mkhal': '↓ma mgal',
         'ka mu gnas': '↑ka ’bur gnas naṅ', 'ka rma': '↓karma',
         'ka smad': '↑ka mad', 'ka tshal': '↑ka rtsal',
         'ka dzi li ban': '↑ka tsi li ban', 'ka ye': '↓kwa’i',
     }
+    assert {name: references[name]['cross_reference_evidence'] for name in expected} == expected
     assert all(r['review_basis'] == a.AGENT_REVIEW_BASIS and r['printed_homonym'] is None
                for r in references.values())
     assert references['ka rma']['anchor'] == 'wts_1_34:42:22'

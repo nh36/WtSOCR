@@ -27,6 +27,16 @@ is reported by the reproduction command and is not inferred from either field.
 - `data/correction_families.tsv` is the small machine-readable correction-family status table.
 - Code and override TSVs are the implementation source for applied behavior.
 
+## HTML Links to Original Print
+
+The checked-in reviewed ledgers contain **232 certified HTML attachments**
+to **50 printed-page derivatives**. Current evidence is in
+`data/badw_html_print_alignment.json`, its checked generated expansion, and
+`data/badw_html_print_pages.json`. Historical pilot reports with zero new links
+are superseded. These counts describe certificates; browser/build validation
+is recorded with each published milestone. Review provenance distinguishes agent
+image inspection from independent human review. The OCR release is unchanged.
+
 ## Corpus Structural Health
 
 The reference/assertion tranche from **d413012a76** has completed full replay and

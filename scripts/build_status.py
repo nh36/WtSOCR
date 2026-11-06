@@ -1667,6 +1667,11 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     reconciliation = json.loads((ROOT / "data/bibliography_apparatus_reconciliation.json").read_text(encoding="utf-8"))
     variant_categories = "; ".join(f"{key}: {value}" for key, value in reconciliation["variants_by_category"].items())
 
+    print_manual = json.loads((ROOT / "data/badw_html_print_pages.json").read_text())
+    print_generated = json.loads((ROOT / "data/badw_html_print_alignment.generated.json").read_text())
+    print_links = len(print_manual["witnesses"]) + len(print_generated["witnesses"])
+    print_pages = len(print_manual["pages"]) + len(print_generated["pages"])
+
     corpus_summary = json.loads((ROOT / "data/badw_relationship_closure/summary.json").read_text(encoding="utf-8"))
     corpus_totals = corpus_summary["totals"]
     corpus_section = """## Corpus Structural Health
@@ -1757,6 +1762,16 @@ is reported by the reproduction command and is not inferred from either field.
 - `docs/STATUS.md` is the current human operational overview.
 - `data/correction_families.tsv` is the small machine-readable correction-family status table.
 - Code and override TSVs are the implementation source for applied behavior.
+
+## HTML Links to Original Print
+
+The checked-in reviewed ledgers contain **{print_links} certified HTML attachments**
+to **{print_pages} printed-page derivatives**. Current evidence is in
+`data/badw_html_print_alignment.json`, its checked generated expansion, and
+`data/badw_html_print_pages.json`. Historical pilot reports with zero new links
+are superseded. These counts describe certificates; browser/build validation
+is recorded with each published milestone. Review provenance distinguishes agent
+image inspection from independent human review. The OCR release is unchanged.
 
 {corpus_section}## Bibliographic Apparatus
 
