@@ -406,3 +406,106 @@ path. Explicit review provenance is mandatory. Running headers, continuations
 and references embedded in another article remain ineligible. These certificates
 link pages; they do not modify cross-reference destinations or certify text
 corrections. Missing C6 anchors or C11 identity edges still require deferral.
+
+## HTML original-page production batch, 2026-11-06
+
+The current reviewed ledger contains **298 HTML-to-original-print attachments**,
+up from 199: 99 additions on eight printed pages from seven physical scans.
+Historical pilot reports showing zero new links describe earlier experiments.
+`docs/STATUS.md` derives its current counts from the reviewed ledgers. This batch
+uses the existing definition and cross-reference-only certificate paths; it does
+not change their acceptance gates, the OCR release or dictionary relationships.
+
+| Registered scan | Physical page | Printed volume/page | Distinct inventory witnesses | Accepted |
+| --- | ---: | --- | ---: | ---: |
+| WtS_1-34 | 86 | 1, 100–101 | 22 | 21 |
+| WtS_35-51 | 682 | 6, 333 | 19 | 18 |
+| WtS_35-51 | 683 | 6, 334 | 18 | 15 |
+| WtS_8-b | 322 | 8, 312 | 12 | 12 |
+| WtS_8-b | 358 | 8, 348 | 14 | 14 |
+| WtS_9-m | 74 | 9, 70 | 11 | 10 |
+| WtS_9-m | 151 | 9, 147 | 9 | 9 |
+| **Total** | **7 scans** | **8 printed pages** | **105** | **99** |
+
+Conversion is 99/105 (94.3%) for the original inventory witnesses, averaging
+15 candidates and 14.1 acceptances per physical scan. Six additional proposals
+were examined and deferred: 111 proposed identities were considered in all,
+with 99 acceptances, one rejection and eleven deferrals. The page images were
+read for article boundaries, running headers, continuations, printed homonyms
+and lexical context; the review is not an exhaustive identification of every
+unassociated heading on these pages. Eight source-bound derivatives are added;
+the earlier 48 derivatives and 199 accepted attachments are preserved.
+
+The rejected *pi* candidate on volume 6, page 333 is a fragment within another
+article, not the independent article represented by the HTML witness (whose
+definition concerns the number 43). Seven deferrals lack a usable C6 article
+heading anchor: *kun rin*, *man luṅ*, *man ne*, *mig ’grim*, *mig rgyaṅ*,
+*mig rgyan* and *mig sṅon*. *pad ma rā ga* has a C6 heading but lacks the
+required C11 identity edge. Three volume-6 reference articles have no explicit
+corresponding HTML cross-reference component: *pad ma’i mṅal byuṅ*,
+*pad ma’i ’byuṅ gnas* and *pad ma’i ze ba*. The source-bound decisions in
+`data/badw_html_print_alignment.json` retain the individual evidence and reasons.
+Neither a running-header anchor nor a matching headword substitutes for the
+missing evidence.
+
+Certificate preparation used local, ignored helpers to copy authoritative source
+URLs, HTML hashes, C6/C11 bindings, QA/component hashes and existing geometry.
+Printed observations and acceptance judgments were entered after image
+inspection. No additional attachment system or automatic identity adjudication
+was introduced. The 199-link baseline fixture checks exact prior generated
+witness identities, page assignments and certificate hashes; manual witnesses
+and pages retain their frozen manifest checksums. These checks are additive,
+rather than tied to a new milestone count.
+
+A separate source-first reinspection covered twelve accepted entries across all
+four scan families: *kun bzaṅ*, *kun la dmigs pa*, *kun las rgyal ba*;
+*pad ma’i grogs po*, *pad ma’i spyan*, *pad ma’i ’od*;
+*dbaṅ po’i rgyal mtshan*, *dbaṅ po’i rta*, *dbaṅ po’i sde*;
+*mig brgya ma*, *mig ṅan phag rgod* and *mig can*. It checked the images
+against the exact HTML components, including heading variants, short reference
+articles and multiple numbered senses. Sense numbering in *kun bzaṅ*,
+*dbaṅ po’i rgyal mtshan*, *dbaṅ po’i sde* and *mig can* was not promoted
+to printed homonym numbering. This is a second inspection by the same coding
+agent, not independent human review or an independent accuracy benchmark.
+All new certificates explicitly disclose agent image inspection; historical
+review provenance is unchanged.
+
+Approximately 30 minutes of elapsed work covered source inspection and
+certificate preparation, interleaved with compilation and focused checks.
+Hands-on inspection and compilation were not separately clocked, so this is
+not a measurement of pure reading time. Complete reader generation and browser
+validation are recorded separately with the completed milestone below.
+
+The main coverage limit remains missing historical associations. A future
+alternative would need a distinct, versioned source-reviewed heading/identity
+certificate: original-scan checksum, physical page and coordinates, heading
+image evidence in both scripts, explicit printed homonym or its absence,
+article-boundary negatives, exact HTML checksum and discriminating lexical
+component bindings. Dedicated validation and negative controls would be needed
+before it could replace either a missing C6 heading or a missing C11 edge.
+No such alternative is enabled in this batch. A reviewed whole-page heading
+inventory could generate clerical fields and direct attention to ambiguous
+articles; it could not turn headword similarity into established identity.
+
+The complete fresh reader built successfully in 841 seconds. Browser validation
+opened all 99 new links and verified return navigation, with screenshots of each
+entry and its PDF. Inspection of the rendered PDFs confirmed the headings on
+all eight new printed pages. The full facsimile suite checked all 298 links at
+1440- and 390-pixel widths, opened all 56 single-page PDFs and made three mobile
+PDF comparisons. The full reader suite passed its search and navigation journeys
+at widths 1440, 320, 390 and 768. All three browser processes exited normally
+with status zero and no browser errors. Assertion work took approximately 144,
+33 and 144 seconds respectively for the new-link, full-reader and facsimile
+runs, measured from their log creation to final result; teardown is additional.
+
+Preservation checks compared all 29,878 reader bodies: exactly the 99 intended
+source attachments changed; all 11,840 PDF witness bodies and the reference-case
+data remained byte-identical. Focused certificate/facsimile/reader tests passed
+(98 tests), as did the required regressions (315 tests and 62 subtests) and the
+two Node browser-cleanup tests. Generated-ledger checks, repository hygiene and
+Python compilation passed. Two intermediate focused failures caused by a stale
+generated ledger passed after regeneration, without changing their assertions.
+The existing release validation warnings remain unchanged; this batch does not
+rebuild or modify `release/current`. The validated local reader is
+`work/page-link-scale-20261106/reader`, with ignored browser artifacts alongside
+it; original scans and build artifacts are excluded from the commits.

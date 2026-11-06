@@ -29,8 +29,8 @@ is reported by the reproduction command and is not inferred from either field.
 
 ## HTML Links to Original Print
 
-The checked-in reviewed ledgers contain **232 certified HTML attachments**
-to **50 printed-page derivatives**. Current evidence is in
+The checked-in reviewed ledgers contain **298 certified HTML attachments**
+to **56 printed-page derivatives**. Current evidence is in
 `data/badw_html_print_alignment.json`, its checked generated expansion, and
 `data/badw_html_print_pages.json`. Historical pilot reports with zero new links
 are superseded. These counts describe certificates; browser/build validation
