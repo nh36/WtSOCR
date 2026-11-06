@@ -511,29 +511,70 @@ rebuild or modify `release/current`. The validated local reader is
 it; original scans and build artifacts are excluded from the commits.
 
 
-## Continued page certification: checkpoint beyond 298
+## Continued page certification: 298 to 476
 
-The reviewed ledger now contains 359 attachments: the protected 298-link baseline
-plus 61 source-image-reviewed assertions on six single-page scans. This is an
-evidence checkpoint; the complete rebuilt reader and browser checks for these
-additions remain pending. It must not be described as a delivered 359-link reader.
+The reviewed ledger contains 476 attachments: the protected 298-link baseline
+plus 178 source-image-reviewed assertions on fourteen physical scans, covering
+sixteen printed pages. The first 61 additions were pushed as an evidence
+checkpoint at `f77a671950`; complete reader validation is recorded below.
 
-| Source | Physical page | Printed volume/page | Accepted | Observed independent starts |
-| --- | ---: | --- | ---: | ---: |
-| WtS_8-b | 56 | 8/46 | 11 | 14 |
-| WtS_8-b | 480 | 8/470 | 10 | 10 |
-| WtS_8-b | 487 | 8/477 | 7 | 11 |
-| WtS_8-b | 186 | 8/176 | 13 | 13 |
-| WtS_9-m | 198 | 9/194 | 9 | 9 |
-| WtS_9-m | 359 | 9/355 | 11 | 15 |
+| Source | Physical page | Printed volume/page | Accepted | Observed independent starts | Identified HTML |
+| --- | ---: | --- | ---: | ---: | ---: |
+| WtS_8-b | 56 | 8/46 | 11 | 14 | 14 |
+| WtS_8-b | 480 | 8/470 | 10 | 10 | 10 |
+| WtS_8-b | 487 | 8/477 | 7 | 11 | 11 |
+| WtS_8-b | 186 | 8/176 | 13 | 13 | 13 |
+| WtS_9-m | 198 | 9/194 | 9 | 9 | 9 |
+| WtS_9-m | 359 | 9/355 | 11 | 15 | 11 |
+| WtS_9-m | 360 | 9/356 | 6 | 12 | 6 |
+| WtS_35-51 | 733 | 7/384 | 15 | 15 | 15 |
+| WtS_35-51 | 859 | 7/510 | 12 | 13 | 13 |
+| WtS_35-51 | 377 | 5/28 | 13 | 14 | 13 |
+| WtS_35-51 | 636 | 6/287 | 14 | 16 | 14 |
+| WtS_35-51 | 616 | 6/267 | 12 | 15 | 12 |
+| WtS_1-34 | 159 | 1/234 | 13 | 13 | 13 |
+| WtS_1-34 | 159 | 1/235 | 12 | 12 | 12 |
+| WtS_1-34 | 81 | 1/90 | 7 | 10 | 8 |
+| WtS_1-34 | 81 | 1/91 | 13 | 14 | 14 |
+| **Total** | **14 scans** | **16 printed pages** | **178** | **206** | **188** |
 
 Each page's `heading_inventory` records the observed starts separately from
-candidate conversion, with exclusions and unresolved associations. Missing C6
-or C11 bindings remain deferred. The two columns, printed folios and actual
-article starts were inspected in the registered source images by the coding
-agent; this is not independent human adjudication.
+candidate conversion, with exclusions and unresolved associations. The entire
+printed pages, including both columns and the two volume-1 spreads, were read
+for independent starts, running headers, continuations and article boundaries.
+The census is an agent observation, not independent human adjudication. Among
+206 observed starts, 188 have identified HTML counterparts: 178 accepted and
+ten deferred. Eighteen remain unassociated with exact acquired HTML witnesses.
+The zero `without_acquired_html` counts mean no absence was established; they
+do not prove that acquired counterparts exist for all eighteen.
 
-`prepare_badw_print_drafts.py` now copies deterministic acquired-HTML, C6/C11,
+Candidate conversion is a different denominator: 191 distinct historical HTML
+candidates on these scans, with 178 accepted (93.2%), eight rejected and five
+deferred. The rejected proposals are *du* (editorial homonyms 1, 2 and 3),
+*bar du* 2, *dpal* 1, *sman* 1 and 2, and *nag po* 1. The proposed *du* anchor
+is inside the *bar dag tu* article; the printed independent *bar du* explicitly
+has homonym numeral 1 and spatial meanings, rather than editorial homonym 2.
+The other rejected anchors head *dpal rdo rje nag po bstan bsruṅ yoṅs rdzogs*,
+*sman sgro* and *nag po bdud*, respectively. Matching fragments of those names
+cannot establish the shorter articles.
+
+The five candidate deferrals are *bar rje khra bo*, *’bras ñag*, *spro skyid*
+(missing usable article-start anchors), and *kun nas mnan pa* and *kun nas źal*
+(independent print references versus expanded editorial definitions). Five
+additional identified counterparts remain deferred outside the old candidate
+packets: *bar gto*, *bar dag tu*, *’bras rdel* and *’bras sna gsum* lack usable
+C6 starts; *’bras ltaṅ* has a C6 start but no appropriate C11 identity edge.
+All page-specific reasons and the eighteen unassociated starts remain in the
+reviewed page inventories. These are unresolved associations, not negative
+claims about the existence of the printed articles or their HTML counterparts.
+
+Original checksums were verified against the source registry. Sixteen new
+source-bound derivatives use actual folios and geometry; the two spreads are
+split at their observed central gutters. The previous 56 derivatives and all
+298 attachments retain their exact assignments and bytes. Printed homonym
+absence is explicit; sense numbering is not promoted to a printed homonym.
+
+`prepare_badw_print_drafts.py` copies deterministic acquired-HTML, C6/C11,
 component, QA, source-registry and existing geometry bindings into draft
 envelopes. It reports missing bindings and rejects duplicate assignments. It
 supplies no visual observations or approval. The certificate compiler rejects
@@ -541,3 +582,96 @@ draft status even when a draft is placed in an accepted list. Tests distinguish
 preparation from publication. A compact second baseline fixture freezes the 99
 additions at 9e547c8 by exact URL, acquired hash, generated-certificate hash and
 page-identity hash, while retaining the legacy 199-link fixture unchanged.
+
+Source-first quality control covered 32 distinct new acceptances across all
+four scan families. A separate coding agent first read physical pages 56, 859,
+360 and 81 without the accepted certificates or prior review notes, then checked
+the acquired HTML. Its thirteen requested examples included eight acceptances
+and five deferrals: numbered *bar du*; *spro khaṅ bde chen lcog* and *spro thuṅ ba*;
+*sman gyi sbyor ba*, *sman gyi gtso mo* and *sman sgrub*; and the distinct
+*kun nas mdzes* and *kun nas mdzes pa*. It confirmed the problematic article
+starts and reference/expanded-definition differences among the deferred cases.
+The primary coding agent separately reinspected another 24 acceptances on
+volume 8 page 470, volume 7 page 384, volume 1 pages 234–235 and volume 9 page
+194, reading the images before comparing HTML components. The sample includes
+short definitions, explicit and absent homonym numerals, reference-only articles,
+multiple senses and continuation boundaries. No identity discrepancies were
+found. Neither agent inspection is independent human adjudication, and the
+same-agent reinspection is not an independent accuracy estimate.
+
+### Bounded missing-evidence design investigation
+
+The eleven earlier deferrals remain unchanged: seven missing usable C6 starts
+(*kun rin*, *man luṅ*, *man ne*, *mig ’grim*, *mig rgyaṅ*, *mig rgyan*,
+*mig sṅon*), one missing C11 association (*pad ma rā ga*) and three references
+represented through Tibetan HTML components. A direct source-reviewed heading
+certificate would need a distinct, versioned input: registered original checksum,
+physical page and reviewed geometry; precise heading coordinates and both
+printed scripts; preceding/following article-boundary evidence; printed homonym
+or explicit absence; exact acquired HTML identity/hash; and discriminating
+lexical or reference-target components bound to the source. Review provenance
+and an explicit acceptance decision must be required. Such a record must never
+manufacture a historical C6/C11 row or reuse a running-header anchor. The known
+cases still need that complete coordinate-bound evidence and replayable negative
+controls before any alternative can grant attachment authority. No new pathway
+is enabled in this batch; existing tests reject missing anchors and edges even
+when a proposed observation and matching heading are supplied.
+
+Reinspection of physical scan 683 confirms independent printed reference
+headings for *pad ma’i mṅal byuṅ*, *pad ma’i ’byuṅ gnas* and *pad ma’i ze ba*.
+Their exact acquired HTML has Tibetan target components rather than explicit
+cross-reference components. The latter two retain downward arrows; the first
+has an arrowless target. A possible narrow future extension would require an
+explicit reviewed reference-target role bound to that exact component/hash,
+the independent printed heading, the printed arrow/target and all ordinary
+homonym and boundary gates. An arrow alone cannot license every Tibetan
+component as a reference; the arrowless case additionally needs demonstrable
+raw-source target semantics. Tests now retain all three deferrals and reject
+these structures under the current validator, alongside existing running-header,
+continuation, embedded-reference and wrong-homonym controls. No permissive
+reinterpretation of Tibetan components was introduced. This investigation did
+not hold up the 178 straightforward acceptances.
+
+A whole-page inventory makes missing historical associations visible and can
+supply deterministic clerical fields. It does not establish lexical identity
+automatically. This batch averaged 14.7 observed starts and 12.7 acceptances per
+physical scan; the 178/191 candidate conversion should not be presented as
+178/206 complete page coverage or as evidence that every printed article has
+an acquired HTML counterpart.
+
+### Final reader and validation
+
+The fresh complete reader at `work/page-link-500/reader` contains all 29,878
+witnesses, with 476 certified HTML attachments to 72 printed-page derivatives.
+It is locally served at `http://127.0.0.1:8897/`. The certificate expansion
+contains 444 attachments; the unchanged manual ledger contributes 32. The
+compiler's checked regeneration agrees with the reviewed inputs. Preservation
+checks compared all reader bodies with the previous reader: exactly 178 HTML
+attachments changed, all 11,840 PDF-derived witness bodies and reference cases
+remain byte-identical, and all 298 previous assignments and decisions survive.
+
+All 178 new entry journeys opened their PDF, retained the expected source label
+and returned to the exact HTML identity. Browser screenshots of all sixteen
+new printed pages were inspected for the rendered article headings. The full
+facsimile suite checked all 476 entries on desktop and mobile, opened all 72
+single-page PDFs and completed three mobile PDF comparisons. The full-reader
+suite passed at widths 1440, 320, 390 and 768, including 82 citation journeys,
+58 facsimile journeys and search checks. All three browser processes exited
+normally with status zero and no browser errors.
+
+Validation passed: 106 focused certificate/facsimile/reader/draft tests;
+315 required regression tests and 62 subtests; 21 Node tests; compiler and
+source-integrity checks; repository hygiene, Python compilation and diff
+whitespace checks. The status checker retains the five inherited OCR QA warning
+categories; this task does not alter the OCR release. Initial sandbox browser
+launch and HTTP binding failures were resolved by running those same commands
+with the necessary local execution permissions.
+
+The main source-inspection and certificate-preparation window was 32.9 elapsed
+minutes, followed by approximately eight minutes of source-first reinspection
+interleaved with the build. These are roughly 40 minutes of elapsed review and
+preparation windows, not a separately instrumented measure of active reading;
+compilation and tests also occupied parts of those windows. The separate agent's
+review effort was not individually timed. Full reader generation took 874.6
+seconds, recorded separately from source review. Intermediate compilation used
+the existing compiler without repeatedly rebuilding the complete reader.

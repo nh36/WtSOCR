@@ -440,6 +440,48 @@ def test_reference_requires_arrow_and_target(reference_evidence, text):
     with pytest.raises(ValueError, match='arrow and target'): compile_fixture(reference_evidence)
 
 
+@pytest.mark.parametrize('target', [
+    'padma’i mṅal byuṅ', '↓padma’i ’byuṅ gnas', '↓padma’i ze ba',
+])
+def test_tibetan_reference_targets_do_not_acquire_attachment_authority(reference_evidence, target):
+    # These are the three deferred source structures on physical page 683.
+    # Changing a component's interpretation requires a separately reviewed path;
+    # an arrow alone, or relabelling its certificate hash, cannot enable it.
+    component = reference_evidence[0]['components'][0]
+    component.update(type='tibetan', source_form=target)
+    reference_evidence[2].update(cross_reference_evidence=target,
+        cross_reference_component_sha256=a.object_digest(component))
+    reference_evidence[2]['print_observation']['cross_reference'] = target
+    with pytest.raises(ValueError, match='not a cross-reference-only'):
+        compile_fixture(reference_evidence)
+
+
+def test_reviewed_observation_cannot_create_a_missing_anchor_or_identity_edge(evidence):
+    body, anchor, _, edges, cert = evidence
+    args = (cert, {body['inspection_id']: body}, {}, edges,
+            {'WtS_1-34': dict(sha256='b'*64)})
+    with pytest.raises(KeyError):
+        a.compile_records(*args, qa_rows=fixture_rows())
+    with pytest.raises(ValueError, match='pinned candidate'):
+        a.compile_records(cert, {body['inspection_id']: body},
+            {anchor['anchor_id']: anchor}, [], args[-1], qa_rows=fixture_rows())
+
+
+def test_eleven_previous_missing_evidence_cases_remain_deferred():
+    from urllib.parse import unquote
+    cert = json.loads(a.CERTIFICATE.read_text())
+    names = {'kun rin', 'man luṅ', 'man ne', 'mig ’grim', 'mig rgyaṅ',
+             'mig rgyan', 'mig sṅon', 'pad ma rā ga', 'pad ma’i mṅal byuṅ',
+             'pad ma’i ’byuṅ gnas', 'pad ma’i ze ba'}
+    decisions = [d for d in cert['decisions']
+                 if unquote(d['source_id']).split('/lemma/')[-1].rsplit('/', 1)[0] in names]
+    assert len(decisions) == len(names)
+    assert all(d['status'] == 'deferred' and d['html_sha256'] and d['qa_rows_sha256']
+               for d in decisions)
+    accepted = {r['source_id'] for p in cert['pages'] for r in p['accepted']}
+    assert not accepted.intersection(d['source_id'] for d in decisions)
+
+
 def test_committed_reference_articles_bind_exact_targets_and_preserve_deferrals():
     cert = json.loads(a.CERTIFICATE.read_text())
     references = {r['editorial']['headword']: r for p in cert['pages']
