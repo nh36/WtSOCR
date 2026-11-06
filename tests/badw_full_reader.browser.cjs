@@ -1,3 +1,4 @@
+const {launchTestBrowser}=require('./badw_browser_process.cjs');
 /* Run against a freshly built, locally served full reader; the 83-witness fixture supplies fixed journeys. See reader README. */
 const {chromium}=require('playwright-core');
 const assert=require('node:assert/strict');
@@ -5,7 +6,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 (async()=>{
  const base=process.env.BADW_READER_URL||'http://127.0.0.1:8765';
- const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+ const {browser,closeBrowser}=await launchTestBrowser(chromium,{executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  let context;
  try{
  context=await browser.newContext({viewport:{width:1440,height:1050}});
@@ -687,6 +688,6 @@ const path=require('node:path');
  }finally{
   // Close pages (including PDF popups) and their request context gracefully
   // before terminating Chromium. Always attempt browser teardown as well.
-  try{if(context)await context.close();}finally{await browser.close();}
+  try{if(context)await context.close();}finally{await closeBrowser();}
  }
 })().catch(e=>{console.error(e);process.exitCode=1;});

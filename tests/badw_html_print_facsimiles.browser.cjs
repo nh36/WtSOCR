@@ -1,3 +1,4 @@
+const {launchTestBrowser}=require('./badw_browser_process.cjs');
 /* Real-source milestone check: editorial sources, exact single-page PDFs,
  * unconfirmed homonyms and unchanged PDF witnesses, at desktop/mobile widths. */
 const assert=require('node:assert/strict');
@@ -11,7 +12,7 @@ const {chromium}=require('playwright-core');
  const reviewed=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_html_print_pages.json')));
  const generated=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_html_print_alignment.generated.json')));
  reviewed.witnesses.push(...generated.witnesses);Object.assign(reviewed.pages,generated.pages);
- const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:process.env.BADW_HEADED!=='1'});
+ const {browser,closeBrowser}=await launchTestBrowser(chromium,{executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:process.env.BADW_HEADED!=='1'});
  const errors=[];const report={};
  try{
  const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
@@ -101,7 +102,7 @@ const {chromium}=require('playwright-core');
  }
  assert.deepEqual(errors,[]);report.mobilePDFComparisons=mobileSources.length;report.reviewedWitnesses=bodies.length;report.openedSinglePagePDFs=seen.size;report.widths=[1440,390];report.browserErrors=errors;
  console.log(JSON.stringify(report));
- }finally{await browser.close();}
+ }finally{await closeBrowser();}
 })().catch(error=>{console.error(error);process.exitCode=1;});
 
 function provenanceAnchor(body){return body.sources[1].print_provenance.evidence.certificate.anchor;}
