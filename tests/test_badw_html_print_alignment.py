@@ -95,10 +95,10 @@ def test_real_batch_is_bounded_explicit_and_contains_negative_controls():
     cert = json.loads(a.CERTIFICATE.read_text())
     generated = json.loads(a.GENERATED.read_text())
     assert generated['certificate_sha256'] == a.object_digest(cert)
-    assert cert['inspected_pages'] == 40
-    assert len(generated['pages']) == 38
-    assert len(generated['witnesses']) == 149
-    assert len({(r['source_url'], r['html_sha256']) for r in generated['witnesses']}) == 149
+    assert cert['inspected_pages'] == 41
+    assert len(generated['pages']) == 39
+    assert len(generated['witnesses']) == 167
+    assert len({(r['source_url'], r['html_sha256']) for r in generated['witnesses']}) == 167
     assert {p['source'] for p in cert['pages']} == {'WtS_1-34','WtS_35-51','WtS_8-b','WtS_9-m'}
     assert all('printed_homonym' in r for p in cert['pages'] for r in p['accepted'])
     assert any('continu' in r['reason'] for r in cert['decisions'])
@@ -429,3 +429,33 @@ def test_reference_requires_candidate_target_heading_variant_and_provenance(refe
 def test_reference_requires_arrow_and_target(reference_evidence, text):
     reference_evidence[0]['components'][0]['source_form'] = text
     with pytest.raises(ValueError, match='arrow and target'): compile_fixture(reference_evidence)
+
+
+def test_committed_reference_articles_bind_exact_targets_and_preserve_deferrals():
+    cert = json.loads(a.CERTIFICATE.read_text())
+    references = {r['editorial']['headword']: r for p in cert['pages']
+                  for r in p['accepted'] if r.get('evidence_kind') == 'cross_reference_only'}
+    assert {name: r['cross_reference_evidence'] for name, r in references.items()} == {
+        'ba glaṅ': '↓ba laṅ', 'ba ra dhwa dza': '↓bha ra dhwa dza',
+        'ma ke na': '↓me ge na', 'ma mkhal': '↓ma mgal',
+        'ka mu gnas': '↑ka ’bur gnas naṅ', 'ka rma': '↓karma',
+        'ka smad': '↑ka mad', 'ka tshal': '↑ka rtsal',
+        'ka dzi li ban': '↑ka tsi li ban', 'ka ye': '↓kwa’i',
+    }
+    assert all(r['review_basis'] == a.AGENT_REVIEW_BASIS and r['printed_homonym'] is None
+               for r in references.values())
+    assert references['ka rma']['anchor'] == 'wts_1_34:42:22'
+    assert references['ka tshal']['anchor'] == 'wts_1_34:42:112'
+    assert references['ka ye']['print_observation']['heading_variant'] == 'kwa ye'
+    for name in ['ka mu gnas', 'ka rma', 'ka smad', 'ka tshal', 'ka dzi li ban', 'ka ye']:
+        record = references[name]
+        assert record['reconsideration']['decision_sha256'] in {
+            a.object_digest(d) for d in cert['decisions'] if d['source_id'] == record['source_id']}
+    assert len(cert['locator_investigations']) == 2
+    assert all(d['status'] == 'deferred' and d['qa_row_sha256'] and d['page_sha256']
+               for d in cert['locator_investigations'])
+    added_deferred = [d for d in cert['decisions'] if 'observed_heading_lines' in d
+                      and d['anchor'].startswith(('wts_8_b:', 'wts_9_m:'))]
+    assert len(added_deferred) == 8
+    accepted = {r['source_id'] for p in cert['pages'] for r in p['accepted']}
+    assert not accepted & {d['source_id'] for d in added_deferred + cert['locator_investigations']}

@@ -145,22 +145,6 @@
       ],
       "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
       "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
-    },
-    "ma12": {
-      "source": "WtS_9-m",
-      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
-      "physical_page": 16,
-      "volume": 9,
-      "printed_page": 12,
-      "side": "single",
-      "crop": [
-        0.0,
-        0.0,
-        459.36,
-        680.64
-      ],
-      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
-      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
     }
   },
   "witnesses": [
