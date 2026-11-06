@@ -409,7 +409,7 @@ corrections. Missing C6 anchors or C11 identity edges still require deferral.
 
 ## HTML original-page production batch, 2026-11-06
 
-The current reviewed ledger contains **298 HTML-to-original-print attachments**,
+The completed 298-link milestone contains **298 HTML-to-original-print attachments**,
 up from 199: 99 additions on eight printed pages from seven physical scans.
 Historical pilot reports showing zero new links describe earlier experiments.
 `docs/STATUS.md` derives its current counts from the reviewed ledgers. This batch
@@ -509,3 +509,35 @@ The existing release validation warnings remain unchanged; this batch does not
 rebuild or modify `release/current`. The validated local reader is
 `work/page-link-scale-20261106/reader`, with ignored browser artifacts alongside
 it; original scans and build artifacts are excluded from the commits.
+
+
+## Continued page certification: checkpoint beyond 298
+
+The reviewed ledger now contains 359 attachments: the protected 298-link baseline
+plus 61 source-image-reviewed assertions on six single-page scans. This is an
+evidence checkpoint; the complete rebuilt reader and browser checks for these
+additions remain pending. It must not be described as a delivered 359-link reader.
+
+| Source | Physical page | Printed volume/page | Accepted | Observed independent starts |
+| --- | ---: | --- | ---: | ---: |
+| WtS_8-b | 56 | 8/46 | 11 | 14 |
+| WtS_8-b | 480 | 8/470 | 10 | 10 |
+| WtS_8-b | 487 | 8/477 | 7 | 11 |
+| WtS_8-b | 186 | 8/176 | 13 | 13 |
+| WtS_9-m | 198 | 9/194 | 9 | 9 |
+| WtS_9-m | 359 | 9/355 | 11 | 15 |
+
+Each page's `heading_inventory` records the observed starts separately from
+candidate conversion, with exclusions and unresolved associations. Missing C6
+or C11 bindings remain deferred. The two columns, printed folios and actual
+article starts were inspected in the registered source images by the coding
+agent; this is not independent human adjudication.
+
+`prepare_badw_print_drafts.py` now copies deterministic acquired-HTML, C6/C11,
+component, QA, source-registry and existing geometry bindings into draft
+envelopes. It reports missing bindings and rejects duplicate assignments. It
+supplies no visual observations or approval. The certificate compiler rejects
+draft status even when a draft is placed in an accepted list. Tests distinguish
+preparation from publication. A compact second baseline fixture freezes the 99
+additions at 9e547c8 by exact URL, acquired hash, generated-certificate hash and
+page-identity hash, while retaining the legacy 199-link fixture unchanged.

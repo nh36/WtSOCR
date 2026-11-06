@@ -199,6 +199,8 @@ def compile_records(certificate, bodies, anchors, edges, registry, qa_rows=None)
             raise ValueError('stale source identity')
         pages[key] = {k: page[k] for k in ('source', 'source_sha256', 'physical_page', 'volume', 'printed_page', 'side', 'crop', 'geometry_review', 'page_evidence')}
         for assertion in page['accepted']:
+            if str(assertion.get('status', '')).startswith('draft'):
+                raise ValueError('draft preparation has no attachment authority')
             sid = assertion['source_id']
             if sid in seen:
                 raise ValueError('witness assigned twice')

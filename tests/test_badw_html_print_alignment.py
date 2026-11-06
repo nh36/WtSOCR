@@ -98,7 +98,8 @@ def test_real_batch_is_bounded_explicit_and_contains_negative_controls():
     baseline = json.loads((Path(__file__).parent/'fixtures/badw_print_199_baseline.json').read_text())
     records = {(r['source_url'], r['html_sha256']): r for r in generated['witnesses']}
     assert len(records) == len(generated['witnesses'])
-    for frozen in baseline['generated']:
+    additions = json.loads((Path(__file__).parent/'fixtures/badw_print_298_additions.json').read_text())
+    for frozen in baseline['generated'] + additions['generated']:
         record = records[frozen['source_url'], frozen['html_sha256']]
         assert record['page'] == frozen['page']
         assert a.object_digest(record) == frozen['record_sha256']
