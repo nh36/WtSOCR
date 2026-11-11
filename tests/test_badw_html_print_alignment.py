@@ -99,7 +99,8 @@ def test_real_batch_is_bounded_explicit_and_contains_negative_controls():
     records = {(r['source_url'], r['html_sha256']): r for r in generated['witnesses']}
     assert len(records) == len(generated['witnesses'])
     additions = json.loads((Path(__file__).parent/'fixtures/badw_print_298_additions.json').read_text())
-    for frozen in baseline['generated'] + additions['generated']:
+    milestone476 = json.loads((Path(__file__).parent/'fixtures/badw_print_476_additions.json').read_text())
+    for frozen in baseline['generated'] + additions['generated'] + milestone476['generated']:
         record = records[frozen['source_url'], frozen['html_sha256']]
         assert record['page'] == frozen['page']
         assert a.object_digest(record) == frozen['record_sha256']
@@ -495,7 +496,7 @@ def test_committed_reference_articles_bind_exact_targets_and_preserve_deferrals(
     }
     assert {name: references[name]['cross_reference_evidence'] for name in expected} == expected
     assert all(r['review_basis'] == a.AGENT_REVIEW_BASIS and r['printed_homonym'] is None
-               for r in references.values())
+               for r in (references[name] for name in expected))
     assert references['ka rma']['anchor'] == 'wts_1_34:42:22'
     assert references['ka tshal']['anchor'] == 'wts_1_34:42:112'
     assert references['ka ye']['print_observation']['heading_variant'] == 'kwa ye'

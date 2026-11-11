@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "Review preparation only; no new acceptances",
-  "certificate_sha256": "e373429e30a6c4ad74d07bd9349b723c7791081993f1db0b11267678186e58bf",
+  "certificate_sha256": "79befa513e954a30a4d1f887ab1195563fd4e000d5d30a0e3b355b8970b2d564",
   "inputs": {
     "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
     "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
@@ -13,922 +13,8 @@
   },
   "policy": "Physical-page locators only. Printed folios, spread sides, headings, identity and gutter geometry require independent review. No pagination offset or crop is extrapolated. Includes density and difficult controls; lexical agreement is not proof.",
   "physical_pages": 48,
-  "candidates": 639,
+  "candidates": 634,
   "pages": [
-    {
-      "family": "wts_1_34",
-      "source": "WtS_1-34",
-      "physical_page": 120,
-      "printed_volume": null,
-      "printed_folio": null,
-      "geometry": null,
-      "status": "unreviewed candidate page",
-      "candidates": [
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20pa/1",
-          "anchor": "wts_1_34:120:1",
-          "editorial_heading": "dka’ thub pa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 18,
-          "anchor_sha256": "17d68934f04a77a1e3bc3445d9f6a4c9b73ed47b63c8f05534ceb43a7b24f7bd"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20pa/1",
-          "anchor": "wts_1_34:120:3",
-          "editorial_heading": "dka’ thub pa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 18,
-          "anchor_sha256": "f5def23f76dd75bc30d3c1c9f93841de82ecbb4be642fac7660154fdfd3f1826"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20spyod%20pa/1",
-          "anchor": "wts_1_34:120:14",
-          "editorial_heading": "dka’ thub spyod pa",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 11,
-          "anchor_sha256": "9cb0fc6f9d82fe25d6ca4405d05dd704690dd2d3e6d8755d85c01ec453bfae6a"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20zla%20ba/1",
-          "anchor": "wts_1_34:120:17",
-          "editorial_heading": "dka’ thub zla ba",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "962cf00ffc5043a8c6f3b6211885cabd055517319b3779a0fdf6ee7851178664"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20bzlog%20ma/1",
-          "anchor": "wts_1_34:120:20",
-          "editorial_heading": "dka’ thub bzlog ma",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 25,
-          "anchor_sha256": "02bee8034bc45aa391ff1a6ab17253a50c471855954ccd77c92d61bd2589a221"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20legs/1",
-          "anchor": "wts_1_34:120:26",
-          "editorial_heading": "dka’ thub legs",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 61,
-          "anchor_sha256": "1969016274de0adde9094e2a991290b0cc3f012fcd70b92b36ce53ccf9bffdc2"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20mdo/1",
-          "anchor": "wts_1_34:120:31",
-          "editorial_heading": "dka’ mdo",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "6f27d97f3bf75152a9184789c15ffea153dad94d5756a17a6593cbaad313525d"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20po/1",
-          "anchor": "wts_1_34:120:32",
-          "editorial_heading": "dka’ po",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 15,
-          "anchor_sha256": "c932a52ee1fd17333e8ffd5971b31e79ddb8ae89c00ac693d13f0ef9eed9055c"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20spyad/1",
-          "anchor": "wts_1_34:120:43",
-          "editorial_heading": "dka’ spyad",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 10,
-          "anchor_sha256": "2b9c3dd214b2d977f8e7343707c2fa415ffec100a540cff9af0101754da03871"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20b%C5%BAi%20dgon/1",
-          "anchor": "wts_1_34:120:55",
-          "editorial_heading": "dka’ bźi dgon",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 21,
-          "anchor_sha256": "1f4de3bc4f1f236b9de5b3669b7e3ac53b7c9a5cec2ed2216f39afefbf1a7121"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20ba/1",
-          "anchor": "wts_1_34:120:69",
-          "editorial_heading": "dka’ ba",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 18,
-          "anchor_sha256": "978d3d3cea2b156f97a3b7130fc552114624418271cc092fdd4744649da6502d"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20blas/1",
-          "anchor": "wts_1_34:120:75",
-          "editorial_heading": "dka’ blas",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 18,
-          "anchor_sha256": "db14b2be5c5a02f358a7fea02ac3a2e534e6fc8adbf7e3b9db0f63c585342635"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20mo/1",
-          "anchor": "wts_1_34:120:80",
-          "editorial_heading": "dka’ mo",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "19ac22dc66a69319ed3614800c912935338a02b4d4a6ddbaf972071d4c1a4ea8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20mo%20ka/1",
-          "anchor": "wts_1_34:120:82",
-          "editorial_heading": "dka’ mo ka",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 13,
-          "anchor_sha256": "191ed9167df0fde96ea7606d8ebf42a7b4a614d0f6d263c465619bd84baed1d6"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20tshegs/1",
-          "anchor": "wts_1_34:120:89",
-          "editorial_heading": "dka’ tshegs",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 15,
-          "anchor_sha256": "e7fc8a2ba5a705f23c9c7caa1886cd2cd3f195f9f4600fba445a910aeb393670"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20b%C5%BAi%20dgon/1",
-          "anchor": "wts_1_34:120:100",
-          "editorial_heading": "dka’ bźi dgon",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 21,
-          "anchor_sha256": "1c435689e6812028e51eb7b90dc2cc3bc4ef43153a50bbcaff2b363ea8706a4f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20zlog/1",
-          "anchor": "wts_1_34:120:115",
-          "editorial_heading": "dka’ zlog",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 37,
-          "anchor_sha256": "64be973bcafa96a6e6cdd9d9f3b61b8aa0189d82177af5fcabbeaa62cb04720e"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20zlog/1",
-          "anchor": "wts_1_34:120:119",
-          "editorial_heading": "dka’ zlog",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 37,
-          "anchor_sha256": "a5412a2b8f08cedf65462aa490c02222a4ba204ed44f110df1210f961faeb2d2"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20zlog%20bla%20ma/1",
-          "anchor": "wts_1_34:120:134",
-          "editorial_heading": "dka’ zlog bla ma",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 9,
-          "anchor_sha256": "bd412d780de374d1153da20588866223bdb8bf47477fb5de54602dba00e93272"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20rug/1",
-          "anchor": "wts_1_34:120:137",
-          "editorial_heading": "dka’ rug",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 15,
-          "anchor_sha256": "2d28cac16a44a1846db3bc37caae99124b0ee2639e016046fd86e97f3078e803"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20las/1",
-          "anchor": "wts_1_34:120:143",
-          "editorial_heading": "dka’ las",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 28,
-          "anchor_sha256": "59387448299c45ecfe44fd86ffda09fcc8c8e4a015dbb74ba16453cecdbb5b24"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20sa/1",
-          "anchor": "wts_1_34:120:161",
-          "editorial_heading": "dka’ sa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 13,
-          "anchor_sha256": "ce6f86e44e95548651357638eb16a984606d49bb37356855bfcc6959bd0264b5"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20se%20ba/1",
-          "anchor": "wts_1_34:120:165",
-          "editorial_heading": "dka’ se ba",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 28,
-          "anchor_sha256": "09a0e6bbc295f93290abff8d4ef7b7307c78f6b25949a21e83c52f467af2f995"
-        }
-      ],
-      "candidate_count": 20,
-      "unique_dual_heading": 15,
-      "homonym_controls": 23,
-      "sparse_definition_controls": 15,
-      "selection_reason": "density and independent-review potential"
-    },
-    {
-      "family": "wts_1_34",
-      "source": "WtS_1-34",
-      "physical_page": 99,
-      "printed_volume": null,
-      "printed_folio": null,
-      "geometry": null,
-      "status": "unreviewed candidate page",
-      "candidates": [
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20yul%20bre%20sna/1",
-          "anchor": "wts_1_34:99:1",
-          "editorial_heading": "koṅ yul bre sna",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 16,
-          "anchor_sha256": "69c69abd965c8ce17e3182b8e09a625c2c2c6faa60ad456a6621cc925717f660"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20yul%20bre%20sna/1",
-          "anchor": "wts_1_34:99:3",
-          "editorial_heading": "koṅ yul bre sna",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 16,
-          "anchor_sha256": "a3e5330efb31ab201ebd44ec4b6d9bc7413e2b7331ea23cc208d956108c1cc24"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20li/1",
-          "anchor": "wts_1_34:99:10",
-          "editorial_heading": "koṅ li",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 87,
-          "anchor_sha256": "63f0e1f6a0b3c28b42349ccad0a14619619096d6590b60cda0b8e1c5fda1f4a7"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20srin%20ba%20gla%E1%B9%85%20gi%20gdo%E1%B9%85%20can/1",
-          "anchor": "wts_1_34:99:33",
-          "editorial_heading": "koṅ srin ba glaṅ gi gdoṅ can",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 61,
-          "anchor_sha256": "f79450f89ffe266a5767fca5f242807efb0664c34e63c7d0dba945e6b28a4c14"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20lha%20ko%E1%B9%85%20btsun%20rgya%20la/1",
-          "anchor": "wts_1_34:99:38",
-          "editorial_heading": "koṅ lha koṅ btsun rgya la",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 48,
-          "anchor_sha256": "a2065a115ba0b514ba371a29699e6372fc4924adebda7a9f7908bc9db1b3c707"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20lham/1",
-          "anchor": "wts_1_34:99:41",
-          "editorial_heading": "koṅ lham",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 38,
-          "anchor_sha256": "8bd2d0dd5f86c74a2e19572a440a735e1363fac39038ea9cb6c14c1f67d9e7c2"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kod%20kha/1",
-          "anchor": "wts_1_34:99:45",
-          "editorial_heading": "kod kha",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "b04f704f44e3e2ea95d47ac5fe7c35be0457f9507fd4d1205c034ebe5bd7b450"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kob%20tse/1",
-          "anchor": "wts_1_34:99:52",
-          "editorial_heading": "kob tse",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 13,
-          "anchor_sha256": "be55e1eca95f228a8ff2eb4836d0ceb3a0fc1fb680fbeb82d939f17d6bc38c48"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kon%20pa/1",
-          "anchor": "wts_1_34:99:62",
-          "editorial_heading": "kon pa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 15,
-          "anchor_sha256": "744edbdbe75f7f885282c38e3652abf24ac63992f5033a39d5c4336d9697117e"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kon%20pa%20gab%20skye/1",
-          "anchor": "wts_1_34:99:69",
-          "editorial_heading": "kon pa gab skye",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 143,
-          "anchor_sha256": "2221a6dc16995a810e666dac8bbc5d33c1c315c70b1c7dbc0be403415d335231"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kon%20pa%20gab%20chu%E1%B9%85/1",
-          "anchor": "wts_1_34:99:86",
-          "editorial_heading": "kon pa gab chuṅ",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 55,
-          "anchor_sha256": "5589199136f912221bae119bf2e2c109ffe640bb83403c3e03b27f86703bb1d3"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kon%20pa%20gab%20chen/1",
-          "anchor": "wts_1_34:99:90",
-          "editorial_heading": "kon pa gab chen",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 52,
-          "anchor_sha256": "770aacbb3827a7d9e8d855cf4590fec66bbe2f39c00b19fcaf8870bc6240b740"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kom%20bu/1",
-          "anchor": "wts_1_34:99:107",
-          "editorial_heading": "kom bu",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 13,
-          "anchor_sha256": "93adb36fceb071bc7b3c517ed692166ec0296f001a477ab54685b1a9a5c2c25d"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E2%80%99u%20kun%20dkris/1",
-          "anchor": "wts_1_34:99:114",
-          "editorial_heading": "ko’u kun dkris",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 17,
-          "anchor_sha256": "b736a84c5dc6fe5992a67273a8c289b8ab8a54f14e4a14d75b350a1c4ce68337"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E2%80%99u%20rab%20bya/1",
-          "anchor": "wts_1_34:99:123",
-          "editorial_heading": "ko’u rab bya",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 22,
-          "anchor_sha256": "c6e3cbcbb609fbbf130890ab3b03f11c028085853d8b29c431a14b4fe398335e"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E2%80%99u%20%C5%9Bam%20bi/1",
-          "anchor": "wts_1_34:99:130",
-          "editorial_heading": "ko’u śam bi",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "92185638a0a9a7bf9367abb2ec28b43417e40b83107465e71aa0693003f28782"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E2%80%99u%20%C5%9Bi%20ka/1",
-          "anchor": "wts_1_34:99:133",
-          "editorial_heading": "ko’u śi ka",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "09acc3d598e89dd321d4575a53cb2338956b2715a2b4df35e42cf49524239b3b"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kor/1",
-          "anchor": "wts_1_34:99:134",
-          "editorial_heading": "kor",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 62,
-          "anchor_sha256": "552c8baa13ebcf1274ad636bdff503ed8280dc3be0fa0feec995f9eb67353003"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kor%20tshe/1",
-          "anchor": "wts_1_34:99:151",
-          "editorial_heading": "kor tshe",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 40,
-          "anchor_sha256": "dcef4ac5c35c8cbaa326c5e272083388d5f392f66e6567eaff68e32c9b9e4c0f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kol%20ma/1",
-          "anchor": "wts_1_34:99:179",
-          "editorial_heading": "kol ma",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 85,
-          "anchor_sha256": "4e876fb49c286a58d830a019e8e386aebb1339b57d8701875103d207431b7f31"
-        }
-      ],
-      "candidate_count": 19,
-      "unique_dual_heading": 15,
-      "homonym_controls": 20,
-      "sparse_definition_controls": 9,
-      "selection_reason": "density and independent-review potential"
-    },
-    {
-      "family": "wts_1_34",
-      "source": "WtS_1-34",
-      "physical_page": 62,
-      "printed_volume": null,
-      "printed_folio": null,
-      "geometry": null,
-      "status": "unreviewed candidate page",
-      "candidates": [
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20skyobs/1",
-          "anchor": "wts_1_34:62:6",
-          "editorial_heading": "kun skyobs",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 40,
-          "anchor_sha256": "0322be32df791a524e8b1ccdd0bd88e5d185ded5af29c7c50ff748bb2fc81154"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20brkos/1",
-          "anchor": "wts_1_34:62:11",
-          "editorial_heading": "kun brkos",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 26,
-          "anchor_sha256": "10671a71ac20df4f84ac3c3f22c5b207750465dc662a578253b8a94e505bdf40"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20bskor/1",
-          "anchor": "wts_1_34:62:16",
-          "editorial_heading": "kun bskor",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "f70271ccc20254a62c3aa42300dabaaaa5fea2a0c29b1c32de323e7ef279e5ba"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20khyab%20gli%E1%B9%85/1",
-          "anchor": "wts_1_34:62:26",
-          "editorial_heading": "kun khyab gliṅ",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 39,
-          "anchor_sha256": "8706c0dfc6b3bad7cdc39d3820cf8d3327cd327e5bff74605bda35deb6c05edf"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20khyab%20mun%20pa/1",
-          "anchor": "wts_1_34:62:32",
-          "editorial_heading": "kun khyab mun pa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 29,
-          "anchor_sha256": "db1533e936aa3aeb9ccf3e32ba3faf460e5f1bface8ed9409dd114df44332757"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20khur/1",
-          "anchor": "wts_1_34:62:55",
-          "editorial_heading": "kun gyi khur",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 17,
-          "anchor_sha256": "9250af7d0b51d5d80ccead3fffa7acb4ec960a9dece3c9c30d97036ba5a3c4ed"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20%E2%80%99khebs/1",
-          "anchor": "wts_1_34:62:86",
-          "editorial_heading": "kun ’khebs",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 18,
-          "anchor_sha256": "0b12b69830272cdfe39563c52aeb9abad02cd6d5a58190cc6f5583a2741c16b8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20%E2%80%99khyil/1",
-          "anchor": "wts_1_34:62:93",
-          "editorial_heading": "kun ’khyil",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 33,
-          "anchor_sha256": "580e37dda3e6ac0616352983f21e1a213ad25f933677d4d7a338c50ed4ce8df4"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20dkyil/1",
-          "anchor": "wts_1_34:62:97",
-          "editorial_heading": "kun gyi dkyil",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 15,
-          "anchor_sha256": "e0826300e696b1a74007f777df1b0e1b8562d42533c23ca67da96c32f070eadf"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20khur/1",
-          "anchor": "wts_1_34:62:100",
-          "editorial_heading": "kun gyi khur",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 17,
-          "anchor_sha256": "01d5164b1f615055e6011b545f6e94abb8f2f85d17c92265699f74a5ce4c8b2f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20%E2%80%99jigs%20byed/1",
-          "anchor": "wts_1_34:62:107",
-          "editorial_heading": "kun gyi ’jigs byed",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 41,
-          "anchor_sha256": "f605efe1ea029ec9f3bce91fffb521a3cd7ce103c970db5e08c8d3294b45e1a6"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20%E2%80%99jigs%20byed/1",
-          "anchor": "wts_1_34:62:109",
-          "editorial_heading": "kun gyi ’jigs byed",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 41,
-          "anchor_sha256": "cc8baaea474c9cf57500189a9b823fb70613d6cf844581d2c84c59eb5a2eb0ef"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20%E2%80%99jug/1",
-          "anchor": "wts_1_34:62:113",
-          "editorial_heading": "kun gyi ’jug",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 24,
-          "anchor_sha256": "772f7ad6f2394d3ad79a83ccdfdc9a2ad994c70c87327cb8862a7835e6f9708e"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20ma/1",
-          "anchor": "wts_1_34:62:120",
-          "editorial_heading": "kun gyi ma",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 30,
-          "anchor_sha256": "2ebe8a879abbb1097dc3de7294529dfc980b2a620c843c467daf6069a590b02c"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20gza%E2%80%99%20ba/1",
-          "anchor": "wts_1_34:62:125",
-          "editorial_heading": "kun gyi gza’ ba",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 33,
-          "anchor_sha256": "8f1fc28cbd56457f548df03e5e2059b63af6bb113e8006c3d90330d4a32c4457"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyi%20b%C5%9Bes%20g%C3%B1en/1",
-          "anchor": "wts_1_34:62:131",
-          "editorial_heading": "kun gyi bśes gñen",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 33,
-          "anchor_sha256": "edb1650207792f129b48cd229fe1ce3b2872f33afb10e22683fa0384b8d7b55c"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20gyis%20bkur%20ba/1",
-          "anchor": "wts_1_34:62:139",
-          "editorial_heading": "kun gyis bkur ba",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 50,
-          "anchor_sha256": "1a25acf0a10c5bc567fe0fdbc98004fe3f7a9177f5ec5a7f0123a3c84ab1d9c9"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99%20%C3%B1i%20ma/1",
-          "anchor": "wts_1_34:62:160",
-          "editorial_heading": "kun dga’ ñi ma",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 80,
-          "anchor_sha256": "40840c39ce89f07b04ef94d0555a0bd4f8a4c7b531ed6b1644c87e94b1f60626"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20grol%20grags%20pa/1",
-          "anchor": "wts_1_34:62:162",
-          "editorial_heading": "kun grol grags pa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 43,
-          "anchor_sha256": "fc493a85c8aeff31b7237b3ad4ac4294c2c7f6776718ad464a954c0b74a43b59"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99/1",
-          "anchor": "wts_1_34:62:172",
-          "editorial_heading": "kun dga’",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 3,
-          "definition_alphanumeric": 89,
-          "anchor_sha256": "2641a945c76d0aa2cf3ab00259e59392b08a7542c2412c2e195d798671d8341b"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99%20rgyal%20mtshan/1",
-          "anchor": "wts_1_34:62:197",
-          "editorial_heading": "kun dga’ rgyal mtshan",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 41,
-          "anchor_sha256": "8b891ca313450c1618bf51d28e5d136a5d0519c4cecee07d780c089be52d7757"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99%20mchog%20ldan/1",
-          "anchor": "wts_1_34:62:205",
-          "editorial_heading": "kun dga’ mchog ldan",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 49,
-          "anchor_sha256": "8da848384915b66acc31a56fb2617969556b5a6ae83e87a598e9f6e293195403"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99%20%C3%B1i%20ma/1",
-          "anchor": "wts_1_34:62:209",
-          "editorial_heading": "kun dga’ ñi ma",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 80,
-          "anchor_sha256": "2042867ad4ae4bad1397e10e154b9b37fb8030b6dd695d472e160017f320ad5a"
-        }
-      ],
-      "candidate_count": 20,
-      "unique_dual_heading": 14,
-      "homonym_controls": 23,
-      "sparse_definition_controls": 5,
-      "selection_reason": "density and independent-review potential"
-    },
-    {
-      "family": "wts_1_34",
-      "source": "WtS_1-34",
-      "physical_page": 222,
-      "printed_volume": null,
-      "printed_folio": null,
-      "geometry": null,
-      "status": "unreviewed candidate page",
-      "candidates": [
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20can%20gyi%20sri%E1%B9%85%20mo/1",
-          "anchor": "wts_1_34:222:9",
-          "editorial_heading": "skra can gyi sriṅ mo",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 19,
-          "anchor_sha256": "8a1afb2cf998aae55ba322b11d30ee2dc5e04dd2b6f8b9db3b2b7ef4119738d0"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20can%20ma/1",
-          "anchor": "wts_1_34:222:13",
-          "editorial_heading": "skra can ma",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 19,
-          "anchor_sha256": "70321ca04579f52ea42825d8b975381e2929abe63188d3733e3cb436f578e262"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20can%20me%20tog/1",
-          "anchor": "wts_1_34:222:16",
-          "editorial_heading": "skra can me tog",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 9,
-          "anchor_sha256": "c01fa4ec4f2c25dbdaa61f02c18c906648249eb6910eb4b742548aaa3d569e9c"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20can%20gsod/1",
-          "anchor": "wts_1_34:222:19",
-          "editorial_heading": "skra can gsod",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 21,
-          "anchor_sha256": "8c8eb58eaa077d8d7ee8494ec942a31e68f1c0eab32080c18d57689cfccb13f8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/bdag/1",
-          "anchor": "wts_1_34:222:42",
-          "editorial_heading": "bdag",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 7,
-          "definition_alphanumeric": 277,
-          "anchor_sha256": "e09647d1b2b8416f214bfad356d2494878a72f5c5d279d139d6716fc88d8f4c8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra/1",
-          "anchor": "wts_1_34:222:42",
-          "editorial_heading": "skra",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 13,
-          "anchor_sha256": "e09647d1b2b8416f214bfad356d2494878a72f5c5d279d139d6716fc88d8f4c8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20phon/1",
-          "anchor": "wts_1_34:222:65",
-          "editorial_heading": "skra phon",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 10,
-          "anchor_sha256": "700a361dae173e5ee37c18c90a0331f73233eedaad2832eff3f02c8d73cfbf88"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20%E2%80%99breg%20mkhan/1",
-          "anchor": "wts_1_34:222:68",
-          "editorial_heading": "skra ’breg mkhan",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 19,
-          "anchor_sha256": "65075256cfbe6ade46eb7ce3e0e2ec1c67df1c4c3b634dead550d35132964dea"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20tshab/1",
-          "anchor": "wts_1_34:222:77",
-          "editorial_heading": "skra tshab",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 13,
-          "anchor_sha256": "e8b236d648049286e52e9a22b1af25fe0468b07105be0754dd67d26b66877bb8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20tshogs/1",
-          "anchor": "wts_1_34:222:83",
-          "editorial_heading": "skra tshogs",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 4,
-          "anchor_sha256": "5e22f82fab63873abf4944f64fbdb966c4537e555656ffebe1891e15821b8447"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20tshom/1",
-          "anchor": "wts_1_34:222:86",
-          "editorial_heading": "skra tshom",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 10,
-          "anchor_sha256": "df638298f38c4e839cad544067a122f7d48e29322e4b6212e5f4a402b7b2e714"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20bza%E1%B9%85/1",
-          "anchor": "wts_1_34:222:118",
-          "editorial_heading": "skra bzaṅ",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 75,
-          "anchor_sha256": "36bf0d18f56962f8daac0efe1c134a83f26738185cadcd9a32db19f3900e7fe7"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20bzed/1",
-          "anchor": "wts_1_34:222:134",
-          "editorial_heading": "skra bzed",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 32,
-          "anchor_sha256": "b690ba26e374241872fbba1063cbea52afd1fe86cfae67a0260d135684bc904a"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20yi%20byi%20dor/1",
-          "anchor": "wts_1_34:222:147",
-          "editorial_heading": "skra yi byi dor",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 4,
-          "anchor_sha256": "19e7156e0ba873767889e6dfc47c1a9eed91a09696ed66a34f2445af9d931874"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20yi%20%C5%BAags%20pa/1",
-          "anchor": "wts_1_34:222:153",
-          "editorial_heading": "skra yi źags pa",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 10,
-          "anchor_sha256": "13e6e258c3358877362eecb27c90f5866464c92c6e7900d28a840b8f2e6a114d"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20yi%20la%20ba%20can/1",
-          "anchor": "wts_1_34:222:157",
-          "editorial_heading": "skra yi la ba can",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "34c0b6fe284fc621e456cb48bc26d1bda005efe6a4dba501ee7db0cf6aa72134"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20lo/1",
-          "anchor": "wts_1_34:222:164",
-          "editorial_heading": "skra lo",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 82,
-          "anchor_sha256": "1cf9debe3394e2498c419b3f410a6af2a6f4541a425a6199e60cc09e028bfc0e"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20%C5%9Bad%20%E2%80%99dzi%E1%B9%85s%20pa/1",
-          "anchor": "wts_1_34:222:205",
-          "editorial_heading": "skra śad ’dziṅs pa",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 40,
-          "anchor_sha256": "b036484d3d8dd335c15106a25f6f073a6a9283973b386cae23d193dc3edc84a4"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/skra%20ser/1",
-          "anchor": "wts_1_34:222:218",
-          "editorial_heading": "skra ser",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 14,
-          "anchor_sha256": "d5f339d4efb8a12184eec2e9dbe9692d0d009f4e0ff9a5dc0847c09c1981d7a6"
-        }
-      ],
-      "candidate_count": 19,
-      "unique_dual_heading": 14,
-      "homonym_controls": 19,
-      "sparse_definition_controls": 13,
-      "selection_reason": "density and independent-review potential"
-    },
     {
       "family": "wts_1_34",
       "source": "WtS_1-34",
@@ -1861,6 +947,960 @@
       "unique_dual_heading": 13,
       "homonym_controls": 16,
       "sparse_definition_controls": 13,
+      "selection_reason": "density and independent-review potential"
+    },
+    {
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "physical_page": 209,
+      "printed_volume": null,
+      "printed_folio": null,
+      "geometry": null,
+      "status": "unreviewed candidate page",
+      "candidates": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20bo%E2%80%99i%20gnas/1",
+          "anchor": "wts_1_34:209:1",
+          "editorial_heading": "skye bo’i gnas",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 23,
+          "anchor_sha256": "357d21b76908eb8b92ec7e27fc8fce54a285215f0cce934a1c9ae22b556dc817"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20bo%E2%80%99i%20gnas/1",
+          "anchor": "wts_1_34:209:3",
+          "editorial_heading": "skye bo’i gnas",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 23,
+          "anchor_sha256": "757c66c6510f4d71ad878ac3fdb83121391f2cf72f577f2500e9173b38e2884f"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20bos%20bkur%20ma/1",
+          "anchor": "wts_1_34:209:13",
+          "editorial_heading": "skye bos bkur ma",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 19,
+          "anchor_sha256": "99c3db23e1b969dec980c681b9818d47f790a707f784a4645b4008d029c9f20f"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20mo/1",
+          "anchor": "wts_1_34:209:24",
+          "editorial_heading": "skye mo",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 14,
+          "anchor_sha256": "e5e1ce06139cf57f903f64faa8041c0e96ff99a51c7b0b749369a967d2e95541"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20dman/1",
+          "anchor": "wts_1_34:209:29",
+          "editorial_heading": "skye dman",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "49c6e04befdcd37a7d26591c8d96686cb9264aa3af730f4c2328b3f7643399ad"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20tshe/1",
+          "anchor": "wts_1_34:209:30",
+          "editorial_heading": "skye tshe",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 35,
+          "anchor_sha256": "66c58e010fcd71846dea0e1596a97c9cb749c15091307e74e390f60a1d164a2c"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20%E2%80%99dzin/1",
+          "anchor": "wts_1_34:209:34",
+          "editorial_heading": "skye ’dzin",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 32,
+          "anchor_sha256": "2ef612a4910ed21bed03dd8465112ba84c5e344879e54cc9afb9717bcd7a12cd"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20zug/1",
+          "anchor": "wts_1_34:209:37",
+          "editorial_heading": "skye zug",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 14,
+          "anchor_sha256": "df7a8f57f227ec96854b2a117336c708549c88adb96534f0b316e189dd131c8c"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20gzugs/1",
+          "anchor": "wts_1_34:209:42",
+          "editorial_heading": "skye gzugs",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 11,
+          "anchor_sha256": "d18697e2802524194518598f006676b836ff2a8ef381c319b687d42b8880258b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20bza%E1%B9%85%20byi%20ba/1",
+          "anchor": "wts_1_34:209:47",
+          "editorial_heading": "skye bzaṅ byi ba",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 17,
+          "anchor_sha256": "534183c344eb6ad7944068db126ebcd598e620780ab4958d5d36011701acfd01"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%E1%B9%85s/1",
+          "anchor": "wts_1_34:209:52",
+          "editorial_heading": "skyeṅs",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 83,
+          "anchor_sha256": "02cc715afa7cddd4965e27c5b3d98c343bae4e0671a4af172183070e27bc37c2"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20la%20skyes/1",
+          "anchor": "wts_1_34:209:57",
+          "editorial_heading": "skye la skyes",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 9,
+          "anchor_sha256": "036f717282aa19c3bc5d4dfa6c9d52cbbf8a9f5a04cf82d85676640ea9502c85"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20lo/1",
+          "anchor": "wts_1_34:209:60",
+          "editorial_heading": "skye lo",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 18,
+          "anchor_sha256": "3abf1e250aeff0416d6176983d82234772972b1f1e6e28378e4ad3dd88403765"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye/1",
+          "anchor": "wts_1_34:209:68",
+          "editorial_heading": "skye",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 6,
+          "definition_alphanumeric": 69,
+          "anchor_sha256": "e4ed70088ad39f2ae30d1681a7809e4eb70819931f7d15448959621c9e8412a0"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%20srid%20sa%20bon%20pa/1",
+          "anchor": "wts_1_34:209:81",
+          "editorial_heading": "skye srid sa bon pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 11,
+          "anchor_sha256": "00cd03e10ffb6989b4be0fe98aef91effe3062aef12077d2f70c9dccf66af342"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skyeg/1",
+          "anchor": "wts_1_34:209:84",
+          "editorial_heading": "skyeg",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "014f0cd158fae8cce80ee5ad6720932a98f74a15421130a9de1abf1bf84c0ca5"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skyegs/1",
+          "anchor": "wts_1_34:209:85",
+          "editorial_heading": "skyegs",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 9,
+          "anchor_sha256": "26d757cb984ebe6f5ce8e35fc83d19621ad8fbe0583a32769389f9ca957f010b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skye%E1%B9%85s/1",
+          "anchor": "wts_1_34:209:90",
+          "editorial_heading": "skyeṅs",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 83,
+          "anchor_sha256": "211c92e723f125ed801668ba60a9fde53b45c5b25d81c642ed1ad8263a21d3f4"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skyed/1",
+          "anchor": "wts_1_34:209:105",
+          "editorial_heading": "skyed",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 4,
+          "definition_alphanumeric": 72,
+          "anchor_sha256": "4e652b61649c86e7708a23ae927b632801493d44ec022d7c948afab56f3e7739"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/gdon/1",
+          "anchor": "wts_1_34:209:123",
+          "editorial_heading": "gdon",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 45,
+          "anchor_sha256": "96a3d00c4705b327b3054e0f3f13a0470029df6f9c082a9ee01ed64c0586364d"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/gdon/2",
+          "anchor": "wts_1_34:209:123",
+          "editorial_heading": "gdon",
+          "editorial_homonym": "2",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 52,
+          "anchor_sha256": "96a3d00c4705b327b3054e0f3f13a0470029df6f9c082a9ee01ed64c0586364d"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skyed/1",
+          "anchor": "wts_1_34:209:126",
+          "editorial_heading": "skyed",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 4,
+          "definition_alphanumeric": 72,
+          "anchor_sha256": "fd5ca4b9332336b6ec68ec35564a326ef92c76e1e31796dc5315a4f67970e212"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skyed%20ka/1",
+          "anchor": "wts_1_34:209:155",
+          "editorial_heading": "skyed ka",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 16,
+          "anchor_sha256": "592eeaaa94337bec42f4eef442505193caad334cbece7b952f29c39028e0fbe1"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/skyed%20ka/1",
+          "anchor": "wts_1_34:209:195",
+          "editorial_heading": "skyed ka",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 16,
+          "anchor_sha256": "d8350c60768c7d393618e2a0c80daa4fdef17fd746784b37a0b05903a9d53ee8"
+        }
+      ],
+      "candidate_count": 20,
+      "unique_dual_heading": 12,
+      "homonym_controls": 24,
+      "sparse_definition_controls": 13,
+      "selection_reason": "density and independent-review potential"
+    },
+    {
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "physical_page": 134,
+      "printed_volume": null,
+      "printed_folio": null,
+      "geometry": null,
+      "status": "unreviewed candidate page",
+      "candidates": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20bkod/1",
+          "anchor": "wts_1_34:134:1",
+          "editorial_heading": "bka’ bkod",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 6,
+          "anchor_sha256": "2cd33ed94e32891eb9cf42abcae1599aab7b7406150e3633388b69630019b441"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20bkod/1",
+          "anchor": "wts_1_34:134:11",
+          "editorial_heading": "bka’ bkod",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 6,
+          "anchor_sha256": "dea23f9c6964b6bc38e3b482b505875b0963f039c343bec3d763293c8a232eb3"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20bkyon/1",
+          "anchor": "wts_1_34:134:17",
+          "editorial_heading": "bka’ bkyon",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 16,
+          "anchor_sha256": "9043d2e8b703058e4c88dd6c4efd277cdeb12476b7ccce91deada7302b5eb11b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20bkrol/1",
+          "anchor": "wts_1_34:134:27",
+          "editorial_heading": "bka’ bkrol",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 20,
+          "anchor_sha256": "3dfbff370f4547587a2d2ff8ada8c5fadca19829ca7daafefdce20d6d3ef5094"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khon/1",
+          "anchor": "wts_1_34:134:30",
+          "editorial_heading": "bka’ khon",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 21,
+          "anchor_sha256": "55bd926d30afb0631fa598f9a3aba57e66039caaf50e9d86ea6a4af93eaa150b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khol/1",
+          "anchor": "wts_1_34:134:40",
+          "editorial_heading": "bka’ khol",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 6,
+          "anchor_sha256": "54b2409fa9d8c16347c154788066e170a052f0bd294f3be111d39fdf08e9d2d5"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khyab/1",
+          "anchor": "wts_1_34:134:46",
+          "editorial_heading": "bka’ khyab",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 13,
+          "anchor_sha256": "8c5fee20f6d36f739a606568a9c8f6146ffe6defc390d24f4f5b336c45bb7f59"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khrims/1",
+          "anchor": "wts_1_34:134:55",
+          "editorial_heading": "bka’ khrims",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 26,
+          "anchor_sha256": "88841162f0db8edd302838b047df382e86d6ce263c3517a2896f2fc803b3c6b2"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khyed%20tha%E1%B9%85%20po/1",
+          "anchor": "wts_1_34:134:62",
+          "editorial_heading": "bka’ khyed thaṅ po",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 36,
+          "anchor_sha256": "a103e71acc6cdae38248d8ecb9a23d154fe8a5a98c7a0f6009ae1c52c11e8bbe"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khra/1",
+          "anchor": "wts_1_34:134:66",
+          "editorial_heading": "bka’ khra",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 27,
+          "anchor_sha256": "88acdaff087f6b203e78ca877b7bba0426b4c7c2b11cdeeb70f7b0e3ee6b0596"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khrims/1",
+          "anchor": "wts_1_34:134:79",
+          "editorial_heading": "bka’ khrims",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 26,
+          "anchor_sha256": "b6e814cfb931237d3a285434d301366b34546e61dd5e87a5038acae4255fdfcf"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khrol/1",
+          "anchor": "wts_1_34:134:105",
+          "editorial_heading": "bka’ khrol",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 56,
+          "anchor_sha256": "2b724c0c3fe1d20e694e8913a47c9293f273ccc193c2f96822e9b2e7bba427d3"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20khrol/1",
+          "anchor": "wts_1_34:134:113",
+          "editorial_heading": "bka’ khrol",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 56,
+          "anchor_sha256": "a3efebd220a37c4d71862e3b90bb02b89dfb6be865442c5862c9fbd861080a9c"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20%E2%80%99khor/1",
+          "anchor": "wts_1_34:134:118",
+          "editorial_heading": "bka’ ’khor",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 106,
+          "anchor_sha256": "50691c689a6251fedc3c2491a6f4b3c87778bef140553dc6656b9af7a2582c25"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20gu%E1%B9%85/1",
+          "anchor": "wts_1_34:134:129",
+          "editorial_heading": "bka’ guṅ",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 8,
+          "anchor_sha256": "75d3832bde96f230e9bd3755484daf9655bb0a5b249adea76619752f1051fcbf"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20gyod/1",
+          "anchor": "wts_1_34:134:141",
+          "editorial_heading": "bka’ gyod",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 75,
+          "anchor_sha256": "2e07e7a5ac72c7f62f46d07d340eb24a8800b3bb84422ca06c1f800f5f843ffe"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20%E2%80%99gyur/1",
+          "anchor": "wts_1_34:134:159",
+          "editorial_heading": "bka’ ’gyur",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 31,
+          "anchor_sha256": "fffd8a7c1b4a90452bf1f9bcb43ce84b3f4364b6c94c276146e2b8684d79c828"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20gyon/1",
+          "anchor": "wts_1_34:134:164",
+          "editorial_heading": "bka’ gyon",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "1d5355e9539e28715b9a22784a94398f825b5aefb2ded0c5667591730b0428f0"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20grims/1",
+          "anchor": "wts_1_34:134:165",
+          "editorial_heading": "bka’ grims",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "bf9606aabfffbe1a9fea8f5dbd8ca6dac274ec2cb9818a7687de20aa6473135e"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20gros/1",
+          "anchor": "wts_1_34:134:167",
+          "editorial_heading": "bka’ gros",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 104,
+          "anchor_sha256": "671116d670a1e58a0f6d9fa0f260d9c992c39e6cadc65ac5637ab25d72c65e99"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20glegs/1",
+          "anchor": "wts_1_34:134:195",
+          "editorial_heading": "bka’ glegs",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 13,
+          "anchor_sha256": "ad921faf61c152394ca46fce70e6ba9685c881ed1b328386b9a82a484ee624f7"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20mgron/1",
+          "anchor": "wts_1_34:134:199",
+          "editorial_heading": "bka’ mgron",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 35,
+          "anchor_sha256": "2942be60389d0654147a84f5db73549c92d799bca32a32dda0fcd04cd7f2786d"
+        }
+      ],
+      "candidate_count": 19,
+      "unique_dual_heading": 12,
+      "homonym_controls": 22,
+      "sparse_definition_controls": 10,
+      "selection_reason": "density and independent-review potential"
+    },
+    {
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "physical_page": 182,
+      "printed_volume": null,
+      "printed_folio": null,
+      "geometry": null,
+      "status": "unreviewed candidate page",
+      "candidates": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20khams/1",
+          "anchor": "wts_1_34:182:1",
+          "editorial_heading": "sku khams",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 75,
+          "anchor_sha256": "2f0e2fc0f102b1c6489c92f3858d5ab5040c54c01c6d99ab8c1d4ba6db20e7ef"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20khams/1",
+          "anchor": "wts_1_34:182:7",
+          "editorial_heading": "sku khams",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 75,
+          "anchor_sha256": "72ba0944270f9f0adf2ce5925a6ebc73677f5a93aeae7f83bc8cd7882541aa18"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20khog/1",
+          "anchor": "wts_1_34:182:28",
+          "editorial_heading": "sku khog",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 6,
+          "anchor_sha256": "20e918fd6a9d81a94d21540620ba67c4a6aa5fe3f25540618a69decdcd8b05a6"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20khrus/1",
+          "anchor": "wts_1_34:182:33",
+          "editorial_heading": "sku khrus",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 39,
+          "anchor_sha256": "8a969c5a163e42e3d177c7bab98503a3e58cad91d6975a3c2cca2c2db9a69705"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20mkhar/1",
+          "anchor": "wts_1_34:182:45",
+          "editorial_heading": "sku mkhar",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 11,
+          "anchor_sha256": "3ced2ea33b1d8296f2f1e3279f91eac8fe1b17b700824d80aca10ef5ebc92464"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20%E2%80%99khru%E1%B9%85s/1",
+          "anchor": "wts_1_34:182:55",
+          "editorial_heading": "sku ’khruṅs",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 17,
+          "anchor_sha256": "d14329cac654c8c74d4317830791763fce299db6d0c94490b29eabadb0ac87c8"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20%E2%80%99khor/1",
+          "anchor": "wts_1_34:182:80",
+          "editorial_heading": "sku ’khor",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 17,
+          "anchor_sha256": "2addf142e6ab9927960719a533b600cafbba68b6df375aa8280f978365f52aff"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20%E2%80%99khris%20su/1",
+          "anchor": "wts_1_34:182:87",
+          "editorial_heading": "sku ’khris su",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 13,
+          "anchor_sha256": "406793e2578a06fa2c90dc32ea90bfbcadb3fcba4f253fde877a3b58c8d3587b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20%E2%80%99khrugs%20pa/1",
+          "anchor": "wts_1_34:182:94",
+          "editorial_heading": "sku ’khrugs pa",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 28,
+          "anchor_sha256": "9de43a93594254889413d963cdaad4462127f7b2b69190c8578ae2a4192200b0"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20bgres/1",
+          "anchor": "wts_1_34:182:106",
+          "editorial_heading": "sku bgres",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 9,
+          "anchor_sha256": "04c7bb49e694073074d61f6fbfd751505f6508ee371f80d35c84e4ce15dd7701"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20bgres/1",
+          "anchor": "wts_1_34:182:112",
+          "editorial_heading": "sku bgres",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 9,
+          "anchor_sha256": "255fe3cae9b740a4d048fb25a2d067fc0985091d5d7f0e452828ef0388642059"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20mgron/1",
+          "anchor": "wts_1_34:182:115",
+          "editorial_heading": "sku mgron",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 8,
+          "anchor_sha256": "3f0c1f9edd1ae94954806e102099e89c9089854c8a3e00324c735dbe47dff76c"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20%E2%80%99gag/1",
+          "anchor": "wts_1_34:182:120",
+          "editorial_heading": "sku ’gag",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 9,
+          "anchor_sha256": "f79ef5b56770059ec78583e02c448a13feec0db84a21192571c05a9ab37fa3c8"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20rgyan/1",
+          "anchor": "wts_1_34:182:127",
+          "editorial_heading": "sku rgyan",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 11,
+          "anchor_sha256": "25841784316cc7a831e166f9563a5fe1f543365c3f6bfc7c968e8aec6296e37f"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20sger/1",
+          "anchor": "wts_1_34:182:141",
+          "editorial_heading": "sku sger",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 10,
+          "anchor_sha256": "cdb8af91d0451e25411f0cd8cf83655fd87558238b029a1bbd8cd097ba69c63b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20chas/1",
+          "anchor": "wts_1_34:182:155",
+          "editorial_heading": "sku chas",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 37,
+          "anchor_sha256": "82acad30e3c91e42a72e23d137f24410591443eda489512f6c2a8f6223bc3ed7"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku/1",
+          "anchor": "wts_1_34:182:166",
+          "editorial_heading": "sku",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 8,
+          "definition_alphanumeric": 205,
+          "anchor_sha256": "0bae84880bd385e5142a3f78670edd1e8fe358aaabf1c23e62444246f439bbe1"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20%E1%B9%85o/1",
+          "anchor": "wts_1_34:182:176",
+          "editorial_heading": "sku ṅo",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 18,
+          "anchor_sha256": "a10366cdc998faaeef26451c1affecb3d8d54017f197c64a3a8a06d1e16e2083"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20cor%20rtogs%20ldan/1",
+          "anchor": "wts_1_34:182:183",
+          "editorial_heading": "sku cor rtogs ldan",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "980a05bb38f43c4c5f9dc3c1adc69bf1ad4e63b78e3d3c6aeda9d3ddb340aafb"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20bcar/1",
+          "anchor": "wts_1_34:182:188",
+          "editorial_heading": "sku bcar",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 42,
+          "anchor_sha256": "aa96ca868c93372152f4015c1f326cb5c115e79a5a005b057eb34ba217a76e4e"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20bcar%20spyi%20khyab%20mkhan%20po/1",
+          "anchor": "wts_1_34:182:196",
+          "editorial_heading": "sku bcar spyi khyab mkhan po",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 68,
+          "anchor_sha256": "6a2c083f3c0f074bd1ffdd0ead10a59ea96f235ec3ea14be32fc279d1572944f"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sku/1",
+          "anchor": "wts_1_34:182:208",
+          "editorial_heading": "sku",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 8,
+          "definition_alphanumeric": 205,
+          "anchor_sha256": "17e960142eb6f595df4cfd9af42cbce7c8611e6d242fa77246c8bc34a7efe8c9"
+        }
+      ],
+      "candidate_count": 19,
+      "unique_dual_heading": 12,
+      "homonym_controls": 22,
+      "sparse_definition_controls": 13,
+      "selection_reason": "density and independent-review potential"
+    },
+    {
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "physical_page": 79,
+      "printed_volume": null,
+      "printed_folio": null,
+      "geometry": null,
+      "status": "unreviewed candidate page",
+      "candidates": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20brkos/1",
+          "anchor": "wts_1_34:79:1",
+          "editorial_heading": "kun nas brkos",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "15012410f01c58931dcf372dceba8940675835c8f65a2d18c68b795501120257"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20brkos/1",
+          "anchor": "wts_1_34:79:30",
+          "editorial_heading": "kun nas brkos",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "7f8d0245ddfa92c7ef1dbce0685d1d1130f38a442f94f838f3006d4054b60c5a"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20skrag%20pa/1",
+          "anchor": "wts_1_34:79:55",
+          "editorial_heading": "kun nas skrag pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 11,
+          "anchor_sha256": "c587e9c1a11ee6c2a7039dad14fdd8c575268983156d1be8e00bf2400299dc51"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20skrun%20pa/1",
+          "anchor": "wts_1_34:79:62",
+          "editorial_heading": "kun nas skrun pa",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 8,
+          "anchor_sha256": "5f0dd95a3e44d43d83c911e3ca3cca186abb85b0cd7a02af132b542b7a43bd47"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20bskyed%20pa/1",
+          "anchor": "wts_1_34:79:69",
+          "editorial_heading": "kun nas bskyed pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 22,
+          "anchor_sha256": "552d2c8dfe4ee7023167d819022f028ef2c3bd2748fb3e668ba0ee3161a2c9b1"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20khor%20yug/1",
+          "anchor": "wts_1_34:79:76",
+          "editorial_heading": "kun nas khor yug",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 34,
+          "anchor_sha256": "97eabe99e6b203d39063c96d7e3e58de7323335e505f342722cbebd28280786c"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20khyab%20pa/1",
+          "anchor": "wts_1_34:79:87",
+          "editorial_heading": "kun nas khyab pa",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 38,
+          "anchor_sha256": "5712cedf29645a283bba3f76e19cf452981628f5c937b39def7832281a0d2b68"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20mkhyen%20ldan/1",
+          "anchor": "wts_1_34:79:95",
+          "editorial_heading": "kun nas mkhyen ldan",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 12,
+          "anchor_sha256": "b7097945a207f41a5c8a44542129f1c0703a9077d24ac9c5dddccad3c57d843a"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20%E2%80%99khor%20ba/1",
+          "anchor": "wts_1_34:79:113",
+          "editorial_heading": "kun nas ’khor ba",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 81,
+          "anchor_sha256": "e2a3d6e0912e7232f95aa1f9a360a2e76dc7fe20c4583bc34b51c21ba2f787ed"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20%E2%80%99khor%20ba/1",
+          "anchor": "wts_1_34:79:115",
+          "editorial_heading": "kun nas ’khor ba",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 81,
+          "anchor_sha256": "c4af50db3b991d3677014625e9b7d4005888728f8055cd52afc7d7d144e7358c"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20%E2%80%99khyud%20pa/1",
+          "anchor": "wts_1_34:79:130",
+          "editorial_heading": "kun nas ’khyud pa",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 30,
+          "anchor_sha256": "88f8eafb60317147aeba38c1fa2e9adf134c3bf36701902cd03ba84efcfb57cb"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20dgod%20pa/1",
+          "anchor": "wts_1_34:79:154",
+          "editorial_heading": "kun nas dgod pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 12,
+          "anchor_sha256": "6bafa5ee93acacb4b3eace0d18b53b8e3a4734ef19b944f4605b619e7283ebc2"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20%C3%B1e%20bar%20%E2%80%99o%E1%B9%85%20ba/1",
+          "anchor": "wts_1_34:79:168",
+          "editorial_heading": "kun nas ñe bar ’oṅ ba",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 12,
+          "anchor_sha256": "4cf552ccc5ada2acd36f37d572f102c0a905b83b31ff6f13b3d2bda480e4609c"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20%E2%80%99gebs/1",
+          "anchor": "wts_1_34:79:170",
+          "editorial_heading": "kun nas ’gebs",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 54,
+          "anchor_sha256": "d94e5b0cbb02b623a0ec55191f096258051e854833a6151c2f93fa0be062de5b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20%E2%80%99gebs%20pa/1",
+          "anchor": "wts_1_34:79:176",
+          "editorial_heading": "kun nas ’gebs pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 22,
+          "anchor_sha256": "61ea9c35115f78c069650808fb784f8d9cc62fdf1b964adfed1e8afb95551b54"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20%E2%80%99gyel%20ba/1",
+          "anchor": "wts_1_34:79:182",
+          "editorial_heading": "kun nas ’gyel ba",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 16,
+          "anchor_sha256": "54b77188670cc53a8e3c0c63bddf4a6dcd00ee83a0ab600e4441cef70db68e97"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20rgod%20pa/1",
+          "anchor": "wts_1_34:79:193",
+          "editorial_heading": "kun nas rgod pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "845b396b2c899406a8a026a55c6fc146b0de2295a9f8273ab373f999e1caacd0"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20rgyas%20par%20byed%20pa/1",
+          "anchor": "wts_1_34:79:194",
+          "editorial_heading": "kun nas rgyas par byed pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 32,
+          "anchor_sha256": "75dec51e72d6ee06c5547b28e74622b253b291bc47af3331681112cfaa2041db"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20sgrib%20pa/1",
+          "anchor": "wts_1_34:79:201",
+          "editorial_heading": "kun nas sgrib pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 24,
+          "anchor_sha256": "7f4905e01eacf057820f9edc9f63c1b47b25d4d2cf623fdeeda041298b6d409f"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20chags%20pa/1",
+          "anchor": "wts_1_34:79:208",
+          "editorial_heading": "kun nas chags pa",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 26,
+          "anchor_sha256": "ae0de576d8dd7d46e8908bd9324ee52e3c0365a32ff1669d5481b97135515001"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20nas%20%C3%B1e%20bar%20%E2%80%99o%E1%B9%85%20ba/1",
+          "anchor": "wts_1_34:79:221",
+          "editorial_heading": "kun nas ñe bar ’oṅ ba",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 12,
+          "anchor_sha256": "da8311bee41cf2618e435869cea5b9541db029d44aa4f608b6e4e9e7d2d02c3c"
+        }
+      ],
+      "candidate_count": 18,
+      "unique_dual_heading": 12,
+      "homonym_controls": 21,
+      "sparse_definition_controls": 10,
       "selection_reason": "density and independent-review potential"
     },
     {
@@ -4890,242 +4930,6 @@
     {
       "family": "wts_35_51",
       "source": "WtS_35-51",
-      "physical_page": 1106,
-      "printed_volume": null,
-      "printed_folio": null,
-      "geometry": null,
-      "status": "unreviewed candidate page",
-      "candidates": [
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%20ba%E2%80%99i%20rta/1",
-          "anchor": "wts_35_51:1106:1",
-          "editorial_heading": "’phyi ba’i rta",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 17,
-          "anchor_sha256": "cd8d086c7945a0d13eccef11c6dc5785c62c90d27650032c585833b0f70a4534"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%20ba%E2%80%99i%20rta/1",
-          "anchor": "wts_35_51:1106:12",
-          "editorial_heading": "’phyi ba’i rta",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 17,
-          "anchor_sha256": "c9d22db6954a6538b7ab525953a2f708971e2311df6c1039f4e886c66bbe4f52"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%20mo/1",
-          "anchor": "wts_35_51:1106:15",
-          "editorial_heading": "’phyi mo",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 6,
-          "anchor_sha256": "e23a344edd987300b8b28c66f670194df8ac4dbf8e109b272720fd237ad2bad8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85/1",
-          "anchor": "wts_35_51:1106:17",
-          "editorial_heading": "’phyiṅ",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 19,
-          "anchor_sha256": "9493fcd65f5080cfc0bae7076cdf9f34d6c605ef2d726d8898ac33895dfedfc6"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20%E1%B9%85a%20stag%20rtse/1",
-          "anchor": "wts_35_51:1106:22",
-          "editorial_heading": "’phyiṅ ṅa stag rtse",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "17ae3117e7292934fe2edea102465eec33527dcbc4b7ea2b9a4b29fcc25e9c03"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20pa/1",
-          "anchor": "wts_35_51:1106:23",
-          "editorial_heading": "’phyiṅ pa",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "0f9640e049e2cc290b91997234d118effc73b2c3706e305c2d3bce497782c25a"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%E1%B9%85%20pa/1",
-          "anchor": "wts_35_51:1106:23",
-          "editorial_heading": "phyiṅ pa",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 3,
-          "definition_alphanumeric": 4,
-          "anchor_sha256": "0f9640e049e2cc290b91997234d118effc73b2c3706e305c2d3bce497782c25a"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20pa%20stag%20rtse/1",
-          "anchor": "wts_35_51:1106:24",
-          "editorial_heading": "’phyiṅ pa stag rtse",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "1270cb094f3722a846ea860ca63d6de4ec943a96350ad6b81ad4bd7429eeb113"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20par%20stag%20rtse/1",
-          "anchor": "wts_35_51:1106:25",
-          "editorial_heading": "’phyiṅ par stag rtse",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "0337c8fbc82d435f5fb91d48b2b251d635706d6b5d92ba9cf1fa0942f983abfc"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20phu/1",
-          "anchor": "wts_35_51:1106:26",
-          "editorial_heading": "’phyiṅ phu",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 37,
-          "anchor_sha256": "8ee8d013a2178f58f4e65617777fea6fdaf4b30a03580c9514ccf198f7f2fed0"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20ba/1",
-          "anchor": "wts_35_51:1106:35",
-          "editorial_heading": "’phyiṅ ba",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "746acbdb4a12af8e3d058dce4e71e948de8599f7a37798b9c102560a10a643b1"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20ba%20stag%20rtse/1",
-          "anchor": "wts_35_51:1106:36",
-          "editorial_heading": "’phyiṅ ba stag rtse",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "ccce4dbe32f451021374995ecdc343a5e2a0245e516a7d2f4d105001820fe33e"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyil/1",
-          "anchor": "wts_35_51:1106:37",
-          "editorial_heading": "’phyil",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 27,
-          "anchor_sha256": "f6d6efba5bf0702e42a8ace03522dd17810f102fb60c643fba146c67b27dcb61"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20ba%20pa/1",
-          "anchor": "wts_35_51:1106:38",
-          "editorial_heading": "’phyiṅ ba pa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "bc0e500405d088ad0367ee5da93727c22640f88317d0f269d414240a138ee77e"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20bar%20stag%20rtse/1",
-          "anchor": "wts_35_51:1106:39",
-          "editorial_heading": "’phyiṅ bar stag rtse",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "1e856b2de953c8e7d029d4898d5e6cccf7018193de38db17dbd73cf44214bbe0"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20yul/1",
-          "anchor": "wts_35_51:1106:40",
-          "editorial_heading": "’phyiṅ yul",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 13,
-          "anchor_sha256": "092704f9c27649d4db8532e80a233f9147a8cfec0a1bab7baa35014a969b2d20"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20sa%E1%B9%85/1",
-          "anchor": "wts_35_51:1106:46",
-          "editorial_heading": "’phyiṅ saṅ",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "9a296bac8ec6665700023cfc601f9949824703cb171d35afd4cea8408043e696"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85s/1",
-          "anchor": "wts_35_51:1106:47",
-          "editorial_heading": "’phyiṅs",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 19,
-          "anchor_sha256": "47d823a15b9ebb67a5737eea2b8118a069df2f2dfce9c1487a532db8d8c0d224"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85s%20pa%20pa/1",
-          "anchor": "wts_35_51:1106:53",
-          "editorial_heading": "’phyiṅs pa pa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "c86b2319678817de86c23f6a3728bcb4dd27a3cf2f0db9ed501a699c3c71f58f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyid/1",
-          "anchor": "wts_35_51:1106:65",
-          "editorial_heading": "’phyid",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 19,
-          "anchor_sha256": "08b2e3cd8af8a375ebc103f6c3146e948b44379b6b564d83334c163367339f38"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyid/2",
-          "anchor": "wts_35_51:1106:65",
-          "editorial_heading": "’phyid",
-          "editorial_homonym": "2",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "08b2e3cd8af8a375ebc103f6c3146e948b44379b6b564d83334c163367339f38"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99phyil/1",
-          "anchor": "wts_35_51:1106:66",
-          "editorial_heading": "’phyil",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 27,
-          "anchor_sha256": "eab0346f02a1572156dbf5cc24d0a6ebca36ef3f676be0932604d0aa4fca433c"
-        }
-      ],
-      "candidate_count": 20,
-      "unique_dual_heading": 7,
-      "homonym_controls": 22,
-      "sparse_definition_controls": 19,
-      "selection_reason": "sparse-definition control"
-    },
-    {
-      "family": "wts_35_51",
-      "source": "WtS_35-51",
       "physical_page": 1052,
       "printed_volume": null,
       "printed_folio": null,
@@ -5367,6 +5171,232 @@
       "unique_dual_heading": 4,
       "homonym_controls": 23,
       "sparse_definition_controls": 14,
+      "selection_reason": "sparse-definition control"
+    },
+    {
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "physical_page": 981,
+      "printed_volume": null,
+      "printed_folio": null,
+      "geometry": null,
+      "status": "unreviewed candidate page",
+      "candidates": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20sto%E1%B9%85%20pa%20%C3%B1id/1",
+          "anchor": "wts_35_51:981:1",
+          "editorial_heading": "phyi stoṅ pa ñid",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 27,
+          "anchor_sha256": "10b4371b77013ecdf08ab14be84f3c837590e716adeea5b9c5aea03e4f3fbec4"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20thag%20ri%E1%B9%85/1",
+          "anchor": "wts_35_51:981:16",
+          "editorial_heading": "phyi thag riṅ",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 20,
+          "anchor_sha256": "355807d429838925b6488345f9fb292ca22ec1c923d1202f6c7fffc7e21924b6"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20than/1",
+          "anchor": "wts_35_51:981:26",
+          "editorial_heading": "phyi than",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 7,
+          "anchor_sha256": "d206b68f24fc8cd7f42c148116f59cc550390e8d378b22fba87e7f6d85c6ec6a"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20thum/1",
+          "anchor": "wts_35_51:981:30",
+          "editorial_heading": "phyi thum",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 21,
+          "anchor_sha256": "033edd44c485cc7acdb717bcffffa6edf0ea0240753f20236de41519c291222c"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20mtha%E2%80%99/1",
+          "anchor": "wts_35_51:981:36",
+          "editorial_heading": "phyi mtha’",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 7,
+          "anchor_sha256": "cb07cb9a3980d3502ea6911e175c9bf4645fdf52a95e14ef96a1bb4da0cf6849"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20dro/1",
+          "anchor": "wts_35_51:981:39",
+          "editorial_heading": "phyi dro",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 15,
+          "anchor_sha256": "3bf01966bc687d27533020561ab1cdbab2aab9ea2f79555e5a4632f875cc2413"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20da%E1%B9%85%20na%E1%B9%85/1",
+          "anchor": "wts_35_51:981:46",
+          "editorial_heading": "phyi daṅ naṅ",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "70c56b9972bb128139d0e000215e66a2c5be4f2487c8bc9f25cebecb896a7869"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20dar/1",
+          "anchor": "wts_35_51:981:47",
+          "editorial_heading": "phyi dar",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 41,
+          "anchor_sha256": "f1d606fa307962567fa6ce9d698b66f836513744715221436998f3de761683dd"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20dar%20ba/1",
+          "anchor": "wts_35_51:981:52",
+          "editorial_heading": "phyi dar ba",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 8,
+          "anchor_sha256": "6bdc9d0a2cf691b3706f351b1b24a4756bba1310a0167c773b46e4d00e08d845"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi/1",
+          "anchor": "wts_35_51:981:58",
+          "editorial_heading": "phyi",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 12,
+          "definition_alphanumeric": 209,
+          "anchor_sha256": "08ddd1cd392fbfe1da4efdaa1b378a50eb88fb681354a38a45ea48007188bae1"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi/2",
+          "anchor": "wts_35_51:981:58",
+          "editorial_heading": "phyi",
+          "editorial_homonym": "2",
+          "dual_heading": false,
+          "competing_anchors": 12,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "08ddd1cd392fbfe1da4efdaa1b378a50eb88fb681354a38a45ea48007188bae1"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi/3",
+          "anchor": "wts_35_51:981:58",
+          "editorial_heading": "phyi",
+          "editorial_homonym": "3",
+          "dual_heading": false,
+          "competing_anchors": 12,
+          "definition_alphanumeric": 25,
+          "anchor_sha256": "08ddd1cd392fbfe1da4efdaa1b378a50eb88fb681354a38a45ea48007188bae1"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/na/3",
+          "anchor": "wts_35_51:981:59",
+          "editorial_heading": "na",
+          "editorial_homonym": "3",
+          "dual_heading": false,
+          "competing_anchors": 29,
+          "definition_alphanumeric": 119,
+          "anchor_sha256": "915fe5b560cb0bdb402c1cc55cc597ea6c929fd02fa3e58570b898ed35fb9125"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/na/4",
+          "anchor": "wts_35_51:981:59",
+          "editorial_heading": "na",
+          "editorial_homonym": "4",
+          "dual_heading": false,
+          "competing_anchors": 29,
+          "definition_alphanumeric": 4,
+          "anchor_sha256": "915fe5b560cb0bdb402c1cc55cc597ea6c929fd02fa3e58570b898ed35fb9125"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/na/5",
+          "anchor": "wts_35_51:981:59",
+          "editorial_heading": "na",
+          "editorial_homonym": "5",
+          "dual_heading": false,
+          "competing_anchors": 29,
+          "definition_alphanumeric": 16,
+          "anchor_sha256": "915fe5b560cb0bdb402c1cc55cc597ea6c929fd02fa3e58570b898ed35fb9125"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi/1",
+          "anchor": "wts_35_51:981:59",
+          "editorial_heading": "phyi",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 12,
+          "definition_alphanumeric": 209,
+          "anchor_sha256": "915fe5b560cb0bdb402c1cc55cc597ea6c929fd02fa3e58570b898ed35fb9125"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi/2",
+          "anchor": "wts_35_51:981:59",
+          "editorial_heading": "phyi",
+          "editorial_homonym": "2",
+          "dual_heading": false,
+          "competing_anchors": 12,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "915fe5b560cb0bdb402c1cc55cc597ea6c929fd02fa3e58570b898ed35fb9125"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi/3",
+          "anchor": "wts_35_51:981:59",
+          "editorial_heading": "phyi",
+          "editorial_homonym": "3",
+          "dual_heading": false,
+          "competing_anchors": 12,
+          "definition_alphanumeric": 25,
+          "anchor_sha256": "915fe5b560cb0bdb402c1cc55cc597ea6c929fd02fa3e58570b898ed35fb9125"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20dor/1",
+          "anchor": "wts_35_51:981:73",
+          "editorial_heading": "phyi dor",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "172af869752116ac1608acf548323c55da65f3013f814d61979f97cdbd73f2f5"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20dril/1",
+          "anchor": "wts_35_51:981:75",
+          "editorial_heading": "phyi dril",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 15,
+          "anchor_sha256": "9fc3607b5e78601dbb5a19ff51d844a08496685764620d1d6ad0e85ecfe18666"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/phyi%20dro/1",
+          "anchor": "wts_35_51:981:77",
+          "editorial_heading": "phyi dro",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 15,
+          "anchor_sha256": "0195fe7fd832c4020f0fd649c78f0ba2551f767fcbd133fd01e4d465d61b1f96"
+        }
+      ],
+      "candidate_count": 17,
+      "unique_dual_heading": 6,
+      "homonym_controls": 21,
+      "sparse_definition_controls": 13,
       "selection_reason": "sparse-definition control"
     },
     {
@@ -6460,272 +6490,6 @@
     {
       "family": "wts_8_b",
       "source": "WtS_8-b",
-      "physical_page": 199,
-      "printed_volume": null,
-      "printed_folio": null,
-      "geometry": null,
-      "status": "unreviewed candidate page",
-      "candidates": [
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20ba%20nag%20po/1",
-          "anchor": "wts_8_b:199:1",
-          "editorial_heading": "byi ba nag po",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 16,
-          "anchor_sha256": "5361196bf8070fe9b7400003b9be3b09a4644556ab12c1f42750da34c1a49e76"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20ba%20nag%20po/1",
-          "anchor": "wts_8_b:199:10",
-          "editorial_heading": "byi ba nag po",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 16,
-          "anchor_sha256": "0a4723aeea2af0ef379415faee315e0011c9b93ccc4eedfb1750a79f2b8e3fb6"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/bo/1",
-          "anchor": "wts_8_b:199:40",
-          "editorial_heading": "bo",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 8,
-          "definition_alphanumeric": 9,
-          "anchor_sha256": "bf359319cd1cac16d8557bb6512cd45594de5e9a993fb08926d26285c172eb2f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/bo/2",
-          "anchor": "wts_8_b:199:40",
-          "editorial_heading": "bo",
-          "editorial_homonym": "2",
-          "dual_heading": false,
-          "competing_anchors": 8,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "bf359319cd1cac16d8557bb6512cd45594de5e9a993fb08926d26285c172eb2f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/bo/3",
-          "anchor": "wts_8_b:199:40",
-          "editorial_heading": "bo",
-          "editorial_homonym": "3",
-          "dual_heading": false,
-          "competing_anchors": 8,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "bf359319cd1cac16d8557bb6512cd45594de5e9a993fb08926d26285c172eb2f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/bo/4",
-          "anchor": "wts_8_b:199:40",
-          "editorial_heading": "bo",
-          "editorial_homonym": "4",
-          "dual_heading": false,
-          "competing_anchors": 8,
-          "definition_alphanumeric": 80,
-          "anchor_sha256": "bf359319cd1cac16d8557bb6512cd45594de5e9a993fb08926d26285c172eb2f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mo/1",
-          "anchor": "wts_8_b:199:46",
-          "editorial_heading": "byi mo",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 4,
-          "definition_alphanumeric": 27,
-          "anchor_sha256": "a21221c022ffe9048562037813cdd2676efdd26f1a03c0eddf68866d86f7e2ec"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mo/2",
-          "anchor": "wts_8_b:199:46",
-          "editorial_heading": "byi mo",
-          "editorial_homonym": "2",
-          "dual_heading": false,
-          "competing_anchors": 4,
-          "definition_alphanumeric": 16,
-          "anchor_sha256": "a21221c022ffe9048562037813cdd2676efdd26f1a03c0eddf68866d86f7e2ec"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20bo/1",
-          "anchor": "wts_8_b:199:59",
-          "editorial_heading": "byi bo",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 19,
-          "anchor_sha256": "27393a3571c6b3584d37393bc51e0ac0e1776efda838f80669d3b496e33b10f8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20bo/2",
-          "anchor": "wts_8_b:199:59",
-          "editorial_heading": "byi bo",
-          "editorial_homonym": "2",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 44,
-          "anchor_sha256": "27393a3571c6b3584d37393bc51e0ac0e1776efda838f80669d3b496e33b10f8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20bo/3",
-          "anchor": "wts_8_b:199:59",
-          "editorial_heading": "byi bo",
-          "editorial_homonym": "3",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 8,
-          "anchor_sha256": "27393a3571c6b3584d37393bc51e0ac0e1776efda838f80669d3b496e33b10f8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20bo/4",
-          "anchor": "wts_8_b:199:59",
-          "editorial_heading": "byi bo",
-          "editorial_homonym": "4",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "27393a3571c6b3584d37393bc51e0ac0e1776efda838f80669d3b496e33b10f8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20brun/1",
-          "anchor": "wts_8_b:199:60",
-          "editorial_heading": "byi brun",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 10,
-          "anchor_sha256": "fc80d32e6db0bd99fc017b485cd284ad52660cb84b2dc5b6fb7366bc9b2885e2"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20brun/2",
-          "anchor": "wts_8_b:199:60",
-          "editorial_heading": "byi brun",
-          "editorial_homonym": "2",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 11,
-          "anchor_sha256": "fc80d32e6db0bd99fc017b485cd284ad52660cb84b2dc5b6fb7366bc9b2885e2"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20brun/1",
-          "anchor": "wts_8_b:199:62",
-          "editorial_heading": "byi brun",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 10,
-          "anchor_sha256": "3eefe46f6d87718ff06ec398f540f8233ee53c9183f1506c6aa30375fc08c430"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20brun/2",
-          "anchor": "wts_8_b:199:62",
-          "editorial_heading": "byi brun",
-          "editorial_homonym": "2",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 11,
-          "anchor_sha256": "3eefe46f6d87718ff06ec398f540f8233ee53c9183f1506c6aa30375fc08c430"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20bla%E2%80%99i%20rgyal%20mtshan/1",
-          "anchor": "wts_8_b:199:65",
-          "editorial_heading": "byi bla’i rgyal mtshan",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 34,
-          "anchor_sha256": "a792b64bf7c2ae0c75f05e1def3b148daffdd0e63541f438ee934a526379845b"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mug/1",
-          "anchor": "wts_8_b:199:68",
-          "editorial_heading": "byi mug",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 15,
-          "anchor_sha256": "b9b0b911e1297a9723d4cea43bbcfdf162704ebf929dc1f92559e27b6f9ad7eb"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mug/2",
-          "anchor": "wts_8_b:199:68",
-          "editorial_heading": "byi mug",
-          "editorial_homonym": "2",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "b9b0b911e1297a9723d4cea43bbcfdf162704ebf929dc1f92559e27b6f9ad7eb"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mug/1",
-          "anchor": "wts_8_b:199:70",
-          "editorial_heading": "byi mug",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 15,
-          "anchor_sha256": "7bfa3ec4eafc9ed019b027923c6920a1a4dc9514eca65a558e9981bfd33d558d"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mug/2",
-          "anchor": "wts_8_b:199:70",
-          "editorial_heading": "byi mug",
-          "editorial_homonym": "2",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "7bfa3ec4eafc9ed019b027923c6920a1a4dc9514eca65a558e9981bfd33d558d"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mu%E1%B9%85/1",
-          "anchor": "wts_8_b:199:71",
-          "editorial_heading": "byi muṅ",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 17,
-          "anchor_sha256": "c5d8977d6b8939b12bf01b7de07fc2afbf8debabc2f20be9ce3ca4b21178f019"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mu%E1%B9%85/2",
-          "anchor": "wts_8_b:199:71",
-          "editorial_heading": "byi muṅ",
-          "editorial_homonym": "2",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 23,
-          "anchor_sha256": "c5d8977d6b8939b12bf01b7de07fc2afbf8debabc2f20be9ce3ca4b21178f019"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mo/1",
-          "anchor": "wts_8_b:199:76",
-          "editorial_heading": "byi mo",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 4,
-          "definition_alphanumeric": 27,
-          "anchor_sha256": "16524b08be8ea0ca8192edcc8ed58eae183da48da7d42dfffb24336853775e42"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/byi%20mo/2",
-          "anchor": "wts_8_b:199:76",
-          "editorial_heading": "byi mo",
-          "editorial_homonym": "2",
-          "dual_heading": false,
-          "competing_anchors": 4,
-          "definition_alphanumeric": 16,
-          "anchor_sha256": "16524b08be8ea0ca8192edcc8ed58eae183da48da7d42dfffb24336853775e42"
-        }
-      ],
-      "candidate_count": 18,
-      "unique_dual_heading": 0,
-      "homonym_controls": 25,
-      "sparse_definition_controls": 19,
-      "selection_reason": "competing/numbered homonym control"
-    },
-    {
-      "family": "wts_8_b",
-      "source": "WtS_8-b",
       "physical_page": 410,
       "printed_volume": null,
       "printed_folio": null,
@@ -6947,6 +6711,212 @@
       "unique_dual_heading": 2,
       "homonym_controls": 21,
       "sparse_definition_controls": 11,
+      "selection_reason": "competing/numbered homonym control"
+    },
+    {
+      "family": "wts_8_b",
+      "source": "WtS_8-b",
+      "physical_page": 385,
+      "printed_volume": null,
+      "printed_folio": null,
+      "geometry": null,
+      "status": "unreviewed candidate page",
+      "candidates": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%E1%B9%85/1",
+          "anchor": "wts_8_b:385:1",
+          "editorial_heading": "dbuṅ",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 42,
+          "anchor_sha256": "da6b5cdaeb3b6fe7f9485f389cbf775f94f52707f8e70d3b192b400e437ccc48"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%E1%B9%85/1",
+          "anchor": "wts_8_b:385:9",
+          "editorial_heading": "dbuṅ",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 2,
+          "definition_alphanumeric": 42,
+          "anchor_sha256": "fe86b7355f75d95a82a4221905f8c4c1f6bce354604a0c0c427827435e376d62"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbud/1",
+          "anchor": "wts_8_b:385:20",
+          "editorial_heading": "dbud",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 12,
+          "anchor_sha256": "880e6112973e90ea2930153e5764fc228fe7f7236654f710c559a63300c4ec29"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbud/2",
+          "anchor": "wts_8_b:385:20",
+          "editorial_heading": "dbud",
+          "editorial_homonym": "2",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 12,
+          "anchor_sha256": "880e6112973e90ea2930153e5764fc228fe7f7236654f710c559a63300c4ec29"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbub/1",
+          "anchor": "wts_8_b:385:26",
+          "editorial_heading": "dbub",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 21,
+          "anchor_sha256": "079888c9b05f7590f64f9c86abec6baca6dc3f882f46210116fa1b7c5267b856"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%E2%80%99%20skas/1",
+          "anchor": "wts_8_b:385:36",
+          "editorial_heading": "dbu’ skas",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 6,
+          "anchor_sha256": "dea1fd8819b8ec8643e71e3f8989e8e6c7a5b68ef1966fc00d9bb960db40b365"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbul/1",
+          "anchor": "wts_8_b:385:40",
+          "editorial_heading": "dbul",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 3,
+          "definition_alphanumeric": 17,
+          "anchor_sha256": "8867a798da7e11518a4e9389a201feeec7bb347fde94e129263c9d794333d065"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbul/2",
+          "anchor": "wts_8_b:385:40",
+          "editorial_heading": "dbul",
+          "editorial_homonym": "2",
+          "dual_heading": false,
+          "competing_anchors": 3,
+          "definition_alphanumeric": 96,
+          "anchor_sha256": "8867a798da7e11518a4e9389a201feeec7bb347fde94e129263c9d794333d065"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbul/3",
+          "anchor": "wts_8_b:385:40",
+          "editorial_heading": "dbul",
+          "editorial_homonym": "3",
+          "dual_heading": false,
+          "competing_anchors": 3,
+          "definition_alphanumeric": 27,
+          "anchor_sha256": "8867a798da7e11518a4e9389a201feeec7bb347fde94e129263c9d794333d065"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%E2%80%99%20%E2%80%99bre%E1%B9%85/1",
+          "anchor": "wts_8_b:385:41",
+          "editorial_heading": "dbu’ ’breṅ",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 4,
+          "anchor_sha256": "fb36c1f3e519f078a1fcefcc64fc9020f33ce4fffbe5d27e8c78b5714cf9cee7"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%E2%80%99i%20s%E1%B9%85as/1",
+          "anchor": "wts_8_b:385:45",
+          "editorial_heading": "dbu’i sṅas",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "f82e4880d528a53e34746d122f40b8cd9fb85ad670a25dd61b1a82567ac4cda6"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%E2%80%99i%20gtsug%20tor/1",
+          "anchor": "wts_8_b:385:47",
+          "editorial_heading": "dbu’i gtsug tor",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "e159c159b3140755bbff51cc9527b2245a2f2093aab6dea5e0fd9d71d1ef2998"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbur/1",
+          "anchor": "wts_8_b:385:48",
+          "editorial_heading": "dbur",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 39,
+          "anchor_sha256": "0a3e9d972564a3266a426831b4a443c866d188e98a70f984d3c8eff6691ed4fb"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbur%20ltir/1",
+          "anchor": "wts_8_b:385:58",
+          "editorial_heading": "dbur ltir",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 10,
+          "anchor_sha256": "376a78320baf4622efa9858778242bb84c373fe1cd1777bec4582a2ffb65dfd6"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbur%20rdo/1",
+          "anchor": "wts_8_b:385:63",
+          "editorial_heading": "dbur rdo",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 33,
+          "anchor_sha256": "8b3171baad4480a3b7ba0a9dc6a50fd06a8056998cc5a9aeaa072e11eb8f057b"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbur%20%C5%9Bi%E1%B9%85/1",
+          "anchor": "wts_8_b:385:71",
+          "editorial_heading": "dbur śiṅ",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 18,
+          "anchor_sha256": "9dd279c46a7912309d4a159cc39bd7103c5941355cfb9d3e7805e94dc68f8f15"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbul/1",
+          "anchor": "wts_8_b:385:74",
+          "editorial_heading": "dbul",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 3,
+          "definition_alphanumeric": 17,
+          "anchor_sha256": "af30b2d07aaeb26cb0eb79ca81acbc1b33a9029bd1c52cb6999304609ff2fd2e"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbul/2",
+          "anchor": "wts_8_b:385:74",
+          "editorial_heading": "dbul",
+          "editorial_homonym": "2",
+          "dual_heading": false,
+          "competing_anchors": 3,
+          "definition_alphanumeric": 96,
+          "anchor_sha256": "af30b2d07aaeb26cb0eb79ca81acbc1b33a9029bd1c52cb6999304609ff2fd2e"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/dbul/3",
+          "anchor": "wts_8_b:385:74",
+          "editorial_heading": "dbul",
+          "editorial_homonym": "3",
+          "dual_heading": false,
+          "competing_anchors": 3,
+          "definition_alphanumeric": 27,
+          "anchor_sha256": "af30b2d07aaeb26cb0eb79ca81acbc1b33a9029bd1c52cb6999304609ff2fd2e"
+        }
+      ],
+      "candidate_count": 15,
+      "unique_dual_heading": 4,
+      "homonym_controls": 19,
+      "sparse_definition_controls": 10,
       "selection_reason": "competing/numbered homonym control"
     },
     {
@@ -7300,102 +7270,6 @@
       "homonym_controls": 18,
       "sparse_definition_controls": 12,
       "selection_reason": "sparse-definition control"
-    },
-    {
-      "family": "wts_9_m",
-      "source": "WtS_9-m",
-      "physical_page": 27,
-      "printed_volume": null,
-      "printed_folio": null,
-      "geometry": null,
-      "status": "unreviewed candidate page",
-      "candidates": [
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20thog/1",
-          "anchor": "wts_9_m:27:14",
-          "editorial_heading": "ma thog",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 93,
-          "anchor_sha256": "c0f1eb308dd1c7be441a90736224633c836bc7ea874053a56a829ecb69cebd29"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20thod/1",
-          "anchor": "wts_9_m:27:35",
-          "editorial_heading": "ma thod",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 23,
-          "anchor_sha256": "03c8a3e683e25867e6e58bfee10420d69182d2467d97ca2ee661313c4fad6e4d"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20mtha%E2%80%99/1",
-          "anchor": "wts_9_m:27:38",
-          "editorial_heading": "ma mtha’",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "d83a006b82749b47df95269ca7a1e0b4e7d232bf1d836130b67e38a7da9bfade"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20da%20na/1",
-          "anchor": "wts_9_m:27:39",
-          "editorial_heading": "ma da na",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 115,
-          "anchor_sha256": "6e7641258a22c35e13b9a867ddb7a9cd17b6f803456472c21bd59066e677cfc6"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20dri/1",
-          "anchor": "wts_9_m:27:43",
-          "editorial_heading": "ma dri",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 44,
-          "anchor_sha256": "ee2211e00bec7850b4aec3e0854c53a17e5ea8f4a0f3e81198159813a88597b4"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20du%20ra/1",
-          "anchor": "wts_9_m:27:61",
-          "editorial_heading": "ma du ra",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 26,
-          "anchor_sha256": "55883e92b1d8b8c3e71e1a196f881fd33ba6a577cb6020f1095e06cce2f5a835"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20dra%E1%B9%85s%20pa/1",
-          "anchor": "wts_9_m:27:64",
-          "editorial_heading": "ma draṅs pa",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 23,
-          "anchor_sha256": "c02cfd53e93d1ccbb0966170012ea7996d25046154457be5bde67b9f618dd4e1"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20dri/1",
-          "anchor": "wts_9_m:27:76",
-          "editorial_heading": "ma dri",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 2,
-          "definition_alphanumeric": 44,
-          "anchor_sha256": "3301d666c33f572c308fb60daa19c94fc62a1e7e934049b1c34f28dc7af5dc1b"
-        }
-      ],
-      "candidate_count": 7,
-      "unique_dual_heading": 5,
-      "homonym_controls": 8,
-      "sparse_definition_controls": 1,
-      "selection_reason": "density and independent-review potential"
     },
     {
       "family": "wts_9_m",
@@ -8252,6 +8126,122 @@
     {
       "family": "wts_9_m",
       "source": "WtS_9-m",
+      "physical_page": 274,
+      "printed_volume": null,
+      "printed_folio": null,
+      "geometry": null,
+      "status": "unreviewed candidate page",
+      "candidates": [
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/mya%E1%B9%85%20ro/1",
+          "anchor": "wts_9_m:274:1",
+          "editorial_heading": "myaṅ ro",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 48,
+          "anchor_sha256": "07a7a0aa3d5b839eded7da1107f3cac8c65f0d74f98e173aef4f971537ea09ba"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/mya%E1%B9%85s/1",
+          "anchor": "wts_9_m:274:11",
+          "editorial_heading": "myaṅs",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 33,
+          "anchor_sha256": "4949e1824544ebcf5303aca18f0f365f3ea8abe173bf1a8a49a2aa07b062d9b8"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/myad%20pa/1",
+          "anchor": "wts_9_m:274:37",
+          "editorial_heading": "myad pa",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 8,
+          "anchor_sha256": "f0b55680b9d0369e26252dfed0df32e0c27ca4cf905bd19846a1a2763ba48c0a"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/myi/1",
+          "anchor": "wts_9_m:274:39",
+          "editorial_heading": "myi",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 4,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "da636cb30ed424741d40b5499522e4c1cec8db6c6aa9b0bfe999320be8c57030"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/myi%20bu/1",
+          "anchor": "wts_9_m:274:41",
+          "editorial_heading": "myi bu",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 4,
+          "anchor_sha256": "61f03150c3359d237eae20d715cd9aaf6a3ff27b2c3261c1945772480d0ef99e"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/myi%20bya/1",
+          "anchor": "wts_9_m:274:48",
+          "editorial_heading": "myi bya",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 11,
+          "anchor_sha256": "938ee91d57c85cf76574c3a8753e9a3625442c3eabc9d981fc3003a9b2af2b96"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/myi%20%E2%80%99ba%E1%B9%85s/1",
+          "anchor": "wts_9_m:274:51",
+          "editorial_heading": "myi ’baṅs",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 8,
+          "anchor_sha256": "f845d8321f8a1667b48ff4424e8a63f92231c0b240a896dee02eb5aadfd2825f"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/myig/1",
+          "anchor": "wts_9_m:274:55",
+          "editorial_heading": "myig",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "4b4798d317e60410a0f864097fd108602c754720987ae2747442979669f214ba"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/myig%20ma%20mkhan/1",
+          "anchor": "wts_9_m:274:57",
+          "editorial_heading": "myig ma mkhan",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 0,
+          "anchor_sha256": "c1403b0085ec0e9106575bee6a68dac5270ffc720ab16be783919e49573d3ddb"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/myu%20gu/1",
+          "anchor": "wts_9_m:274:66",
+          "editorial_heading": "myu gu",
+          "editorial_homonym": "1",
+          "dual_heading": true,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 51,
+          "anchor_sha256": "bd99569d87247c2bd6dd8504cacb35f8ec5fc882de9636f9c4a4e994caa275c8"
+        }
+      ],
+      "candidate_count": 10,
+      "unique_dual_heading": 4,
+      "homonym_controls": 10,
+      "sparse_definition_controls": 7,
+      "selection_reason": "density and independent-review potential"
+    },
+    {
+      "family": "wts_9_m",
+      "source": "WtS_9-m",
       "physical_page": 321,
       "printed_volume": null,
       "printed_folio": null,
@@ -8680,115 +8670,115 @@
     {
       "family": "wts_9_m",
       "source": "WtS_9-m",
-      "physical_page": 274,
+      "physical_page": 374,
       "printed_volume": null,
       "printed_folio": null,
       "geometry": null,
       "status": "unreviewed candidate page",
       "candidates": [
         {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/mya%E1%B9%85%20ro/1",
-          "anchor": "wts_9_m:274:1",
-          "editorial_heading": "myaṅ ro",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sme/1",
+          "anchor": "wts_9_m:374:4",
+          "editorial_heading": "sme",
           "editorial_homonym": "1",
           "dual_heading": false,
           "competing_anchors": 1,
-          "definition_alphanumeric": 48,
-          "anchor_sha256": "07a7a0aa3d5b839eded7da1107f3cac8c65f0d74f98e173aef4f971537ea09ba"
+          "definition_alphanumeric": 19,
+          "anchor_sha256": "a3ca13cfdc25acfc3a9ee4ffc77c91b9b88bb173f24599734c64f5dee59fdd46"
         },
         {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/mya%E1%B9%85s/1",
-          "anchor": "wts_9_m:274:11",
-          "editorial_heading": "myaṅs",
-          "editorial_homonym": "1",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sme/2",
+          "anchor": "wts_9_m:374:4",
+          "editorial_heading": "sme",
+          "editorial_homonym": "2",
           "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 33,
-          "anchor_sha256": "4949e1824544ebcf5303aca18f0f365f3ea8abe173bf1a8a49a2aa07b062d9b8"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/myad%20pa/1",
-          "anchor": "wts_9_m:274:37",
-          "editorial_heading": "myad pa",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 8,
-          "anchor_sha256": "f0b55680b9d0369e26252dfed0df32e0c27ca4cf905bd19846a1a2763ba48c0a"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/myi/1",
-          "anchor": "wts_9_m:274:39",
-          "editorial_heading": "myi",
-          "editorial_homonym": "1",
-          "dual_heading": false,
-          "competing_anchors": 4,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "da636cb30ed424741d40b5499522e4c1cec8db6c6aa9b0bfe999320be8c57030"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/myi%20bu/1",
-          "anchor": "wts_9_m:274:41",
-          "editorial_heading": "myi bu",
-          "editorial_homonym": "1",
-          "dual_heading": true,
           "competing_anchors": 1,
           "definition_alphanumeric": 4,
-          "anchor_sha256": "61f03150c3359d237eae20d715cd9aaf6a3ff27b2c3261c1945772480d0ef99e"
+          "anchor_sha256": "a3ca13cfdc25acfc3a9ee4ffc77c91b9b88bb173f24599734c64f5dee59fdd46"
         },
         {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/myi%20bya/1",
-          "anchor": "wts_9_m:274:48",
-          "editorial_heading": "myi bya",
-          "editorial_homonym": "1",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sme/3",
+          "anchor": "wts_9_m:374:4",
+          "editorial_heading": "sme",
+          "editorial_homonym": "3",
           "dual_heading": false,
           "competing_anchors": 1,
-          "definition_alphanumeric": 11,
-          "anchor_sha256": "938ee91d57c85cf76574c3a8753e9a3625442c3eabc9d981fc3003a9b2af2b96"
+          "definition_alphanumeric": 4,
+          "anchor_sha256": "a3ca13cfdc25acfc3a9ee4ffc77c91b9b88bb173f24599734c64f5dee59fdd46"
         },
         {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/myi%20%E2%80%99ba%E1%B9%85s/1",
-          "anchor": "wts_9_m:274:51",
-          "editorial_heading": "myi ’baṅs",
-          "editorial_homonym": "1",
-          "dual_heading": true,
-          "competing_anchors": 1,
-          "definition_alphanumeric": 8,
-          "anchor_sha256": "f845d8321f8a1667b48ff4424e8a63f92231c0b240a896dee02eb5aadfd2825f"
-        },
-        {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/myig/1",
-          "anchor": "wts_9_m:274:55",
-          "editorial_heading": "myig",
-          "editorial_homonym": "1",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sme/4",
+          "anchor": "wts_9_m:374:4",
+          "editorial_heading": "sme",
+          "editorial_homonym": "4",
           "dual_heading": false,
           "competing_anchors": 1,
           "definition_alphanumeric": 0,
-          "anchor_sha256": "4b4798d317e60410a0f864097fd108602c754720987ae2747442979669f214ba"
+          "anchor_sha256": "a3ca13cfdc25acfc3a9ee4ffc77c91b9b88bb173f24599734c64f5dee59fdd46"
         },
         {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/myig%20ma%20mkhan/1",
-          "anchor": "wts_9_m:274:57",
-          "editorial_heading": "myig ma mkhan",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/smra/1",
+          "anchor": "wts_9_m:374:4",
+          "editorial_heading": "smra",
           "editorial_homonym": "1",
-          "dual_heading": true,
+          "dual_heading": false,
           "competing_anchors": 1,
-          "definition_alphanumeric": 0,
-          "anchor_sha256": "c1403b0085ec0e9106575bee6a68dac5270ffc720ab16be783919e49573d3ddb"
+          "definition_alphanumeric": 382,
+          "anchor_sha256": "a3ca13cfdc25acfc3a9ee4ffc77c91b9b88bb173f24599734c64f5dee59fdd46"
         },
         {
-          "source_id": "badw:https://wts-digital.badw.de/lemma/myu%20gu/1",
-          "anchor": "wts_9_m:274:66",
-          "editorial_heading": "myu gu",
-          "editorial_homonym": "1",
-          "dual_heading": true,
+          "source_id": "badw:https://wts-digital.badw.de/lemma/smra/2",
+          "anchor": "wts_9_m:374:4",
+          "editorial_heading": "smra",
+          "editorial_homonym": "2",
+          "dual_heading": false,
           "competing_anchors": 1,
-          "definition_alphanumeric": 51,
-          "anchor_sha256": "bd99569d87247c2bd6dd8504cacb35f8ec5fc882de9636f9c4a4e994caa275c8"
+          "definition_alphanumeric": 18,
+          "anchor_sha256": "a3ca13cfdc25acfc3a9ee4ffc77c91b9b88bb173f24599734c64f5dee59fdd46"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sme%20thig/1",
+          "anchor": "wts_9_m:374:19",
+          "editorial_heading": "sme thig",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 9,
+          "anchor_sha256": "e08daf0bb91a67d6f64c597ad67280c866ed01c1f7a49fb525502f366d028c7d"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sme%20bdun/1",
+          "anchor": "wts_9_m:374:23",
+          "editorial_heading": "sme bdun",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 19,
+          "anchor_sha256": "74459bea5f0164432bf917c284146652cbc0b50076a7e91efc42e01f2ee93b35"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sme%20phre%E1%B9%85/1",
+          "anchor": "wts_9_m:374:31",
+          "editorial_heading": "sme phreṅ",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 114,
+          "anchor_sha256": "0dcf4b4f29de3de44867393b5f5987095c93161831d0e1f46bf9d5698b71e8ff"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/sme%20ba/1",
+          "anchor": "wts_9_m:374:36",
+          "editorial_heading": "sme ba",
+          "editorial_homonym": "1",
+          "dual_heading": false,
+          "competing_anchors": 1,
+          "definition_alphanumeric": 186,
+          "anchor_sha256": "671c122f47ffb35f634c60ece18c2dbc4b4b12db5bddea52c729cf2512f319b9"
         }
       ],
       "candidate_count": 10,
-      "unique_dual_heading": 4,
+      "unique_dual_heading": 0,
       "homonym_controls": 10,
       "sparse_definition_controls": 7,
       "selection_reason": "sparse-definition control"
