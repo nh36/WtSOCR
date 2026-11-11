@@ -1,0 +1,5 @@
+# Optional worker dependencies; the certificate compiler does not need these.
+openai==3.49.0
+jsonschema>=4.26,<5
+PyMuPDF>=1.26,<2
+Pillow>=11.3,<13

@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "frozen_at_commit": "b60a802bde334692af4ceea238e803f60015b6eb",
+  "policy": "Frozen before prompt experiments. Locators only; no answers in model inputs. Existing agent certificates are provisional reference subsets, not independent gold. Heldout pages must not be used for tuning.",
+  "pages": [
+    {
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "split": "development",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 86,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 159,
+      "split": "development",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 81,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 120,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 99,
+      "split": "development",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 62,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 222,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 215,
+      "split": "development",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 107,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_1_34",
+      "physical_page": 194,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 682,
+      "split": "development",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 683,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 733,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 859,
+      "split": "development",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 636,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 616,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 723,
+      "split": "development",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 425,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 226,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 35,
+      "split": "development",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 91,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_35_51",
+      "physical_page": 120,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 13,
+      "split": "development",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 18,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 358,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 322,
+      "split": "development",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 56,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 480,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 263,
+      "split": "development",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 227,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 181,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 330,
+      "split": "development",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 374,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_8_b",
+      "physical_page": 22,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 17,
+      "split": "development",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 16,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 74,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 151,
+      "split": "development",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 359,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 360,
+      "split": "heldout",
+      "reference_status": "previously certified subset; full census not established"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 27,
+      "split": "development",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 316,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 364,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 195,
+      "split": "development",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 372,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    },
+    {
+      "family": "wts_9_m",
+      "physical_page": 32,
+      "split": "heldout",
+      "reference_status": "uninspected; reference census required"
+    }
+  ]
+}

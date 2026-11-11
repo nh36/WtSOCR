@@ -64,6 +64,13 @@ PROJECT_LOCAL_IMPORTS = {
     "tests",
 }
 
+# Optional, isolated model worker: SDK transport, strict response validation and
+# PDF rasterisation. Installation and live-call gates are documented in
+# docs/BADW_SOURCE_INTEGRATION.md and requirements-badw-model.txt.
+FILE_NON_STDLIB_IMPORTS = {
+    "scripts/badw_model_worker.py": {"openai", "jsonschema", "pymupdf"},
+}
+
 ZERO_SHA = "0" * 40
 
 NARRATIVE_REPORT_ERROR = (
@@ -373,7 +380,8 @@ def check_imports(changes: list[FileChange], errors: list[str]) -> None:
         except SyntaxError as exc:
             errors.append(f"{path.relative_to(ROOT)}: could not parse Python: {exc}")
             continue
-        for root in sorted(roots - allowed):
+        file_allowed = FILE_NON_STDLIB_IMPORTS.get(path.relative_to(ROOT).as_posix(), set())
+        for root in sorted(roots - allowed - file_allowed):
             errors.append(f"{path.relative_to(ROOT)} imports {root}: {IMPORT_ERROR}")
 
 
