@@ -35,7 +35,15 @@ const {chromium}=require('playwright-core');
    const observation=provenance.evidence.certificate.print_observation;
    assert.equal(observation.verification,'visual transcription; not machine-verified');
    assert.equal(observation.heading,provenance.printed_heading);
-   assert.equal(observation.heading_anchor,observation.evidence_anchor);
+   if(provenance.evidence.certificate.certificate_type==='direct-source-heading-v1'){
+    const certificate=provenance.evidence.certificate;
+    assert.equal(provenance.evidence.heading_item_sha256,certificate.heading_item_sha256);
+    assert.equal(certificate.source_review.decision,'accept');
+    assert(certificate.heading_id);
+    assert(!('anchor' in certificate));
+   }else{
+    assert.equal(observation.heading_anchor,observation.evidence_anchor);
+   }
   }
   assert(!('original_url' in provenance));
   assert(!/file:|\/Users\/|\/private\//.test(JSON.stringify(body)));

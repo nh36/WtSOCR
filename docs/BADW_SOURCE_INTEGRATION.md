@@ -676,7 +676,7 @@ review effort was not individually timed. Full reader generation took 874.6
 seconds, recorded separately from source review. Intermediate compilation used
 the existing compiler without repeatedly rebuilding the complete reader.
 
-## Current production milestone: 583 links (2026-11-11)
+## Historical production milestone: 583 links (2026-11-11)
 
 The 476-link milestone above is historical. The reviewed ledger now adds 107
 attachments, giving 551 generated and 32 unchanged manual links: **583 total**.
@@ -726,83 +726,163 @@ errors. Browser navigation is functional evidence, separate from the source
 identity inspection described above. Five inherited status warnings remain;
 they are not new test failures. No OCR release files changed.
 
-### Experimental model worker: reproducible offline, live benchmark pending
+## Current production milestone: 688 links (2026-11-12)
 
-`scripts/badw_model_worker.py` uses the existing draft preparer and compiler;
-it does not grant publication authority. Fixed prompts and strict schemas live
-in `data/badw_model_{inventory,match}_prompt.txt`. Inventory requests contain the
-source image without accepted decisions or proposed candidate headings. Matching
-retrieves authoritative HTML evidence using historical associations and exact
-observed headings, retaining uncertainty and unmatched articles. Image transforms,
-source/image/input hashes and prompt/model versions bind resumable responses.
-Model coordinates and readings remain provisional until source inspection.
+The reader contains 656 generated and 32 manual attachments: **688 total**, an
+increase of 105 over the protected 583-link baseline. The new fixture
+`tests/fixtures/badw_print_583_additions.json` preserves the 107 assignments added
+between 476 and 583, alongside the earlier baseline fixtures. Existing reviewed
+assertions and negative decisions remain unchanged.
 
-The frozen 48-page locator set (`data/badw_model_evaluation_pages.json`) has twelve
-pages per scan family and separate development/held-out splits. Its reference
-status describes the freeze at commit b60a802. It is **not a completed gold
-standard**: complete independently reviewed reference inventories, live Luna/Terra
-outputs, resolution comparisons and accuracy/cost measurements remain pending.
-No model-assisted links or paid requests are claimed by this milestone.
+Thirty-three additions recover earlier deferrals on volume 1 pages 58–59,
+126–127 and 352–353, volume 8 page 189 and volume 9 page 23. The remaining 72
+are on volume 7 pages 114 and 199, volume 8 pages 4, 10, 375 and 400, and
+volume 9 page 14. Five new page derivatives bring the total to 88; existing
+reviewed geometry is reused on the other pages. Source inspection and certificate
+preparation were interleaved and not separately instrumented; no precise active
+review-time claim is made. These are coding-agent source-image reviews, not
+independent human adjudications or automatically promoted model identifications.
+The three deferred Tibetan-component reference cases remain deferred.
 
-Optional dependencies are isolated from the ordinary compiler:
+The batch records 110 reviewed inventory items on 15 printed folios (12 physical
+scans). Seven folios have a complete inspected census: 77 article starts and
+14 separately recorded exclusions; eight recovery-page inventories are partial
+and contain 33 items. Five inventory items were already linked. All 105 new
+attachments have exact acquired HTML counterparts; this does not establish a
+complete census for the eight partial pages or the remaining dictionary.
+Sixty new links use the direct-source pathway and 45 use historical bindings.
+
+A further same-agent source-first check covered volume 1 pages 352–353, volume 7
+page 114, volume 8 page 10 and volume 9 page 14, across all four scan families.
+It included the skra compounds and their lexical citations, phyi thum and the
+phyi reference articles, explicitly numbered ba la¹/² and ba laṅ¹, short ma gal
+and ma gu ta definitions, and the ma ga dha pa article crossing columns. Running
+headers and preceding continuations were distinguished from article starts.
+This reinspection agreed with the recorded assignments; it is neither independent
+human adjudication nor a statistical precision estimate.
+
+The complete 29,878-witness reader built in 876.6 seconds. Preservation checks
+compared every witness body: all 11,840 PDF-derived bodies and the reference-case
+data are byte-identical, all 583 earlier attachments remain, and all 83 earlier
+derivatives retain their bytes and metadata. Only the 105 newly attached HTML
+witnesses acquired changed source attachments. The generated ledger passes its
+compiler check against the acquired HTML bodies.
+
+Validation passed: 121 focused certificate/draft/facsimile/worker tests;
+342 reader/source/regression tests with 62 subtests; and 21 Node tests, exiting
+normally. The required Python compilation checks, repository hygiene and
+whitespace checks passed. Five existing release-validation warnings remain
+unchanged. The full-reader desktop/mobile browser journeys passed with no
+browser errors and exited normally. Chrome required execution outside the
+filesystem sandbox; the initial sandbox launch failures were environmental.
+The facsimile browser suite checked all 688 attachments at desktop and mobile
+widths, opened all 88 distinct single-page PDFs and made three mobile PDF
+comparisons, with no browser errors. A separate run opened all 105 new links,
+captured their displayed printed pages and verified return to the correct HTML
+entry. Both processes exited normally with status zero; facsimile Chrome teardown
+was slow. Displayed headings were also inspected against the source reviews.
+
+### Direct source-reviewed certificates and durable inventories
+
+`direct-source-heading-v1` is a separate certificate pathway. It requires a
+checksum-bound registered scan and reviewed page geometry, a stable reviewed
+inventory item, heading and lexical-evidence coordinates within an article
+region, explicit printed homonym treatment, neighbouring article context,
+boundary and identity reasons, and exact acquired HTML/component bindings.
+It records the absent or defective historical C6/C11 evidence and its hashes;
+it never manufactures historical anchors or edges. Reconsidered negative decisions
+are explicitly bound to their previous records. The compiler checks these
+mechanical bindings; it cannot itself verify a printed transcription.
+
+Reviewed page inventories retain stable item IDs, coordinates, actual readings,
+source context, decisions and separate exclusions. A complete-census flag is
+used only after examining the entire printed page. Provisional model inventories
+remain in ignored run storage and are not substituted for reviewed inventories.
+`prepare_badw_print_drafts.py` can prepare direct-source drafts, but cannot grant
+publication authority. Tests reject running headers, embedded expressions,
+competing homonyms, wrong pages, definition mismatches and tampered bindings.
+
+### Model worker: live calls demonstrated, production accuracy not established
+
+`scripts/badw_model_worker.py` now joins actual inventory and matching outputs
+for evaluation without dropping unmatched or abstained inventory items. It
+preserves item IDs, image hashes, source identities and coordinate transforms.
+Targeted article crops map back to the original page; candidate HTML evidence is
+bounded while retaining competing identities. Offline tests exercise
+prepare → inventory → retrieve → match → evaluate → review. Evaluation requires
+explicit source-reviewed reference provenance and a complete census for recall;
+model agreement and unreviewed certificates are not gold-standard answers.
+
+The user authorised external transmission and a US$10 ceiling. Real Responses
+API calls to GPT-6 Luna and GPT-6.1 Terra completed on ten frozen physical-page
+examples (five development and five held-out). Inventory inputs did not include
+accepted certificates. Match prompt v2 was adjusted on a development page only.
+At 240 DPI with original image detail and targeted match crops, the final strict
+validation accepted Luna outputs on 5/10 pages and Terra outputs on 10/10.
+Luna produced 43 supported matches, 35 agreeing with existing certified page
+assignments and eight not previously certified; Terra produced 141, of which
+104 agreed and 37 were not previously certified. No known wrong-page match
+appeared in this concordance check. These numbers are **not independently
+measured precision or recall**; unverified matches are neither accepted links
+nor established errors. Some paid responses failed exact-quotation or identity
+validation and remain rejected.
+
+Source-first coding-agent reinspection of development volume 8 page 3 found
+11 independent starts, two running headers and a preceding continuation. Both
+models found the 11 starts and excluded the headers and continuation. Terra
+supported all 11 correct identities; Luna's diagnostic response supported ten
+and abstained on the short reference *ba glaṅ*. This small same-agent development
+check is not held-out or independent human validation. Inventory box extents
+also differ (heading versus whole article); region-IoU scores need a consistently
+reviewed reference geometry before meaningful aggregate recall can be claimed.
+No model response has been automatically promoted, and no new attachment is
+counted as delivered through a validated model-assisted production workflow.
+A controlled resolution comparison and independently reviewed held-out reference
+census remain necessary before scaling production.
+
+Returned usage accounts for approximately **US$1.48653**, including cache-write
+pricing; two failed-request reservations remain unresolved, so this is not a
+confirmed invoice total. The local spending ledger retains those reservations.
+Live request bounds use the documented maximum input allowance at the long-context
+and cache-write tariffs, rather than an assumed image-token formula. The run is
+stopped with a local `STOP` file. Credentials, approvals, page images, raw model
+responses and detailed usage records remain ignored under `work/`.
+
+### Reproduce and resume
+
+Install optional dependencies in an ignored virtual environment using
+`requirements-badw-model.txt`. Supply acquired bodies from the existing source
+acquisition, not from accepted certificates. Use a locator list of `family` and
+`physical_page` records, optionally `page_key` for reviewed printed-side geometry.
+The frozen development/held-out manifest remains
+`data/badw_model_evaluation_pages.json`; it is a locator freeze, not a completed
+gold standard. Do not tune prompts on held-out examples.
 
 ```bash
-python3 -m venv work/badw-model-venv
-work/badw-model-venv/bin/pip install -r requirements-badw-model.txt
-work/badw-model-venv/bin/pip install pytest
-work/badw-model-venv/bin/python scripts/badw_model_worker.py plan --work work/model-run --pages data/badw_model_evaluation_pages.json
-work/badw-model-venv/bin/python scripts/badw_model_worker.py prepare --work work/model-run --pages data/badw_model_evaluation_pages.json --bodies work/page-link-expansion-20261105/all-bodies.json --dpi 240
-work/badw-model-venv/bin/python scripts/badw_model_worker.py run --work work/model-run --dry-run
-work/badw-model-venv/bin/python -m pytest tests/test_badw_model_worker.py -q
+python3 scripts/badw_model_worker.py plan --work work/model-run --pages data/badw_model_evaluation_pages.json
+python3 scripts/badw_model_worker.py prepare --work work/model-run --pages work/selected-pages.json --bodies work/acquired-bodies.json --dpi 240
+python3 scripts/badw_model_worker.py run --work work/model-run --dry-run
+python3 scripts/badw_model_worker.py run --work work/model-run --model gpt-6-luna --stage inventory --detail original --approval work/approval.json --cap-usd 10
+python3 scripts/badw_model_worker.py run --work work/model-run --model gpt-6-luna --stage match --article-crops --bodies work/acquired-bodies.json --approval work/approval.json --cap-usd 10
+python3 scripts/badw_model_worker.py evaluate --work work/model-run --model gpt-6-luna --page-pack work/model-run/PAGE/pack.json --bodies work/acquired-bodies.json --article-crops --reference work/reviewed-reference.json
+python3 scripts/badw_model_worker.py review --work work/model-run --model gpt-6-luna --stage match --article-crops --bodies work/acquired-bodies.json
+python3 scripts/badw_model_worker.py report --work work/model-run
 ```
 
-A smaller JSON locator list with `family` and `physical_page` selects any next
-batch; `page_key` reuses a reviewed printed-side crop. Whole-spread inputs retain
-physical coordinates; new page geometry and folios still require review. The
-worker currently supplies whole-page images rather than optimised article crops.
-Preserve held-out pages from prompt tuning. `evaluate --reference PATH
---prediction PATH` requires source-bound reviewer references and reports region
-matching, false supported links, homonym errors, abstentions and missed articles;
-complete recall is reported only for an explicitly complete reference census.
+Use the actual prepared pack path for `--page-pack`. Repeat with Terra on the same
+frozen examples. A local approval record requires `approved_usd`, `approver`,
+`rights_basis` and `transmission_authorized: true`; load `OPENAI_API_KEY` securely
+into the process environment. Never commit it. Cache keys bind source, image,
+HTML, model, prompt and schema inputs. Rerunning resumes completed requests;
+rejected paid payloads remain private for diagnosis. An uncertain request retains
+its budget reservation. `STOP` prevents subsequent requests; in-flight calls may
+finish. A hundred-page run is not yet authorised by benchmark accuracy: complete
+the held-out source-reviewed references and error assessment first.
 
-Live execution is deliberately blocked. A local approval JSON must contain
-`approved_usd`, `approver`, `rights_basis` and `transmission_authorized: true`,
-plus an explicit positive `--cap-usd` no larger than that approval and an
-`OPENAI_API_KEY` environment variable. The proposed initial US$10 benchmark has
-not been approved. Public BAdW access is not an external-transmission licence;
-rights must be established before sending scans or HTML. Official image billing
-has not established the named Luna/Terra image-token formula; provisional rates
-cannot authorise paid execution. `LIVE_IMAGE_BILLING_VERIFIED` remains false.
-Actual model availability, image-detail support and charges must be checked
-before changing that gate. No credential check or successful API call is implied.
-
-After those prerequisites, use `run --model gpt-6-luna --stage inventory`, then
-`run --stage match --bodies PATH` with the same approved cap, approval file and
-work directory. Repeat on the frozen examples with `gpt-6.1-terra` for comparison.
-Cache keys include all source, model, schema, prompt and request inputs; rerunning
-resumes without resubmitting verified cached requests. Fixture caches are
-separate from live caches. Concurrency is bounded, rate limiting is shared,
-429 retries are bounded, and uncertain charges remain reserved against the cap.
-Create `STOP` in the run directory to stop subsequent requests; in-flight calls
-may finish. `report` shows actual returned token usage and accounted charges,
-not an accuracy claim. Keep approvals, responses, scans and credentials ignored.
-
-`review --stage match --bodies PATH` creates non-publishable drafts. Inspect every
-proposed acceptance against the scan and exact HTML, then supply actual observed
-heading, homonym, boundaries and lexical evidence through the existing reviewed
-ledger. Missing historical associations go to review, never invented anchors.
-The direct source-heading certificate remains a bounded design, not an enabled
-alternative gate; the earlier missing-anchor and Tibetan-component deferrals
-remain preserved. Confidence scores cannot approve a link.
-
-Compile and build using the established commands, after review:
+After source review, compile and build through the established machinery:
 
 ```bash
-python3 scripts/badw_html_print_alignment.py --bodies work/page-link-expansion-20261105/all-bodies.json --queue data/badw_html_print_review_queue.json
+python3 scripts/badw_html_print_alignment.py --bodies work/acquired-bodies.json --queue data/badw_html_print_review_queue.json
 python3 scripts/badw_html_print_facsimiles.py --scans-root . --output work/model-production/pages
 python3 scripts/build_badw_full_reader.py --output work/model-production/reader --print-facsimiles work/model-production/pages/manifest.json
 ```
-
-The executable next benchmark is the frozen 48-page manifest, after reference
-censuses and permissions; it is not yet a validated hundred-page production
-run. Continue source-reviewed attachments while resolving these prerequisites.
