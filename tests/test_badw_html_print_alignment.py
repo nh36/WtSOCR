@@ -101,7 +101,8 @@ def test_real_batch_is_bounded_explicit_and_contains_negative_controls():
     additions = json.loads((Path(__file__).parent/'fixtures/badw_print_298_additions.json').read_text())
     milestone476 = json.loads((Path(__file__).parent/'fixtures/badw_print_476_additions.json').read_text())
     milestone583 = json.loads((Path(__file__).parent/'fixtures/badw_print_583_additions.json').read_text())
-    for frozen in baseline['generated'] + additions['generated'] + milestone476['generated'] + milestone583['generated']:
+    milestone688 = json.loads((Path(__file__).parent/'fixtures/badw_print_688_additions.json').read_text())
+    for frozen in baseline['generated'] + additions['generated'] + milestone476['generated'] + milestone583['generated'] + milestone688['generated']:
         record = records[frozen['source_url'], frozen['html_sha256']]
         assert record['page'] == frozen['page']
         assert a.object_digest(record) == frozen['record_sha256']
@@ -559,6 +560,27 @@ def test_direct_source_certificate_and_nonpublishable_preparation(direct_evidenc
     draft_cert['pages'][0]['accepted'] = [draft]
     with pytest.raises(ValueError, match='draft'):
         a.compile_records(draft_cert, {'html:one':body}, {}, [], {'WtS_1-34':dict(sha256='b'*64)})
+
+
+def test_reviewed_inventory_binding_requires_explicit_source_acceptance(direct_evidence):
+    import prepare_badw_print_drafts as drafts
+    body, anchor, assertion, edges, cert = direct_evidence
+    cert['pages'][0]['accepted'] = []
+    item = cert['pages'][0]['source_heading_inventory']['items'][0]
+    registry = {'WtS_1-34':dict(sha256='b'*64)}
+    index = next(i for i,c in enumerate(body['components']) if c['type']=='definition')
+    def bind():
+        return drafts.bind_reviewed_direct(cert,body,'v1-p16',item['item_id'],index,
+            'missing_identity_edge','No C11 association.',{},[],registry)
+    with pytest.raises(ValueError,match='explicit source inspection'):
+        bind()
+    item['source_review'] = dict(assertion['source_review'])
+    result = bind()
+    assert result['heading_item_sha256'] == a.object_digest(item)
+    assert result['source_review'] == assertion['source_review']
+    item['printed_homonym'] = 1
+    with pytest.raises(ValueError,match='homonym'):
+        bind()
 
 
 @pytest.mark.parametrize('target,field,value,message', [
