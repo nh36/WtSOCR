@@ -9,6 +9,21 @@ import badw_campaign_review as r
 from test_badw_model_worker import item, pack, match
 
 
+def test_bounded_review_advances_past_completed_failed_and_uncached_pages(tmp_path):
+    pages=[]
+    for name in ['completed','uncached','cached','failed','exhausted']:
+        directory=tmp_path/name
+        (directory/'cache').mkdir(parents=True);pages.append(directory)
+    r.w.write(pages[0]/'source_review.json',{})
+    r.w.write(pages[2]/'cache/paid.json',dict(request=dict(stage='source_review')))
+    r.w.write(pages[3]/'source-review-attempt.json',dict(attempts=1,at=1))
+    r.w.write(pages[4]/'source-review-attempt.json',dict(attempts=3,at=1))
+    assert r.unfinished_pages(pages)==[pages[2]]
+    assert r.unfinished_pages(pages,live=True)==[pages[2],pages[1],pages[3]]
+    r.w.write(pages[2]/'source_review.json',{})
+    assert r.unfinished_pages(pages,live=True)[:1]==[pages[1]]
+
+
 def observation():
     p=pack()
     return dict(inventory=p['inventory'],matching=match())
@@ -95,6 +110,23 @@ def test_quote_recovery_preserves_original_and_only_repairs_unique_whitespace():
     assert restored['result']['matching']['matches'][0]['html_evidence']=='specific\u00a0\n gloss'
     assert restored['result']['matching']['matches'][0]['outcome']=='supported'
     assert restored['recovery'][0]['before']['html_evidence']=='specific gloss'
+
+
+def test_matching_recovery_keeps_exact_rows_and_quarantines_only_bad_quote():
+    p=pack(); result=match()
+    p['inventory']['items'].append(item('bad'))
+    bad=copy.deepcopy(result['matches'][0])
+    bad.update(item_id='bad',html_evidence='invented quotation')
+    result['matches'].append(bad)
+    spec=r.w.request_spec('match',p,'gpt-6.1-terra','original',16000)
+    _,cached=rejected_review(p,observation())
+    cached.update(request=spec,request_sha256=r.w.a.object_digest(spec),output_text=json.dumps(result))
+    cached['output_sha256']=r.w.a.object_digest(cached['output_text'])
+    original=copy.deepcopy(cached)
+    restored=r.recover_review(cached,spec,p)
+    assert cached==original
+    assert restored['result']['matches'][0]==result['matches'][0]
+    assert restored['result']['matches'][1]['outcome']=='insufficient'
 
 
 @pytest.mark.parametrize('quote',['invented gloss','specific … gloss','specific gloss specific gloss',''])

@@ -166,12 +166,19 @@ function localSourceURL(url){
 function appendSources(container,item){
  const section=el('section',undefined,'source-access');section.setAttribute('aria-label','Original sources');
  section.append(el('span','Read the source','source-label'));
+ if((item.sources||[]).some(s=>s.suggested_print_provenance)){
+  const label=el('label'), toggle=el('input');toggle.type='checkbox';toggle.checked=localStorage.getItem('hideSuggestedPrint')!=='yes';
+  label.append(toggle,document.createTextNode(' Show suggested print links'));section.append(label);
+  section.classList.toggle('hide-suggestions',!toggle.checked);
+  toggle.addEventListener('change',()=>{localStorage.setItem('hideSuggestedPrint',toggle.checked?'no':'yes');section.classList.toggle('hide-suggestions',!toggle.checked);});
+ }
  for(const source of item.sources||[{url:item.source_url,label:'BAdW source'}]){
   if(!source.url)continue;
   const local=localSourceURL(source.url);
   if(source.url.startsWith('sources/')&&!local)continue;
   const link=local?el('a',source.label):sourceLink(source.url,source.label);
   if(local)link.href=source.url;
+  if(source.suggested_print_provenance)link.classList.add('suggested-print');
   link.target='_blank';link.rel='noopener noreferrer';section.append(link);
  }
  container.append(section);
@@ -295,6 +302,11 @@ function show(item){
   if(source.print_provenance){
    const p=source.print_provenance;
    provenance.append(el('p',`Original scan: ${p.source}; SHA-256: ${p.source_sha256}. Physical PDF page ${p.physical_page}, ${p.side}; crop [${p.crop.join(', ')}] PDF points; ${p.method}. Printed heading: ${p.printed_heading}. ${p.evidence}`));
+  }
+  if(source.suggested_print_provenance){
+   const p=source.suggested_print_provenance;
+   provenance.append(el('p',`Automatically matched, not yet verified. Original scan: ${p.source}; SHA-256: ${p.source_sha256}. Physical PDF page ${p.physical_page}; whole scan, printed folio and spread side unverified.`));
+   const evidence=el('a','Machine observations and conflicts');evidence.href=p.evidence;evidence.target='_blank';provenance.append(evidence);
   }
  }
 

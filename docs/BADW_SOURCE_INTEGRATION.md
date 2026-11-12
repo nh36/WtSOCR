@@ -1084,6 +1084,71 @@ a validated automatic-promotion policy. Every accepted attachment still requires
 actual source review under existing provenance rules. Agreement of two model
 calls, confidence scores and successful browser navigation grant no lexical
 certification authority. Until a larger risk-stratified source assessment passes,
-the detached campaign generates proposals, not thousands of certified links.
+the detached campaign cannot generate thousands of certified links.
 The first three delivered links demonstrate the checked publication route;
 they do not establish 1,000-link throughput or completion of the larger campaign.
+
+### Provisional reader links from paid observations
+
+`data/badw_html_print_provisional.generated.json` is a separate machine-evidence
+layer. It grants no certificate authority. The offline exporter
+`scripts/badw_provisional_print_links.py` validates registered scan checksums,
+physical page bounds, immutable request/result and image hashes, exact HTML
+identities and component bindings. Publication requires corroborating blind
+source reading, compatible headings and printed homonyms, and no conflicting
+page assignment or previous evidence decision. Pending and disputed cases remain
+in its explicit review queue. Certified identities always take precedence.
+
+The first export recovers 262 additional suggestions on 35 physical scans from
+344 paid supported proposals: 46 pending blind review, 32 disputed, one excluded
+by an earlier evidence decision and three already certified. No duplicate or
+competing-page survivors were found. These are provisional links, not 262 new
+certificates. They use whole physical-page derivatives, including whole spreads;
+no printed folio or side is inferred. The reader labels them “Suggested original
+printed page — automatically matched, not yet verified.” A persistent checkbox
+can hide them. Source and model evidence remain available in the generated file.
+
+A coding-agent source-image check covered 55 suggestions on five scans across
+all four families: WtS 1–34 physical 91 and 97, 35–51 physical 684, 8-b physical
+22 and 9-m physical 25. It checked numbered homonyms, very short cross-references,
+continuations, spreads and distinctive citations. No wrong page association was
+found in this selected sample. This is neither a random accuracy estimate nor
+an independent human audit; two readings from the same model can share errors.
+Some first-pass heading fields contained positional descriptions instead of
+transcription. Publication now requires an explicit matching headword in at
+least one reading. No new automatic certificate type is justified by this sample.
+
+The existing ordering benchmark reproduced seven correct held-out identities and
+one abstention out of eight. It can narrow candidates but cannot establish page
+identity or safely extrapolate physical offsets through spreads and editorial
+reordering.
+
+Offline recovery, without API calls:
+
+```bash
+PYTHONPATH=work/badw-model-deps python3 scripts/badw_provisional_print_links.py --campaign work/linking-campaign-20261112 --prepare work/provisional-links-20261112/pages
+```
+
+Bounded production in the same campaign and spending ledger:
+
+```bash
+PYTHONPATH=work/badw-model-deps NODE_PATH=work/badw_reader_browser_tools/node_modules python3 scripts/run_badw_linking_campaign.py produce --campaign work/linking-campaign-20261112 --api-key-file work/openai-api-key --max-pages 5 --base-reader work/provisional-links-20261112/reader --output work/provisional-production-NEXT
+```
+
+Use a fresh output directory each time. `produce` runs generation, unfinished
+blind reviews, provisional export, certificate validation and reader browser
+checks. `--base-reader` reuses a complete reader and changes only suggestion
+source lists, updating their hashes; full witness reconstruction is unnecessary
+at every milestone. Without it the normal complete build runs. Interrupted
+completed builds retain the existing `publish --resume-build` route.
+Completed reviews are skipped, paid caches precede new requests, and failures
+have bounded retry counts. `stop` controls generation; `REVIEW_STOP` separately
+controls blind review. Reservations with uncertain billing are never cleared.
+
+The recovered private configuration, approval and spending ledger all specify
+the same cumulative US$20 cap. The planner now preserves the ledger's authorized
+extension instead of reinstating US$10. At initial recovery, returned usage was
+US$6.478751645, unresolved reservations US$5.2368 and available authorization
+US$8.284448355. These reservations are retained. Status uses held process locks,
+reports last successful progress and separates the 3,466-scan census from link
+and processing counts. These figures are observations, not new spending approval.

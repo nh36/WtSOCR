@@ -1671,6 +1671,9 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     print_generated = json.loads((ROOT / "data/badw_html_print_alignment.generated.json").read_text())
     print_links = len(print_manual["witnesses"]) + len(print_generated["witnesses"])
     print_pages = len(print_manual["pages"]) + len(print_generated["pages"])
+    provisional = json.loads((ROOT / "data/badw_html_print_provisional.generated.json").read_text())
+    provisional_links = len(provisional['witnesses'])
+    provisional_pages = len({r['page'] for r in provisional['witnesses']})
 
     corpus_summary = json.loads((ROOT / "data/badw_relationship_closure/summary.json").read_text(encoding="utf-8"))
     corpus_totals = corpus_summary["totals"]
@@ -1772,15 +1775,19 @@ to **{print_pages} printed-page derivatives**. Current evidence is in
 are superseded. These counts describe certificates; browser/build validation
 is recorded with each published milestone. Review provenance distinguishes agent
 image inspection from independent human review. The OCR release is unchanged.
-The persistent API campaign controller is `scripts/run_badw_linking_campaign.py`;
-its private live status is `work/linking-campaign-20261112/status.json`. A 200-scan
-plan exists; proposal generation is stopped while the backlog receives blind
-source review through `scripts/badw_campaign_review.py`. Its private
-`source-review-status.json` and `source-review.html` separate corroborated
-proposals, exceptions and previously certified identities. Model
-proposals remain separate from reviewed and published links; automatic promotion
-has not been validated. See `docs/BADW_SOURCE_INTEGRATION.md` for terminal commands
-and the held-out sample’s accuracy limits.
+The separate `data/badw_html_print_provisional.generated.json` contains
+**{provisional_links} additional provisional links on {provisional_pages} physical scans**.
+These use two model source readings, exact HTML/component evidence and registered
+scan checksums. The reader labels them “Suggested original printed page —
+automatically matched, not yet verified” and permits hiding them. They never
+replace certificates or claim printed folios on unresolved spreads. Conflicts,
+unfinished reviews and prior decisions remain in the explicit review queue.
+No automatic certification policy has been validated.
+The persistent controller is `scripts/run_badw_linking_campaign.py`; private live
+state remains in `work/linking-campaign-20261112`. Its `produce` command connects
+bounded generation, blind review, provisional export and reader verification;
+`--base-reader` reuses complete witness bodies at subsequent milestones.
+See `docs/BADW_SOURCE_INTEGRATION.md` for commands, source checking and limits.
 
 {corpus_section}## Bibliographic Apparatus
 

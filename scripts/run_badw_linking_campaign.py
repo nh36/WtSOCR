@@ -18,6 +18,7 @@ import subprocess
 import sys
 import time
 import copy
+import shutil
 
 import badw_model_worker as w
 
@@ -104,10 +105,18 @@ def plan(root, pages, bodies, budget_root, dpi=240, model='gpt-6.1-terra'):
         (w.DATA/'source_pdfs.tsv').open(), delimiter='\t') if r.get('label')}
     prior = {(p['family'],p['physical_page']) for p in cert['pages'] if p['accepted']}
     baseline = w.load(w.a.GENERATED)
+    budget_path = Path(budget_root)
+    cap = 10
+    if (budget_path/'spending.json').exists():
+        state = w.load(budget_path/'spending.json')
+        approval = w.load(budget_path/'approval.json')
+        if state['approval'] != w.a.object_digest(approval) or state['cap'] > approval['approved_usd']:
+            raise ValueError('spending ledger and approval disagree')
+        cap = state['cap']
     settings = dict(bodies=str(Path(bodies).resolve()), budget_root=str(Path(budget_root).resolve()),
                     dpi=dpi, model=model, detail='original', max_output_tokens=16000,
                     baseline=w.a.object_digest(baseline['witnesses']),
-                    baseline_witnesses={r['source_url']:r for r in baseline['witnesses']}, cap_usd=10,
+                    baseline_witnesses={r['source_url']:r for r in baseline['witnesses']}, cap_usd=cap,
                     manual_sha256=w.a.digest(w.DATA/'badw_html_print_pages.json'),
                     prompt_hashes={s:w.a.digest(w.DATA/f'badw_model_{s}_prompt.txt')
                                    for s in ('inventory','match')})
@@ -193,16 +202,28 @@ def status(root, db=None):
                 fcntl.flock(probe,fcntl.LOCK_UN)
             except BlockingIOError:
                 alive=True
+    review_alive=False
+    with (Path(root)/'source-review.lock').open('a') as probe:
+        try:
+            fcntl.flock(probe,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            fcntl.flock(probe,fcntl.LOCK_UN)
+        except BlockingIOError:
+            review_alive=True
     result = dict(stages=stages,planned_views=sum(stages.values()),
         process_running=alive,process_state=('running' if alive else ('interrupted' if runtime.get('state')=='running' else runtime.get('state','not_running'))),
-        process_pid=runtime.get('pid'),last_progress_at=db.execute('SELECT max(at) FROM events').fetchone()[0],
+        source_review_running=review_alive,
+        process_pid=runtime.get('pid'),last_progress_at=db.execute("SELECT max(at) FROM events WHERE kind IN ('inventoried','awaiting_review','source_reviewed','local_reader_published')").fetchone()[0],
+        remaining_authorized_usd=cfg['cap_usd']-actual-reserved,
+        pages_awaiting_review=sum(not (p.parent/'source_review.json').exists()
+            for p in Path(root).glob('pages/*/match.json')),
+        pages_awaiting_certificate_adjudication=stages.get('awaiting_review',0),
         generation_remaining_views=sum(n for stage,n in stages.items() if stage!='awaiting_review'),
         corpus_physical_scans=db.execute('SELECT count(*) FROM coverage').fetchone()[0],
         provisional_scan_inventories=inventories,model_outcomes=outcomes,
         independent_headings_provisional=observed,model_supported_proposals=supported,
         source_reviewed_acceptances=db.execute('SELECT count(*) FROM reviewed').fetchone()[0],
         published_additional_links=db.execute('SELECT count(*) FROM reviewed WHERE published=1').fetchone()[0],
-        publication_policy='source-review gate; model observations grant no attachment authority',
+        publication_policy='certificates require source adjudication; corroborated model links use a separate provisional dataset',
         api_actual_usd=actual,api_unresolved_reservations_usd=reserved,
         campaign_returned_usage_usd=campaign_actual,
         campaign_completed_requests=campaign_requests,
@@ -306,7 +327,7 @@ def review_batch(root, decisions, output):
                 canonical_ledger_changed=False,reader_published=False)
 
 
-def publish(root, output, resume_build=False):
+def publish(root, output, resume_build=False, base_reader=None):
     """Build and exercise the full reader before recording local publication.
 
     Git publication is a separate, explicit operator step. A failed build or
@@ -317,28 +338,43 @@ def publish(root, output, resume_build=False):
     cfg=config(db)
     output=w.private(output)
     ledger_sha=w.a.digest(w.a.CERTIFICATE)
+    build_files = ('pages/manifest.json','suggested-pages/manifest.json','reader/data.json',
+                   'reader/print_facsimiles.json','reader/provisional_print_links.json','reader/manifest.json')
     checkpoint=output/'build-checkpoint.json'
     if resume_build:
         saved=w.load(checkpoint)
         expected=dict(certificate_sha256=ledger_sha,files={str(path.relative_to(output)):w.a.digest(path)
-            for path in (output/'pages/manifest.json',output/'reader/data.json',
-                         output/'reader/print_facsimiles.json',output/'reader/manifest.json')})
+            for path in (output/name for name in build_files) if path.exists()})
         if saved!=expected:
             raise ValueError('publication build checkpoint changed; use a fresh build')
     elif any(output.iterdir()):
         raise ValueError('publication requires a fresh output directory')
     commands=[
+        [sys.executable,'scripts/badw_provisional_print_links.py','--campaign',str(root),
+         '--prepare',str(output/'suggested-pages')],
         [sys.executable,'scripts/badw_html_print_alignment.py','--bodies',cfg['bodies'],'--check'],
         [sys.executable,'scripts/badw_html_print_facsimiles.py','--scans-root','.',
          '--output',str(output/'pages')],
         [sys.executable,'scripts/build_badw_full_reader.py','--output',str(output/'reader'),
-         '--print-facsimiles',str(output/'pages/manifest.json')]]
-    for command in (commands[:1] if resume_build else commands):
+         '--print-facsimiles',str(output/'pages/manifest.json'),
+         '--provisional-print-links',str(output/'suggested-pages/manifest.json')]]
+    if base_reader and not resume_build:
+        base_reader=w.private(base_reader)
+        if w.load(base_reader/'print_facsimiles.json').get('certificate_sha256')!=ledger_sha:
+            raise ValueError('base reader has different certified attachments')
+        shutil.copytree(base_reader,output/'reader')
+        commands=commands[:2]+[[sys.executable,'scripts/badw_provisional_print_links.py',
+            '--prepare',str(output/'suggested-pages'),'--refresh-reader',str(output/'reader')]]
+        # Preserve the familiar checkpoint path without regenerating certificates.
+        (output/'pages').mkdir()
+        w.write(output/'pages/manifest.json',w.load(base_reader/'print_facsimiles.json'))
+        for name in ('app.js','style.css','index.html'):
+            shutil.copyfile(w.a.ROOT/'scripts/badw_dictionary_prototype'/name,output/'reader'/name)
+    for command in (commands[1:2] if resume_build else commands):
         subprocess.run(command,cwd=w.a.ROOT,check=True)
     if not resume_build:
         w.write(checkpoint,dict(certificate_sha256=ledger_sha,files={str(path.relative_to(output)):w.a.digest(path)
-            for path in (output/'pages/manifest.json',output/'reader/data.json',
-                         output/'reader/print_facsimiles.json',output/'reader/manifest.json')}))
+            for path in (output/name for name in build_files)}))
     handler=functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(output/'reader'))
     server=http.server.ThreadingHTTPServer(('127.0.0.1',0),handler)
     thread=threading.Thread(target=server.serve_forever,daemon=True)
@@ -347,7 +383,8 @@ def publish(root, output, resume_build=False):
         env=os.environ.copy()
         env.update(BADW_READER_URL=f'http://127.0.0.1:{server.server_port}',
                    BADW_SCREENSHOTS=str(output/'screenshots'))
-        for suite in ('badw_full_reader.browser.cjs','badw_html_print_facsimiles.browser.cjs'):
+        for suite in ('badw_full_reader.browser.cjs','badw_html_print_facsimiles.browser.cjs',
+                      'badw_provisional_print_links.browser.cjs'):
             subprocess.run(['node',f'tests/{suite}'],cwd=w.a.ROOT,env=env,check=True,timeout=3600)
     finally:
         server.shutdown()
@@ -387,8 +424,15 @@ def process(root, db, view, cfg, resources, spending=None, client=None, fixtures
             w.prepare_match_crops(pack,directory)
         request = w.request_spec(stage,pack,cfg['model'],cfg['detail'],cfg['max_output_tokens'])
         fixture = w.load(Path(fixtures)/view['id']/(stage+'.json')) if fixtures else None
-        output = w.execute(request,pack,directory/('fixtures' if fixtures else 'cache'),
-                           spending,client,fixture)
+        try:
+            output = w.execute(request,pack,directory/('fixtures' if fixtures else 'cache'),
+                               spending,client,fixture)
+        except ValueError:
+            cached = directory/'cache'/(w.a.object_digest(request)+'.json')
+            if stage != 'match' or fixtures or not cached.exists():
+                raise
+            from badw_campaign_review import recover_review
+            output = recover_review(w.load(cached),request,pack)
         w.write(directory/(stage+'.json'),output)
         results[stage]=output
         checkpoint(db,view['id'],'inventoried' if stage=='inventory' else 'matched',
@@ -406,6 +450,24 @@ def process(root, db, view, cfg, resources, spending=None, client=None, fixtures
     review['source_review']=dict(decision=None,reviewer=None)
     w.write(directory/'review.json',review)
     checkpoint(db,view['id'],'awaiting_review')
+
+
+def recover_cached_matches(root, db, cfg, resources):
+    """Drain completed paid matching failures without a client or a new request."""
+    for view in db.execute("SELECT * FROM views WHERE stage!='awaiting_review'").fetchall():
+        directory=Path(root)/'pages'/view['id']
+        paid=[p for p in directory.glob('cache/*.json')
+              if (r:=w.load(p)).get('request',{}).get('stage')=='match'
+              and r.get('status')=='rejected model response; no evidence authority'
+              and r.get('response_status')=='completed']
+        if not paid or (Path(root)/'STOP').exists():
+            continue
+        try:
+            process(root,db,view,cfg,resources)
+            event(db,view['id'],'cached_matching_recovered',{})
+        except (ValueError,KeyError):
+            # Structural failures remain quarantined; no API client is supplied.
+            continue
 
 
 def run(root, max_pages=25, fixtures=None, clear_budget_stop=False, drain=False):
@@ -427,6 +489,8 @@ def run(root, max_pages=25, fixtures=None, clear_budget_stop=False, drain=False)
             raise ValueError('protected manual attachments changed')
         if any(current.get(k)!=v for k,v in cfg['baseline_witnesses'].items()):
             raise ValueError('protected baseline changed')
+        if not fixtures:
+            recover_cached_matches(root,db,cfg,resources)
         spending=client=None
         if not fixtures:
             budget=w.private(Path(cfg['budget_root']))
@@ -474,7 +538,7 @@ def run(root, max_pages=25, fixtures=None, clear_budget_stop=False, drain=False)
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('command',choices=['plan','run','resume','stop','status','report','review','publish'])
+    p.add_argument('command',choices=['plan','run','resume','produce','stop','status','report','review','publish'])
     p.add_argument('--campaign',type=Path,required=True)
     p.add_argument('--pages',type=Path)
     p.add_argument('--bodies',type=Path)
@@ -490,18 +554,32 @@ def main():
                    help='Import reviewed decisions from validated canonical certificates only')
     p.add_argument('--output',type=Path,help='Fresh ignored directory for full reader publication')
     p.add_argument('--resume-build',action='store_true',help='Resume browser checks of an unchanged completed build')
+    p.add_argument('--api-key-file',type=Path,help='Read a private API key without printing it or putting it in shell history')
+    p.add_argument('--base-reader',type=Path,help='Reuse a complete reader, updating suggestion sources only at this milestone')
     args=p.parse_args()
     root=w.private(args.campaign)
+    if args.api_key_file:
+        os.environ['OPENAI_API_KEY']=args.api_key_file.read_text().strip()
     if args.command=='plan':
         if not all((args.bodies,args.budget_root)):
             p.error('plan requires --bodies and --budget-root')
         pages=w.load(args.pages) if args.pages else select_pages(args.max_pages,
             w.load(args.starts) if args.starts else None)
         result=plan(root,pages if isinstance(pages,list) else pages['pages'],args.bodies,args.budget_root,args.dpi)
-    elif args.command in ('run','resume'):
-        if args.command=='resume':
+    elif args.command in ('run','resume','produce'):
+        if args.command=='produce' and (not args.output or args.drain):
+            p.error('produce requires a fresh --output and a bounded --max-pages (no --drain)')
+        if args.command=='produce' and any(w.private(args.output).iterdir()):
+            p.error('produce requires a fresh output directory before buying work')
+        if args.command in ('resume','produce'):
             (root/'STOP').unlink(missing_ok=True)
         result=run(root,args.max_pages,args.fixtures,args.clear_budget_stop,args.drain)
+        if args.command=='produce':
+            import badw_campaign_review
+            # Consume the matched backlog and this batch before one milestone
+            # build. Budget/STOP gates remain owned by the existing workers.
+            badw_campaign_review.run(root,live=not bool(args.fixtures),fixtures=args.fixtures)
+            result=publish(root,args.output,base_reader=args.base_reader)
     elif args.command=='stop':
         (root/'STOP').touch()
         result=status(root)
@@ -518,7 +596,7 @@ def main():
     elif args.command=='publish':
         if not args.output:
             p.error('publish requires --output pointing to a fresh ignored directory')
-        result=publish(root,args.output,args.resume_build)
+        result=publish(root,args.output,args.resume_build,args.base_reader)
     else:
         result=status(root)
     print(json.dumps(result,ensure_ascii=False,indent=2))

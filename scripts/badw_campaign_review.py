@@ -34,10 +34,13 @@ def recover_review(cached, spec, pack):
         raise ValueError('recovery requires an intact completed paid response')
     result = json.loads(cached['output_text'])
     from jsonschema import validate
-    validate(result, w.SCHEMAS['source_review'])
+    stage = spec['stage']
+    if stage not in ('match', 'source_review'):
+        raise ValueError('quotation recovery requires a matching response')
+    validate(result, w.SCHEMAS[stage])
     candidates = {i['source_id']:i for i in pack['candidates']}
     changes = []
-    for row in result['matching']['matches']:
+    for row in (result['matching']['matches'] if stage == 'source_review' else result['matches']):
         if row['outcome'] != 'supported':
             continue
         body = candidates.get(row['source_id'])
@@ -60,7 +63,7 @@ def recover_review(cached, spec, pack):
             reason = 'invalid or ambiguous quotation quarantined'
         changes.append(dict(item_id=row['item_id'],reason=reason,before=before,after=copy.deepcopy(row)))
     # All boundary, identity, homonym, omission and schema gates still apply.
-    w.validate('source_review', result, pack)
+    w.validate(stage, result, pack)
     if not changes:
         raise ValueError('no recoverable quotation failure')
     return dict(status='recovered provisional observation; no certificate authority',
@@ -102,16 +105,25 @@ def reconcile(first_inventory, first_match, second):
     return rows
 
 
-def load_page(directory, resources, model):
+def load_page(directory, resources, model, verified_sources=None):
     pack = w.load(directory/'pack.json')
     registry = resources[4][w.a.FAMILIES[pack['family']]]
-    if pack['source_sha256'] != registry['sha256'] or w.a.digest(w.a.ROOT/registry['filename']) != registry['sha256']:
+    if pack['source_sha256'] != registry['sha256']:
         raise ValueError('registered source changed')
+    if verified_sources is None or registry['sha256'] not in verified_sources:
+        if w.a.digest(w.a.ROOT/registry['filename']) != registry['sha256']:
+            raise ValueError('registered source changed')
+        if verified_sources is not None:
+            verified_sources.add(registry['sha256'])
     inv = w.checked_observation(directory/'inventory.json', 'inventory', pack, model)
     pack['inventory'] = inv['result']
     pack['candidates'] = w.retrieve(pack['inventory'], pack, resources[1])
     w.prepare_match_crops(pack, directory)
     match = w.checked_observation(directory/'match.json', 'match', pack, model)
+    if match.get('recovery'):
+        cached = w.load(directory/'cache'/(match['request_sha256']+'.json'))
+        if recover_review(cached, match['request'], pack) != match:
+            raise ValueError('recovered matching differs from immutable paid response')
     return pack, inv, match
 
 
@@ -165,12 +177,31 @@ def packet(pack, inv, match, second, resources, directory):
         second_observation=second['result'] if second else None,associations=rows)
 
 
+def unfinished_pages(pages, live=False, fixtures=None):
+    """Consume paid caches first; bounded offline calls cannot starve behind gaps."""
+    ready=[]
+    for directory in pages:
+        if (directory/'source_review.json').exists():
+            continue
+        cached=any(w.load(p).get('request',{}).get('stage')=='source_review'
+                   for p in directory.glob('cache/*.json'))
+        attempt=directory/'source-review-attempt.json'
+        state=w.load(attempt) if attempt.exists() else {}
+        if not cached and not live and not fixtures:
+            continue
+        if state.get('attempts',0)>=3:
+            continue
+        ready.append(((not cached,state.get('attempts',0),state.get('at',0),directory.name),directory))
+    return [directory for _,directory in sorted(ready)]
+
+
 def run(root, live=False, max_pages=None, fixtures=None, page=None):
     root=w.private(root)
     # Review has a separate stop flag: proposal STOP remains in force throughout.
     with (root/'source-review.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-        cfg=c.config(c.database(root)); resources=w.authoritative(Path(cfg['bodies']))
+        db=c.database(root)
+        cfg=c.config(db); resources=w.authoritative(Path(cfg['bodies']))
         client=spending=None
         if live:
             budget=w.private(cfg['budget_root']); approval=w.load(budget/'approval.json')
@@ -193,10 +224,15 @@ def run(root, live=False, max_pages=None, fixtures=None, page=None):
         handlers={sig:signal.signal(sig,stop) for sig in (signal.SIGINT,signal.SIGTERM)}
         w.write(root/'source-review-runtime.json',dict(pid=os.getpid(),state='running',started=time.time()))
         try:
+            # Bounded invocations advance past completed reviews. Offline full
+            # refreshes still revalidate every saved observation without billing.
+            if max_pages is not None or live:
+                pages = unfinished_pages(pages,live,fixtures)
+            verified_sources = set()
             for directory in pages[:max_pages]:
                 if stopping or (root/'REVIEW_STOP').exists(): break
                 try:
-                    pack,inv,match=load_page(directory,resources,cfg['model'])
+                    pack,inv,match=load_page(directory,resources,cfg['model'],verified_sources)
                     review_pack=copy.deepcopy(pack)
                     review_pack.pop('inventory',None); review_pack.pop('match_images',None)
                     spec=w.request_spec('source_review',review_pack,cfg['model'],cfg['detail'],cfg['max_output_tokens'])
@@ -222,6 +258,8 @@ def run(root, live=False, max_pages=None, fixtures=None, page=None):
                         w.write(directory/'source_review.json',second)
                     result=packet(pack,inv,match,second,resources,directory)
                     w.write(directory/'source_review_packet.json',result)
+                    with db:
+                        c.event(db,directory.name,'source_reviewed',dict(associations=len(result['associations'])))
                     for row in result['associations']:
                         counts[row['state']]+=1
                         counts['already_certified']+=int(row['already_certified'])
@@ -229,6 +267,9 @@ def run(root, live=False, max_pages=None, fixtures=None, page=None):
                 except Exception as exc:
                     safe=str(exc) if isinstance(exc,(ValueError,RuntimeError)) else type(exc).__name__
                     errors.append(dict(page=directory.name,error=safe))
+                    attempt=directory/'source-review-attempt.json'
+                    previous=w.load(attempt) if attempt.exists() else {}
+                    w.write(attempt,dict(attempts=previous.get('attempts',0)+1,at=time.time(),error=safe))
                     if 'spending' in safe.lower() or 'reservation retained' in safe.lower():
                         (root/'REVIEW_STOP').touch()
                         break

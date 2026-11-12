@@ -30,6 +30,7 @@ from badw_bibliography_citation_reviews import CitationReviews
 from badw_bibliography_external import load_publications
 from badw_reader_supplements import load_supplements, MANIFEST as SUPPLEMENTS
 from badw_html_print_facsimiles import Facsimiles
+from badw_provisional_print_links import Suggestions
 
 
 def prepare_catalogue(catalog):
@@ -159,6 +160,7 @@ def main():
     ap.add_argument('--witness-ids', type=Path, help='JSON list: validate only these witnesses (investigation output, never a complete reader)')
     ap.add_argument('--baseline-reader', type=Path, help='Certified reader required for affected-witness relationship comparison')
     ap.add_argument('--print-facsimiles', type=Path, help='Prepared, reviewed HTML-only original-print manifest')
+    ap.add_argument('--provisional-print-links', type=Path, help='Prepared, separately labelled machine suggestions')
     args = ap.parse_args()
     if bool(args.witness_ids) != bool(args.baseline_reader):
         ap.error('--witness-ids and --baseline-reader must be supplied together')
@@ -179,6 +181,7 @@ def main():
     out.mkdir(parents=True)
     (out/'entries').mkdir(); (out/'sources').mkdir()
     facsimiles = Facsimiles(args.print_facsimiles, out) if args.print_facsimiles else None
+    suggestions = Suggestions(args.provisional_print_links, out) if args.provisional_print_links else None
     supplements, supplemental_projections = load_supplements(CACHE, args.supplements)
     original_entries = list(rows(INDEX))
     if {e['id'] for e in supplements} & {e['id'] for e in original_entries}:
@@ -297,6 +300,8 @@ def main():
         entry['sources'] = sources or [dict(url=entry['source_url'], label='BAdW editorial text', sha256=objects[0]['sha256'])]
         if facsimiles:
             facsimiles.attach(entry)
+        if suggestions:
+            suggestions.attach(entry)
         if selected is not None:
             meta = frozen[entry['id']]
             body = (args.baseline_reader/meta['path']).read_bytes()
@@ -360,6 +365,10 @@ def main():
     timings['catalogue_preparation'] = prepared['collation']['seconds']
     write(out/'data.json', dict(entries=catalog, sharded=True, preview=dict(scope='All acquired HTML and PDF witnesses. Source acquisition is not a claim of complete editorial coverage.', ordering=prepared['ordering'], collation=prepared['collation'], reviewed_occurrences=23, suggested_entries=[dict(id=r['source_identity'],label=r['headword']) for r in list(rows(SEEDS))[:5]])))
     assets = ROOT/'scripts/badw_dictionary_prototype'
+    if suggestions:
+        if len(suggestions.attached) != len(suggestions.rows):
+            raise ValueError('not all provisional identities attached to reader')
+        write(out/'provisional_print_links.json', suggestions.data)
     for name in ('index.html','app.js','style.css'): shutil.copyfile(assets/name,out/name)
     shutil.copytree(assets/'fonts', out/'fonts')
     if facsimiles:
