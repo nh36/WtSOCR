@@ -129,7 +129,7 @@ def test_systematic_selection_uses_all_registered_families():
     assert {p['family'] for p in pages}==set(c.w.a.FAMILIES)
     assert len({(p['family'],p['physical_page']) for p in pages})==200
     prior={(p['family'],p['physical_page']) for p in c.w.load(c.w.a.CERTIFICATE)['pages'] if p['accepted']}
-    assert not prior.intersection((p['family'],p['physical_page']) for p in pages)
+    assert prior.intersection((p['family'],p['physical_page']) for p in pages), 'partially linked scans must remain eligible'
     with pytest.raises(ValueError):
         c.select_pages(1,{'wts_8_b':False})
 

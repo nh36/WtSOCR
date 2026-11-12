@@ -38,7 +38,10 @@ is recorded with each published milestone. Review provenance distinguishes agent
 image inspection from independent human review. The OCR release is unchanged.
 The persistent API campaign controller is `scripts/run_badw_linking_campaign.py`;
 its private live status is `work/linking-campaign-20261112/status.json`. A 200-scan
-plan is active, with an initial approximately 25-scan detached experiment. Model
+plan exists; proposal generation is stopped while the backlog receives blind
+source review through `scripts/badw_campaign_review.py`. Its private
+`source-review-status.json` and `source-review.html` separate corroborated
+proposals, exceptions and previously certified identities. Model
 proposals remain separate from reviewed and published links; automatic promotion
 has not been validated. See `docs/BADW_SOURCE_INTEGRATION.md` for terminal commands
 and the held-out sample’s accuracy limits.

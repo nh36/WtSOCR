@@ -23,7 +23,7 @@ import badw_model_worker as w
 
 
 def select_pages(count, starts=None):
-    """Round-robin the registered corpus, skipping already certified scans.
+    """Round-robin the registered corpus, retaining partially certified scans.
 
     These are physical locators only: pagination and article identity remain
     unknown until source inspection. Starts permit explicit front-matter skips.
@@ -32,7 +32,12 @@ def select_pages(count, starts=None):
         raise ValueError('page count must be positive')
     starts = starts or {}
     cert = w.load(w.a.CERTIFICATE)
-    prior = {(p['family'],p['physical_page']) for p in cert['pages'] if p['accepted']}
+    # An accepted article says nothing about the remaining headings. Only an
+    # explicit complete physical-scan census can retire a whole scan. Reviewed
+    # printed-page crops alone do not establish coverage of a two-page spread.
+    prior = {(p['family'],p['physical_page']) for p in cert.get('complete_scan_reviews', [])
+             if isinstance(p,dict) and p.get('physical_scan_complete') is True
+             and p.get('heading_census_reviewed') is True}
     registry = {r['label']:r for r in csv.DictReader(
         (w.DATA/'source_pdfs.tsv').open(), delimiter='\t') if r.get('label')}
     queues = []
@@ -177,7 +182,21 @@ def status(root, db=None):
     first=db.execute('SELECT min(at) FROM events').fetchone()[0]
     elapsed=max(0,time.time()-first) if first else 0
     finished=stages.get('awaiting_review',0)
+    runtime_path=Path(root)/'runtime.json'
+    runtime=w.load(runtime_path) if runtime_path.exists() else {}
+    alive=False
+    if runtime.get('state')=='running' and runtime.get('pid'):
+        # The held lock distinguishes the live controller from a recycled PID.
+        with (Path(root)/'controller.lock').open('a') as probe:
+            try:
+                fcntl.flock(probe,fcntl.LOCK_EX|fcntl.LOCK_NB)
+                fcntl.flock(probe,fcntl.LOCK_UN)
+            except BlockingIOError:
+                alive=True
     result = dict(stages=stages,planned_views=sum(stages.values()),
+        process_running=alive,process_state=('running' if alive else ('interrupted' if runtime.get('state')=='running' else runtime.get('state','not_running'))),
+        process_pid=runtime.get('pid'),last_progress_at=db.execute('SELECT max(at) FROM events').fetchone()[0],
+        generation_remaining_views=sum(n for stage,n in stages.items() if stage!='awaiting_review'),
         corpus_physical_scans=db.execute('SELECT count(*) FROM coverage').fetchone()[0],
         provisional_scan_inventories=inventories,model_outcomes=outcomes,
         independent_headings_provisional=observed,model_supported_proposals=supported,
@@ -389,7 +408,7 @@ def process(root, db, view, cfg, resources, spending=None, client=None, fixtures
     checkpoint(db,view['id'],'awaiting_review')
 
 
-def run(root, max_pages=25, fixtures=None, clear_budget_stop=False):
+def run(root, max_pages=25, fixtures=None, clear_budget_stop=False, drain=False):
     root=w.private(root)
     with (root/'controller.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -422,9 +441,10 @@ def run(root, max_pages=25, fixtures=None, clear_budget_stop=False):
             spending=w.Spending(budget,cfg['cap_usd'],w.a.object_digest(approval))
         old_handlers={s:signal.signal(s,lambda *_:(root/'STOP').touch())
                       for s in (signal.SIGTERM,signal.SIGINT)}
+        w.write(root/'runtime.json',dict(pid=os.getpid(),state='running',started=time.time(),drain=drain))
         try:
             rows=list(db.execute("SELECT * FROM views WHERE stage!='awaiting_review' AND attempts<3 ORDER BY rowid"))
-            for view in rows[:max_pages]:
+            for view in (rows if drain else rows[:max_pages]):
                 if (root/'STOP').exists():
                     break
                 with db:
@@ -440,10 +460,13 @@ def run(root, max_pages=25, fixtures=None, clear_budget_stop=False):
                         db.execute('UPDATE views SET error=?,updated=? WHERE id=?',
                                    (safe,time.time(),view['id']))
                         event(db,view['id'],'failed',dict(error=safe))
-                    if 'spending cap' in safe.lower() or 'spending limit' in safe.lower():
+                    if ('spending cap' in safe.lower() or 'spending limit' in safe.lower()
+                            or 'reservation retained' in safe.lower()):
                         (root/'STOP').touch()
                 print(json.dumps(status(root,db)),flush=True)
         finally:
+            w.write(root/'runtime.json',dict(pid=os.getpid(),state='stopped' if (root/'STOP').exists() else
+                'invocation_finished',finished=time.time(),drain=drain))
             for s, handler in old_handlers.items():
                 signal.signal(s,handler)
         return status(root,db)
@@ -458,6 +481,7 @@ def main():
     p.add_argument('--budget-root',type=Path)
     p.add_argument('--fixtures',type=Path)
     p.add_argument('--max-pages',type=int,default=25)
+    p.add_argument('--drain',action='store_true',help='Process all eligible planned views until stop, budget or completion')
     p.add_argument('--starts',type=Path,help='Optional family-to-first-physical-page JSON for systematic planning')
     p.add_argument('--bindings',type=Path,help='Explicit source-reviewed page records and binding decisions')
     p.add_argument('--dpi',type=int,default=240)
@@ -477,7 +501,7 @@ def main():
     elif args.command in ('run','resume'):
         if args.command=='resume':
             (root/'STOP').unlink(missing_ok=True)
-        result=run(root,args.max_pages,args.fixtures,args.clear_budget_stop)
+        result=run(root,args.max_pages,args.fixtures,args.clear_budget_stop,args.drain)
     elif args.command=='stop':
         (root/'STOP').touch()
         result=status(root)

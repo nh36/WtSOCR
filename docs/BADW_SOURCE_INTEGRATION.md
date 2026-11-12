@@ -914,7 +914,9 @@ separate counts. Model inventories are never labelled complete source censuses.
 
 A 200-physical-scan campaign is stored privately in
 `work/linking-campaign-20261112`. It spans all four families beyond the historical
-48-page candidate queue. Its initial detached run completed inventories for 25
+48-page candidate queue. The following initial-run figures are historical;
+consult private live status and spending records for current totals.
+Its initial detached run completed inventories for 25
 scans and matching for 21, producing 297 provisional article starts and 214
 supported identity proposals. Four paid matching responses failed the exact
 HTML-evidence quotation check and remain blocked and cached. The first 50 paid
@@ -933,7 +935,10 @@ Images, responses, approval records, the database and credentials stay ignored.
 
 Use the optional dependencies in `requirements-badw-model.txt`, the acquired HTML
 body map, and the existing private approval/spending directory. All campaigns
-must share that spending directory while consuming the same US$10 authorisation.
+must share that spending directory while consuming the same authorisation.
+The user subsequently authorised additional spending; the current explicit
+cumulative ceiling is US$20. Renewed approval preserves paid requests and all
+unresolved reservations rather than resetting expenditure.
 Load `OPENAI_API_KEY` securely into the shell environment; do not put its value in
 a command, source file or shell history. The examples use the existing local
 body/dependency locations; another installation can substitute its own paths.
@@ -943,13 +948,13 @@ export PYTHONPATH=work/badw-model-deps
 python3 scripts/run_badw_linking_campaign.py status --campaign work/linking-campaign-20261112
 python3 scripts/run_badw_linking_campaign.py review --campaign work/linking-campaign-20261112
 python3 scripts/run_badw_linking_campaign.py stop --campaign work/linking-campaign-20261112
-python3 scripts/run_badw_linking_campaign.py resume --campaign work/linking-campaign-20261112 --max-pages 25
+python3 scripts/run_badw_linking_campaign.py resume --campaign work/linking-campaign-20261112 --drain
 ```
 
 For a detached process, after securely loading the key:
 
 ```bash
-nohup python3 -u scripts/run_badw_linking_campaign.py resume --campaign work/linking-campaign-20261112 --max-pages 25 </dev/null >work/linking-campaign-20261112/terminal.log 2>&1 &
+nohup python3 -u scripts/run_badw_linking_campaign.py resume --campaign work/linking-campaign-20261112 --drain </dev/null >work/linking-campaign-20261112/terminal.log 2>&1 &
 ```
 
 The shell returns immediately; the controller survives closing that terminal
@@ -961,6 +966,24 @@ the cap. `--clear-budget-stop` clears the worker STOP marker only: it does not
 increase the cap or forgive reserved spending. `--max-pages` bounds work per
 invocation, including failed page attempts, rather than resetting campaign state.
 
+During backlog review, leave the proposal-generation STOP marker in place.
+The separate blind reading excludes the earlier inventory and favoured match:
+
+```bash
+python3 scripts/badw_campaign_review.py --campaign work/linking-campaign-20261112 --live
+python3 scripts/badw_campaign_review.py --campaign work/linking-campaign-20261112 --report
+touch work/linking-campaign-20261112/REVIEW_STOP
+```
+
+`REVIEW_STOP` finishes the current request before stopping. Remove it explicitly
+before resuming the same review command; cached paid responses are reused.
+The private HTML desk shows source crops, exact component bindings, both readings
+and exceptions. Corroboration is labelled model-source-reviewed, never human
+review or certification. This checkpoint does not implement automatic promotion.
+Only unique whitespace differences in exact HTML quotations can be repaired;
+other invalid quotations become abstentions with the raw response preserved.
+Uncertain billing remains reserved and is never retried automatically.
+
 To plan another bounded campaign with systematic round-robin physical selection:
 
 ```bash
@@ -971,7 +994,8 @@ Use `--starts work/starts.json` for a family-to-first-physical-page mapping to s
 known front matter, or `--pages work/pages.json` for explicit physical locators.
 `page_key` selects an existing reviewed printed-page crop. Unreviewed spreads
 remain provisional whole scans; a model's folio reading cannot confer reviewed
-geometry. Selection skips already certified scans but does not assume pagination
+geometry. Selection retains partially certified scans and skips only explicitly
+reviewed complete physical-scan censuses. It does not assume pagination
 offsets or that every observed article has an acquired HTML counterpart.
 
 ### Review and publish a batch

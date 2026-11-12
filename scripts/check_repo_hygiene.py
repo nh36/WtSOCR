@@ -72,6 +72,8 @@ FILE_NON_STDLIB_IMPORTS = {
     # The detached controller uses the worker's existing optional SDK transport
     # with automatic retries disabled; no additional dependency is introduced.
     "scripts/run_badw_linking_campaign.py": {"openai"},
+    # Reuses the same optional SDK in requirements-badw-model.txt for blind review.
+    "scripts/badw_campaign_review.py": {"openai", "jsonschema"},
     # Exercise the worker's real PDF/image coordinate transforms end to end.
     "tests/test_badw_model_worker.py": {"pymupdf"},
 }

@@ -72,11 +72,16 @@ SCHEMAS = {
     source_id=NULL_S, component_index=dict(type=['integer','null']), printed_evidence=S,
     html_evidence=S, boundary_evidence=S, homonym_evidence=S, alternatives=S, uncertainty=S)))))
 }
+SCHEMAS['source_review'] = obj(dict(inventory=SCHEMAS['inventory'], matching=SCHEMAS['match']))
 
 
 def validate(stage, result, pack):
     from jsonschema import validate as schema_validate
     schema_validate(result, SCHEMAS[stage])
+    if stage == 'source_review':
+        validate('inventory', result['inventory'], pack)
+        validate('match', result['matching'], dict(pack, inventory=result['inventory']))
+        return
     if stage == 'inventory':
         ids = set()
         for item in result['items']:
@@ -290,13 +295,19 @@ def request_spec(stage, pack, model, detail, max_output_tokens):
     prompt = (DATA/f'badw_model_{stage}_prompt.txt').read_text()
     # Inventory is genuinely source-first. No candidates or previous answers.
     evidence = dict(image_pixels=pack['image']['pixels']) if stage=='inventory' else dict(
-        inventory=pack['inventory'], candidates=[
+        candidates=[
             dict({k:v for k,v in row.items() if k in ('source_id','headword','homonym')},
                  # Keep original component indices and all lexical alternatives,
                  # but omit acquisition/layout metadata unnecessary to matching.
                  components=[{k:v for k,v in component.items() if k in ('type','source_form')}
                              for component in row['components']])
             for row in pack['candidates']])
+    if stage == 'match':
+        evidence['inventory'] = pack['inventory']
+    if stage == 'source_review':
+        # Deliberately exclude earlier inventory, matches, confidence, verdicts,
+        # source bindings and crop filenames derived from the first decision.
+        evidence['image_pixels'] = pack['image']['pixels']
     if stage=='match' and pack.get('match_images'):
         evidence['article_images']=pack['match_images']
     return dict(version=VERSION, stage=stage, model=model, detail=detail, prompt=prompt,
@@ -348,6 +359,23 @@ class Spending:
         self.directory = private(directory)
         self.cap = cap
         self.approval = approval
+
+    def extend(self, previous_approval, authorization):
+        """Apply an explicitly renewed cap without erasing uncertain billing."""
+        if not authorization or not self.approval or self.approval == previous_approval:
+            raise ValueError('new explicit authorization required')
+        with (self.directory/'spending.lock').open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            path = self.directory/'spending.json'
+            state = load(path)
+            if state['approval'] != previous_approval or self.cap <= state['cap']:
+                raise ValueError('previous approval mismatch or cap not increased')
+            state.setdefault('authorization_history', []).append(dict(
+                approval=state['approval'], cap=state['cap'],
+                renewed_by=authorization, renewed_at=time.time()))
+            state.update(approval=self.approval, cap=self.cap)
+            write(path, state)
+            return state
 
     def change(self, key, reservation=None, actual=None, usage=None):
         with (self.directory/'spending.lock').open('a') as lock:
@@ -452,6 +480,10 @@ def execute(spec, pack, directory, spending=None, client=None, fixture=None, int
             write(directory/(key+'-failure.json'), dict(exception_type=type(exc).__name__,
                 status_code=getattr(exc,'status_code',None),request_id=getattr(exc,'request_id',None),
                 error_code=error_code,error_type=error_type,reservation_retained=not rejected))
+            if not rejected:
+                # Stop every process sharing this authorisation, not just this
+                # page. Further calls would accumulate unresolved liabilities.
+                (spending.directory/'STOP').touch()
             disposition = 'request rejected without usage' if rejected else 'reservation retained'
             raise RuntimeError('API request failed ('+type(exc).__name__+', '+str(error_code)+'); '+disposition+'; inspect local ledger') from None
         usage = response.usage.model_dump()
