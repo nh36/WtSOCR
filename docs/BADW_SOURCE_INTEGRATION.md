@@ -726,7 +726,7 @@ errors. Browser navigation is functional evidence, separate from the source
 identity inspection described above. Five inherited status warnings remain;
 they are not new test failures. No OCR release files changed.
 
-## Current production milestone: 688 links (2026-11-12)
+## Historical production milestone: 688 links (2026-11-12)
 
 The reader contains 656 generated and 32 manual attachments: **688 total**, an
 increase of 105 over the protected 583-link baseline. The new fixture
@@ -886,3 +886,180 @@ python3 scripts/badw_html_print_alignment.py --bodies work/acquired-bodies.json 
 python3 scripts/badw_html_print_facsimiles.py --scans-root . --output work/model-production/pages
 python3 scripts/build_badw_full_reader.py --output work/model-production/reader --print-facsimiles work/model-production/pages/manifest.json
 ```
+
+
+## Persistent linking campaign (2026-11-12)
+
+The current reviewed ledger contains **691 certified attachments** (659 generated,
+32 manual) and 89 derivatives. The three additions are printed volume 8 page 11:
+*²ba laṅ*, *ba laṅ dkar zal* and *ba laṅ rkaṅ pa*. The source image was checked
+for each identity, homonym, neighbouring boundary and exact HTML evidence. Two
+use direct-source certificates; the middle article uses its existing C6/C11
+association. The running header for *ba laṅ rkaṅ pa* is explicitly excluded.
+The entire printed page has a reviewed three-start census. These are coding-agent
+image inspections following model proposals, not independent human adjudication.
+`tests/fixtures/badw_print_688_additions.json` freezes the preceding 105 additions,
+alongside all earlier preservation fixtures.
+
+`scripts/run_badw_linking_campaign.py` is the persistent controller. SQLite/WAL
+records the registered 3,466 physical scans, planned printed-page views, stage
+checkpoints, errors, response IDs, usage, review provenance and publication state.
+A single writer and one in-flight request bound concurrency. It reuses worker
+caches across interruption; an uncertain request keeps its budget reservation.
+An invalid paid response is retained for diagnosis rather than bought again.
+Per-page failures continue to other pages, with at most three processing attempts.
+`status.json` is refreshed after each stage pair and is readable without a chat.
+Provisional inventories, source-reviewed decisions and published links have
+separate counts. Model inventories are never labelled complete source censuses.
+
+A 200-physical-scan campaign is stored privately in
+`work/linking-campaign-20261112`. It spans all four families beyond the historical
+48-page candidate queue. Its initial detached run completed inventories for 25
+scans and matching for 21, producing 297 provisional article starts and 214
+supported identity proposals. Four paid matching responses failed the exact
+HTML-evidence quotation check and remain blocked and cached. The first 50 paid
+requests, including those four rejected responses, returned US$1.71769125 in
+usage; cumulative returned usage including the earlier benchmark was
+US$3.204221645, with US$0.3868 still reserved for earlier uncertain requests.
+These are measured usage charges, not a claim that the billing dashboard has
+reconciled the uncertain requests. The continuing detached run has been launched
+against the remaining 200-scan plan under the same cumulative US$10 cap.
+STOP and resume were exercised on the real process,
+as well as interruption immediately after inventory in offline tests. `tmux` is
+unavailable on this host; detached execution with a new process session works.
+Images, responses, approval records, the database and credentials stay ignored.
+
+### Operate from another terminal
+
+Use the optional dependencies in `requirements-badw-model.txt`, the acquired HTML
+body map, and the existing private approval/spending directory. All campaigns
+must share that spending directory while consuming the same US$10 authorisation.
+Load `OPENAI_API_KEY` securely into the shell environment; do not put its value in
+a command, source file or shell history. The examples use the existing local
+body/dependency locations; another installation can substitute its own paths.
+
+```bash
+export PYTHONPATH=work/badw-model-deps
+python3 scripts/run_badw_linking_campaign.py status --campaign work/linking-campaign-20261112
+python3 scripts/run_badw_linking_campaign.py review --campaign work/linking-campaign-20261112
+python3 scripts/run_badw_linking_campaign.py stop --campaign work/linking-campaign-20261112
+python3 scripts/run_badw_linking_campaign.py resume --campaign work/linking-campaign-20261112 --max-pages 25
+```
+
+For a detached process, after securely loading the key:
+
+```bash
+nohup python3 -u scripts/run_badw_linking_campaign.py resume --campaign work/linking-campaign-20261112 --max-pages 25 </dev/null >work/linking-campaign-20261112/terminal.log 2>&1 &
+```
+
+The shell returns immediately; the controller survives closing that terminal
+while the host stays running. Inspect `status.json`, CLI `status`/`report` and
+`terminal.log`. Issue `stop` from another terminal; the current request may finish,
+but the next stage will not start. Resume after a crash with the same directory.
+Do not delete uncertain reservations or use a new spending directory to evade
+the cap. `--clear-budget-stop` clears the worker STOP marker only: it does not
+increase the cap or forgive reserved spending. `--max-pages` bounds work per
+invocation, including failed page attempts, rather than resetting campaign state.
+
+To plan another bounded campaign with systematic round-robin physical selection:
+
+```bash
+python3 scripts/run_badw_linking_campaign.py plan --campaign work/next-campaign --max-pages 200 --bodies work/direct-source-20261111/compact-bodies.json --budget-root work/live-benchmark-20261111
+```
+
+Use `--starts work/starts.json` for a family-to-first-physical-page mapping to skip
+known front matter, or `--pages work/pages.json` for explicit physical locators.
+`page_key` selects an existing reviewed printed-page crop. Unreviewed spreads
+remain provisional whole scans; a model's folio reading cannot confer reviewed
+geometry. Selection skips already certified scans but does not assume pagination
+offsets or that every observed article has an acquired HTML counterpart.
+
+### Review and publish a batch
+
+`review` lists the private source packs. Inspect the original registered image,
+precise article location and exact HTML components. Preserve the provisional
+model response separately. Record stable reviewed inventory IDs, explicit print
+homonyms/absence, boundary evidence, identity evidence, provenance and decisions.
+A complete census needs inspection of the whole printed page, including exclusions.
+
+`prepare_badw_print_drafts.bind_reviewed_direct()` removes deterministic clerical
+work after review; it cannot invent observations or approve a proposal. The
+controller's `review --bindings work/decisions.json --output work/proposed-ledger.json`
+accepts an operator-authored object with `pages` (optional new reviewed page
+records with empty `accepted` lists) and `bindings`. Each binding supplies
+`source_id`, `page_key`, `item_id`, `component_index`, `historical_issue` and
+`historical_reason`. It requires explicit source-inspection acceptance in the
+reviewed inventory, binds authoritative hashes, runs the ordinary compiler and
+checks preservation of the campaign baseline. Failure writes no proposed ledger.
+It never edits the canonical ledger or publishes. Existing page records and
+inventories are reused; duplicate assignments fail closed. Review the proposed
+diff before installing it in `data/badw_html_print_alignment.json` and compiling:
+
+```bash
+python3 scripts/badw_html_print_alignment.py --bodies work/direct-source-20261111/compact-bodies.json --queue data/badw_html_print_review_queue.json
+python3 scripts/run_badw_linking_campaign.py review --campaign work/linking-campaign-20261112 --sync-certificates
+NODE_PATH=work/badw_reader_browser_tools/node_modules python3 scripts/run_badw_linking_campaign.py publish --campaign work/linking-campaign-20261112 --output work/campaign-publication-NEXT
+```
+
+Publication requires a fresh ignored directory. It checks the generated ledger,
+prepares derivatives, builds the complete reader, and runs the full-reader and
+all-attachment desktop/mobile browser suites against a managed local server.
+Server teardown is in `finally`. A build/browser failure never marks links
+published. Git publication remains a separate explicit commit/push operation;
+local `publication.json` never claims a GitHub push.
+
+If a complete build succeeded but browser execution was interrupted, repeat
+`publish` with the same output and `--resume-build`. A checkpoint verifies the
+certificate, reader manifests, reader data and facsimile manifest hashes before
+reusing that build. It reruns the compiler and both browser suites; a changed
+build fails closed. This avoids rebuilding 29,878 witnesses merely because a
+browser needs to be restarted. The usual command still requires a fresh output.
+
+Measured costs currently project approximately US$13–14 for the 200-scan plan,
+excluding the earlier benchmark and unresolved reservations. This is a usage
+projection, not a safe reservation bound or approval for additional spending.
+The controller will stop at the existing cap, potentially earlier because of
+conservative per-request reservations. Completing the plan may need a separately
+approved higher cumulative cap; deleting reservations or changing spending
+directories is not a legitimate way to continue. Wall-clock throughput includes
+idle time between sessions; `api_service_seconds` separately totals recorded
+request elapsed time, including rejected responses.
+
+### Held-out source evidence and promotion policy
+
+`data/badw_model_heldout_ma12_reference.json` freezes a source-first reinspection
+of held-out WtS 9-m physical page 16, printed volume 9 page 12: 12 independent
+starts, two running headers and an opening continuation. Its reviewer is a coding
+agent, not a human. The source census and exact HTML checks preceded inspection
+of the model outputs; accepted certificates were not supplied as answers.
+Terra located and matched all 12 correctly, including explicit printed homonym
+5 and short reference entries. Strict precision and heading recall were both
+12/12; the Wilson 95% interval for each is approximately 0.758–1.000. Five extra
+embedded-reference observations abstained rather than proposing attachments.
+
+Luna merged *ma ke na* with *mā kra*. Its eight supported identities were
+lexically correct on source inspection, but broad whole-article boxes failed
+the frozen heading-box IoU criterion. The strict scorer therefore reports eight
+false-positive *localized links* and zero matched reference regions: these are
+localization failures, not eight demonstrated wrong lexical identities. A missed
+homonym numeral on an excluded running header is another diagnostic error.
+Do not tune the held-out geometry or silently reinterpret these strict metrics.
+The remaining held-out pages are not yet independently censused. The earlier
+10-page schema-validity comparison and certified-page concordance are not
+substitutes for this lexical assessment.
+
+Reproduce the strict comparison without paid calls (substitute `gpt-6-luna` for
+the second model):
+
+```bash
+PYTHONPATH=work/badw-model-deps python3 scripts/badw_model_worker.py evaluate --work work/live-benchmark-20261111 --reference data/badw_model_heldout_ma12_reference.json --prediction work/live-benchmark-20261111/wts_9_m-16-ma12/prediction-gpt-6.1-terra.json
+```
+
+This evidence favours Terra for provisional production, but is insufficient for
+a validated automatic-promotion policy. Every accepted attachment still requires
+actual source review under existing provenance rules. Agreement of two model
+calls, confidence scores and successful browser navigation grant no lexical
+certification authority. Until a larger risk-stratified source assessment passes,
+the detached campaign generates proposals, not thousands of certified links.
+The first three delivered links demonstrate the checked publication route;
+they do not establish 1,000-link throughput or completion of the larger campaign.

@@ -34431,6 +34431,283 @@
           }
         ]
       }
+    },
+    {
+      "key": "v8-p11",
+      "family": "wts_8_b",
+      "source": "WtS_8-b",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "physical_page": 21,
+      "volume": 8,
+      "printed_page": 11,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        471.36,
+        679.92
+      ],
+      "geometry_review": "Agent inspected the complete registered single-page scan, printed folio and both columns. Full MediaBox retained; no inferred spread crop or pagination offset.",
+      "page_evidence": "Agent image inspection: printed folio 11, volume 8; independent article headings in two columns. Printed homonyms are transcribed separately from editorial numbering.",
+      "accepted": [
+        {
+          "certificate_type": "direct-source-heading-v1",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/2",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/2",
+            "headword": "ba laṅ",
+            "homonym": "2"
+          },
+          "html_sha256": "0b531a70c3d5ce07ff5311115117d980523574d458eb6ebdd44236398a562a78",
+          "heading_id": "v8-p11-article-1",
+          "heading_item_sha256": "606268f23cceaca1bab1a09b40ab5ccbae8852d28e55dd8f7ec81cf7e0b178db",
+          "printed_homonym": "2",
+          "review_basis": "Agent source-image inspection and identity adjudication; no independent human review; compiler verifies registered source, reviewed geometry, heading inventory and exact HTML component bindings, not printed transcription.",
+          "source_review": {
+            "decision": "accept",
+            "reviewer": "Codex source-image review, 2026-11-12; no independent human adjudication",
+            "reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: The independently headed printed homonym 2 refers downward to bal la, after the elephant sense of the preceding article and before ba laṅ dkar zal."
+          },
+          "historical_evidence": {
+            "edges_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "anchors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "issue": "missing_heading",
+            "reason": "No historical C11 association identifies this independently headed cross-reference homonym."
+          },
+          "lexical_agreement_reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: The independently headed printed homonym 2 refers downward to bal la, after the elephant sense of the preceding article and before ba laṅ dkar zal.",
+          "print_observation": {
+            "heading": "ba laṅ",
+            "homonym": "2",
+            "evidence": "The independently headed printed homonym 2 refers downward to bal la, after the elephant sense of the preceding article and before ba laṅ dkar zal.",
+            "identity_context": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: The independently headed printed homonym 2 refers downward to bal la, after the elephant sense of the preceding article and before ba laṅ dkar zal.",
+            "page_sha256": "9923254ef45d7d754243c507135c38ea234ab3520863c3e35dc4ba4176851861",
+            "verification": "visual transcription; not machine-verified",
+            "cross_reference": "↓bal la"
+          },
+          "evidence_kind": "cross_reference_only",
+          "cross_reference_evidence": "↓bal la",
+          "cross_reference_component_sha256": "f30eb5c3ebaf95a8680dbe4b10dddbda4bc6e9e679540a5cbc3113f6184e1c0a"
+        },
+        {
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20dkar%20zal/1",
+          "anchor": "wts_8_b:21:70",
+          "heading_position": "right column",
+          "printed_homonym": null,
+          "scan_review": "Agent read the independent printed heading ba laṅ dkar zal and its article in the right column, below the running header. ein geschecktes oder weißes Rind; ba laṅ khra khra bkra bas so, brDa, and ba laṅ dkar po, Dagy. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial numbering is not inferred from print.",
+          "html_sha256": "511f0d435e24ba3097e7c3332b6d87acb1ed19cab3938e5fcefdba9978823025",
+          "anchor_sha256": "55cd63bdf5495cc9396f0ef9ed6aae2fd3e18117b6361dcc64f2b7c98a5fc2f2",
+          "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20dkar%20zal/1",
+            "headword": "ba laṅ dkar zal",
+            "homonym": "1"
+          },
+          "print_observation": {
+            "heading": "ba laṅ dkar zal",
+            "homonym": null,
+            "evidence": "ein geschecktes oder weißes Rind; ba laṅ khra khra bkra bas so, brDa, and ba laṅ dkar po, Dagy.",
+            "identity_context": "Agent read the independent printed heading ba laṅ dkar zal and its article in the right column, below the running header. ein geschecktes oder weißes Rind; ba laṅ khra khra bkra bas so, brDa, and ba laṅ dkar po, Dagy. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial numbering is not inferred from print.",
+            "heading_anchor": "wts_8_b:21:70",
+            "evidence_anchor": "wts_8_b:21:70",
+            "column": "right column",
+            "page_sha256": "9923254ef45d7d754243c507135c38ea234ab3520863c3e35dc4ba4176851861",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "article_boundary": {
+            "classification": "reviewed lexical article start",
+            "heading_lines": [
+              70
+            ],
+            "evidence_lines": [
+              70,
+              71,
+              72,
+              73,
+              74
+            ],
+            "excluded_lines": [],
+            "qa_rows_sha256": "0c99b3650547278ec72e3866ebc513ecd4d27c42cde0b6db7016bd1e2033d452",
+            "review_reason": "Agent read the independent printed heading ba laṅ dkar zal and its article in the right column, below the running header. ein geschecktes oder weißes Rind; ba laṅ khra khra bkra bas so, brDa, and ba laṅ dkar po, Dagy. These printed lexical details agree with the exact bound HTML witness. No printed heading homonym numeral; editorial numbering is not inferred from print."
+          },
+          "definition_evidence": "ein geschecktes oder weißes Rind.",
+          "definition_component_sha256": "1f75e4b9c4dcc4e49bac88b1f5e9f34fe0aafa6277eb1dff2d2a750289295a12"
+        },
+        {
+          "certificate_type": "direct-source-heading-v1",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rka%E1%B9%85%20pa/1",
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rka%E1%B9%85%20pa/1",
+            "headword": "ba laṅ rkaṅ pa",
+            "homonym": "1"
+          },
+          "html_sha256": "4f90a6fc6ec0786bec2296c8a775ff499f12d8f1b6aa0da305a66ec0f372d15e",
+          "heading_id": "v8-p11-article-3",
+          "heading_item_sha256": "6fe9eb0630a658c000d1c4e6b1b5df18c141d8abfc465d76705f55e1be05f237",
+          "printed_homonym": null,
+          "review_basis": "Agent source-image inspection and identity adjudication; no independent human review; compiler verifies registered source, reviewed geometry, heading inventory and exact HTML component bindings, not printed transcription.",
+          "source_review": {
+            "decision": "accept",
+            "reviewer": "Codex source-image review, 2026-11-12; no independent human adjudication",
+            "reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: 1. Bein des Rindes; ba laṅ gi rkaṅ pa spyi la’aṅ, brDa; ba phyugs kyi rkaṅ pa, Dagy. Further senses name khrums stod and khrums smad, month khrums zla, and Tierkreiszeichen Jungfrau."
+          },
+          "historical_evidence": {
+            "edges_sha256": "ad62947caa5e78a27558fdd1115960a75430e5c1f75a712a9a93bead6a937c56",
+            "anchors_sha256": "c53ce46a92bb68917cc0ed56d040fd89a40c78cf09f75c7675421da979dc24d5",
+            "issue": "defective_association",
+            "reason": "No usable independent C6/C11 article association: the actual heading is separately located in the image. The rkaṅ pa C11 edge points to the running header, not the independent lower-column article."
+          },
+          "lexical_agreement_reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: 1. Bein des Rindes; ba laṅ gi rkaṅ pa spyi la’aṅ, brDa; ba phyugs kyi rkaṅ pa, Dagy. Further senses name khrums stod and khrums smad, month khrums zla, and Tierkreiszeichen Jungfrau.",
+          "print_observation": {
+            "heading": "ba laṅ rkaṅ pa",
+            "homonym": null,
+            "evidence": "1. Bein des Rindes; ba laṅ gi rkaṅ pa spyi la’aṅ, brDa; ba phyugs kyi rkaṅ pa, Dagy. Further senses name khrums stod and khrums smad, month khrums zla, and Tierkreiszeichen Jungfrau.",
+            "identity_context": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: 1. Bein des Rindes; ba laṅ gi rkaṅ pa spyi la’aṅ, brDa; ba phyugs kyi rkaṅ pa, Dagy. Further senses name khrums stod and khrums smad, month khrums zla, and Tierkreiszeichen Jungfrau.",
+            "page_sha256": "9923254ef45d7d754243c507135c38ea234ab3520863c3e35dc4ba4176851861",
+            "verification": "visual transcription; not machine-verified"
+          },
+          "definition_evidence": "1.\n  Bein des Rindes.",
+          "definition_component_sha256": "c0345e8479936eb777a081f7a962933063a78f8203dca49cc5d7040f2a9650ea"
+        }
+      ],
+      "source_heading_inventory": {
+        "version": 1,
+        "page_sha256": "9923254ef45d7d754243c507135c38ea234ab3520863c3e35dc4ba4176851861",
+        "review_basis": "Agent source-image inspection and identity adjudication; no independent human review; compiler verifies registered source, reviewed geometry, heading inventory and exact HTML component bindings, not printed transcription.",
+        "reviewer": "Codex source-image review, 2026-11-12; no independent human adjudication",
+        "census_complete": true,
+        "coverage": "Both full columns inspected against the registered image after model proposals; three independent starts. This is agent source inspection, not independent human adjudication.",
+        "items": [
+          {
+            "item_id": "v8-p11-article-1",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/2",
+            "classification": "independent article start",
+            "status": "accepted",
+            "coordinate_system": "PDF points; bottom-left origin",
+            "article_bbox": [
+              223.07999599575996,
+              333.17999267578125,
+              400.97999599575996,
+              348.7799926757813
+            ],
+            "heading_bbox": [
+              224.57999599575996,
+              336.17999267578125,
+              309.17999599575995,
+              348.17999267578125
+            ],
+            "evidence_bbox": [
+              223.07999599575996,
+              333.17999267578125,
+              400.97999599575996,
+              348.7799926757813
+            ],
+            "heading": "ba laṅ",
+            "printed_homonym": "2",
+            "printed_evidence": "The independently headed printed homonym 2 refers downward to bal la, after the elephant sense of the preceding article and before ba laṅ dkar zal.",
+            "preceding": "Continuation of cattle article, sense 2 Elefant and Mvy 8803.",
+            "following": "ba laṅ dkar zal",
+            "boundary_reason": "Separate Tibetan heading with italic romanisation in the right column, below the running header and separated from the preceding article; adjacent starts checked in source image.",
+            "homonym_review": "Explicit printed superscript 2; distinct from cattle article and its internal sense 2.",
+            "identity_reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: The independently headed printed homonym 2 refers downward to bal la, after the elephant sense of the preceding article and before ba laṅ dkar zal.",
+            "source_review": {
+              "decision": "accept",
+              "reviewer": "Codex source-image review, 2026-11-12; no independent human adjudication",
+              "reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: The independently headed printed homonym 2 refers downward to bal la, after the elephant sense of the preceding article and before ba laṅ dkar zal."
+            },
+            "cross_reference": "↓bal la"
+          },
+          {
+            "item_id": "v8-p11-article-2",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20dkar%20zal/1",
+            "classification": "independent article start",
+            "status": "accepted",
+            "coordinate_system": "PDF points; bottom-left origin",
+            "article_bbox": [
+              223.07999599575996,
+              262.67999267578125,
+              400.97999599575996,
+              329.5799926757813
+            ],
+            "heading_bbox": [
+              224.27999599575995,
+              307.37999267578124,
+              398.87999599575994,
+              328.97999267578126
+            ],
+            "evidence_bbox": [
+              223.07999599575996,
+              262.67999267578125,
+              400.97999599575996,
+              329.5799926757813
+            ],
+            "heading": "ba laṅ dkar zal",
+            "printed_homonym": null,
+            "printed_evidence": "ein geschecktes oder weißes Rind; ba laṅ khra khra bkra bas so, brDa, and ba laṅ dkar po, Dagy.",
+            "preceding": "ba laṅ",
+            "following": "ba laṅ rkaṅ pa",
+            "boundary_reason": "Separate Tibetan heading with italic romanisation in the right column, below the running header and separated from the preceding article; adjacent starts checked in source image.",
+            "homonym_review": "No printed heading homonym numeral; editorial 1 is not inferred from print.",
+            "identity_reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: ein geschecktes oder weißes Rind; ba laṅ khra khra bkra bas so, brDa, and ba laṅ dkar po, Dagy.",
+            "source_review": {
+              "decision": "accept",
+              "reviewer": "Codex source-image review, 2026-11-12; no independent human adjudication",
+              "reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: ein geschecktes oder weißes Rind; ba laṅ khra khra bkra bas so, brDa, and ba laṅ dkar po, Dagy."
+            }
+          },
+          {
+            "item_id": "v8-p11-article-3",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rka%E1%B9%85%20pa/1",
+            "classification": "independent article start",
+            "status": "accepted",
+            "coordinate_system": "PDF points; bottom-left origin",
+            "article_bbox": [
+              223.07999599575996,
+              76.67999267578125,
+              400.97999599575996,
+              258.47999267578126
+            ],
+            "heading_bbox": [
+              224.27999599575995,
+              243.17999267578125,
+              327.77999599576,
+              257.87999267578124
+            ],
+            "evidence_bbox": [
+              223.07999599575996,
+              76.67999267578125,
+              400.97999599575996,
+              258.47999267578126
+            ],
+            "heading": "ba laṅ rkaṅ pa",
+            "printed_homonym": null,
+            "printed_evidence": "1. Bein des Rindes; ba laṅ gi rkaṅ pa spyi la’aṅ, brDa; ba phyugs kyi rkaṅ pa, Dagy. Further senses name khrums stod and khrums smad, month khrums zla, and Tierkreiszeichen Jungfrau.",
+            "preceding": "ba laṅ dkar zal",
+            "following": "Page foot after sense 4 Jungfrau.",
+            "boundary_reason": "Separate Tibetan heading with italic romanisation in the right column, below the running header and separated from the preceding article; adjacent starts checked in source image.",
+            "homonym_review": "No printed heading homonym numeral; editorial 1 is not inferred from print.",
+            "identity_reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: 1. Bein des Rindes; ba laṅ gi rkaṅ pa spyi la’aṅ, brDa; ba phyugs kyi rkaṅ pa, Dagy. Further senses name khrums stod and khrums smad, month khrums zla, and Tierkreiszeichen Jungfrau.",
+            "source_review": {
+              "decision": "accept",
+              "reviewer": "Codex source-image review, 2026-11-12; no independent human adjudication",
+              "reason": "Source image heading and the following discriminating printed evidence agree with the exact acquired HTML witness: 1. Bein des Rindes; ba laṅ gi rkaṅ pa spyi la’aṅ, brDa; ba phyugs kyi rkaṅ pa, Dagy. Further senses name khrums stod and khrums smad, month khrums zla, and Tierkreiszeichen Jungfrau."
+            }
+          }
+        ],
+        "exclusions": [
+          {
+            "item_id": "v8-p11-excluded-0",
+            "classification": "excluded source region",
+            "status": "excluded",
+            "reason": "The top left ba laṅ and right ba laṅ rkaṅ pa are running headers, not article starts."
+          },
+          {
+            "item_id": "v8-p11-excluded-1",
+            "classification": "excluded source region",
+            "status": "excluded",
+            "reason": "The complete left column and upper right column continue the cattle article; 2. Elefant is an internal sense, not homonym 2."
+          }
+        ]
+      }
     }
   ],
   "decisions": [
@@ -35434,7 +35711,7 @@
       "review_basis": "Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings."
     }
   ],
-  "inspected_pages": 75,
+  "inspected_pages": 76,
   "inspection_only": [
     {
       "source": "WtS_35-51",
