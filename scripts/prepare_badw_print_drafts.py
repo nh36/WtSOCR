@@ -19,7 +19,7 @@ def prepare(certificate, body, anchor_id, anchors, edges, registry, qa_rows,
         raise ValueError('exact acquired HTML witness required')
     if sid in reserved or any(sid == r['source_id'] for p in certificate['pages'] for r in p['accepted']):
         raise ValueError('duplicate witness assignment')
-    if any(anchor_id == r['anchor'] for p in certificate['pages'] for r in p['accepted']):
+    if any(anchor_id == r.get('anchor') for p in certificate['pages'] for r in p['accepted']):
         raise ValueError('heading anchor already assigned')
     anchor = anchors.get(anchor_id)
     missing = []
@@ -59,6 +59,34 @@ def prepare(certificate, body, anchor_id, anchors, edges, registry, qa_rows,
             'explicit reviewer provenance and acceptance decision'])
 
 
+def prepare_direct(certificate, body, page_key, anchors, edges, registry, reserved=()):
+    """Bind clerical inputs for source review, without inventing an observation."""
+    sid = body['inspection_id']
+    if body['source_kind'] != 'html':
+        raise ValueError('exact acquired HTML witness required')
+    if sid in reserved or any(sid == r['source_id'] for p in certificate['pages'] for r in p['accepted']):
+        raise ValueError('duplicate witness assignment')
+    pages = [p for p in certificate['pages'] if p['key'] == page_key]
+    if len(pages) != 1:
+        raise ValueError('exactly one reviewed page required')
+    page = pages[0]
+    if registry[page['source']]['sha256'] != page['source_sha256']:
+        raise ValueError('stale reviewed source')
+    historical = [e for e in edges if e['source_id'] == sid]
+    historical_anchors = [anchors[k] for k in sorted({e['local_anchor_id'] for e in historical} & set(anchors))]
+    return dict(status='draft; no attachment authority', certificate_type=a.DIRECT_TYPE,
+        source_id=sid, editorial=dict(source_url=body['source_url'], headword=body['headword']['loc'], homonym=body['homonym']),
+        html_sha256=body['sources'][0]['sha256'], page=page_key,
+        page_sha256=a.object_digest(a.page_binding(page)),
+        historical_evidence=dict(edges_sha256=a.object_digest(historical), anchors_sha256=a.object_digest(historical_anchors)),
+        historical_edges=historical, historical_anchors=historical_anchors,
+        components=[dict(record=c, sha256=a.object_digest(c)) for c in body['components']],
+        prior_decisions=[dict(record=d, sha256=a.object_digest(d)) for d in certificate.get('decisions', []) if d['source_id'] == sid],
+        required_observations=['reviewed heading inventory item with precise PDF heading, article and evidence coordinates',
+            'observed spelling, printed homonym or absence, neighbouring boundaries and lexical evidence',
+            'historical association defect, exact HTML component agreement, explicit provenance and decision'])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--bodies', type=Path, required=True)
@@ -80,6 +108,10 @@ def main():
             qa[family,int(row['page']),int(row['line'])] = row
     drafts, seen, used = [], set(), set()
     for proposal in json.loads(args.proposals.read_text()):
+        if proposal.get('certificate_type') == a.DIRECT_TYPE:
+            drafts.append(prepare_direct(cert, bodies[proposal['source_id']], proposal['page'], anchors, edges, registry, seen))
+            seen.add(proposal['source_id'])
+            continue
         if proposal['anchor'] in used:
             raise ValueError('duplicate proposed heading anchor')
         drafts.append(prepare(cert, bodies[proposal['source_id']], proposal['anchor'], anchors,

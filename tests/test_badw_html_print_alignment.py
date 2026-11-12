@@ -100,7 +100,8 @@ def test_real_batch_is_bounded_explicit_and_contains_negative_controls():
     assert len(records) == len(generated['witnesses'])
     additions = json.loads((Path(__file__).parent/'fixtures/badw_print_298_additions.json').read_text())
     milestone476 = json.loads((Path(__file__).parent/'fixtures/badw_print_476_additions.json').read_text())
-    for frozen in baseline['generated'] + additions['generated'] + milestone476['generated']:
+    milestone583 = json.loads((Path(__file__).parent/'fixtures/badw_print_583_additions.json').read_text())
+    for frozen in baseline['generated'] + additions['generated'] + milestone476['generated'] + milestone583['generated']:
         record = records[frozen['source_url'], frozen['html_sha256']]
         assert record['page'] == frozen['page']
         assert a.object_digest(record) == frozen['record_sha256']
@@ -288,8 +289,8 @@ def test_reviewed_candidate_anchor_correction_is_explicit_and_edge_bound(evidenc
 
 def test_three_reported_bindings_cannot_return_as_accepted_headings():
     cert = json.loads(a.CERTIFICATE.read_text())
-    accepted = {r['anchor']: r for p in cert['pages'] for r in p['accepted']}
-    decisions = {r['anchor']: r for r in cert['decisions']}
+    accepted = {r['anchor']: r for p in cert['pages'] for r in p['accepted'] if 'anchor' in r}
+    decisions = {r['anchor']: r for r in cert['decisions'] if 'anchor' in r}
     for old, true in [('wts_1_34:1090:55',89),('wts_35_51:106:47',59)]:
         assert old not in accepted
         assert decisions[old]['status'] == 'deferred'
@@ -512,3 +513,105 @@ def test_committed_reference_articles_bind_exact_targets_and_preserve_deferrals(
     assert len(added_deferred) == 8
     accepted = {r['source_id'] for p in cert['pages'] for r in p['accepted']}
     assert not accepted & {d['source_id'] for d in added_deferred + cert['locator_investigations']}
+
+
+@pytest.fixture
+def direct_evidence(evidence):
+    body, anchor, assertion, edges, cert = evidence
+    page = cert['pages'][0]
+    item = dict(item_id='p16-a01', source_id=body['inspection_id'], classification='independent article start',
+        status='accepted', coordinate_system='PDF points; bottom-left origin',
+        article_bbox=[20,100,200,200], heading_bbox=[20,180,90,200], evidence_bbox=[20,150,200,180],
+        heading='test', printed_homonym=2, printed_evidence='Eine bestimmte Heilpflanze.',
+        preceding='Numeral 1: vessel ends above.', following='Next independent heading below.',
+        boundary_reason='Separate indented heading below vessel, not the running header.',
+        homonym_review='Explicit printed numeral 2, not the vessel numeral 1.',
+        identity_reason='Plant definition distinguishes this exact HTML witness from the vessel.')
+    page['source_heading_inventory'] = dict(version=1, page_sha256=a.object_digest(a.page_binding(page)),
+        reviewer='test source reviewer', review_basis=a.DIRECT_REVIEW_BASIS, census_complete=False,
+        items=[item], exclusions=[])
+    for k in ('anchor', 'anchor_sha256', 'article_boundary', 'heading_position'):
+        assertion.pop(k)
+    assertion.update(certificate_type=a.DIRECT_TYPE, review_basis=a.DIRECT_REVIEW_BASIS,
+        heading_id=item['item_id'], heading_item_sha256=a.object_digest(item),
+        source_review=dict(decision='accept', reviewer='test source reviewer', reason='Source image checked.'),
+        historical_evidence=dict(issue='missing_identity_edge', reason='No C11 association.',
+            edges_sha256=a.object_digest([]), anchors_sha256=a.object_digest([])),
+        lexical_agreement_reason=item['identity_reason'],
+        print_observation=dict(heading=item['heading'], homonym=2, evidence=item['printed_evidence'],
+            identity_context=item['identity_reason'], page_sha256=a.object_digest(a.page_binding(page)),
+            verification='visual transcription; not machine-verified'))
+    edges.clear()
+    return evidence
+
+
+def test_direct_source_certificate_and_nonpublishable_preparation(direct_evidence):
+    import prepare_badw_print_drafts as drafts
+    body, anchor, assertion, edges, cert = direct_evidence
+    generated = compile_fixture(direct_evidence)
+    a.validate_expansion(cert, generated)
+    assert generated['witnesses'][0]['review_basis'] == a.DIRECT_REVIEW_BASIS
+    assert 'anchor_sha256' not in generated['witnesses'][0]['evidence']
+    draft_cert = copy.deepcopy(cert)
+    draft_cert['pages'][0]['accepted'] = []
+    draft = drafts.prepare_direct(draft_cert, body, 'v1-p16', {}, [], {'WtS_1-34':dict(sha256='b'*64)})
+    assert not {'source_review','print_observation','heading_id'} & draft.keys()
+    draft_cert['pages'][0]['accepted'] = [draft]
+    with pytest.raises(ValueError, match='draft'):
+        a.compile_records(draft_cert, {'html:one':body}, {}, [], {'WtS_1-34':dict(sha256='b'*64)})
+
+
+@pytest.mark.parametrize('target,field,value,message', [
+    ('item','classification','running header','independent'),
+    ('item','classification','embedded compound','independent'),
+    ('item','classification','continuation','independent'),
+    ('item','printed_homonym',1,'homonym'),
+    ('item','heading_bbox',[0,0,500,500],'location'),
+    ('item','evidence_bbox',[20,150,float('nan'),180],'location'),
+    ('item','boundary_reason','','boundary_reason'),
+    ('item','status','provisional','independent'),
+    ('assertion','definition_evidence','A different vessel.','lexical evidence'),
+    ('assertion','html_sha256','c'*64,'HTML identity'),
+    ('assertion','anchor','invented:41:20','manufacture'),
+    ('assertion','review_basis',a.REVIEW_BASIS,'review basis'),
+])
+def test_direct_source_negative_controls(direct_evidence,target,field,value,message):
+    assertion=direct_evidence[2]
+    item=direct_evidence[4]['pages'][0]['source_heading_inventory']['items'][0]
+    (item if target=='item' else assertion)[field]=value
+    assertion['heading_item_sha256']=a.object_digest(item)
+    with pytest.raises(ValueError,match=message):
+        compile_fixture(direct_evidence)
+
+
+def test_direct_page_hash_and_expansion_tampering(direct_evidence):
+    generated=compile_fixture(direct_evidence)
+    generated['witnesses'][0]['evidence']['heading_item_sha256']='f'*64
+    generated['content_sha256']=a.object_digest({k:v for k,v in generated.items() if k!='content_sha256'})
+    with pytest.raises(ValueError,match='witness differs'):
+        a.validate_expansion(direct_evidence[4],generated)
+    direct_evidence[4]['pages'][0]['physical_page']=42
+    with pytest.raises(ValueError,match='inventory'):
+        compile_fixture(direct_evidence)
+
+
+def test_direct_prior_deferral_is_explicitly_reconsidered(direct_evidence):
+    cert=direct_evidence[4]
+    cert['decisions']=[dict(source_id='html:one',anchor='old:41:2',reason='Running header',status='deferred')]
+    with pytest.raises(ValueError,match='reconsideration'):
+        compile_fixture(direct_evidence)
+
+    direct_evidence[2]['reconsideration']=dict(decision_sha256s=[a.object_digest(cert['decisions'][0])],reason='Independent source heading now located precisely.')
+    compile_fixture(direct_evidence)
+    cert['decisions'][0]['reason']='changed'
+    with pytest.raises(ValueError,match='reconsideration'):
+        compile_fixture(direct_evidence)
+
+
+def test_direct_heading_cannot_be_reassigned_under_another_inventory_id(direct_evidence):
+    items = direct_evidence[4]['pages'][0]['source_heading_inventory']['items']
+    duplicate = copy.deepcopy(items[0])
+    duplicate.update(item_id='another-id', source_id='html:another')
+    items.append(duplicate)
+    with pytest.raises(ValueError, match='duplicate accepted source heading location'):
+        compile_fixture(direct_evidence)

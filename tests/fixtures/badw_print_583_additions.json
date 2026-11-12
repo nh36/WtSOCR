@@ -1,0 +1,753 @@
+{
+  "generated": [
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20skyobs/1",
+      "html_sha256": "3b410b604be3e99617325cf5aa8b337f329ee1ea3311d848b99d686993647bab",
+      "page": "v1-p58",
+      "record_sha256": "9a6f9245845f12ad5f5bb815d84cf2138a94e9672b380ab109e998e8644118f3",
+      "page_sha256": "da6e52a20ea493436b64e07a50aa3e77201e0d8df21f6074afb21a00f278171c"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20brkos/1",
+      "html_sha256": "eac0dc4b5e16c24dfc2bfcb5b9606df418e769c0766dec7ee09776948c1cc4a8",
+      "page": "v1-p58",
+      "record_sha256": "30f79ed5ac4db791984a51f4998980c131b81a789311dd300b359c8842e2d8c4",
+      "page_sha256": "da6e52a20ea493436b64e07a50aa3e77201e0d8df21f6074afb21a00f278171c"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20khyab%20gli%E1%B9%85/1",
+      "html_sha256": "8b3ec7f39dcc628db1087b84f3671108f3bba90804e505e646a50a0d65863de4",
+      "page": "v1-p58",
+      "record_sha256": "cc33a5c4f8610cd81544c13b627f60e14ae2772dc1061415509243c77999ecfd",
+      "page_sha256": "da6e52a20ea493436b64e07a50aa3e77201e0d8df21f6074afb21a00f278171c"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20khyab%20mun%20pa/1",
+      "html_sha256": "0119f128cfb45a6692705bb39db5ee5c865df3284f91aeca085cda72c913f7b3",
+      "page": "v1-p58",
+      "record_sha256": "dd8dbe0f26f549ca067e5c9c39deb9b7da358356088eb9c7baceeebe8ac0a4b2",
+      "page_sha256": "da6e52a20ea493436b64e07a50aa3e77201e0d8df21f6074afb21a00f278171c"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20%E2%80%99khebs/1",
+      "html_sha256": "5c2fb5f5ba94d4d898f40c4ec32d467cf2a6133d5fe5f15b7f2aef18f65233c2",
+      "page": "v1-p58",
+      "record_sha256": "6be292be344a7133bbf5807b93477cf5126c94c784cf10f04500c8de72abc4fe",
+      "page_sha256": "da6e52a20ea493436b64e07a50aa3e77201e0d8df21f6074afb21a00f278171c"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20%E2%80%99khyil/1",
+      "html_sha256": "fbb6a9ad6f959fa54beaf5a5e0e451a5c6d9d5139abc511edbb64f5a6ec92bc3",
+      "page": "v1-p58",
+      "record_sha256": "5214b101b628d4f5da9e3a407371b7172ad5592615d8f5412d8a73387cd44bef",
+      "page_sha256": "da6e52a20ea493436b64e07a50aa3e77201e0d8df21f6074afb21a00f278171c"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20gyi%20dkyil/1",
+      "html_sha256": "7366f1ddb09cda08d3b707513c78fdeb04dafc387e93c936a03c92e5c68095a4",
+      "page": "v1-p58",
+      "record_sha256": "efae4fa9070fb6bba17659eda99eb53ce4f6415490a346d8b9729ed339b36e60",
+      "page_sha256": "da6e52a20ea493436b64e07a50aa3e77201e0d8df21f6074afb21a00f278171c"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20gyi%20khur/1",
+      "html_sha256": "d8c319ac9a4edadc5fbd5de30674ee65d362959e97ddfe63cb122a235121a7f3",
+      "page": "v1-p58",
+      "record_sha256": "a70ea355e41dcac2f77e5474abeea9a5024f87b6c9935522fa2ca8eea7d20e24",
+      "page_sha256": "da6e52a20ea493436b64e07a50aa3e77201e0d8df21f6074afb21a00f278171c"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20gyi%20%E2%80%99jigs%20byed/1",
+      "html_sha256": "ac6e8da777b0090f8c875bdc053e5c1d96dcc2092dbec16964ff5f90fecacd44",
+      "page": "v1-p59",
+      "record_sha256": "813fb8dea71d48cfe3b64a0c215fc74c275a0d4132c9b30cb33ef2116a6e98e9",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20gyi%20%E2%80%99jug/1",
+      "html_sha256": "eb47efbc3e4100127e6ec20fa451a2adf5990224947c68c5cdc20fbbc87a09c4",
+      "page": "v1-p59",
+      "record_sha256": "d578dd38147440db29bfa1f032c4b62bff19f35f23f5306aef8af82f656447ad",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20gyi%20ma/1",
+      "html_sha256": "5d9cf08632dc6edd0e55cf9c52e3bbfb490e53058645716b5fdddbb732937a62",
+      "page": "v1-p59",
+      "record_sha256": "244a2c765ab74b8dfc8d8b3d6c3d98479400397c9a298a383de6d68acf4c00d9",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20gyi%20gza%E2%80%99%20ba/1",
+      "html_sha256": "e1b6d8b630b8f98ff80d3711f61018d5bfcc932198496f0a3c944bdd852ec3e7",
+      "page": "v1-p59",
+      "record_sha256": "881fe9a4893820f1908e1fe25c9aabff2614a14970b52b226382ed5f58ea2f18",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20gyi%20b%C5%9Bes%20g%C3%B1en/1",
+      "html_sha256": "23458e0ba245c01f4a75eff842dce86237643b1f717e75af53787f4ca48cc1ee",
+      "page": "v1-p59",
+      "record_sha256": "249956cfb114a1c1e790c42f3f3e39d2992fa75ce3a89256cc39ac3f6ec2be34",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20gyis%20bkur%20ba/1",
+      "html_sha256": "9f7eb4f2ee9cb454cb8fc66a205575e0fdbd3bad7cf6273604ae8d336fcb965c",
+      "page": "v1-p59",
+      "record_sha256": "f3f421192beaa5acbfacf31be8e9bd7c186652e8fd224e71bee409798cef52e0",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20grol%20grags%20pa/1",
+      "html_sha256": "5ac4d9733d77b1ac78373ba285ac9f059b515f7f7c2ddfb362b27ccbacf1674b",
+      "page": "v1-p59",
+      "record_sha256": "954dd90efe8dd4a7b712bf2808ddc34ba454b3802ef30984febfb4e068610dec",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99/1",
+      "html_sha256": "42c74685c9622b9e05ec0696711f58da3f61d1c463858d7e4ca3745067128c42",
+      "page": "v1-p59",
+      "record_sha256": "0931f84c99fb302aadbd4387e8ed14bde194edecb512fc3b1012a9579fee57e7",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99%20rgyal%20mtshan/1",
+      "html_sha256": "5ed6416196c78f243ca3dc0d79ff2ba41a37164857e3f376bcf3cb56ad976177",
+      "page": "v1-p59",
+      "record_sha256": "a92069900cac413b81edc516ff393692d23adeb0b1d574664ff83efd3431f043",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99%20mchog%20ldan/1",
+      "html_sha256": "0c94b0d07eec197a74e1c4da4f9b0a43f911a358d0b4ed208fd85ab10821add6",
+      "page": "v1-p59",
+      "record_sha256": "43b3a53d10eb95ea9688cd51c0b319f1d6b1d3a27f2e6c14d2bf7df5d2be3666",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kun%20dga%E2%80%99%20%C3%B1i%20ma/1",
+      "html_sha256": "ca9a7706ff9c73679d214d3001df2d2a2443aa1c312c81e2d7481dbea5f59da4",
+      "page": "v1-p59",
+      "record_sha256": "65beb2874ee8e3a1f873c733fad80fd51fd0d51fbbf212c8c862661f50732bc0",
+      "page_sha256": "2960e501f20dce401493b5e75d8d34162a604963eca1027a42759dba1690e6db"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20yul%20bre%20sna/1",
+      "html_sha256": "ecb5986625d1c1d0262ce8b9ab95cb3f05bf42f1cfdf6e7edb0c21ce2585e6a4",
+      "page": "v1-p126",
+      "record_sha256": "bfa28f8f879759389996111ccdcccc95b378a180adc1f3f933cc30a9e21571f1",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20li/1",
+      "html_sha256": "3254a8346a1a40958ce2c855f846467180bcba9487459d662ad1136d480cfddb",
+      "page": "v1-p126",
+      "record_sha256": "f3dc67fc6053f18283d114105b6dc866ff8bdc676743bfb63e63f2c7bd7872b3",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20srin%20ba%20gla%E1%B9%85%20gi%20gdo%E1%B9%85%20can/1",
+      "html_sha256": "a0d1374347e7dfac3b4ca85d1721f7354d11381d3f1c52757696cf4f3a9d872a",
+      "page": "v1-p126",
+      "record_sha256": "bbcb0171d960b69775b67648f24fd09bf5290b00952b6cea34611ce783942ec5",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20lha%20ko%E1%B9%85%20btsun%20rgya%20la/1",
+      "html_sha256": "60dde3731adb832e33416257de51361e1338dc90eed3271176ef25d7d93216d2",
+      "page": "v1-p126",
+      "record_sha256": "2388b11a1055d9ceaf94617efae5c9ab62dec06eab40368b7df6110244cbd2e2",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20lham/1",
+      "html_sha256": "36b5d2417cc6beae5acd18b334e6feda7fff4bb91184736243a0518317e99fa5",
+      "page": "v1-p126",
+      "record_sha256": "2c9de2f0dd71b1615e61d0156518a769757b0052f84b8938c9e5c1acac4895cb",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kod%20kha/1",
+      "html_sha256": "bdb2bee54edc6ca49d8488aa0fccb3c64fe511eca267b7f49360ab557dc51f85",
+      "page": "v1-p126",
+      "record_sha256": "96c0e0b641f5fa9f1618e6504877cfd37928a0cc95fd53c9a89df07ec887ee05",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kon%20pa/1",
+      "html_sha256": "948d77846790adfd89956baa104c63085a64fff70111b0b260844ddd8914887d",
+      "page": "v1-p126",
+      "record_sha256": "590affaaa6cf05f984bd59e25a39d83f0ef147f2c9ecd4446e8624e7e2c75f9a",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kon%20pa%20gab%20skye/1",
+      "html_sha256": "83e13c6bbcfd873a589dbfaa85799f53223440d1bf88aebbcc807a8eac090b5f",
+      "page": "v1-p126",
+      "record_sha256": "167dbedf7b81467e0dc612f376222c5a23eae29818ef76d5e54707eb89a1eac1",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kon%20pa%20gab%20chu%E1%B9%85/1",
+      "html_sha256": "f84a010623b90640707d56e0b58bfb2dc65058564d7bf7a7d5c364f6b72f8cc2",
+      "page": "v1-p126",
+      "record_sha256": "8dc22b5f3a4aebe81157b1ed005596b1f9478cc87478dfbd4ecb863b8cf98c5d",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kon%20pa%20gab%20chen/1",
+      "html_sha256": "ed51d0bb0a8fc98e496c18ee5da3322904ec2d81b008d0609d7e3a319441ea49",
+      "page": "v1-p126",
+      "record_sha256": "719e10341d1632def86eef495c28db1eabf0dabc7d7dc811303eac07c811aee4",
+      "page_sha256": "599d8c3d3a1a03a0fc56ccbedc39a41e19765c79827cc3e408919102adfe2c73"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kom%20bu/1",
+      "html_sha256": "cb8bb1489e62ae80094e8d2946d46fba13a450939f9255be5214e2283e98bad3",
+      "page": "v1-p127",
+      "record_sha256": "d0f37c5e596d59d8619ec9b6dca772ae448552e7f077b30c1a491f9e14ca5e83",
+      "page_sha256": "0f0c5fc1bfa6cd914cc9d0c79978f04c2fd513c455b1648e4fa0047895981cd8"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ko%E2%80%99u%20kun%20dkris/1",
+      "html_sha256": "80015b411790d29bc7a20a9d365cb41d275619e82cb6545b1c17bd12fa5dcd6b",
+      "page": "v1-p127",
+      "record_sha256": "f519c8d023a2dba4e8efc664e44ab174251239b1bed17771947638352dbc89f4",
+      "page_sha256": "0f0c5fc1bfa6cd914cc9d0c79978f04c2fd513c455b1648e4fa0047895981cd8"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ko%E2%80%99u%20rab%20bya/1",
+      "html_sha256": "dfdf939759761272459b60941d5a574031506ea6b3fb44808d2759e13bb248a6",
+      "page": "v1-p127",
+      "record_sha256": "2ce09f45d3cd84820994e300c78ba4b57bbc90589e76e0882f86c232ef8edb01",
+      "page_sha256": "0f0c5fc1bfa6cd914cc9d0c79978f04c2fd513c455b1648e4fa0047895981cd8"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ko%E2%80%99u%20%C5%9Bi%20ka/1",
+      "html_sha256": "ff6ba0830d2deaa457574edbdde993a2d8ce63efe6a5a7e6d7e19de983b9f3ac",
+      "page": "v1-p127",
+      "record_sha256": "00ce7196939de3ec5e1bd5cd58454f1fbcf077b0b596d56feba257357114025b",
+      "page_sha256": "0f0c5fc1bfa6cd914cc9d0c79978f04c2fd513c455b1648e4fa0047895981cd8"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kor/1",
+      "html_sha256": "3270b2cae5a71b243df288ea51c59f3391310fabe20926a1366c8d958425dfb7",
+      "page": "v1-p127",
+      "record_sha256": "9096e859990be272b04455714af3e7cd80e0093fbffd3cd0ec6027b3b0f37208",
+      "page_sha256": "0f0c5fc1bfa6cd914cc9d0c79978f04c2fd513c455b1648e4fa0047895981cd8"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kor%20tshe/1",
+      "html_sha256": "e4641ac69d256b0733e340d43cee0e828096aa601d1589926cf8bd677745d1c9",
+      "page": "v1-p127",
+      "record_sha256": "ee8ef8245ca4dacf75f2c43755c3c921f51ed596114f28d709d886f47c596688",
+      "page_sha256": "0f0c5fc1bfa6cd914cc9d0c79978f04c2fd513c455b1648e4fa0047895981cd8"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/kol%20ma/1",
+      "html_sha256": "cfdc51fd95ef53b4d2985f8e708f45600c9513641260973fd018b09393e5430e",
+      "page": "v1-p127",
+      "record_sha256": "d0b8d33d853fa150b05dbf799c7636ab1579f189e66300a88e0489b98db8221c",
+      "page_sha256": "0f0c5fc1bfa6cd914cc9d0c79978f04c2fd513c455b1648e4fa0047895981cd8"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20pa/1",
+      "html_sha256": "ece26f30df3556acdebd83f98c00467b78ae2e5bffa64c144d082e7133b2f1e8",
+      "page": "v1-p162",
+      "record_sha256": "99767ff15d3fec1e0cb1d98f5fb57ce484e64af1f8bac5b1ed28600de12d0924",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20spyod%20pa/1",
+      "html_sha256": "c43576c35b1ef5bbae3482c220c2bc587834489476ecfbfd2ca9ad8a4fb57a02",
+      "page": "v1-p162",
+      "record_sha256": "92536546765d2d7e300982dff0f0128820f7d9ff59de34f4319f1d4478df344d",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20bzlog%20ma/1",
+      "html_sha256": "37d9ee33aed524937fd08a4ad2845d5ddea756e9a7fed3eae6dfd3d58a212274",
+      "page": "v1-p162",
+      "record_sha256": "c82068fb283435151b01025d80325926df17e8ae568c445174aad63a143b84e0",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20thub%20legs/1",
+      "html_sha256": "aabfb9c05586c8cb17a63f0e18aeb7cd17255fc1eb35e1543233c572c33c8068",
+      "page": "v1-p162",
+      "record_sha256": "3c7621cdc2842136394de7e276846f0fec71a0d8e37419626df0de81401d13c7",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20mdo/1",
+      "html_sha256": "2b12d3aaa931e9e76718f0640534a1933d04342dc82c79dd36a51d695c36cb8b",
+      "page": "v1-p162",
+      "record_sha256": "dc65717c588690ac496d8b2b13ba12cdd8afdb7519d3307ad59850973a856a96",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20po/1",
+      "html_sha256": "fdbaad116b7245811de540782113235d81a79915eb94345c48fca296c95baafc",
+      "page": "v1-p162",
+      "record_sha256": "8cf717ae28783b32a26c31e7623c1e765abe126a033f987850b9476f48fdcebe",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20spyad/1",
+      "html_sha256": "be0385bfe29f5335bcdcf68b2d45d977ecbdf1c48a2d8f83e01683146042a3de",
+      "page": "v1-p162",
+      "record_sha256": "01baee938a2060440dd2b9739394e1ce9d8421bfcb725e1586de33478c969d65",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20ba/1",
+      "html_sha256": "58808e9e892c0db520706eff283754c328254e013492dd7315781347605142d0",
+      "page": "v1-p162",
+      "record_sha256": "b1f92974f1b1237e5679b407aa23ee5f22c770bdbc67fa89dfe8bdeda5ba07d1",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20blas/1",
+      "html_sha256": "edf7f946366612cfda6de690c7ebd001fe6f1f8a0c185d9a6e4c630f362c4ab4",
+      "page": "v1-p162",
+      "record_sha256": "ae151977b3af4a5b5e603751c7cfbb69a820ab37bb28b3b043b1c447bbe9d7b1",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20mo/1",
+      "html_sha256": "45d850ae5041db8c750bd67c5ce1167aec5bcab8d5956c5c400bd884e22f3c9e",
+      "page": "v1-p162",
+      "record_sha256": "d31b8a803972756d5785a6d1eda52ab52479303c696c76c41a1dd894c5eaa633",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20mo%20ka/1",
+      "html_sha256": "1b8948c16a046a4869ab3f32bc7901dfe343fb649d241fc8a5339e22e06a917b",
+      "page": "v1-p162",
+      "record_sha256": "db80efcc99f1404866dcbdcae02e10f33492a76a83f5966113b1ee18af58e0c8",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20tshegs/1",
+      "html_sha256": "61495835f638f5c9b4cf03e01e1a6b2394b92655a2a6274ea085c2ab4e71f542",
+      "page": "v1-p162",
+      "record_sha256": "f84eca5d49bd537a79bd263ca42e2bf92d214075b4504a44e0957a027039864e",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20b%C5%BAi%20dgon/1",
+      "html_sha256": "603cbffb0e3cafbf1a872a517e7649d72823fca249385a99a11911374be5d8bd",
+      "page": "v1-p162",
+      "record_sha256": "c5841e6b81354486da161f5131f2103847b2001b01ff8d510cb0e6e833b0c95a",
+      "page_sha256": "d2ac610e5df26031442d3789e5538d0e2d8e3a4c6b1102191eaadc587d83a0b0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20zlog/1",
+      "html_sha256": "0d00ea6d7a0580789b09a7ea551f26e8951abce37899fc5d782f80ac4c3e65a2",
+      "page": "v1-p163",
+      "record_sha256": "a2f6a7d13be9939f2cb8cbc15340776909a40f2c2c7a68745be62e4d7c2fbcdc",
+      "page_sha256": "0bc26b2abe88e834ab7102d917b2123a10d59f401a64798d82e8eee16e3ee47a"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20zlog%20bla%20ma/1",
+      "html_sha256": "8fde0b2cf76985445e9f80afc149021f7be741b7e7d6a1cfbfc1d41acebb3ca7",
+      "page": "v1-p163",
+      "record_sha256": "363e6ebf6f36455e8817dd3810c16fb38719f36fcbe9c4cf2efb54418649d882",
+      "page_sha256": "0bc26b2abe88e834ab7102d917b2123a10d59f401a64798d82e8eee16e3ee47a"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20rug/1",
+      "html_sha256": "f99cacc11f318553bcba0317939b51acf3ed6d637a2a597e0b45ece1e751c362",
+      "page": "v1-p163",
+      "record_sha256": "f691b0d22bdb4fe2624f6afb13b057abcd165e11d8add97de2e4271577fb8989",
+      "page_sha256": "0bc26b2abe88e834ab7102d917b2123a10d59f401a64798d82e8eee16e3ee47a"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20las/1",
+      "html_sha256": "e02ea61957864053580a667d309c2e8fe178eb91fba25b60ee4c7587ae49e4a0",
+      "page": "v1-p163",
+      "record_sha256": "c5f1611f2ddcf80cdea6381bd5566b20349c4f5d85f3c51704235c8778ea927b",
+      "page_sha256": "0bc26b2abe88e834ab7102d917b2123a10d59f401a64798d82e8eee16e3ee47a"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20sa/1",
+      "html_sha256": "9a5ef23438ce8619478c010b91f3727072829261fba2ade71cdfd443b05f1671",
+      "page": "v1-p163",
+      "record_sha256": "b0a4c326b02523a005aa68e923bf819bc4a0a94ca44f9c15281a24049e96682a",
+      "page_sha256": "0bc26b2abe88e834ab7102d917b2123a10d59f401a64798d82e8eee16e3ee47a"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/dka%E2%80%99%20se%20ba/1",
+      "html_sha256": "3b33690923d51f9c5f754d9ceed0743cd1952ddcbb93b379e2c868574d626a11",
+      "page": "v1-p163",
+      "record_sha256": "cc48c7016fd9eb82f5169e00a937aaeec64165f0232127b2bfa47aee53131b67",
+      "page_sha256": "0bc26b2abe88e834ab7102d917b2123a10d59f401a64798d82e8eee16e3ee47a"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20can%20gyi%20sri%E1%B9%85%20mo/1",
+      "html_sha256": "3070e377a614a4f49e9f041c0e3cc90f7448f242574a1b60e77a1900b3326244",
+      "page": "v1-p352",
+      "record_sha256": "47cc502c2509cca7f9a4c490a734862b7c96f26c6ee12e1863e5503bc89b00af",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20can%20ma/1",
+      "html_sha256": "3a3e3209754f2bad03a44bb81321c0fb7b8816a04fe194d7437ce0a795e2363e",
+      "page": "v1-p352",
+      "record_sha256": "344d777e9ecb70b7654e5564ff54825e42b52f7945a9794f67c8e4cc7486e28d",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20can%20me%20tog/1",
+      "html_sha256": "3b2ad0f651a04d533d72c43dfb11a2ad94e3557199408fc4515d01bb6522eb29",
+      "page": "v1-p352",
+      "record_sha256": "54ac6232a4a46be40a0d06cdb70f825fe974b2407a296c2c715ac148a4573287",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20can%20gsod/1",
+      "html_sha256": "bca0aed6070563f38b70c877d0b04870140456a66435faa8f624e91543ceecf1",
+      "page": "v1-p352",
+      "record_sha256": "284ad0925b8b19d5fd1d87a0835c08d857baf782b4037da51722f3b94ff007b1",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20phon/1",
+      "html_sha256": "874cb722f00a424a69e84c781892a038dfbf03d68bb68ef647cd6b9c2d4c1fa9",
+      "page": "v1-p352",
+      "record_sha256": "8b7c35268cddf68a0e109ed994067e1f1eb48a2a5d964a49f44edec5b295b57f",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20%E2%80%99breg%20mkhan/1",
+      "html_sha256": "7b380d70a795a9aefc398c4fe4a3987b9cfd07d8a0df7e63ca28ff9ddea64892",
+      "page": "v1-p352",
+      "record_sha256": "0bf11da2289bbe10be361a8c9737b6016fdd8b8ffed85fcfb1292cf70cbcb6a2",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20tshab/1",
+      "html_sha256": "f1bade1bf42408e4eff9aa8a7a8c52a22a49fb39a458d53feb3e4c303b5c4a13",
+      "page": "v1-p352",
+      "record_sha256": "38673e16692c626f5c294f02aba63bd8c9122f27a4ed9c9975cfb314ce1fefd5",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20tshogs/1",
+      "html_sha256": "fb5b10cf1ddefe13746986902177aaf3018889ccb7c0c75cc576ad5ccff30089",
+      "page": "v1-p352",
+      "record_sha256": "c964fa1d3b996c310adcdd3360490ded26475e82d0e0b682b1c6c6df804c9bf5",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20tshom/1",
+      "html_sha256": "4f543ca246e17abba1395dc13f1f4f7949e57ffea8e3e26e36903bfe5455975c",
+      "page": "v1-p352",
+      "record_sha256": "82520ff32cd00d4c27a48d4789774a5a0324acc96d0588badfd987385f88711c",
+      "page_sha256": "7548acd1ab7aa62cc02019a5f3fe6142a01c12ec0c99b951c3dd8d8165fd89b1"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20bza%E1%B9%85/1",
+      "html_sha256": "b86b09519ba00655d39d61710e4d45b5fee8ddda4f7e119f183fdb790b7d93ea",
+      "page": "v1-p353",
+      "record_sha256": "5e4667ce80896720eb7c90c1b5dff1b119713af4b6f6e668d2a5d65873b524a4",
+      "page_sha256": "281477f501746514507548d1a112ce2869c851312a58272fb36b2fa148fedcc7"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20bzed/1",
+      "html_sha256": "4aa58a9e363a05877819bd4326732b76568cecc1d82f0052448844b621beb4cf",
+      "page": "v1-p353",
+      "record_sha256": "f864367c662455b583d74041f13dd5132d5f44314e86aa73159e25267486f900",
+      "page_sha256": "281477f501746514507548d1a112ce2869c851312a58272fb36b2fa148fedcc7"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20yi%20byi%20dor/1",
+      "html_sha256": "8313ea4faa8f6c6b1b9e65d3b686a09fb6aef85b63e25b692e442b91ef9669f2",
+      "page": "v1-p353",
+      "record_sha256": "bce2b7d2b46ec45e4a53b3a77e649cdc8cc9e44ecb1b8ec474cd3ca7cee879d2",
+      "page_sha256": "281477f501746514507548d1a112ce2869c851312a58272fb36b2fa148fedcc7"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20yi%20%C5%BAags%20pa/1",
+      "html_sha256": "4a45deb571e386af8104ed00480591144609359856fa013708d5ccfcb8183801",
+      "page": "v1-p353",
+      "record_sha256": "f303ff96b5439a7214bc1664c4e3e190aada3118d435342d5e78c2560ac41858",
+      "page_sha256": "281477f501746514507548d1a112ce2869c851312a58272fb36b2fa148fedcc7"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20yi%20la%20ba%20can/1",
+      "html_sha256": "446863ab71f4479438fab21ad95bc03735aa40d95944bd06e4fdd516924f1a1f",
+      "page": "v1-p353",
+      "record_sha256": "a3924255d3c1beedafcef60ff8b7334e536420cbff961a4fb027d9aa0544abfb",
+      "page_sha256": "281477f501746514507548d1a112ce2869c851312a58272fb36b2fa148fedcc7"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20lo/1",
+      "html_sha256": "e6da876d373afe90eb3d3ce08b5fa9e429190a15b0823f27d4ec41a0e5c8ae3d",
+      "page": "v1-p353",
+      "record_sha256": "5156da87596b8e21ccda4fdb97a043799bcabd7a1f6412139cea9d741ef8dcde",
+      "page_sha256": "281477f501746514507548d1a112ce2869c851312a58272fb36b2fa148fedcc7"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20%C5%9Bad%20%E2%80%99dzi%E1%B9%85s%20pa/1",
+      "html_sha256": "7ed3f7439caf00c4d8610dd62160971eadfdd6df11c76040df6a6e9af20b983c",
+      "page": "v1-p353",
+      "record_sha256": "4b551c2bd7c2c63438ea8e7629da888cc85115ec040b0e06e6cd5e58f5dd3874",
+      "page_sha256": "281477f501746514507548d1a112ce2869c851312a58272fb36b2fa148fedcc7"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/skra%20ser/1",
+      "html_sha256": "45cbeaf19d695652e468fe8074118519f6adb8ca85829df3091c64166bf8bc79",
+      "page": "v1-p353",
+      "record_sha256": "0872ffc71e06f9719363c7657e26b3dffd2521b786d48137be00b98c791c35bd",
+      "page_sha256": "281477f501746514507548d1a112ce2869c851312a58272fb36b2fa148fedcc7"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20thog/1",
+      "html_sha256": "7d117fe0af22b558de58dffc3cacde15c531b48e52a1b4e24cc5477edb5fd82d",
+      "page": "v9-p23",
+      "record_sha256": "215ba264d8f93439665f74699043ebdc6fc3138fbdf9cff37b92208a93ff7fb2",
+      "page_sha256": "8c0ed4d33f70744cd65e6cd99f06f55e3166dc7e7ed45002af9501d405d52e64"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20thod/1",
+      "html_sha256": "2409c3f9aba411cf5501c6923e38aa78dfa36d1c846317c9a9748cf9afa15089",
+      "page": "v9-p23",
+      "record_sha256": "868a8be193d5b21d03aae425182f29c1831a834756695688e96fe197dc3ce636",
+      "page_sha256": "8c0ed4d33f70744cd65e6cd99f06f55e3166dc7e7ed45002af9501d405d52e64"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20mtha%E2%80%99/1",
+      "html_sha256": "c6897a852c6c19f53a2a57f2a363a3f4eb7d06967effa28b108082dca58a02a1",
+      "page": "v9-p23",
+      "record_sha256": "5312076842f083ffb4c3a01a6479c2ffeed75e27523e699e02e28b317d36d5b7",
+      "page_sha256": "8c0ed4d33f70744cd65e6cd99f06f55e3166dc7e7ed45002af9501d405d52e64"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20da%20na/1",
+      "html_sha256": "304a7b3e12a4f1365c88bd6f084813f66b8093b3b14ceae87fb88b39e26a9844",
+      "page": "v9-p23",
+      "record_sha256": "93114b1e8bce678c237fbfe77ee39cc356aa0471a3de1829f5f32ed9927aff0c",
+      "page_sha256": "8c0ed4d33f70744cd65e6cd99f06f55e3166dc7e7ed45002af9501d405d52e64"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20du%20ra/1",
+      "html_sha256": "20c680eee855d71d55afa08723f0ac92cbe316496f0bdd1b6918807ada439213",
+      "page": "v9-p23",
+      "record_sha256": "ab055ee95822b0f86a221ba08ac79e0b1fe986c14b0eddd0b8f3e36a689c87c8",
+      "page_sha256": "8c0ed4d33f70744cd65e6cd99f06f55e3166dc7e7ed45002af9501d405d52e64"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20dra%E1%B9%85s%20pa/1",
+      "html_sha256": "c4661658cbc3299b2ee8f07a36b41bf242ca2e75d61c5beb5453cd96f1595711",
+      "page": "v9-p23",
+      "record_sha256": "3c56fae26e9608d39f0d68fed390a31d5f0d92040316eff167bfccab47464c72",
+      "page_sha256": "8c0ed4d33f70744cd65e6cd99f06f55e3166dc7e7ed45002af9501d405d52e64"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20dri/1",
+      "html_sha256": "304e076be1383300a88a8512335508763484769411357fd3d634b85898fde5ff",
+      "page": "v9-p23",
+      "record_sha256": "f8c176a4d94cdf04ac2acd0c4b7dfb6b2a8b2756f692010dd8ca30e6db5b0540",
+      "page_sha256": "8c0ed4d33f70744cd65e6cd99f06f55e3166dc7e7ed45002af9501d405d52e64"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20ba%20nag%20po/1",
+      "html_sha256": "d1d1389020b3b01848519236cc2d7efa39778e9a9a6a10cf3e53d8b39b4aafa2",
+      "page": "v8-p189",
+      "record_sha256": "33434fd307f673aa983845604718a1e2ff2fc650d8bd2f2b878fc65e43eaafba",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20bo/2",
+      "html_sha256": "3835085f0e42175a577c8de0fd10a63b8c6c43138779989d9a72db0514500922",
+      "page": "v8-p189",
+      "record_sha256": "1e4366e88b265c94dbfcf1b1df27cb0b75ec3115619742a7a798cf6c7fdb16a2",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20bo/4",
+      "html_sha256": "c0eb1c9ed069875cba7a72f3ec2c7bd6c81f058ebdd4c6a6810a6a460375c702",
+      "page": "v8-p189",
+      "record_sha256": "775cfdde7e19f363687043000cc8cb008715cb0d3cd52c470ba91446848c1b74",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20brun/1",
+      "html_sha256": "7c160599e92b98ab56d711dabd88a890c4b2da0d4bba6c745e8a3a307d73284e",
+      "page": "v8-p189",
+      "record_sha256": "a643fd9a1682d1eabe98753f81569a77ed9a49cb3a9a3e59e62adacd9454dac6",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20brun/2",
+      "html_sha256": "eaf34f27c7cad033adc5bab461163bc1c41e65ff387faefd6eee2722cb570da7",
+      "page": "v8-p189",
+      "record_sha256": "b96fe8876795a540d8ed090b3ccd7ce4c75e5fc30e3ce012cfe550fae9746909",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20bla%E2%80%99i%20rgyal%20mtshan/1",
+      "html_sha256": "6fe37b4090e56f27d719b6c02d5eb78b8a957ac8592b54585e483dc5f11c7d7a",
+      "page": "v8-p189",
+      "record_sha256": "701e980c0a86444f763ff57987a883ab84cd0f7abdaee46c04002fd9e77094eb",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20mug/1",
+      "html_sha256": "25f5f4336f9fcd18656c510eb4c10a49fe96fbd686f8034ce0a6244474a80e5f",
+      "page": "v8-p189",
+      "record_sha256": "f556e8083f0e184797693413f994db28f196db094feaf2f4ca7084df2e277bde",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20mug/2",
+      "html_sha256": "102e9d079fdf537d61ee8d6c3eab46112419278f10e28807a80782ec881c2d63",
+      "page": "v8-p189",
+      "record_sha256": "2ae7e8c2eac483cfa82149a65f25b41aa35c5a122aca85ad8006764f7fc42553",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20mu%E1%B9%85/1",
+      "html_sha256": "e6f97f910c50b4959cf455b08974d791424b7baac2c2322d94ebd760ab1a36c0",
+      "page": "v8-p189",
+      "record_sha256": "40ec2f2b5cc775989b4ec6a0ec7191973e36753e3113ac9bc5495cf9ecc29fed",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/byi%20mo/1",
+      "html_sha256": "003ca4149df97bde1cfaef0b5a1a21dfa644c206c8343c3fac4e120e17159f05",
+      "page": "v8-p189",
+      "record_sha256": "dfbcb077e8e5566fec859a92a68db386210f11021b6a0c7ed56af9ddd1899f0a",
+      "page_sha256": "9bf6e8f9e3c41325a40626a19185df87a5ec0b7638d28d7ab53111420f48fdf0"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%20ba%E2%80%99i%20rta/1",
+      "html_sha256": "30cc045d4337fcd54541bd136c9eda9df79d555f9436b8007756ccea8d0756a4",
+      "page": "v7-p235",
+      "record_sha256": "a770991213e9140aaf9862f66e261a2bc44a918a903e7d12c351ad4d0b17c545",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%20mo/1",
+      "html_sha256": "5ad011ceea83ec3e6631c3d90ef1ba5419a4ce1e060f46278f105c8b415125ff",
+      "page": "v7-p235",
+      "record_sha256": "c6e616c349af6ec1a8656e0c26f386b9d087274bb4b805e4b6ae641062aa281d",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85/1",
+      "html_sha256": "7aebd03ba60b999f5b0b4e1f0ca2b632787f003ba456387ae811082f7090383d",
+      "page": "v7-p235",
+      "record_sha256": "94afca911450d5c6680e5e332944d03e85257d1d1cdb3a365870e5e73628647b",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20%E1%B9%85a%20stag%20rtse/1",
+      "html_sha256": "ff2e8dc99dd344345db7aa2930b9bb3adb37fdf781f1555946536d1ed2b2e989",
+      "page": "v7-p235",
+      "record_sha256": "730fe76be7af2266d50f431194d18038d06983c46beed39b684fb8fb6997c9cb",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20pa/1",
+      "html_sha256": "8c03ac4bd582f152abf05fb648f6b148d6716b70287c01c88615db1234025ed5",
+      "page": "v7-p235",
+      "record_sha256": "2c7588c81b1da62ff195af277cb9bdc9ece14ced01d463cbcc2dc7c2de504c4e",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20pa%20stag%20rtse/1",
+      "html_sha256": "72d4d536c6c7bb8e28de2c3367e2b7034ce28fb25f6fc93c8b4eb2ed6591338f",
+      "page": "v7-p235",
+      "record_sha256": "7ab511df03d26ad74032d89e154fccde78948f6b934fed00b5863796aeca8fc3",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20par%20stag%20rtse/1",
+      "html_sha256": "38a9a9a14724486a0cedacb746fd51b6d017dfa02f7e8dfaa97c8b0eece019c6",
+      "page": "v7-p235",
+      "record_sha256": "0811c1928d93cc1c2e8cebc9ccd901817c1f4a832c05c269d847dd1de25d7240",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20phu/1",
+      "html_sha256": "d5224d11e6e1ca4f38b90c63d7124a10e37e3b6152064fabc3e4fff3b113dfe1",
+      "page": "v7-p235",
+      "record_sha256": "ab16a36fd0e68c03147251dafd4e01e7c74fbb0aabc66b510abb19e32e1df64a",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20ba/1",
+      "html_sha256": "5c6b07f6ac51cec488fb70155f84c71495df3655269ef9fd7ae0c0060ac9e6e6",
+      "page": "v7-p235",
+      "record_sha256": "2a293c793af563eb0428df6374f6dec209ca5fdd76f443e8488fd8dd34349029",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20ba%20stag%20rtse/1",
+      "html_sha256": "87f4de41218c432a52b8fee97f1a7cdd8e24d63755bc3b472441a91dd49b46d0",
+      "page": "v7-p235",
+      "record_sha256": "ca97cafb140052b64ee22cc1acad9ff711d9de9950ce90df8ff514adf41ce0f4",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20ba%20pa/1",
+      "html_sha256": "2e522368dccd8c7454722f99203cd855f86328d7021f02e041c97ea59fc22815",
+      "page": "v7-p235",
+      "record_sha256": "8cf1536b2b3a61bfc1049936c1ed23b1037f606bae41a94722d07dbd2e2d0fe7",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20bar%20stag%20rtse/1",
+      "html_sha256": "39f1b9f827d3b84eb5f7a7c9edd770ab945c1738571ce02f32a187d874d194e0",
+      "page": "v7-p235",
+      "record_sha256": "b3b5bf511917516667aea1563d93aa572bbd62ba29d0ff1355a48bfd1762dc0a",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20yul/1",
+      "html_sha256": "6ea842bc8db8f324bbf4c5035afdce2db688f90147ce13b49c267171bee22ca2",
+      "page": "v7-p235",
+      "record_sha256": "222d64a6ad4d7811eb265f3c35b0206b1be5f70e59622f53de7b147c244cf69e",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85%20sa%E1%B9%85/1",
+      "html_sha256": "363ec87f2d9f7a5f559cbf1301ffd31203c40580f07897c3dae668eef0dfba7b",
+      "page": "v7-p235",
+      "record_sha256": "89ebdca4e6dcaf8d2ab4dfc4408e4d23c6a7684e3249ab6b52f418b1a71bacd2",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85s/1",
+      "html_sha256": "405f7698788bbca943ffa889c85b49109869152416a7debc50e53341cbc5c340",
+      "page": "v7-p235",
+      "record_sha256": "dac36c88ef9072b40a6c7372b4e10221d6007c6133b3cced4527f72d74031681",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyi%E1%B9%85s%20pa%20pa/1",
+      "html_sha256": "228ddceb8ff0ec42dc28e992406169c88e3cfd8b94b10d4506d37529255928bd",
+      "page": "v7-p235",
+      "record_sha256": "a66ebdb5575733239154145af4045d2d35b7729a758fd8f81e82ad7b874d070b",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyid/2",
+      "html_sha256": "5c7ebc2ac082ab8cefc5c003cb31f67cb40a93d7325da16d03389608c35e75c4",
+      "page": "v7-p235",
+      "record_sha256": "7bcc448bfa02c6c5e9d3b4428e423836bfafa07e08e5ead1ec28c5fb8da107ed",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99phyil/1",
+      "html_sha256": "a2f778af32ecb06a1fc1ea05015460c0732719f5e90b8f12b4b1fa2c13c58507",
+      "page": "v7-p235",
+      "record_sha256": "06104d383c6c92a46ec6e08bb43be497a04a31bf08dd67e4125f5ee9535b9435",
+      "page_sha256": "f8f7b853d47ebf2389ae10d5c56f7f506a8dbb93b59c60c6c8e76b0ff04c97e9"
+    }
+  ]
+}

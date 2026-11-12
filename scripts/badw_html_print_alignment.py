@@ -44,6 +44,8 @@ def proof_key(text):
 
 REVIEW_BASIS = 'Human visual transcription and identity adjudication, not automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.'
 AGENT_REVIEW_BASIS = 'Agent visual inspection and identity adjudication; no independent human review and no automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.'
+DIRECT_TYPE = 'direct-source-heading-v1'
+DIRECT_REVIEW_BASIS = 'Agent source-image inspection and identity adjudication; no independent human review; compiler verifies registered source, reviewed geometry, heading inventory and exact HTML component bindings, not printed transcription.'
 
 
 def review_basis(assertion):
@@ -53,7 +55,8 @@ def review_basis(assertion):
     Both modes pass precisely the same certificate gates.
     """
     basis = assertion.get('review_basis', REVIEW_BASIS)
-    if basis not in (REVIEW_BASIS, AGENT_REVIEW_BASIS):
+    allowed = (DIRECT_REVIEW_BASIS,) if assertion.get('certificate_type') == DIRECT_TYPE else (REVIEW_BASIS, AGENT_REVIEW_BASIS)
+    if basis not in allowed:
         raise ValueError('unknown review basis; use a fixed human or agent visual review label')
     return basis
 
@@ -63,10 +66,12 @@ def witness_record(page_key, assertion):
     observed = assertion['print_observation']
     component_key = ('cross_reference_component_sha256' if assertion.get('evidence_kind') == 'cross_reference_only'
                      else 'definition_component_sha256')
+    location = (dict(heading_item_sha256=assertion['heading_item_sha256'])
+                if assertion.get('certificate_type') == DIRECT_TYPE else dict(anchor_sha256=assertion['anchor_sha256']))
     return dict(source_url=editorial['source_url'], html_sha256=assertion['html_sha256'],
         headword=editorial['headword'], homonym=editorial['homonym'], page=page_key,
         printed_heading=observed['heading'], printed_homonym=observed['homonym'],
-        evidence=dict(certificate=assertion, anchor_sha256=assertion['anchor_sha256'],
+        evidence=dict(certificate=assertion, **location,
             **{component_key: assertion[component_key]}), review_basis=review_basis(assertion))
 
 
@@ -122,6 +127,103 @@ def validate_boundary(assertion, anchor, qa_rows):
         raise ValueError('stale article-boundary QA evidence')
     if not boundary.get('review_reason'):
         raise ValueError('manual article-boundary adjudication required')
+
+
+def page_binding(page):
+    return {k: page[k] for k in ('source', 'source_sha256', 'physical_page', 'volume', 'printed_page', 'side', 'crop')}
+
+
+def validate_direct(assertion, body, page, anchors, edges, decisions):
+    """Separate source-reviewed pathway. Never synthesizes historical OCR evidence.
+
+    Geometry and hashes make the visual claim reproducible, not machine-proven.
+    Inventory review and an explicit acceptance remain mandatory.
+    """
+    review_basis(assertion)
+    if any(k in assertion for k in ('anchor', 'anchor_sha256', 'candidate_anchor_correction')):
+        raise ValueError('direct certificate must not manufacture a historical anchor')
+    inventory = page.get('source_heading_inventory', {})
+    if (inventory.get('version') != 1 or inventory.get('page_sha256') != object_digest(page_binding(page))
+        or inventory.get('review_basis') != DIRECT_REVIEW_BASIS or not inventory.get('reviewer')):
+        raise ValueError('source-bound reviewed heading inventory required')
+    items = inventory.get('items', []) + inventory.get('exclusions', [])
+    ids = [i['item_id'] for i in items]
+    if len(ids) != len(set(ids)):
+        raise ValueError('duplicate source heading inventory ID')
+    accepted_locations = [tuple(i.get('heading_bbox', [])) for i in inventory.get('items', [])
+                          if i.get('status') == 'accepted']
+    if len(accepted_locations) != len(set(accepted_locations)):
+        raise ValueError('duplicate accepted source heading location')
+    matches = [i for i in inventory.get('items', []) if i['item_id'] == assertion.get('heading_id')]
+    if len(matches) != 1:
+        raise ValueError('direct heading not in reviewed article inventory')
+    item = matches[0]
+    if assertion.get('heading_item_sha256') != object_digest(item):
+        raise ValueError('stale reviewed heading inventory item')
+    if (item.get('classification') != 'independent article start' or item.get('status') != 'accepted'
+        or item.get('source_id') != body['inspection_id']):
+        raise ValueError('heading is not an accepted independent article for this HTML identity')
+    review = assertion.get('source_review', {})
+    if (review.get('decision') != 'accept' or review.get('reviewer') != inventory['reviewer']
+        or not review.get('reason')):
+        raise ValueError('explicit source-review acceptance required')
+    def contains(outer, inner):
+        import math
+        return (len(inner) == 4 and all(isinstance(x, (int,float)) and not isinstance(x,bool) and math.isfinite(x) for x in inner)
+                and outer[0] <= inner[0] < inner[2] <= outer[2]
+                and outer[1] <= inner[1] < inner[3] <= outer[3])
+    if (item.get('coordinate_system') != 'PDF points; bottom-left origin'
+        or not contains(page['crop'], item.get('article_bbox', []))
+        or not contains(item['article_bbox'], item.get('heading_bbox', []))
+        or not contains(item['article_bbox'], item.get('evidence_bbox', []))):
+        raise ValueError('invalid precise source heading/evidence location')
+    for field in ('heading', 'printed_evidence', 'preceding', 'following', 'boundary_reason', 'homonym_review', 'identity_reason'):
+        if not isinstance(item.get(field), str) or not item[field].strip():
+            raise ValueError('independent source observation required: '+field)
+    if (body['source_kind'] != 'html' or assertion['source_id'] != body['inspection_id']
+        or assertion['editorial'] != dict(source_url=body['source_url'], headword=body['headword']['loc'], homonym=body['homonym'])
+        or assertion['html_sha256'] != body['sources'][0]['sha256']):
+        raise ValueError('stale exact acquired HTML identity')
+    if 'printed_homonym' not in item or assertion.get('printed_homonym') != item['printed_homonym']:
+        raise ValueError('explicit printed homonym observation required')
+    if item['printed_homonym'] is not None and str(item['printed_homonym']) != str(body['homonym']):
+        raise ValueError('competing numbered homonym')
+    observation = assertion.get('print_observation', {})
+    expected_observation = dict(heading=item['heading'], homonym=item['printed_homonym'],
+                           evidence=item['printed_evidence'], identity_context=item['identity_reason'],
+                           page_sha256=inventory['page_sha256'], verification='visual transcription; not machine-verified')
+    if assertion.get('evidence_kind') == 'cross_reference_only':
+        for field in ('cross_reference', 'heading_variant'):
+            if field in item:
+                expected_observation[field] = item[field]
+    if observation != expected_observation:
+        raise ValueError('direct printed observation differs from reviewed inventory')
+    historical = assertion.get('historical_evidence', {})
+    actual_edges = [e for e in edges if e['source_id'] == assertion['source_id']]
+    actual_anchors = [anchors[k] for k in sorted({e['local_anchor_id'] for e in actual_edges} & set(anchors))]
+    if (historical.get('edges_sha256') != object_digest(actual_edges)
+        or historical.get('anchors_sha256') != object_digest(actual_anchors)
+        or historical.get('issue') not in ('missing_heading', 'missing_identity_edge', 'defective_association')
+        or not historical.get('reason')):
+        raise ValueError('historical evidence absence/defect must be recorded and bound')
+    prior = [d for d in decisions if d['source_id'] == assertion['source_id']]
+    reconsider = assertion.get('reconsideration', {})
+    if prior and (reconsider.get('decision_sha256s') != [object_digest(d) for d in prior] or not reconsider.get('reason')):
+        raise ValueError('all earlier decisions require explicit source-bound reconsideration')
+    if assertion.get('evidence_kind', 'definition') == 'cross_reference_only':
+        # Preserve the existing strict reference controls, with the independently
+        # observed heading supplied by the reviewed inventory.
+        return validate_cross_reference(assertion, body)
+    if assertion.get('evidence_kind', 'definition') != 'definition':
+        raise ValueError('unknown direct article evidence kind')
+    quote = assertion.get('definition_evidence', '')
+    components = [c for c in body['components'] if c['type'] == 'definition'
+                  and proof_key(quote) and proof_key(quote) in proof_key(c['source_form'])]
+    if not components or assertion.get('definition_component_sha256') != object_digest(components[0]):
+        raise ValueError('direct lexical evidence is not bound to this HTML definition')
+    if not assertion.get('lexical_agreement_reason'):
+        raise ValueError('printed/HTML lexical agreement must be reviewed explicitly')
+    return components[0]
 
 
 def validate_assertion(assertion, body, anchor, edges):
@@ -205,6 +307,16 @@ def compile_records(certificate, bodies, anchors, edges, registry, qa_rows=None)
             if sid in seen:
                 raise ValueError('witness assigned twice')
             seen.add(sid)
+            if assertion.get('certificate_type') == DIRECT_TYPE:
+                validate_direct(assertion, bodies[sid], page, anchors, edges, certificate.get('decisions', []))
+                location = (key, assertion['heading_id'])
+                if location in used_anchors:
+                    raise ValueError('direct heading assigned twice')
+                used_anchors[location] = assertion
+                witnesses.append(witness_record(key, assertion))
+                continue
+            if assertion.get('certificate_type') is not None:
+                raise ValueError('unknown certificate type')
             body, anchor = bodies[sid], anchors[assertion['anchor']]
             if anchor['start_page'] != page['physical_page'] or anchor['volume'] != page['family']:
                 raise ValueError('physical anchor differs from reviewed page')
