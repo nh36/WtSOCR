@@ -1,0 +1,248 @@
+{
+  "version": "source-first-evaluation-v1",
+  "family": "wts_9_m",
+  "physical_page": 16,
+  "printed_volume": 9,
+  "printed_page": 12,
+  "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+  "source_image_sha256": "56329c8bfb69058dfea033afdc56594cc07f2349bfa450193b0e3bfdf1a353c2",
+  "image_pixels": [
+    1514,
+    2257
+  ],
+  "image_transform": {
+    "pdf_crop": [
+      0.0,
+      0.0,
+      459.36,
+      680.64
+    ],
+    "image_device_origin": [
+      0,
+      0
+    ],
+    "points_per_pixel": [
+      0.3,
+      0.3
+    ],
+    "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+    "pdf_to_mupdf": [
+      1.0,
+      0.0,
+      0.0,
+      -1.0,
+      -2.640000104904175,
+      678.9600219726562
+    ]
+  },
+  "reviewer": "Codex agent source-image and exact HTML inspection; not independent human adjudication",
+  "review_decision": "source-reviewed reference",
+  "complete_census": true,
+  "reference_process": "Entire image read and exact local HTML compared before viewing model outputs for this held-out page. Coordinates enclose headings, not entire articles. No prior certificate decisions supplied.",
+  "items": [
+    {
+      "item_id": "reviewed-01",
+      "classification": "article",
+      "heading_loc": "ma",
+      "printed_homonym": 5,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma/5",
+      "html_sha256": "1d38e69d283fee695adab69df050b2d7495162d91f8f4b57b0a38010cce29019",
+      "bbox": [
+        253.1,
+        461.6,
+        363.1,
+        508.9
+      ]
+    },
+    {
+      "item_id": "reviewed-02",
+      "classification": "article",
+      "heading_loc": "ma ka ra",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ka%20ra/1",
+      "html_sha256": "7f16a9de3804e59020a6a9608765e675422ff79c5b74625f5e1a0e4f02ee9c52",
+      "bbox": [
+        253.1,
+        757.5,
+        460.1,
+        800.1
+      ]
+    },
+    {
+      "item_id": "reviewed-03",
+      "classification": "article",
+      "heading_loc": "ma kī",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20k%C4%AB/1",
+      "html_sha256": "1c79b13a1bf46c3335c1b25223f6fa8575f25a8b9131784a8fc1b7bc2c4b6fcc",
+      "bbox": [
+        253.1,
+        877.0,
+        408.1,
+        933.8
+      ]
+    },
+    {
+      "item_id": "reviewed-04",
+      "classification": "article",
+      "heading_loc": "ma ki ta",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ki%20ta/1",
+      "html_sha256": "c740f82d393abd48b62acab3eb0c001c63c8a895b0d180d869e7f49e66a32074",
+      "bbox": [
+        253.1,
+        1219.0,
+        464.8,
+        1269.9
+      ]
+    },
+    {
+      "item_id": "reviewed-05",
+      "classification": "article",
+      "heading_loc": "ma ku ra",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ku%20ra/1",
+      "html_sha256": "57acd2f87e2f36460c04ab4002d368e6c16090826befcd24d83fe9864f3930d7",
+      "bbox": [
+        253.1,
+        1432.1,
+        464.8,
+        1483.0
+      ]
+    },
+    {
+      "item_id": "reviewed-06",
+      "classification": "article",
+      "heading_loc": "ma ke na",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ke%20na/1",
+      "html_sha256": "0dd59d27079ef50142968f2dbc38a8a678f2e70553ceafc1eb9c2946e4c3ce02",
+      "bbox": [
+        253.1,
+        1581.2,
+        482.6,
+        1630.9
+      ]
+    },
+    {
+      "item_id": "reviewed-07",
+      "classification": "article",
+      "heading_loc": "mā kra",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/m%C4%81%20kra/1",
+      "html_sha256": "445a8348d9bab8d1ffae37cd70a2fbfc9c646c9005c0716e6e73db93cc3c8387",
+      "bbox": [
+        253.1,
+        1659.3,
+        434.1,
+        1711.4
+      ]
+    },
+    {
+      "item_id": "reviewed-08",
+      "classification": "article",
+      "heading_loc": "ma klas",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20klas/1",
+      "html_sha256": "28ab8188df55b44989f50a77dd2c4847a961e58e214e56c9cbd51fd75955aaa2",
+      "bbox": [
+        253.1,
+        1772.9,
+        460.1,
+        1828.6
+      ]
+    },
+    {
+      "item_id": "reviewed-09",
+      "classification": "article",
+      "heading_loc": "ma kṣi ka",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20k%E1%B9%A3i%20ka/1",
+      "html_sha256": "54212a130fb46ddcdf4ca9c6604f2bdd7a33eb87a54471c84c4803050331100e",
+      "bbox": [
+        843.3,
+        269.8,
+        1081.1,
+        324.3
+      ]
+    },
+    {
+      "item_id": "reviewed-10",
+      "classification": "article",
+      "heading_loc": "ma kṣi sbraṅ rtsi",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20k%E1%B9%A3i%20sbra%E1%B9%85%20rtsi/1",
+      "html_sha256": "ef6d7864da4bf757bf94bd380e7f3ca4aa22fbc5cc3a58aa276f9181770defb0",
+      "bbox": [
+        843.3,
+        955.1,
+        1218.3,
+        1009.6
+      ]
+    },
+    {
+      "item_id": "reviewed-11",
+      "classification": "article",
+      "heading_loc": "ma bkrus pa",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20bkrus%20pa/1",
+      "html_sha256": "7decddae05909b8e9ccd5fcaf509adfcef5adfa5864eb6bb9bf3dc8f6f794a07",
+      "bbox": [
+        843.3,
+        1169.3,
+        1152.1,
+        1226.1
+      ]
+    },
+    {
+      "item_id": "reviewed-12",
+      "classification": "article",
+      "heading_loc": "ma skyes dgra",
+      "printed_homonym": null,
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20skyes%20dgra/1",
+      "html_sha256": "1aa3d5a6633b8c298afe3da8f0287f7b8a5cd5e9dc7bb0797257f1c6ac6fab31",
+      "bbox": [
+        843.3,
+        1393.0,
+        1191.1,
+        1452.2
+      ]
+    },
+    {
+      "item_id": "running-left",
+      "classification": "running_header",
+      "printed_homonym": 5,
+      "source_id": null,
+      "bbox": [
+        496.8,
+        156.2,
+        603.2,
+        210.7
+      ]
+    },
+    {
+      "item_id": "running-right",
+      "classification": "running_header",
+      "printed_homonym": null,
+      "source_id": null,
+      "bbox": [
+        987.6,
+        153.9,
+        1312.9,
+        213.0
+      ]
+    },
+    {
+      "item_id": "continuation",
+      "classification": "continuation",
+      "printed_homonym": null,
+      "source_id": null,
+      "bbox": [
+        276.8,
+        269.8,
+        816.1,
+        414.2
+      ]
+    }
+  ]
+}
