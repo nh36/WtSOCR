@@ -22,11 +22,14 @@ import prepare_badw_print_drafts as drafts
 VERSION = 1
 DATA = a.ROOT/'data'
 RATES = {'gpt-6-luna': (0.10, 0.01, 0.50), 'gpt-6.1-terra': (1.00, 0.05, 5.00)}
-PRICING_CHECKED = '2026-11-11; standard short context; USD per million tokens'
+PRICING_CHECKED = '2026-11-11; standard service, including long-context adjustment; USD per million tokens'
 PRICING_URL = 'https://developers.openai.com/api/docs/pricing'
-# The published image-token table does not yet name these two models. Do not
-# present an assumed patch multiplier as an enforceable spending bound.
-LIVE_IMAGE_BILLING_VERIFIED = False
+# Official model pages specify these limits. Reserving the entire input allowance
+# at the long-context tariff bounds image charges without assuming an undocumented
+# image patch multiplier. Actual usage, including cached tokens, is reconciled.
+# https://developers.openai.com/api/docs/models/gpt-6-luna
+# https://developers.openai.com/api/docs/models/gpt-6.1-terra
+MAX_INPUT_TOKENS = {'gpt-6-luna': 922000, 'gpt-6.1-terra': 922000}
 RATE_LOCK = threading.Lock()
 LAST_REQUEST = 0.0
 
@@ -192,27 +195,131 @@ def retrieve(inventory, pack, bodies):
     for sid,body in bodies.items():
         if body['source_kind']=='html' and a.proof_key(body['headword']['loc']) in names:
             result[sid] = candidate(body)
+            # Newly retrieved witnesses have exact HTML bindings but no invented
+            # historical association. This distinction survives into review.
+            pack.setdefault('bindings', {}).setdefault(sid, dict(
+                html_sha256=body['sources'][0]['sha256'], source_url=body['source_url'], anchors=[]))
     return [result[k] for k in sorted(result)]
+
+
+def image_to_pdf(box, transform):
+    """Map a parent-image pixel rectangle back to registered PDF points."""
+    aa,bb,cc,dd,ee,ff = transform['pdf_to_mupdf']
+    determinant = aa*dd-bb*cc
+    if not determinant:
+        raise ValueError('singular source image transform')
+    sx,sy = transform['points_per_pixel']
+    ox,oy = transform['image_device_origin']
+    corners=[]
+    for x,y in ((box[0],box[1]),(box[2],box[3])):
+        u,v=(x+ox)*sx-ee,(y+oy)*sy-ff
+        corners.append(((dd*u-cc*v)/determinant,(-bb*u+aa*v)/determinant))
+    return [min(x for x,y in corners),min(y for x,y in corners),
+            max(x for x,y in corners),max(y for x,y in corners)]
+
+
+def combined_prediction(pack, inventory, matching):
+    """Lossless scorer adapter for the real two-stage outputs, never a review.
+
+    Unmatched, excluded and abstaining inventory items remain present. A proposed
+    identity on an abstention is retained as a proposal, never scored as a link.
+    Callers loading saved observations must rebind them with checked_observation.
+    """
+    validate('inventory', inventory, pack)
+    validate('match', matching, dict(pack, inventory=inventory))
+    by_id={r['item_id']:r for r in matching['matches']}
+    items=[]
+    for observation in inventory['items']:
+        match=by_id[observation['item_id']]
+        row=dict(observation, source_id=match['source_id'] if match['outcome']=='supported' else None,
+                 match=match)
+        if pack['image']['transform']:
+            row['pdf_bbox']=image_to_pdf(row['bbox'],pack['image']['transform'])
+        items.append(row)
+    return dict(status='model prediction; no source-review authority',
+        source_image_sha256=pack['image']['sha256'],
+        source_identity={k:pack.get(k) for k in ('family','physical_page','source_sha256','geometry')},
+        image_transform=pack['image']['transform'], inventory_sha256=a.object_digest(inventory),
+        matching_sha256=a.object_digest(matching), items=items)
+
+
+def prepare_match_crops(pack, directory, padding=24):
+    """Targeted provisional regions; coordinates always refer to the parent image.
+
+    Inventory boxes may cover just headings. Include the space below each box up
+    to the next observed start in its column. These are reading aids, not reviewed
+    article boundaries or certificate geometry.
+    """
+    from PIL import Image
+    directory=private(directory)
+    image=directory/pack['image']['path']
+    if a.digest(image) != pack['image']['sha256']:
+        raise ValueError('prepared image changed')
+    validate('inventory',pack['inventory'],pack)
+    regions=[]
+    with Image.open(image) as parent:
+        width,height=parent.size
+        for index,item in enumerate(pack['inventory']['items']):
+            x0,y0,x1,y1=item['bbox']
+            below=[r['bbox'][1] for r in pack['inventory']['items']
+                   if r['column']==item['column'] and r['bbox'][1]>=y1 and r['item_id']!=item['item_id']]
+            end=min(below) if below else min(height,y1+height/3)
+            column=[r['bbox'] for r in pack['inventory']['items'] if r['column']==item['column']]
+            # Heading boxes alone may omit the right-hand part of a definition.
+            # Use the observed column envelope, bounded by neighbouring columns.
+            left=min(r[0] for r in column)
+            other_right=[r['bbox'][0] for r in pack['inventory']['items']
+                         if r['column']!=item['column'] and r['bbox'][0]>max(q[2] for q in column)]
+            right=min(other_right)-padding if other_right else width
+            box=[max(0,math.floor(left-padding)),max(0,math.floor(y0-padding)),
+                 min(width,math.ceil(max(x1,right))),min(height,math.ceil(max(y1,end)+padding))]
+            # Different models may inventory this same page concurrently. Their
+            # provisional regions must never overwrite one another's crops.
+            inventory_key=a.object_digest(pack['inventory'])[:16]
+            path=directory/f'article-{inventory_key}-{index:04d}.png'
+            parent.crop(box).save(path)
+            regions.append(dict(item_id=item['item_id'], path=path.name, sha256=a.digest(path),
+                pixels=[box[2]-box[0],box[3]-box[1]],parent_bbox=box,
+                pdf_bbox=image_to_pdf(box,pack['image']['transform']),
+                coordinate_note='Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region'))
+    pack['match_images']=regions
+    return regions
 
 
 def request_spec(stage, pack, model, detail, max_output_tokens):
     prompt = (DATA/f'badw_model_{stage}_prompt.txt').read_text()
     # Inventory is genuinely source-first. No candidates or previous answers.
     evidence = dict(image_pixels=pack['image']['pixels']) if stage=='inventory' else dict(
-        inventory=pack['inventory'], candidates=pack['candidates'])
+        inventory=pack['inventory'], candidates=[
+            dict({k:v for k,v in row.items() if k in ('source_id','headword','homonym')},
+                 # Keep original component indices and all lexical alternatives,
+                 # but omit acquisition/layout metadata unnecessary to matching.
+                 components=[{k:v for k,v in component.items() if k in ('type','source_form')}
+                             for component in row['components']])
+            for row in pack['candidates']])
+    if stage=='match' and pack.get('match_images'):
+        evidence['article_images']=pack['match_images']
     return dict(version=VERSION, stage=stage, model=model, detail=detail, prompt=prompt,
         schema=SCHEMAS[stage], evidence=evidence, image_sha256=pack['image']['sha256'],
+        service_tier='default', billing_bound='documented full input allowance at long-context tariff',
         source_binding_sha256=a.object_digest({k:pack.get(k) for k in
             ('family','physical_page','source_sha256','geometry','input_hashes','bindings')}),
         transform=pack['image']['transform'], max_output_tokens=max_output_tokens,
         pricing=PRICING_CHECKED, rates=list(RATES[model]))
 
 
-def cost(model, input_tokens, output_tokens, cached_tokens=0):
-    if min(input_tokens,output_tokens,cached_tokens)<0 or cached_tokens>input_tokens or input_tokens>272000:
-        raise ValueError('invalid usage or unsupported long-context tariff')
+def cost(model, input_tokens, output_tokens, cached_tokens=0, cache_write_tokens=0):
+    # Default 30-minute cache writes replace ordinary input billing at 1.25x.
+    # https://developers.openai.com/api/docs/guides/prompt-caching
+    if (min(input_tokens,output_tokens,cached_tokens,cache_write_tokens)<0
+            or cached_tokens+cache_write_tokens>input_tokens
+            or input_tokens>MAX_INPUT_TOKENS[model] or output_tokens>128000):
+        raise ValueError('invalid usage or model token limit exceeded')
     i,c,o = RATES[model]
-    return ((input_tokens-cached_tokens)*i+cached_tokens*c+output_tokens*o)/1_000_000
+    if input_tokens>272000:
+        i,c,o=i*2,c*2,o*1.5
+    return ((input_tokens-cached_tokens-cache_write_tokens)*i+cached_tokens*c
+            +cache_write_tokens*i*1.25+output_tokens*o)/1_000_000
 
 
 def checked_observation(path, stage, pack, model):
@@ -228,6 +335,9 @@ def checked_observation(path, stage, pack, model):
     image = Path(path).parent/pack['image']['path']
     if a.digest(image) != expected['image_sha256']:
         raise ValueError('prepared image changed')
+    for crop in pack.get('match_images', []) if stage=='match' else []:
+        if a.digest(Path(path).parent/crop['path']) != crop['sha256']:
+            raise ValueError('article crop changed')
     validate(stage, record['result'], pack)
     return record
 
@@ -268,8 +378,17 @@ def execute(spec, pack, directory, spending=None, client=None, fixture=None, int
     image = directory.parent/pack['image']['path']
     if a.digest(image) != spec['image_sha256']:
         raise ValueError('prepared image changed')
+    images=pack.get('match_images',[]) if spec['stage']=='match' else []
+    for crop in images:
+        if a.digest(directory.parent/crop['path']) != crop['sha256']:
+            raise ValueError('article crop changed')
     if path.exists():
         cached = load(path)
+        if cached.get('status') == 'rejected model response; no evidence authority':
+            if (cached.get('request') != spec or cached.get('request_sha256') != key
+                    or cached.get('output_sha256') != a.object_digest(cached.get('output_text'))):
+                raise ValueError('corrupt cached rejected response')
+            raise ValueError('cached rejected model response; inspect private cache; no repeated paid request')
         if cached.get('request') != spec or cached['request_sha256'] != key or cached['result_sha256'] != a.object_digest(cached['result']):
             raise ValueError('corrupt cached observation')
         validate(spec['stage'],cached['result'],pack)
@@ -283,19 +402,15 @@ def execute(spec, pack, directory, spending=None, client=None, fixture=None, int
         return output
     if client is None or spending is None:
         raise ValueError('live execution requires client and approved spending ledger')
-    if not LIVE_IMAGE_BILLING_VERIFIED:
-        raise ValueError('live calls disabled: model-specific image billing bound requires verification')
-    # A conservative byte bound: text bytes + schema/prompt bytes dominate token
-    # count; 30k image patches * 10 bounds current model image token multipliers.
-    # Refuse excessive contexts instead of accepting long-context pricing.
-    text_bound = len(json.dumps(spec,ensure_ascii=False).encode())
-    image_bound = math.ceil(pack['image']['pixels'][0]/32)*math.ceil(pack['image']['pixels'][1]/32)*10
-    input_bound = text_bound+image_bound+4096
-    if input_bound > 272000:
-        raise ValueError('request exceeds conservative short-context bound; crop or reduce candidates')
-    reservation = cost(spec['model'],input_bound,spec['max_output_tokens'])
-    content = [dict(type='input_text',text=spec['prompt']+'\n'+json.dumps(spec['evidence'],ensure_ascii=False)),
-        dict(type='input_image',image_url='data:image/png;base64,'+base64.b64encode(image.read_bytes()).decode(),detail=spec['detail'])]
+    if (spending.directory/'STOP').exists():
+        raise ValueError('operator stop file present')
+    reservation = cost(spec['model'],MAX_INPUT_TOKENS[spec['model']],spec['max_output_tokens'],
+                       cache_write_tokens=MAX_INPUT_TOKENS[spec['model']])
+    content = [dict(type='input_text',text=spec['prompt']+'\n'+json.dumps(spec['evidence'],ensure_ascii=False))]
+    for region in images or [dict(path=pack['image']['path'],item_id='entire printed page')]:
+        content.append(dict(type='input_text',text='Image for '+region['item_id']))
+        content.append(dict(type='input_image',image_url='data:image/png;base64,'+
+            base64.b64encode((directory.parent/region['path']).read_bytes()).decode(),detail=spec['detail']))
     start = time.monotonic()
     for attempt in range(attempts):
         if (spending.directory/'STOP').exists():
@@ -307,23 +422,52 @@ def execute(spec, pack, directory, spending=None, client=None, fixture=None, int
             time.sleep(max(0,interval-(time.monotonic()-LAST_REQUEST)))
             LAST_REQUEST = time.monotonic()
         try:
-            response = client.responses.create(model=spec['model'],store=False,
+            response = client.responses.create(model=spec['model'],store=False,service_tier='default',
                 input=[dict(role='user',content=content)],max_output_tokens=spec['max_output_tokens'],
                 text=dict(format=dict(type='json_schema',name='wts_'+spec['stage'],strict=True,schema=spec['schema'])),
                 extra_headers={'Idempotency-Key':attempt_key})
         except Exception as exc:
             # SDK retries are disabled. Only explicit rate-limit responses are
             # retried; timeouts/5xx may have incurred charges and stay unresolved.
-            if getattr(exc,'status_code',None)==429:
+            error_body = getattr(exc, 'body', None)
+            error_body = error_body if isinstance(error_body, dict) else {}
+            error_body = error_body.get('error', error_body)
+            error_body = error_body if isinstance(error_body, dict) else {}
+            # Log only bounded enum-like identifiers, never server messages,
+            # credentials or echoed request content.
+            error_code = error_body.get('code')
+            error_type = error_body.get('type')
+            safe_identifier = lambda value: value if isinstance(value, str) and len(value) <= 80 and all(c.isalnum() or c == '_' for c in value) else None
+            error_code, error_type = map(safe_identifier, (error_code, error_type))
+            rejected = getattr(exc,'status_code',None)==429
+            quota_failure = error_type == 'insufficient_quota' or error_code in {
+                'insufficient_quota', 'credit_balance_exhausted',
+                'organization_spend_limit_exceeded', 'project_spend_limit_exceeded',
+                'organization_usage_limit_exceeded'}
+            if rejected:
                 spending.change(attempt_key,actual=0)
-                if attempt+1 < attempts:
+                if not quota_failure and attempt+1 < attempts:
                     time.sleep(min(2**attempt,8))
                     continue
-            raise RuntimeError('API request failed; reservation retained; inspect local ledger, not credentials') from None
+            write(directory/(key+'-failure.json'), dict(exception_type=type(exc).__name__,
+                status_code=getattr(exc,'status_code',None),request_id=getattr(exc,'request_id',None),
+                error_code=error_code,error_type=error_type,reservation_retained=not rejected))
+            disposition = 'request rejected without usage' if rejected else 'reservation retained'
+            raise RuntimeError('API request failed ('+type(exc).__name__+', '+str(error_code)+'); '+disposition+'; inspect local ledger') from None
         usage = response.usage.model_dump()
         cached_tokens = (usage.get('input_tokens_details') or {}).get('cached_tokens',0)
-        usd = cost(spec['model'],usage['input_tokens'],usage['output_tokens'],cached_tokens)
+        written_tokens = (usage.get('input_tokens_details') or {}).get('cache_write_tokens',0) or 0
+        usd = cost(spec['model'],usage['input_tokens'],usage['output_tokens'],cached_tokens,written_tokens)
         spending.change(attempt_key,actual=usd,usage=usage)
+        # Persist paid observations before parsing or checking them. Invalid
+        # quotations and truncated JSON are benchmark findings, not permission
+        # to repeat a paid request or discard the evidence of failure.
+        rejected = dict(status='rejected model response; no evidence authority',
+            request=spec,request_sha256=key,output_text=response.output_text,
+            output_sha256=a.object_digest(response.output_text),model=spec['model'],
+            response_status=response.status,response_id=response.id,usage=usage,
+            usd=usd,elapsed_seconds=time.monotonic()-start)
+        write(path,rejected)
         if response.status != 'completed':
             raise ValueError('incomplete model response; not evidence')
         result = json.loads(response.output_text)
@@ -362,12 +506,22 @@ def evaluate(reference, prediction):
     This scorer deliberately refuses to estimate heading recall from certificates
     alone. A complete page census is required for recall, including unmatched starts.
     """
-    if not reference.get('reviewer') or not reference.get('source_image_sha256'):
+    if (not reference.get('reviewer') or not reference.get('source_image_sha256')
+        or reference.get('review_decision') != 'source-reviewed reference'):
         raise ValueError('source-bound reference review required')
     if prediction.get('source_image_sha256') != reference['source_image_sha256']:
         raise ValueError('evaluation image binding differs')
     expected = reference['items']
     found = prediction['items']
+    for name,rows in [('reference',expected),('prediction',found)]:
+        ids=[r.get('item_id') for r in rows]
+        if None in ids or len(ids)!=len(set(ids)):
+            raise ValueError(name+' has missing or duplicate item IDs')
+        for row in rows:
+            box=row.get('bbox',[])
+            if (len(box)!=4 or not all(isinstance(v,(int,float)) and math.isfinite(v) for v in box)
+                    or box[0]>=box[2] or box[1]>=box[3]):
+                raise ValueError(name+' has invalid source region')
     # Pair source regions by overlap, one-to-one, independent of model item IDs.
     def overlap(x,y):
         l,t,r,b=x; L,T,R,B=y
@@ -386,7 +540,8 @@ def evaluate(reference, prediction):
         if y.get('source_id') is None:
             abstain+=1
             correct_abstain+=int(x.get('source_id') is None)
-        elif x.get('source_id')==y['source_id'] and x['classification']==y['classification']=='article':
+        elif (x.get('source_id')==y['source_id'] and x['classification']==y['classification']=='article'
+              and x['printed_homonym']==y['printed_homonym']):
             correct+=1
         else:
             wrong+=1
@@ -394,8 +549,20 @@ def evaluate(reference, prediction):
             homonym+=1
     false_positive=wrong+sum(y.get('source_id') is not None for j,y in enumerate(found) if j not in used_p)
     starts=sum(x['classification']=='article' for x in expected)
+    linkable=sum(x['classification']=='article' and x.get('source_id') is not None for x in expected)
+    def interval(success,total):
+        # Wilson 95% interval: a small error-free sample does not prove perfection.
+        if not total:return None
+        z=1.95996398454;p=success/total;d=1+z*z/total
+        c=(p+z*z/(2*total))/d
+        h=z*math.sqrt(p*(1-p)/total+z*z/(4*total*total))/d
+        return [max(0,c-h),min(1,c+h)]
     return dict(reference_reviewer=reference['reviewer'],reference_starts=starts,
         heading_recall=located/starts if reference.get('complete_census') and starts else None,
+        link_precision=correct/(correct+false_positive) if correct+false_positive else None,
+        link_precision_95=interval(correct,correct+false_positive),
+        link_recall=correct/linkable if reference.get('complete_census') and linkable else None,
+        link_recall_95=interval(correct,linkable) if reference.get('complete_census') else None,
         correct_links=correct,false_positive_links=false_positive,homonym_errors=homonym,
         abstentions=abstain,correct_abstentions=correct_abstain,missed_regions=len(expected)-len(used_e),unpaired_observations=len(found)-len(used_p))
 
@@ -419,6 +586,8 @@ def main():
     p.add_argument('--dry-run',action='store_true')
     p.add_argument('--reference',type=Path)
     p.add_argument('--prediction',type=Path)
+    p.add_argument('--page-pack',type=Path,help='Evaluate the bound inventory and match observations beside this prepared pack')
+    p.add_argument('--article-crops',action='store_true',help='Supply provisional article regions to matching instead of the full page')
     args=p.parse_args()
     if args.command=='review':
         args.stage='match'
@@ -426,7 +595,19 @@ def main():
         raise ValueError('invalid request limits')
     work=private(args.work)
     if args.command=='evaluate':
-        print(json.dumps(evaluate(load(args.reference),load(args.prediction))))
+        if args.page_pack:
+            pack=load(args.page_pack);directory=args.page_pack.parent
+            inventory=checked_observation(directory/('inventory-'+args.model+'.json'),'inventory',pack,args.model)
+            pack['inventory']=inventory['result']
+            resources=authoritative(args.bodies)
+            pack['candidates']=retrieve(pack['inventory'],pack,resources[1])
+            if args.article_crops:prepare_match_crops(pack,directory)
+            matching=checked_observation(directory/('match-'+args.model+'.json'),'match',pack,args.model)
+            prediction=combined_prediction(pack,inventory['result'],matching['result'])
+            write(directory/('prediction-'+args.model+'.json'),prediction)
+        else:
+            prediction=load(args.prediction)
+        print(json.dumps(evaluate(load(args.reference),prediction)))
         return
     if args.command=='report':
         state=load(work/'spending.json') if (work/'spending.json').exists() else None
@@ -464,6 +645,7 @@ def main():
             inventory=checked_observation(directory/('inventory-'+args.model+'.json'),'inventory',pack,args.model)
             pack['inventory']=inventory['result']
             pack['candidates']=retrieve(pack['inventory'],pack,resources[1])
+            if args.article_crops:prepare_match_crops(pack,directory)
         spec=request_spec(args.stage,pack,args.model,args.detail,args.max_output_tokens)
         if args.command=='review':
             result=checked_observation(directory/('match-'+args.model+'.json'),'match',pack,args.model)['result']

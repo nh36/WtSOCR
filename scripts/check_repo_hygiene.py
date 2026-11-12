@@ -69,6 +69,8 @@ PROJECT_LOCAL_IMPORTS = {
 # docs/BADW_SOURCE_INTEGRATION.md and requirements-badw-model.txt.
 FILE_NON_STDLIB_IMPORTS = {
     "scripts/badw_model_worker.py": {"openai", "jsonschema", "pymupdf"},
+    # Exercise the worker's real PDF/image coordinate transforms end to end.
+    "tests/test_badw_model_worker.py": {"pymupdf"},
 }
 
 ZERO_SHA = "0" * 40
