@@ -72,6 +72,8 @@ FILE_NON_STDLIB_IMPORTS = {
     # The detached controller uses the worker's existing optional SDK transport
     # with automatic retries disabled; no additional dependency is introduced.
     "scripts/run_badw_linking_campaign.py": {"openai"},
+    # Certified production reuses the campaign's existing SDK and spending ledger.
+    "scripts/badw_certified_production.py": {"openai"},
     # Reuses the same optional SDK in requirements-badw-model.txt for blind review.
     "scripts/badw_campaign_review.py": {"openai", "jsonschema"},
     # Offline certification re-renders cached scans with the worker's existing

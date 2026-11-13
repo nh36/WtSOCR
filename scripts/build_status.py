@@ -1670,7 +1670,9 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     print_manual = json.loads((ROOT / "data/badw_html_print_pages.json").read_text())
     print_generated = json.loads((ROOT / "data/badw_html_print_alignment.generated.json").read_text())
     print_links = len(print_manual["witnesses"]) + len(print_generated["witnesses"])
-    print_pages = len(print_manual["pages"]) + len(print_generated["pages"])
+    print_page_map = json.loads((ROOT / "data/badw_print_page_map.json").read_text())
+    print_pages = len({print_page_map['destinations'].get(w['source_url'], {}).get('page', w['page'])
+                       for w in print_manual['witnesses'] + print_generated['witnesses']})
     provisional = json.loads((ROOT / "data/badw_html_print_provisional.generated.json").read_text())
     provisional_links = len(provisional['witnesses'])
     provisional_pages = len({r['page'] for r in provisional['witnesses']})
@@ -1769,31 +1771,42 @@ is reported by the reproduction command and is not inferred from either field.
 ## HTML Links to Original Print
 
 The checked-in ledgers contain **{print_links} certified HTML attachments** to **{print_pages}
-printed-page derivatives**, including **92 newly compiled model-verified links**
-from the frozen 92-candidate pool. All previous 691 certificates are preserved.
-The new `model-source-verified-v1` certificates explicitly identify their two
-source readings and deterministic checks; they do not claim human review.
-`unique-unnumbered-lexical-v1` admits unique, unnumbered printed headings with
-exact HTML identity, lexical component quotations, boundary observations, no
-competing assignments or prior exclusions, and a re-rendered original physical
-scan. Whole scans can be linked without inventing a printed folio or spread side.
+printed-page derivatives**. The original 783 certificates, including the frozen
+92-candidate model production, are preserved. A further 24 associations (20 from paid caches and four from fresh pages)
+have been compiled automatically under
+`independent-source-lexical-reference-v2`. Certificates accurately identify
+model verification; they do not claim human review. Numbered references require
+matching printed numerals; unresolved editorial homonym splits abstain.
 
-`python3 scripts/certify_badw_model_links.py` performs offline acceptance,
-certificate generation, full compilation and canonical ledger updates without
-per-article authored decisions or API calls. The initial production certified
-92 in 103.67 seconds. The 32 prior crop inspections and eight additional
-source-first audit observations are preserved as controls. They found no
-identity errors but do not establish a corpus-wide accuracy estimate.
-Numbered/editorially split homonyms and reference-only articles require a
-separately tested policy and are not automatically accepted by this class.
+Run the resumable, budget-bounded, certified-only production command:
 
-The remaining **{provisional_links} cached suggestions** are retained separately, not counted as
-finished links. The current complete reader build omits suggestions. Witness
-bodies, references, the original 691 certificates and `release/current` remain
-unchanged. No new API expenditure was incurred; the existing campaign ledger
-retains US$10.139691895 returned usage and US$5.2368 unresolved reservations
-against its US$20 ceiling (US$4.623508105 available).
-See `docs/BADW_SOURCE_INTEGRATION.md` for reproducible commands and policy limits.
+```bash
+python3 scripts/run_badw_linking_campaign.py complete --campaign work/linking-campaign-20261112
+```
+
+The finished complete reader is
+`work/linking-campaign-20261112/certified-publication/current/reader`.
+Publication recompiles the latest canonical ledger, preserves the last working
+reader on failure, and checks all 29,878 witness bodies and references unchanged.
+A shared checksum-bound printed-page map redirects 25 existing certified links
+on 12 landscape scans to individual printed sides. Physical scan coordinates
+and the original certificate evidence remain intact. Blank sides, two-column
+single pages and unreadable folios are handled without pagination extrapolation.
+
+The remaining **{provisional_links} cached suggestions** are private evidence,
+not finished links and not displayed in this reader. Production reuses paid
+responses, acquires independent page readings when needed, certifies eligible
+cases and records reasons for abstention. All acquired HTML identities are
+accounted for separately from source-page processing completeness.
+
+Source inspection found 24/24 new associations correct across all four
+families. The independent pre-policy eight-identity sample includes seven
+correct identities that still abstain. These small samples measure observed
+accuracy and policy coverage separately; they do not establish corpus accuracy.
+The original frozen controls and their checksums are preserved. `release/current`
+is unchanged. Live costs, unresolved reservations and remaining authorisation
+are reported by `run_badw_linking_campaign.py status`; the cumulative ceiling
+remains US$20. See `docs/BADW_SOURCE_INTEGRATION.md` for policy and recovery details.
 
 {corpus_section}## Bibliographic Apparatus
 

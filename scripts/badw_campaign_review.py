@@ -246,6 +246,7 @@ def run(root, live=False, max_pages=None, fixtures=None, page=None):
         def stop(signum, frame):
             nonlocal stopping
             stopping=True
+            (root/'REVIEW_STOP').touch()
         handlers={sig:signal.signal(sig,stop) for sig in (signal.SIGINT,signal.SIGTERM)}
         w.write(root/'source-review-runtime.json',dict(pid=os.getpid(),state='running',started=time.time()))
         try:
@@ -298,16 +299,16 @@ def run(root, live=False, max_pages=None, fixtures=None, page=None):
                     attempt=directory/'source-review-attempt.json'
                     previous=w.load(attempt) if attempt.exists() else {}
                     w.write(attempt,dict(attempts=previous.get('attempts',0)+1,at=time.time(),error=safe))
-                    if 'spending' in safe.lower() or 'reservation retained' in safe.lower():
+                    if 'spending' in safe.lower() or 'reservation retained' in safe.lower() or 'token-count preflight failed' in safe:
                         (root/'REVIEW_STOP').touch()
                         break
                 summary=dict(counts=dict(counts),errors=errors,proposal_generation_stopped=(root/'STOP').exists(),
-                    certified_additions=0,updated=time.time(),policy='No automatic certification; source-first accuracy audit pending')
+                    certified_additions=0,updated=time.time(),policy='Evidence acquisition only; complete invokes the separate validated certifier and publisher')
                 w.write(root/'source-review-status.json',summary)
                 print(json.dumps(dict(page=directory.name,counts=dict(counts),last_error=errors[-1] if errors else None)),flush=True)
         finally:
             summary=dict(counts=dict(counts),errors=errors,certified_additions=0,
-                updated=time.time(),policy='No automatic certification; source-first accuracy audit pending')
+                updated=time.time(),policy='Evidence acquisition only; complete invokes the separate validated certifier and publisher')
             w.write(root/'source-review-status.json',summary)
             for sig,handler in handlers.items(): signal.signal(sig,handler)
             w.write(root/'source-review-runtime.json',dict(pid=os.getpid(),state='stopped' if stopping or (root/'REVIEW_STOP').exists() else 'invocation_finished',finished=time.time()))

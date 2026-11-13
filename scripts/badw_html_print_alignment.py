@@ -314,6 +314,8 @@ def compile_records(certificate, bodies, anchors, edges, registry, qa_rows=None)
                 from certify_badw_model_links import validate_model
                 validate_model(assertion, bodies[sid], page, (certificate,bodies,anchors,edges,registry,qa_rows))
                 location = (page['source'], page['physical_page'], assertion['heading_id'])
+                if assertion.get('policy') == 'independent-source-lexical-reference-v2':
+                    location += (assertion['page_observations']['image']['sha256'],)
                 if location in used_anchors:
                     raise ValueError('model heading assigned twice')
                 used_anchors[location] = assertion

@@ -1340,3 +1340,97 @@ and reference navigation over 29,878 witnesses, all 783 certified attachments
 at desktop/mobile widths, all 131 distinct page PDFs opened in Chrome, and zero
 browser errors. Repository hygiene, Python compilation and whitespace checks
 passed. The generated operational status is checked after committing its update.
+
+
+### Unattended certified production and individual printed pages (2026-11-13)
+
+The current production command supersedes the frozen-pool-only procedure above:
+
+```bash
+python3 scripts/run_badw_linking_campaign.py complete --campaign work/linking-campaign-20261112
+```
+
+Use the same checkout and private workspace. The command loads the existing SDK,
+private key file and shared spending ledger; no new campaign or allowance is
+created. Rerun the identical command after interruption. `--cache-only` performs
+an entirely offline publication; `--production-limit N` bounds commissioning by
+physical scans; `--stop-after-response` stops after saving inventory/matching
+responses and before independent review. `status --campaign` reports controller
+lock/PID activity, successful progress, unfinished processing/review and actual
+usage, unresolved reservations and available budget. An uncertain paid request
+is retained and skipped rather than bought again. The US$20 cumulative ceiling
+includes these reservations. A failed token-count preflight creates no paid
+reservation; generation reserves against the complete image/text input count
+with a margin and the configured output bound.
+
+The complete certified-only reader is at
+`work/linking-campaign-20261112/certified-publication/current/reader`.
+Serve that directory with a local HTTP server. Each publication stages and fully
+compiles the latest ledger, reconciles conflicts, exports cropped single-page
+PDFs, checks all 29,878 saved bodies/references and attachment cardinalities,
+then atomically changes `current`. Journal recovery restores canonical files
+if a failure precedes the pointer change; the previous reader remains usable.
+No provisional attachment is included. Unchanged lexical inputs permit a full
+reader source refresh; changed lexical inputs fail closed. API responses and
+source inventories persist independently of certification/publication.
+
+`data/badw_print_page_map.json` is shared by matching, certification and export.
+Each stable identity contains original PDF SHA-256, one-based physical scan and
+exact PDF crop. Printed folios/volumes are recorded only when established; blanks
+are retained otherwise. The initial map reuses all reviewed crops and fixes 25
+links on 12 landscape scans using both saved heading boxes, producing 24 separate
+printed-side destinations. All prior certificates remain byte-for-byte intact;
+the map records a checksum-bound destination projection rather than rewriting
+the source observations. The original PDF and physical numbering never change.
+For unknown layouts, the existing gutter detector supplies a proposal and an
+image-based layout worker distinguishes spreads, two-column singles, blanks
+and uncertain geometry. No midpoint or physical-to-folio offset is presumed.
+Matching on new work starts from the individual mapped printed page.
+
+`independent-source-lexical-reference-v2` runs on fresh evidence without adding
+candidate IDs. It preserves the frozen 92 pool/checksum and certificate policy
+for replay. The fresh policy requires independent inventory and blind source
+readings, independent article boundaries, exact HTML identity/components,
+source/response hashes and geometry reconstructed from the registered original
+PDF. Both heading boxes must belong to the same unique mapped page. Lexical
+matches require at least 20 normalized contiguous characters quoted in the
+inventory or match evidence of each independent reading. An exact Tibetan
+heading transcription can establish identity when the location field describes
+its position rather than transcribing its transliteration. References require the entire single-arrow HTML component, a target of
+at least four characters and that exact complete target with token boundaries
+in both source readings. A numbered homonym additionally requires both printed
+numerals to agree with the exact HTML identity. Editorially split senses without
+that distinction abstain. Unknown uncertainty wording, competing pages, prior
+exclusions, uncertain geometry and unsupported identities abstain. Ordinary
+observations such as “No printed homonym numeral visible” are accepted only in
+the applicable unnumbered case. Provenance explicitly says model verified.
+
+Commissioning added 24 finished certificates outside the frozen pool,
+raising 783 to 807: 20 from existing paid evidence and four from fresh page
+processing. All 24 identities were checked against source images across the
+four families, including two numbered references: 24 correct identities and no
+observed false positives. This is an acceptance-class census, not a random corpus accuracy
+estimate. Replaying the earlier pre-policy SHA-selected sample (two identities
+per family) admits one and abstains on seven correct identities, exposing missed
+coverage rather than identity errors. The original 32 inspections are not
+repeated or recast as new independent evidence. Negative controls alter targets,
+target prefixes, heading classification, numerals, uncertainty, prior decisions,
+component hashes, source pages and crop boundaries. Browser success establishes
+delivery and return navigation, not lexical identity.
+
+Production tracks every acquired HTML identity in private `catalogue-progress.json`
+and all 3,466 original scans in `production_scans`. Existing links do not retire
+a page's census. Unknown identities, ambiguous senses and exhausted retries keep
+explicit reasons; the program continues on other pages. Publication occurs at
+meaningful scan checkpoints and on ordinary stop/budget exhaustion, not after
+each association. Completion of the corpus still depends on source coverage,
+policy yield and the remaining authorised budget, not merely on running calls.
+
+Commissioning saved the inventory and match responses, stopped before blind
+review, then resumed using those same request keys and single ledger charges.
+Six fresh responses cost US$0.22277925. Returned cumulative usage was
+US$10.362471145; US$7.6618 remains reserved for unresolved requests, leaving
+US$1.975728855 available under US$20 at that checkpoint. These are historical
+checkpoint figures; use `status` for live spending. Reservations were retained,
+including a failed network request. Private commissioning evidence is stored in
+`work/complete-commission/commissioning.json`.

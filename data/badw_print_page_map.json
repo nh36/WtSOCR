@@ -1,0 +1,1426 @@
+{
+  "version": 1,
+  "pages": {
+    "ka14": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 40,
+      "volume": 1,
+      "printed_page": 14,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        438,
+        632.76
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; gutter at x=438 points, displaced from midpoint; no text in cut",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "ka15": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 40,
+      "volume": 1,
+      "printed_page": 15,
+      "side": "right",
+      "crop": [
+        438,
+        0.0,
+        892.44,
+        632.76
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; gutter at x=438 points, displaced from midpoint; no text in cut",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "v1-p16": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 41,
+      "volume": 1,
+      "printed_page": 16,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        441,
+        634.44
+      ],
+      "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=441 PDF points; text columns on both sides clear of cut.",
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+    },
+    "v1-p17": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 41,
+      "volume": 1,
+      "printed_page": 17,
+      "side": "right",
+      "crop": [
+        441,
+        0.0,
+        893.64,
+        634.44
+      ],
+      "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=441 PDF points; text columns on both sides clear of cut.",
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+    },
+    "v1-p18": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 42,
+      "volume": 1,
+      "printed_page": 18,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        439,
+        632.76
+      ],
+      "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=439 PDF points; text columns on both sides clear of cut.",
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+    },
+    "v1-p19": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 42,
+      "volume": 1,
+      "printed_page": 19,
+      "side": "right",
+      "crop": [
+        439,
+        0.0,
+        892.44,
+        632.76
+      ],
+      "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=439 PDF points; text columns on both sides clear of cut.",
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+    },
+    "v1-p20": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 43,
+      "volume": 1,
+      "printed_page": 20,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        438,
+        629.28
+      ],
+      "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=438 PDF points; text columns on both sides clear of cut.",
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+    },
+    "v1-p22": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 44,
+      "volume": 1,
+      "printed_page": 22,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        439,
+        630.96
+      ],
+      "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=439 PDF points; text columns on both sides clear of cut.",
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+    },
+    "v1-p23": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 44,
+      "volume": 1,
+      "printed_page": 23,
+      "side": "right",
+      "crop": [
+        439,
+        0.0,
+        891.24,
+        630.96
+      ],
+      "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=439 PDF points; text columns on both sides clear of cut.",
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+    },
+    "v1-p100": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 86,
+      "volume": 1,
+      "printed_page": 100,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        445.02,
+        629.28
+      ],
+      "geometry_review": "Agent inspected the complete spread, folios 100–101 and central gutter. Split at x=445.02 points in blank gutter; each crop retains both printed columns and folio.",
+      "page_evidence": "Agent image inspection: volume 1, printed page 100, left side of physical page 86. Running headers and continued articles excluded."
+    },
+    "v1-p101": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 86,
+      "volume": 1,
+      "printed_page": 101,
+      "side": "right",
+      "crop": [
+        445.02,
+        0.0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Agent inspected the complete spread, folios 100–101 and central gutter. Split at x=445.02 points in blank gutter; each crop retains both printed columns and folio.",
+      "page_evidence": "Agent image inspection: volume 1, printed page 101, right side of physical page 86. Running headers and continued articles excluded."
+    },
+    "v1-p234": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 159,
+      "volume": 1,
+      "printed_page": 234,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        446.22,
+        632.76
+      ],
+      "geometry_review": "Agent inspected visible folios 234–235 and all four columns. Vertical gutter at x=446.22 PDF points is clear of text; both page crops retain outer margins and folios.",
+      "page_evidence": "Agent image inspection of registered spread, printed folio 234, volume 1; running headers excluded and intercolumn/page continuations distinguished."
+    },
+    "v1-p235": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 159,
+      "volume": 1,
+      "printed_page": 235,
+      "side": "right",
+      "crop": [
+        446.22,
+        0.0,
+        892.44,
+        632.76
+      ],
+      "geometry_review": "Agent inspected visible folios 234–235 and all four columns. Vertical gutter at x=446.22 PDF points is clear of text; both page crops retain outer margins and folios.",
+      "page_evidence": "Agent image inspection of registered spread, printed folio 235, volume 1; running headers excluded and intercolumn/page continuations distinguished."
+    },
+    "v1-p90": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 81,
+      "volume": 1,
+      "printed_page": 90,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        445.02,
+        629.28
+      ],
+      "geometry_review": "Agent inspected visible folios 90–91 and all four columns. Central gutter at x=445.02 PDF points separates the pages without clipping text.",
+      "page_evidence": "Agent image inspection of registered spread, volume 1 printed folio 90; running headers and column continuations excluded."
+    },
+    "v1-p91": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 81,
+      "volume": 1,
+      "printed_page": 91,
+      "side": "right",
+      "crop": [
+        445.02,
+        0.0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Agent inspected visible folios 90–91 and all four columns. Central gutter at x=445.02 PDF points separates the pages without clipping text.",
+      "page_evidence": "Agent image inspection of registered spread, volume 1 printed folio 91; running headers and column continuations excluded."
+    },
+    "v1-p58": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 62,
+      "volume": 1,
+      "printed_page": 58,
+      "side": "left",
+      "crop": [
+        0,
+        0,
+        445.62,
+        630.96
+      ],
+      "geometry_review": "Agent inspected the complete registered spread, visible folios 58–59 and four text columns. Gutter at x=445.62 PDF points is clear of text. These are measured page sides, not an inferred pagination offset.",
+      "page_evidence": "Agent image inspection of printed volume 1 folio 58; independent headings below running headers. No printed heading homonym numerals observed."
+    },
+    "v1-p59": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 62,
+      "volume": 1,
+      "printed_page": 59,
+      "side": "right",
+      "crop": [
+        445.62,
+        0,
+        891.24,
+        630.96
+      ],
+      "geometry_review": "Agent inspected the complete registered spread, visible folios 58–59 and four text columns. Gutter at x=445.62 PDF points is clear of text. These are measured page sides, not an inferred pagination offset.",
+      "page_evidence": "Agent image inspection of printed volume 1 folio 59; independent headings below running headers. No printed heading homonym numerals observed."
+    },
+    "v1-p126": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 99,
+      "volume": 1,
+      "printed_page": 126,
+      "side": "left",
+      "crop": [
+        0,
+        0,
+        445.02,
+        629.28
+      ],
+      "geometry_review": "Agent inspected the complete source spread, visible folios 126 and 127 and all four columns. The central gutter at 445.02 PDF points is clear of text.",
+      "page_evidence": "Agent source-image inspection of volume 1 printed folio 126. Independent headings distinguished from running headers and continuations. No printed heading homonym numerals observed."
+    },
+    "v1-p127": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 99,
+      "volume": 1,
+      "printed_page": 127,
+      "side": "right",
+      "crop": [
+        445.02,
+        0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Agent inspected the complete source spread, visible folios 126 and 127 and all four columns. The central gutter at 445.02 PDF points is clear of text.",
+      "page_evidence": "Agent source-image inspection of volume 1 printed folio 127. Independent headings distinguished from running headers and continuations. No printed heading homonym numerals observed."
+    },
+    "v1-p162": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 120,
+      "volume": 1,
+      "printed_page": 162,
+      "side": "left",
+      "crop": [
+        0,
+        0,
+        445.02,
+        629.28
+      ],
+      "geometry_review": "Agent inspected the complete source spread, visible folios 162 and 163 and all four columns. The central gutter at 445.02 PDF points is clear of text.",
+      "page_evidence": "Source-image inspection distinguishes independent headings from running headers and the continuation of dka’ spyad. No printed heading homonym numerals observed."
+    },
+    "v1-p163": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 120,
+      "volume": 1,
+      "printed_page": 163,
+      "side": "right",
+      "crop": [
+        445.02,
+        0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Agent inspected the complete source spread, visible folios 162 and 163 and all four columns. The central gutter at 445.02 PDF points is clear of text.",
+      "page_evidence": "Source-image inspection distinguishes independent headings from running headers and the continuation of dka’ spyad. No printed heading homonym numerals observed."
+    },
+    "v1-p352": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 222,
+      "volume": 1,
+      "printed_page": 352,
+      "side": "left",
+      "crop": [
+        0,
+        0,
+        445.62,
+        630.96
+      ],
+      "geometry_review": "Agent inspected the entire four-column registered spread, visible printed folios 352 and 353. Central gutter at445.62 PDF points is clear of printed text.",
+      "page_evidence": "Independent headings read in visual order; running headers, top-of-column continuations and numbered senses distinguished. No printed heading homonym numerals observed."
+    },
+    "v1-p353": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 222,
+      "volume": 1,
+      "printed_page": 353,
+      "side": "right",
+      "crop": [
+        445.62,
+        0,
+        891.24,
+        630.96
+      ],
+      "geometry_review": "Agent inspected the entire four-column registered spread, visible printed folios 352 and 353. Central gutter at445.62 PDF points is clear of printed text.",
+      "page_evidence": "Independent headings read in visual order; running headers, top-of-column continuations and numbered senses distinguished. No printed heading homonym numerals observed."
+    },
+    "printed-5b6225d4287f4608fbd9e612fa8c35e93700c3f0babdf712fd62eb9d40ace0b2": {
+      "key": "printed-5b6225d4287f4608fbd9e612fa8c35e93700c3f0babdf712fd62eb9d40ace0b2",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 92,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        445.26,
+        630.96
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-517621ce20a746194db88d842e985a55bb1372db3bdddd7bec3156efe818d65b": {
+      "key": "printed-517621ce20a746194db88d842e985a55bb1372db3bdddd7bec3156efe818d65b",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 92,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        445.26,
+        0.0,
+        891.24,
+        630.96
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-6bcb655334443c3a99c456101aab945be1eef50e1b37c3eaf21f4a7615860621": {
+      "key": "printed-6bcb655334443c3a99c456101aab945be1eef50e1b37c3eaf21f4a7615860621",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 93,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        442.1405,
+        630.96
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-4ec73caab4ce7fddf5d877804a247e650366f5c38765feeff1da830799616813": {
+      "key": "printed-4ec73caab4ce7fddf5d877804a247e650366f5c38765feeff1da830799616813",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 93,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        442.1405,
+        0.0,
+        891.24,
+        630.96
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-01b7ffb62f221565e1fbbb113c051580a62cc7d6e12a7e99813c145ff475211c": {
+      "key": "printed-01b7ffb62f221565e1fbbb113c051580a62cc7d6e12a7e99813c145ff475211c",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 94,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        441.5408,
+        636.24
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-09adfbe47844230d04ab621b5798d651ef07ea8c3da8994468a404cbf9349b57": {
+      "key": "printed-09adfbe47844230d04ab621b5798d651ef07ea8c3da8994468a404cbf9349b57",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 94,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        441.5408,
+        0.0,
+        894.84,
+        636.24
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-9a217746135799a61fd3daade9e237e97fd77d526e3b41ec695de9cfa1c0133e": {
+      "key": "printed-9a217746135799a61fd3daade9e237e97fd77d526e3b41ec695de9cfa1c0133e",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 95,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        441.6606,
+        632.76
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-51d7dd201eeb1abd8f89d142a9b3bb1df5825405b4754074c117237a5098c19f": {
+      "key": "printed-51d7dd201eeb1abd8f89d142a9b3bb1df5825405b4754074c117237a5098c19f",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 95,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        441.6606,
+        0.0,
+        892.44,
+        632.76
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-1aa937ad36250f1cee15b63b9dccee0a396031d40fa66674be237347e32b4634": {
+      "key": "printed-1aa937ad36250f1cee15b63b9dccee0a396031d40fa66674be237347e32b4634",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 96,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        437.941,
+        629.28
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-5883525a66fabf0f25a85eddd8ec13c33037c2bb7a41cf22bd72e6e6e6623a1f": {
+      "key": "printed-5883525a66fabf0f25a85eddd8ec13c33037c2bb7a41cf22bd72e6e6e6623a1f",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 96,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        437.941,
+        0.0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-66dde96b0e9889436d17ee0996f2ace6c02cbaa198cafe8cb4e223ec57c89b15": {
+      "key": "printed-66dde96b0e9889436d17ee0996f2ace6c02cbaa198cafe8cb4e223ec57c89b15",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 97,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        440.5807,
+        630.96
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-11e644663510a9a5ae2cd6b9783451b77141cde8fdda87e93684a4dfb1fdadbd": {
+      "key": "printed-11e644663510a9a5ae2cd6b9783451b77141cde8fdda87e93684a4dfb1fdadbd",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 97,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        440.5807,
+        0.0,
+        891.24,
+        630.96
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-e0894332946dc111c0fe7cb9959447cd165b69515993b2db1151e4860b4537b0": {
+      "key": "printed-e0894332946dc111c0fe7cb9959447cd165b69515993b2db1151e4860b4537b0",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 98,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        440.9406,
+        629.28
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-ab1bff4dbb85b4e0efe7b73d85356b67e80ff8d5f4cf9bf05aa436799cba1215": {
+      "key": "printed-ab1bff4dbb85b4e0efe7b73d85356b67e80ff8d5f4cf9bf05aa436799cba1215",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 98,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        440.9406,
+        0.0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-ef27ea864e7dd18d4142f759b52f6cfa1be549361efac4d9740d75cd3ffb65c0": {
+      "key": "printed-ef27ea864e7dd18d4142f759b52f6cfa1be549361efac4d9740d75cd3ffb65c0",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 100,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        445.0,
+        634.44
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-e4249200baf9275dc774fb4d5f7dc7e1f0c9d572021a149c83e46afdec781e21": {
+      "key": "printed-e4249200baf9275dc774fb4d5f7dc7e1f0c9d572021a149c83e46afdec781e21",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 100,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        445.0,
+        0.0,
+        893.64,
+        634.44
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-d8162db6655b17e2ff421bb8a3004aa284717a44fe395ab2c4b7aee558682fa1": {
+      "key": "printed-d8162db6655b17e2ff421bb8a3004aa284717a44fe395ab2c4b7aee558682fa1",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 103,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        445.0,
+        629.28
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-803643a9f3fef69bc6ab3b3e410cb75dfeff12fc3641e14aaba33d8284a6fbf3": {
+      "key": "printed-803643a9f3fef69bc6ab3b3e410cb75dfeff12fc3641e14aaba33d8284a6fbf3",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 103,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        445.0,
+        0.0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-005800057a183e9d84d0a0bd1c0419c3bcf4d4b4157d3faf6e1965f46a99460e": {
+      "key": "printed-005800057a183e9d84d0a0bd1c0419c3bcf4d4b4157d3faf6e1965f46a99460e",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 104,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        442.1405,
+        632.76
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-db41a3bd577405d8a5c5cb667e21ef764f7c022c235ceb783971823d5269a4d2": {
+      "key": "printed-db41a3bd577405d8a5c5cb667e21ef764f7c022c235ceb783971823d5269a4d2",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 104,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        442.1405,
+        0.0,
+        892.44,
+        632.76
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-4c2daa2d77903cc32131872cbdb8bf210e12cf58636d6bd3105855bb9f64d872": {
+      "key": "printed-4c2daa2d77903cc32131872cbdb8bf210e12cf58636d6bd3105855bb9f64d872",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 105,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        443.7003,
+        630.96
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-02cedea77e0f776b7205d8eaf4b0cce237cb60cd6861d7571e9459dbe25be4d0": {
+      "key": "printed-02cedea77e0f776b7205d8eaf4b0cce237cb60cd6861d7571e9459dbe25be4d0",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 105,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        443.7003,
+        0.0,
+        891.24,
+        630.96
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-1e5d32f07efd0a810fb308b196b7bce2807e07fbcc44fedb2bb51d391380bcdd": {
+      "key": "printed-1e5d32f07efd0a810fb308b196b7bce2807e07fbcc44fedb2bb51d391380bcdd",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 106,
+      "volume": null,
+      "printed_page": null,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        443.4602,
+        629.28
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-40fc1c62fdb462771d9ec4afa612c242f05a907646e5c6a614de764ff9e2a4fc": {
+      "key": "printed-40fc1c62fdb462771d9ec4afa612c242f05a907646e5c6a614de764ff9e2a4fc",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 106,
+      "volume": null,
+      "printed_page": null,
+      "side": "right",
+      "crop": [
+        443.4602,
+        0.0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Original spread visually checked in commissioning contact sheet; central gutter confirmed against OCR column geometry. Scans 100 and 103 inspected for blank side and preface layout. No folio inferred.",
+      "page_evidence": "Registered physical scan; original coordinates retained. Printed folio unreadable at inspection scale."
+    },
+    "printed-eac12c8d2f747576561cec20743ff8c8f540e7ef93b0c546feecd818692e9c2c": {
+      "key": "printed-eac12c8d2f747576561cec20743ff8c8f540e7ef93b0c546feecd818692e9c2c",
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 690,
+      "volume": null,
+      "printed_page": 341,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        468.0,
+        679.0
+      ],
+      "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
+      "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    },
+    "printed-78b881eb1b497f66c12f60a27b400c43b850a34a23262e0188ffa177a0d10666": {
+      "key": "printed-78b881eb1b497f66c12f60a27b400c43b850a34a23262e0188ffa177a0d10666",
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 692,
+      "volume": null,
+      "printed_page": 343,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        467.0,
+        679.0
+      ],
+      "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
+      "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    },
+    "printed-64b85c5b1af7ff03e4e194f0d2f6a25d3050a767d30a86917115c169f7520260": {
+      "key": "printed-64b85c5b1af7ff03e4e194f0d2f6a25d3050a767d30a86917115c169f7520260",
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 695,
+      "volume": null,
+      "printed_page": 346,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        472.0,
+        677.0
+      ],
+      "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
+      "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    },
+    "printed-c0caf7d0d503feaf03f318fcac066b7c047a3325906ddd38524ee45b71e0a854": {
+      "key": "printed-c0caf7d0d503feaf03f318fcac066b7c047a3325906ddd38524ee45b71e0a854",
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 699,
+      "volume": null,
+      "printed_page": 350,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        470.0,
+        676.0
+      ],
+      "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
+      "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    },
+    "printed-238b4b7bd40b3eed339c96786826c55f35eca50ce29b5dbdd0867ab457905c05": {
+      "key": "printed-238b4b7bd40b3eed339c96786826c55f35eca50ce29b5dbdd0867ab457905c05",
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 701,
+      "volume": null,
+      "printed_page": 352,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        467.0,
+        681.0
+      ],
+      "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
+      "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    },
+    "printed-4f9d133b82d7b7adb0fbc5ecb0be4b767c925a8ba48674f19eba01b952bfa38f": {
+      "key": "printed-4f9d133b82d7b7adb0fbc5ecb0be4b767c925a8ba48674f19eba01b952bfa38f",
+      "family": "wts_8_b",
+      "source": "WtS_8-b",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "physical_page": 28,
+      "volume": null,
+      "printed_page": 18,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        442.08,
+        675.12
+      ],
+      "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
+      "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    },
+    "printed-d8c81c29cccf5db32ef51d561f0c44f04b2453b5592ff253c650ba0c12c1d254": {
+      "key": "printed-d8c81c29cccf5db32ef51d561f0c44f04b2453b5592ff253c650ba0c12c1d254",
+      "family": "wts_9_m",
+      "source": "WtS_9-m",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "physical_page": 29,
+      "volume": null,
+      "printed_page": 25,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        469.44,
+        672.72
+      ],
+      "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
+      "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    },
+    "printed-31735c8aff05c10eaeb0cbf934274b03d4905b38052fe9e2e689183f9e5f6277": {
+      "key": "printed-31735c8aff05c10eaeb0cbf934274b03d4905b38052fe9e2e689183f9e5f6277",
+      "family": "wts_9_m",
+      "source": "WtS_9-m",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "physical_page": 35,
+      "volume": null,
+      "printed_page": 31,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        467.04,
+        671.04
+      ],
+      "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
+      "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    }
+  },
+  "destinations": {
+    "https://wts-digital.badw.de/lemma/kos%20thag%20pa/1": {
+      "page": "printed-ef27ea864e7dd18d4142f759b52f6cfa1be549361efac4d9740d75cd3ffb65c0",
+      "witness_sha256": "ba9b953ed7a70dc08871d995aefa56c9f3d53638484cb0bdbf13ee002783d728",
+      "certificate_sha256": "bef965854c10ef08b02ec5cb225d288838350720da98c1d3c982e4f7ba68895a",
+      "heading_boxes": [
+        [
+          155,
+          211,
+          429,
+          256
+        ],
+        [
+          151,
+          207,
+          740,
+          650
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kyag%20kyag/1": {
+      "page": "printed-803643a9f3fef69bc6ab3b3e410cb75dfeff12fc3641e14aaba33d8284a6fbf3",
+      "witness_sha256": "ef4715a603ee4ee84801941e5f734466b885d7ee47574fc64a9fba9855e4b220",
+      "certificate_sha256": "e0d31fb5a8091119abed17e28163fea841b078ae9b6395476a4d1b595163c34e",
+      "heading_boxes": [
+        [
+          1637,
+          1315,
+          1872,
+          1358
+        ],
+        [
+          1635,
+          1314,
+          2227,
+          1480
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kyag%20%C5%9Bob/1": {
+      "page": "printed-803643a9f3fef69bc6ab3b3e410cb75dfeff12fc3641e14aaba33d8284a6fbf3",
+      "witness_sha256": "5ad8ba54321b78ccb6c3997cbf5291ef83f7be189b926c1f0f92eeaacb98d2e6",
+      "certificate_sha256": "55f9b9d8c4f9d5e4c8612b687d5b534eb4253d17abf57911a5cbfbd752337f67",
+      "heading_boxes": [
+        [
+          2255,
+          507,
+          2458,
+          555
+        ],
+        [
+          2255,
+          508,
+          2848,
+          673
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kyam%20kyam%20pa/1": {
+      "page": "printed-db41a3bd577405d8a5c5cb667e21ef764f7c022c235ceb783971823d5269a4d2",
+      "witness_sha256": "964d377921c463b04601b0eeb36fa2dc1423bb7c67492df172e4dab434d9fd02",
+      "certificate_sha256": "a05f633cc18dc2fafa1b981f23e27cd499ea847b7fb37797fd3c9dc9696744d9",
+      "heading_boxes": [
+        [
+          1639,
+          220,
+          1967,
+          263
+        ],
+        [
+          1640,
+          219,
+          1975,
+          262
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kya%E2%80%99o/1": {
+      "page": "printed-db41a3bd577405d8a5c5cb667e21ef764f7c022c235ceb783971823d5269a4d2",
+      "witness_sha256": "e43d6965a3e102f1a1e0a4c332ce183299d980d23149e9c85a2fe4060fa87f71",
+      "certificate_sha256": "2723d00193874bbab7533b9fa28a5a21ceafc6980a6de1efbceb2ee445d1fd93",
+      "heading_boxes": [
+        [
+          1638,
+          624,
+          1759,
+          667
+        ],
+        [
+          1640,
+          623,
+          1770,
+          666
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kyi%20lce/1": {
+      "page": "printed-02cedea77e0f776b7205d8eaf4b0cce237cb60cd6861d7571e9459dbe25be4d0",
+      "witness_sha256": "6686a845e5e42d202efc11925f722f48b0a90513175eb8ca77841e57a545b30d",
+      "certificate_sha256": "3e9f1acb0803d7e2b363cf81d4a71827a006c07ca44777e38046c83d55d35592",
+      "heading_boxes": [
+        [
+          1641,
+          219,
+          1789,
+          262
+        ],
+        [
+          1640,
+          217,
+          2226,
+          798
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kyi%20li%20li/1": {
+      "page": "printed-02cedea77e0f776b7205d8eaf4b0cce237cb60cd6861d7571e9459dbe25be4d0",
+      "witness_sha256": "7d23444b8d35693574bdf51487768f0f94ea77a0e12da2ef56e9cfe21f7750bf",
+      "certificate_sha256": "24b6edfd5b63e24fb500d403c494e81c67a57d7f9442d2c62c7469732adb05f3",
+      "heading_boxes": [
+        [
+          1641,
+          1800,
+          1818,
+          1846
+        ],
+        [
+          1642,
+          1801,
+          2220,
+          1881
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kyug%20kyug%20byed/1": {
+      "page": "printed-40fc1c62fdb462771d9ec4afa612c242f05a907646e5c6a614de764ff9e2a4fc",
+      "witness_sha256": "9a60ae1d6cf6bdb44f80603876f868fc0d05a4acc3996108cdcef3adaffe953a",
+      "certificate_sha256": "1e9b07d1c9da1e19181f23ebfd2e41badd0c4aaea80bc7d5677725f31a94cd6c",
+      "heading_boxes": [
+        [
+          2258,
+          1126,
+          2596,
+          1175
+        ],
+        [
+          2260,
+          1127,
+          2843,
+          1255
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kyur%20kyur/1": {
+      "page": "printed-40fc1c62fdb462771d9ec4afa612c242f05a907646e5c6a614de764ff9e2a4fc",
+      "witness_sha256": "cb16a05282ee4ec47c77baa64697af9a41138116cbc3e1f66ef7107753233fde",
+      "certificate_sha256": "2cc083eeae116caca6564c0c82a7e5075e6db99402697b7ec75d0c84db8a756c",
+      "heading_boxes": [
+        [
+          2259,
+          1655,
+          2498,
+          1701
+        ],
+        [
+          2259,
+          1650,
+          2847,
+          1821
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ker%20leb%20sgur%20gsum/1": {
+      "page": "printed-5b6225d4287f4608fbd9e612fa8c35e93700c3f0babdf712fd62eb9d40ace0b2",
+      "witness_sha256": "591064572757ce5a7822d577103be2763d9835340bd69b7aac228116668c60d4",
+      "certificate_sha256": "8458bd81344ecba06cc65df9895d6895a1b7fbf58f3a9f08b08ac4438f6b9368",
+      "heading_boxes": [
+        [
+          130,
+          1181,
+          591,
+          1233
+        ],
+        [
+          129,
+          1178,
+          594,
+          1230
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20ka%20li%20ka/1": {
+      "page": "printed-517621ce20a746194db88d842e985a55bb1372db3bdddd7bec3156efe818d65b",
+      "witness_sha256": "b39679c4ddae59375a86eda7916fcc4fa07c3e2f4fa6c8d9fab0c312d414127e",
+      "certificate_sha256": "f2f5e4c0f2d5aec34bf4e675e1622d57e8a88704e75bf5ec1d5bb774c339a5f3",
+      "heading_boxes": [
+        [
+          2233,
+          1220,
+          2478,
+          1272
+        ],
+        [
+          2231,
+          1222,
+          2490,
+          1271
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20skyi/1": {
+      "page": "printed-6bcb655334443c3a99c456101aab945be1eef50e1b37c3eaf21f4a7615860621",
+      "witness_sha256": "f74308875776dc9059be25be64aeb50f6a54387e866d77ba50a62867e64495f8",
+      "certificate_sha256": "d72d1dd2e2ef0d04231e15caab1c8679773d41eef202b5a45a2c52a932d3569c",
+      "heading_boxes": [
+        [
+          720,
+          1347,
+          876,
+          1403
+        ],
+        [
+          717,
+          1348,
+          880,
+          1394
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20lpags/1": {
+      "page": "printed-09adfbe47844230d04ab621b5798d651ef07ea8c3da8994468a404cbf9349b57",
+      "witness_sha256": "ef17ca32488db7c62274bff57206aea8931fc694c28067dde75f2b4b18b7e3b6",
+      "certificate_sha256": "0f2f928da78db4a26085deaad1ab05b639312e73905985d22e82d2351cc112df",
+      "heading_boxes": [
+        [
+          1650,
+          490,
+          2119,
+          540
+        ],
+        [
+          1644,
+          487,
+          2233,
+          962
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20phub/1": {
+      "page": "printed-09adfbe47844230d04ab621b5798d651ef07ea8c3da8994468a404cbf9349b57",
+      "witness_sha256": "ead09c4ccbcceade76201949b0d6896d13fc758191ab5c3092f828dbd7159cad",
+      "certificate_sha256": "8d39178b45ac0c943481aabee4649ad98d31cda63266ea01d683b7c3f1d34d04",
+      "heading_boxes": [
+        [
+          2266,
+          539,
+          2654,
+          588
+        ],
+        [
+          2262,
+          543,
+          2862,
+          749
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20bi%20da%20ra/1": {
+      "page": "printed-9a217746135799a61fd3daade9e237e97fd77d526e3b41ec695de9cfa1c0133e",
+      "witness_sha256": "94bd8a9baa1a3689b0fe42691f687313325150f1af99d536aa364aac1429d6f4",
+      "certificate_sha256": "70d8af4a0188e2bdf621a2aa77c64684e1965b919d345b84dcc22d75da3c8787",
+      "heading_boxes": [
+        [
+          91,
+          748,
+          361,
+          801
+        ],
+        [
+          90,
+          746,
+          322,
+          799
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20bugs/1": {
+      "page": "printed-9a217746135799a61fd3daade9e237e97fd77d526e3b41ec695de9cfa1c0133e",
+      "witness_sha256": "237d3f9c1296356846468553c6423c74afd554eb0f5305aeaacc4dddd98e73ba",
+      "certificate_sha256": "666e6f41779f73abfc36384be8d0637c827f3da42fd447a6f418cb04f15c3b39",
+      "heading_boxes": [
+        [
+          90,
+          1389,
+          264,
+          1445
+        ],
+        [
+          90,
+          1387,
+          258,
+          1434
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20%E2%80%99bog/1": {
+      "page": "printed-9a217746135799a61fd3daade9e237e97fd77d526e3b41ec695de9cfa1c0133e",
+      "witness_sha256": "77e49eb667e8b29e55b50b89eeea80cdee55738e1a48c86a969a48c90126aeb9",
+      "certificate_sha256": "18b1839dcb86ef8d41ef001d180f8f84c8fa8a402c675aec040f239a79f6652f",
+      "heading_boxes": [
+        [
+          709,
+          1512,
+          902,
+          1563
+        ],
+        [
+          708,
+          1511,
+          898,
+          1563
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20ro/1": {
+      "page": "printed-51d7dd201eeb1abd8f89d142a9b3bb1df5825405b4754074c117237a5098c19f",
+      "witness_sha256": "a55f3e95ea72c05e64af0b3a531fb2efaabbb2ec8c91f8ea116c500c7dc8a50c",
+      "certificate_sha256": "6d212191265ba080a5201e56b93f8c88cbd91fcd36dd2d4e28eaa53cfdc8161e",
+      "heading_boxes": [
+        [
+          2267,
+          1583,
+          2410,
+          1635
+        ],
+        [
+          2268,
+          1583,
+          2415,
+          1630
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%20la%20ha%20la/1": {
+      "page": "printed-1aa937ad36250f1cee15b63b9dccee0a396031d40fa66674be237347e32b4634",
+      "witness_sha256": "94da9487640294cdf9ae38fd1027f8901df32b08a4c37d5bb02dd9d07da69116",
+      "certificate_sha256": "a52b9f52ec3970cb40805080ace82d45f096df0af59d2905aea18b6da064f7aa",
+      "heading_boxes": [
+        [
+          83,
+          377,
+          322,
+          422
+        ],
+        [
+          82,
+          376,
+          330,
+          420
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/kog%20man/1": {
+      "page": "printed-5883525a66fabf0f25a85eddd8ec13c33037c2bb7a41cf22bd72e6e6e6623a1f",
+      "witness_sha256": "732b898a04f87a0db93614c7c07d6a10d7c42d8d12d119d8e5420a0775c02cbf",
+      "certificate_sha256": "969676a6854e9f0b213fb4dfb896b2f92257581b61163c840c868315703d8efa",
+      "heading_boxes": [
+        [
+          2258,
+          1025,
+          2464,
+          1074
+        ],
+        [
+          2258,
+          1023,
+          2456,
+          1071
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20rje%20dkar%20dmar/1": {
+      "page": "printed-66dde96b0e9889436d17ee0996f2ace6c02cbaa198cafe8cb4e223ec57c89b15",
+      "witness_sha256": "311d9c6693a6a6def8c2b264138005342be7871f2caa6824e0d8883c912d68d4",
+      "certificate_sha256": "eab861fc62ead93b5484597024071aca010c08f035ff03489c23ec22a31da876",
+      "heading_boxes": [
+        [
+          710,
+          1272,
+          1148,
+          1320
+        ],
+        [
+          705,
+          1270,
+          1300,
+          1390
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20rna%20pan%20tog/1": {
+      "page": "printed-11e644663510a9a5ae2cd6b9783451b77141cde8fdda87e93684a4dfb1fdadbd",
+      "witness_sha256": "6b8aabbd7fa27d72370d27c09b9be70b9c1465d328b9797217ac7795926519ff",
+      "certificate_sha256": "ec0adb7b3d507a547f8ee190f6af222430992475c156742984d3186e07287bf9",
+      "heading_boxes": [
+        [
+          1647,
+          1339,
+          2027,
+          1385
+        ],
+        [
+          1645,
+          1335,
+          2245,
+          1455
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20po%20bar%20la/1": {
+      "page": "printed-e0894332946dc111c0fe7cb9959447cd165b69515993b2db1151e4860b4537b0",
+      "witness_sha256": "dac0ae958a06a7935cf6189fd339d5395391aed0f28e6ca4d763c0e9682c8ffb",
+      "certificate_sha256": "e31f84778dc8db521190a56f9b3bd3e3645207ea3965cac74fed8a247ea78925",
+      "heading_boxes": [
+        [
+          94,
+          416,
+          416,
+          461
+        ],
+        [
+          90,
+          413,
+          681,
+          733
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20sprel/1": {
+      "page": "printed-e0894332946dc111c0fe7cb9959447cd165b69515993b2db1151e4860b4537b0",
+      "witness_sha256": "8e5bcfd33bd252ca18c75fd8f14c81796a0cc01ce3e5be9f5246a83ae3b57809",
+      "certificate_sha256": "c8ac28138471e2048f3e1e0397c3ec775ac10bc29487110bcadaae9c37a1a373",
+      "heading_boxes": [
+        [
+          711,
+          378,
+          931,
+          430
+        ],
+        [
+          710,
+          378,
+          1298,
+          511
+        ]
+      ]
+    },
+    "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20%C5%BAwa/1": {
+      "page": "printed-ab1bff4dbb85b4e0efe7b73d85356b67e80ff8d5f4cf9bf05aa436799cba1215",
+      "witness_sha256": "6d3acc06fdab20f2ae3664f2449a09cf6db1ab14334bbbaa98730d6f71be37f2",
+      "certificate_sha256": "8baf5b63fc32a727923ca779b9cf04b6aded586217fe318cda5946e6b185ee48",
+      "heading_boxes": [
+        [
+          2267,
+          1000,
+          2466,
+          1049
+        ],
+        [
+          2264,
+          998,
+          2862,
+          1131
+        ]
+      ]
+    }
+  }
+}

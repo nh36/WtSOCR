@@ -61,6 +61,11 @@ def reviewed_records(reviews):
         reviewed['pages'].update(expanded['pages'])
         reviewed['witnesses'].extend(expanded['witnesses'])
         bindings = dict(alignment_sha256=sha256(generated), certificate_sha256=sha256(certificate))
+    if Path(reviews).resolve() == REVIEWS.resolve():
+        import badw_print_page_map as page_map
+        if (ROOT/'data/badw_print_page_map.json').exists():
+            reviewed = page_map.project(reviewed)
+            bindings['page_map_sha256'] = sha256(page_map.PATH)
     return reviewed, bindings
 
 
@@ -70,7 +75,7 @@ def prepare(scans_root, output, reviews=REVIEWS, registry=ROOT/'data/source_pdfs
     output.mkdir(parents=True, exist_ok=True)
     reviewed, bindings = reviewed_records(reviews)
     sources = {r['label']: r for r in csv.DictReader(Path(registry).open(), delimiter='\t')}
-    readers, originals, pages = {}, {}, {}
+    readers, originals, pages, written = {}, {}, {}, {}
     for key, row in reviewed['pages'].items():
         source = sources[row['source']]
         path = Path(scans_root)/source['filename']
@@ -88,19 +93,25 @@ def prepare(scans_root, output, reviews=REVIEWS, registry=ROOT/'data/source_pdfs
         check_page(page, row)
         identity = derivative_id(source['sha256'], row['physical_page'], row['crop'])
         dest = output/(identity+'.pdf')
+        if identity in written:
+            # Historical page keys may name the same geometry. Never overwrite
+            # a derivative after its checksum has entered another manifest row.
+            pages[key] = dict(row, id=identity, filename=dest.name, sha256=written[identity], method=METHOD)
+            continue
         writer = PdfWriter()
         writer.add_page(page)
         # Both boxes are required: ordinary browser viewers must open a single
         # printed page at normal scale. Image XObjects are copied, not resampled.
         writer.pages[0].mediabox = RectangleObject(row['crop'])
         writer.pages[0].cropbox = RectangleObject(row['crop'])
-        title = (f"WTS {row['volume']}, p. {row['printed_page']}" if row['printed_page'] is not None
+        title = ((f"WTS {row['volume']}, " if row['volume'] is not None else 'WTS ')+f"p. {row['printed_page']}" if row['printed_page'] is not None
                  else f"WTS {row['source']}, physical scan {row['physical_page']}")
         writer.add_metadata({'/Title': title,
                              '/Producer': METHOD})
         with dest.open('wb') as stream:
             writer.write(stream)
         pages[key] = dict(row, id=identity, filename=dest.name, sha256=sha256(dest), method=METHOD)
+        written[identity] = pages[key]['sha256']
     witnesses, seen = [], set()
     for row in reviewed['witnesses']:
         binding = (row['source_url'], row['html_sha256'])
@@ -160,7 +171,7 @@ class Facsimiles:
             self.used.add(page['id'])
         editorial['label'] = 'BAdW editorial text'
         entry['sources'].append(dict(url='sources/print/'+page['filename']+'#page=1&view=Fit',
-            label=(f"Original printed edition · {page['volume']}, p. {page['printed_page']}"
+            label=("Original printed edition · "+(f"{page['volume']}, " if page['volume'] is not None else '')+f"p. {page['printed_page']}"
                    if page['printed_page'] is not None else
                    f"Original printed edition · {page['source']}, physical scan {page['physical_page']} · model source verified"),
             sha256=page['sha256'], print_provenance=dict(page, evidence=row['evidence'],

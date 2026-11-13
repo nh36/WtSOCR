@@ -12,6 +12,9 @@ const {chromium}=require('playwright-core');
  const reviewed=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_html_print_pages.json')));
  const generated=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_html_print_alignment.generated.json')));
  reviewed.witnesses.push(...generated.witnesses);Object.assign(reviewed.pages,generated.pages);
+ const pageMap=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_print_page_map.json')));
+ for(const witness of reviewed.witnesses){const d=pageMap.destinations[witness.source_url];if(d){reviewed.pages[d.page]=pageMap.pages[d.page];witness.page=d.page;}}
+ const used=new Set(reviewed.witnesses.map(w=>w.page));for(const key of Object.keys(reviewed.pages))if(!used.has(key))delete reviewed.pages[key];
  const {browser,closeBrowser}=await launchTestBrowser(chromium,{executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:process.env.BADW_HEADED!=='1'});
  const errors=[];const report={};
  try{
@@ -44,10 +47,10 @@ const {chromium}=require('playwright-core');
     assert(certificate.heading_id);
     assert(!('anchor' in certificate));
    }else if(certificate.certificate_type==='model-source-verified-v1'){
-    assert.equal(certificate.policy,'unique-unnumbered-lexical-v1');
+    assert(['unique-unnumbered-lexical-v1','independent-source-lexical-reference-v2'].includes(certificate.policy));
     assert.equal(certificate.model_evidence.second_reading.inventory.length,1);
     assert.equal(certificate.model_evidence.second_reading.matching.length,1);
-    assert.equal(provenance.printed_page,null);
+    if(certificate.policy==='unique-unnumbered-lexical-v1')assert.equal(provenance.printed_page,null);
    }else{
     assert.equal(observation.heading_anchor,observation.evidence_anchor);
    }

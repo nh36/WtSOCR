@@ -1,0 +1,4236 @@
+{
+  "version": 1,
+  "reviewer": "Coding agent visual check of original-source article crops, not human review. All 22 qualifying cached references inspected; this is an acceptance-class census, not a representative corpus accuracy estimate.",
+  "contact_sheet_sha256": "bbe5cb83048a76f2a2103884dd614c94adb234151074584701a458fea8cafe56",
+  "cases": [
+    {
+      "cached_row": {
+        "item_id": "i05",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/kyil%20le/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A4"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/kyil%20le/1",
+        "html_sha256": "97b61100b30561b7f66fdec22ac9d788969bd5c54341a0b7f97cc2b010fdc94a",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "4e350cbbb960a21dc9bf9475a118100449532cf0989c55cc754ac1f027dbc17c",
+        "historical_anchors": [
+          "wts_1_34:106:38"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "i05",
+          "heading_loc": "kyil le",
+          "heading_tibetan": "ཀྱིལ་ལེ",
+          "printed_homonym": null,
+          "bbox": [
+            112,
+            1427,
+            280,
+            1475
+          ],
+          "column": "134 left",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓dkyil le.",
+          "preceding": "End of kyin, including lexical examples.",
+          "following": "kyis.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          33.6,
+          186.780029296875,
+          84.0,
+          201.18002929687503
+        ],
+        "image_crop": {
+          "item_id": "i05",
+          "path": "article-5a9730a62268a5e1-0004.png",
+          "sha256": "e09bb373d6c964f4a537bc1e23a26333e4a90274971b354f1846e787be2e19c1",
+          "pixels": [
+            638,
+            112
+          ],
+          "parent_bbox": [
+            88,
+            1403,
+            726,
+            1515
+          ],
+          "pdf_bbox": [
+            26.4,
+            174.780029296875,
+            217.79999999999998,
+            208.38002929687502
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "i05",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kyil%20le/1",
+          "component_index": 2,
+          "printed_evidence": "kyil le points to “↓dkyil le”.",
+          "html_evidence": "↓dkyil le",
+          "boundary_evidence": "A separate heading follows the end of kyin and precedes kyis.",
+          "homonym_evidence": "No printed homonym numeral; the reference target identifies the entry.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-106",
+        "headword": "kyil le",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A4",
+              "heading_loc": "kyil le",
+              "heading_tibetan": "ཀྱིལ་ལེ་",
+              "printed_homonym": null,
+              "bbox": [
+                112,
+                1428,
+                402,
+                1475
+              ],
+              "column": "134-left",
+              "classification": "article",
+              "printed_evidence": "Headword followed by ↓dkyil le.",
+              "preceding": "kyin.",
+              "following": "kyis.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A4",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/kyil%20le/1",
+              "component_index": 2,
+              "printed_evidence": "The printed reference target is dkyil le.",
+              "html_evidence": "↓dkyil le",
+              "boundary_evidence": "Separate short article between kyin and kyis.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "Other supplied cross-reference articles point elsewhere.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/kyil%20le/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/kyil%20le/1",
+        "headword": {
+          "loc": "kyil le",
+          "tibetan": "ཀྱིལ་ལེ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:d143ca6326ac88e67af7cb318416263bda87b170e115eba0e18ad626e2e98ee2",
+            "type": "headword",
+            "source_form": "ཀྱིལ་ལེ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:590826c8f30f4c8eeb911ec60c0e70ef79d90815b3597bd539773444e0ab91a3",
+            "type": "headword",
+            "source_form": "kyil le",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:bd5735e13415f9144689ad91971677293a1d3e5e2bca7181f7cf72a1baefb521",
+            "type": "cross_reference",
+            "source_form": "↓dkyil le",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:462059fab7a77f11c8c9499c4ac97f5764de7c0e2a6ec5b079df03afa10e0019",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/kyil%20le/1",
+            "label": "BAdW editorial text",
+            "sha256": "97b61100b30561b7f66fdec22ac9d788969bd5c54341a0b7f97cc2b010fdc94a"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "kyil le points to “↓dkyil le”."
+    },
+    {
+      "cached_row": {
+        "item_id": "i16",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/kyu%20ru%20ra/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A8"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/kyu%20ru%20ra/1",
+        "html_sha256": "e57fca1288257acd5c67abdabf0cdbe9cb6bf0ce499c506da6525725ba935acc",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "415015c2b4afe4c338c9e3c5e576bfc768dc8c40e183e0bfa04adfdbf5abde92",
+        "historical_anchors": [
+          "wts_1_34:106:171"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "i16",
+          "heading_loc": "kyu ru ra",
+          "heading_tibetan": "ཀྱུ་རུ་ར",
+          "printed_homonym": null,
+          "bbox": [
+            2258,
+            660,
+            2456,
+            704
+          ],
+          "column": "135 right",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓skyu ru ra.",
+          "preceding": "End of kyu ra.",
+          "following": "kyu ru ru.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          677.4,
+          418.080029296875,
+          736.8,
+          431.280029296875
+        ],
+        "image_crop": {
+          "item_id": "i16",
+          "path": "article-5a9730a62268a5e1-0015.png",
+          "sha256": "761c7b6ccfd92bc7bc6f985e5ff6927de494e38e9c9e1391acfc56837ab0b6d0",
+          "pixels": [
+            733,
+            106
+          ],
+          "parent_bbox": [
+            2234,
+            636,
+            2967,
+            742
+          ],
+          "pdf_bbox": [
+            670.1999999999999,
+            406.680029296875,
+            890.1,
+            438.48002929687505
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "i16",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kyu%20ru%20ra/1",
+          "component_index": 2,
+          "printed_evidence": "kyu ru ra points to “↓skyu ru ra”.",
+          "html_evidence": "↓skyu ru ra",
+          "boundary_evidence": "A separate heading follows kyu ra and precedes kyu ru ru.",
+          "homonym_evidence": "No printed homonym numeral; the reference target discriminates this entry.",
+          "alternatives": "Not the similar neighbouring kyu ru ru.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-106",
+        "headword": "kyu ru ra",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A8",
+              "heading_loc": "kyu ru ra",
+              "heading_tibetan": "ཀྱུ་རུ་ར་",
+              "printed_homonym": null,
+              "bbox": [
+                2259,
+                657,
+                2612,
+                705
+              ],
+              "column": "135-right",
+              "classification": "article",
+              "printed_evidence": "Headword followed by ↓skyu ru ra.",
+              "preceding": "End of kyu ra.",
+              "following": "kyu ru ru.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A8",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/kyu%20ru%20ra/1",
+              "component_index": 2,
+              "printed_evidence": "The printed target is skyu ru ra.",
+              "html_evidence": "↓skyu ru ra",
+              "boundary_evidence": "Independent short entry after kyu ra and before kyu ru ru.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "kyu ru ru has a bird-sound definition and a different final syllable.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/kyu%20ru%20ra/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/kyu%20ru%20ra/1",
+        "headword": {
+          "loc": "kyu ru ra",
+          "tibetan": "ཀྱུ་རུ་ར་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:a7551ff845e456ab5edbf38067bf0c55219f48eaf3bf5cbe0c608933644aa2df",
+            "type": "headword",
+            "source_form": "ཀྱུ་རུ་ར་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:60f0540d253c045c8d71c9e678b131fad1ef2364df14895156570548b567c2a2",
+            "type": "headword",
+            "source_form": "kyu ru ra",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:6b197655160f357056fb152a160e81ab16e1389f0582f0136a938f2027de355b",
+            "type": "cross_reference",
+            "source_form": "↓skyu ru ra",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:3b72076d57ecad201c1017c7897ab3a9a3813ca64c3b4ca88afa3317ec9c3f76",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/kyu%20ru%20ra/1",
+            "label": "BAdW editorial text",
+            "sha256": "e57fca1288257acd5c67abdabf0cdbe9cb6bf0ce499c506da6525725ba935acc"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "kyu ru ra points to “↓skyu ru ra”."
+    },
+    {
+      "cached_row": {
+        "item_id": "i21",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/kyus%20gar/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A13"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/kyus%20gar/1",
+        "html_sha256": "08a3600e9af74bd638920e963c556a3793938b7938836733045868b66f30835a",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "4286462becc4c69ec5fd5112c02ab25961596675ed1988f33ba7d6a4b9716ccb",
+        "historical_anchors": [
+          "wts_1_34:106:156",
+          "wts_1_34:106:208"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "i21",
+          "heading_loc": "kyus gar",
+          "heading_tibetan": "ཀྱུས་གར",
+          "printed_homonym": null,
+          "bbox": [
+            2259,
+            1840,
+            2466,
+            1888
+          ],
+          "column": "135 right",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓dkyus gar.",
+          "preceding": "kyur kyur.",
+          "following": "Foot of folio 135.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          677.6999999999999,
+          62.88002929687502,
+          739.8,
+          77.280029296875
+        ],
+        "image_crop": {
+          "item_id": "i21",
+          "path": "article-5a9730a62268a5e1-0020.png",
+          "sha256": "22dff58fe4cdc5f4ad638e44af824e78f132c27807f79f4ee7d4b6de3126ec3e",
+          "pixels": [
+            733,
+            282
+          ],
+          "parent_bbox": [
+            2234,
+            1816,
+            2967,
+            2098
+          ],
+          "pdf_bbox": [
+            670.1999999999999,
+            -0.11997070312497726,
+            890.1,
+            84.48002929687505
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "i21",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kyus%20gar/1",
+          "component_index": 2,
+          "printed_evidence": "kyus gar points to “↓dkyus gar”.",
+          "html_evidence": "↓dkyus gar",
+          "boundary_evidence": "The independent article starts below kyur kyur; the occurrence at i14 is only a running header.",
+          "homonym_evidence": "No printed homonym numeral; the reference target identifies the witness.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-106",
+        "headword": "kyus gar",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A13",
+              "heading_loc": "kyus gar",
+              "heading_tibetan": "ཀྱུས་གར་",
+              "printed_homonym": null,
+              "bbox": [
+                2260,
+                1838,
+                2611,
+                1885
+              ],
+              "column": "135-right",
+              "classification": "article",
+              "printed_evidence": "Headword followed by ↓dkyus gar.",
+              "preceding": "kyur kyur.",
+              "following": "Bottom margin.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A13",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/kyus%20gar/1",
+              "component_index": 2,
+              "printed_evidence": "The printed reference target is dkyus gar.",
+              "html_evidence": "↓dkyus gar",
+              "boundary_evidence": "Last independent entry, after kyur kyur.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "Other supplied reference-only entries have different targets.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/kyus%20gar/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/kyus%20gar/1",
+        "headword": {
+          "loc": "kyus gar",
+          "tibetan": "ཀྱུས་གར་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:ed1376943de1a89e653d6f0b3103fdfdc4965c6224d9119a7fc7b40c80ef4807",
+            "type": "headword",
+            "source_form": "ཀྱུས་གར་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:26cffe60b099501a8b8b119d72339198a86f3472a400487f0c8febcb12f6b39d",
+            "type": "headword",
+            "source_form": "kyus gar",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:fb3b4edf531da7751b985990626a21cb9f01d4986dea1fb502242828be2f6d1e",
+            "type": "cross_reference",
+            "source_form": "↓dkyus gar",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:478f604985de3d62a0b97b15fec9de71dff94702b1d61c09c7158d410557dcfa",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/kyus%20gar/1",
+            "label": "BAdW editorial text",
+            "sha256": "08a3600e9af74bd638920e963c556a3793938b7938836733045868b66f30835a"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "kyus gar points to “↓dkyus gar”."
+    },
+    {
+      "cached_row": {
+        "item_id": "113-05",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ka/2",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a12"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ka/2",
+        "html_sha256": "2227de06085218d28d4f1f6107302b6d5c5da952a104f75a5cd7e8f0396c8894",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "a0eee06a6be6ccde0917b2dbc5c759889212ac11faea98c861cd603ef146c277",
+        "historical_anchors": [
+          "wts_1_34:92:154",
+          "wts_1_34:92:176",
+          "wts_1_34:92:192"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "113-05",
+          "heading_loc": "ko ka",
+          "heading_tibetan": "ཀོ་ཀ",
+          "printed_homonym": 2,
+          "bbox": [
+            2236,
+            312,
+            2380,
+            365
+          ],
+          "column": "113, right",
+          "classification": "article",
+          "printed_evidence": "²ko ka Kurzf. für ↓ko ka na da.",
+          "preceding": "¹ko ka lexical evidence (Mvy 4864).",
+          "following": "³ko ka.",
+          "uncertainty": "Superscript 2 is visibly printed."
+        },
+        "pdf_heading_bbox": [
+          671.4000059843063,
+          520.6199951171875,
+          714.6000059843063,
+          536.5199951171875
+        ],
+        "image_crop": {
+          "item_id": "113-05",
+          "path": "article-7cc153def12641dd-0019.png",
+          "sha256": "eecc599ec044182658767e393b1cefb4153ca5338f632fc180076f1b43880ad8",
+          "pixels": [
+            760,
+            110
+          ],
+          "parent_bbox": [
+            2207,
+            288,
+            2967,
+            398
+          ],
+          "pdf_bbox": [
+            662.7000059843064,
+            510.7199951171875,
+            890.7000059843064,
+            543.7199951171875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "113-05",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ka/2",
+          "component_index": 2,
+          "printed_evidence": "²ko ka Kurzf. für ↓ko ka na da.",
+          "html_evidence": "↓ko ka na da",
+          "boundary_evidence": "Independent short entry after the continuation of ¹ko ka and before ³ko ka.",
+          "homonym_evidence": "Printed superscript 2 and the lotus-term target distinguish it from the animal entry and the ko ki reference.",
+          "alternatives": "The full ko ka na da article is 113-08.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "numbered homonym",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-92",
+        "headword": "ko ka",
+        "homonym": "2",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a12",
+              "heading_loc": "ko ka",
+              "heading_tibetan": "ཀོ་ཀ་",
+              "printed_homonym": 2,
+              "bbox": [
+                2237,
+                313,
+                2380,
+                361
+              ],
+              "column": "113 right",
+              "classification": "article",
+              "printed_evidence": "²ko ka Kurzf. für ↓ko ka na da.",
+              "preceding": "¹ko ka continuation.",
+              "following": "³ko ka.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a12",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ka/2",
+              "component_index": 2,
+              "printed_evidence": "Short form for the explicitly printed reference target ko ka na da.",
+              "html_evidence": "↓ko ka na da",
+              "boundary_evidence": "Independent ²ko ka between preceding continuation and ³ko ka.",
+              "homonym_evidence": "Printed 2 and target distinguish /2 from animal /1 and ko ki reference /3.",
+              "alternatives": "ko ka/1, ko ka/3 and the full ko ka na da article.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ko%20ka/2",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ka/2",
+        "headword": {
+          "loc": "ko ka",
+          "tibetan": "ཀོ་ཀ་"
+        },
+        "homonym": "2",
+        "components": [
+          {
+            "id": "span:b2d117cab7a7fa641f85bb307ece96a65c75f53a8b50b87989c97d28e9ecc742",
+            "type": "headword",
+            "source_form": "ཀོ་ཀ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:6bf3c47f8d5906ce0eb2e27c1dd2399f4f9bc4caef386f7491703c099c572161",
+            "type": "headword",
+            "source_form": "ko ka",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:8fd82a1f439e51f87ce9c8622d2ae43df2e441cfe95b690b8d067d16f8bb3475",
+            "type": "cross_reference",
+            "source_form": "↓ko ka na da",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:f935b00a471c7aed62ea9f1f895641851b9abce00977d06142a8850d7ec8d4e6",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/ko%20ka/2",
+            "label": "BAdW editorial text",
+            "sha256": "2227de06085218d28d4f1f6107302b6d5c5da952a104f75a5cd7e8f0396c8894"
+          }
+        ]
+      },
+      "headword_count": 3,
+      "identity_correct": true,
+      "source_observation": "²ko ka Kurzf. für ↓ko ka na da."
+    },
+    {
+      "cached_row": {
+        "item_id": "113-06",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ka/3",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a13"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ka/3",
+        "html_sha256": "c7b58e4ed9026adb5417d84f944ce17386bc6b0fa141b3e94e589c789d4c89ac",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "9031e55a823e97c1d99bae842eae393bf2ccf68f456076ac3ea3211b1c9c4c3b",
+        "historical_anchors": [
+          "wts_1_34:92:154",
+          "wts_1_34:92:176",
+          "wts_1_34:92:192"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "113-06",
+          "heading_loc": "ko ka",
+          "heading_tibetan": "ཀོ་ཀ",
+          "printed_homonym": 3,
+          "bbox": [
+            2236,
+            374,
+            2382,
+            425
+          ],
+          "column": "113, right",
+          "classification": "article",
+          "printed_evidence": "³ko ka ↓ko ki.",
+          "preceding": "²ko ka, short form of ko ka na da.",
+          "following": "ko ka thaṅ dmar gliṅ.",
+          "uncertainty": "Superscript 3 is visibly printed."
+        },
+        "pdf_heading_bbox": [
+          671.4000059843063,
+          502.6199951171875,
+          715.2000059843064,
+          517.9199951171875
+        ],
+        "image_crop": {
+          "item_id": "113-06",
+          "path": "article-7cc153def12641dd-0020.png",
+          "sha256": "01f7fef215e197d5a0866c4f64bd61ab695091687ac2322680179de2d1524fbe",
+          "pixels": [
+            760,
+            106
+          ],
+          "parent_bbox": [
+            2207,
+            350,
+            2967,
+            456
+          ],
+          "pdf_bbox": [
+            662.7000059843064,
+            493.31999511718755,
+            890.7000059843064,
+            525.1199951171875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "113-06",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ka/3",
+          "component_index": 2,
+          "printed_evidence": "³ko ka ↓ko ki.",
+          "html_evidence": "↓ko ki",
+          "boundary_evidence": "Independent short entry between ²ko ka and ko ka thaṅ dmar gliṅ.",
+          "homonym_evidence": "Printed superscript 3 and the ko ki target distinguish it from the other ko ka entries.",
+          "alternatives": "The full ko ki article is 113-10.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "numbered homonym",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-92",
+        "headword": "ko ka",
+        "homonym": "3",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a13",
+              "heading_loc": "ko ka",
+              "heading_tibetan": "ཀོ་ཀ་",
+              "printed_homonym": 3,
+              "bbox": [
+                2237,
+                375,
+                2380,
+                420
+              ],
+              "column": "113 right",
+              "classification": "article",
+              "printed_evidence": "³ko ka ↓ko ki.",
+              "preceding": "²ko ka.",
+              "following": "ko ka thaṅ dmar gliṅ.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a13",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ka/3",
+              "component_index": 2,
+              "printed_evidence": "Reference explicitly points to ko ki.",
+              "html_evidence": "↓ko ki",
+              "boundary_evidence": "Independent ³ko ka after ²ko ka and before the place-name article.",
+              "homonym_evidence": "Printed 3 and target distinguish /3 from /1 and /2.",
+              "alternatives": "ko ka/1, ko ka/2 and the full ko ki article.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ko%20ka/3",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ka/3",
+        "headword": {
+          "loc": "ko ka",
+          "tibetan": "ཀོ་ཀ་"
+        },
+        "homonym": "3",
+        "components": [
+          {
+            "id": "span:729db2f52ba60d28c1c94f4aa9d16ef1a116f05e154ea4f0778170bf465946bb",
+            "type": "headword",
+            "source_form": "ཀོ་ཀ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:27ca8fea12b9d37b661eb4b9d0326b90f7bf4fc7beac57ea0c3e1ccf33f501ca",
+            "type": "headword",
+            "source_form": "ko ka",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:fd1d4a80857a8f17bffa04c51eaf9f4e8d28cc4a97214390c1c67e97a068a8f9",
+            "type": "cross_reference",
+            "source_form": "↓ko ki",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:778ee8c65257026a039d8262d6d593e8a54f463fe6739ac5191df2408fa0c898",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/ko%20ka/3",
+            "label": "BAdW editorial text",
+            "sha256": "c7b58e4ed9026adb5417d84f944ce17386bc6b0fa141b3e94e589c789d4c89ac"
+          }
+        ]
+      },
+      "headword_count": 3,
+      "identity_correct": true,
+      "source_observation": "³ko ka ↓ko ki."
+    },
+    {
+      "cached_row": {
+        "item_id": "a03",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ko%20tha%E1%B9%85%20ma/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a03"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ko%20tha%E1%B9%85%20ma/1",
+        "html_sha256": "9b271657ea5d3731d6bd929b9773e0897650fdee107762e4033cdac19b1bd304",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "f546adccc7d07fe2930fdb8f5b0bfb95531cf447b69d01ef3fbde6739ab72c53",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a03",
+          "heading_loc": "ko ko thaṅ ma",
+          "heading_tibetan": "ཀོ་ཀོ་ཐང་མ",
+          "printed_homonym": null,
+          "bbox": [
+            101,
+            1195,
+            402,
+            1247
+          ],
+          "column": "114 left",
+          "classification": "article",
+          "printed_evidence": "Cross-reference to ko ka thaṅ dmar gliṅ.",
+          "preceding": "ko ke.",
+          "following": "ko ko g.yag.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          30.900005984306333,
+          256.01999511718753,
+          121.20000598430633,
+          271.6199951171875
+        ],
+        "image_crop": {
+          "item_id": "a03",
+          "path": "article-92cedd0a134ae33e-0007.png",
+          "sha256": "5bcf80e3e93be4d45072a5b8a16950acf7a0198ecc64155cd739577fb5ac28f7",
+          "pixels": [
+            615,
+            113
+          ],
+          "parent_bbox": [
+            74,
+            1171,
+            689,
+            1284
+          ],
+          "pdf_bbox": [
+            22.800005984306335,
+            244.9199951171875,
+            207.30000598430632,
+            278.8199951171875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a03",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ko%20tha%E1%B9%85%20ma/1",
+          "component_index": 2,
+          "printed_evidence": "ko ko thaṅ ma points to ↑ko ka thaṅ dmar gliṅ.",
+          "html_evidence": "↑ko ka thaṅ dmar gliṅ",
+          "boundary_evidence": "Independent cross-reference entry before ko ko g.yag; its target is not a second start.",
+          "homonym_evidence": "No printed homonym number.",
+          "alternatives": "The target witness describes the place but is not the printed cross-reference entry.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-93",
+        "headword": "ko ko thaṅ ma",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a03",
+              "heading_loc": "ko ko thaṅ ma",
+              "heading_tibetan": "ཀོ་ཀོ་ཐང་མ་",
+              "printed_homonym": null,
+              "bbox": [
+                100,
+                1195,
+                405,
+                1240
+              ],
+              "column": "114 left",
+              "classification": "article",
+              "printed_evidence": "Independent heading followed by ↑ko ka thaṅ dmar gliṅ.",
+              "preceding": "ko ke",
+              "following": "ko ko g.yag",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a03",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ko%20tha%E1%B9%85%20ma/1",
+              "component_index": 2,
+              "printed_evidence": "The independent reference explicitly points to ko ka thaṅ dmar gliṅ.",
+              "html_evidence": "↑ko ka thaṅ dmar gliṅ",
+              "boundary_evidence": "Separate heading after ko ke and before ko ko g.yag.",
+              "homonym_evidence": "No printed homonym numeral.",
+              "alternatives": "ko ka thaṅ dmar gliṅ is the reference target, not the printed reference article.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ko%20ko%20tha%E1%B9%85%20ma/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ko%20tha%E1%B9%85%20ma/1",
+        "headword": {
+          "loc": "ko ko thaṅ ma",
+          "tibetan": "ཀོ་ཀོ་ཐང་མ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:b88891ab9809251e7814cc9a8ebf0f99efb3855850afc5542da6e7b20d7d2072",
+            "type": "headword",
+            "source_form": "ཀོ་ཀོ་ཐང་མ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:b54e4a96e47335f43a949d27196b989a70833d6fd73b3a8149d8f79a166e078c",
+            "type": "headword",
+            "source_form": "ko ko thaṅ ma",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:967e7e610ae757d0c7c0703a893dcedd8b20a7736cf7fe31297e4978b657eadd",
+            "type": "cross_reference",
+            "source_form": "↑ko ka thaṅ dmar gliṅ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:f13d1966089aac44a39de918bacb183c9189dac4cf8ba081e2f7bd9967fae15f",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/ko%20ko%20tha%E1%B9%85%20ma/1",
+            "label": "BAdW editorial text",
+            "sha256": "9b271657ea5d3731d6bd929b9773e0897650fdee107762e4033cdac19b1bd304"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "ko ko thaṅ ma points to ↑ko ka thaṅ dmar gliṅ."
+    },
+    {
+      "cached_row": {
+        "item_id": "118-02",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ba%20t%C4%81%20ra/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a02"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ba%20t%C4%81%20ra/1",
+        "html_sha256": "f48fc7aba0d3316dded5928707685c3c5b135e89ce68fe46a9b9c518251a03ce",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "e77da2198a1c4f518903e72b714ef0762458da4760df01fc9e45b4bf2c9c0ea4",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "118-02",
+          "heading_loc": "ko ba tā ra",
+          "heading_tibetan": "ཀོ་བ་ཏཱ་ར་",
+          "printed_homonym": null,
+          "bbox": [
+            90,
+            688,
+            483,
+            744
+          ],
+          "column": "118 left",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓ko bi da ra.",
+          "preceding": "ko ba can, ending Lex. ānardha (r. ānaddha).",
+          "following": "ko bi da ra.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          28.200000047683716,
+          407.88001708984376,
+          146.10000004768372,
+          424.6800170898438
+        ],
+        "image_crop": {
+          "item_id": "118-02",
+          "path": "article-507912720aa2639d-0003.png",
+          "sha256": "e964e58f9be527b0ecc433ec998e0e1e7e4ec428f569ff572b71f1cf0a459c2c",
+          "pixels": [
+            619,
+            108
+          ],
+          "parent_bbox": [
+            66,
+            664,
+            685,
+            772
+          ],
+          "pdf_bbox": [
+            21.000000047683717,
+            399.4800170898437,
+            206.70000004768372,
+            431.88001708984376
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "118-02",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ba%20t%C4%81%20ra/1",
+          "component_index": 2,
+          "printed_evidence": "The independent ko ba tā ra heading points down to ko bi da ra.",
+          "html_evidence": "↓ko bi da ra",
+          "boundary_evidence": "It is a separate cross-reference immediately before the ko bi da ra article.",
+          "homonym_evidence": "No printed homonym number; the reference target distinguishes the witness.",
+          "alternatives": "The later ko ba tā ra lexical note is embedded in ko bi da ra.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-95",
+        "headword": "ko ba tā ra",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a02",
+              "heading_loc": "ko ba tā ra",
+              "heading_tibetan": "ཀོ་བ་ཏཱ་ར་",
+              "printed_homonym": null,
+              "bbox": [
+                90,
+                689,
+                334,
+                739
+              ],
+              "column": "118 left",
+              "classification": "article",
+              "printed_evidence": "Independent reference entry: ↓ko bi da ra.",
+              "preceding": "ko ba can.",
+              "following": "ko bi da ra.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a02",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ba%20t%C4%81%20ra/1",
+              "component_index": 2,
+              "printed_evidence": "The independent heading points down to ko bi da ra.",
+              "html_evidence": "↓ko bi da ra",
+              "boundary_evidence": "Separate entry between ko ba can and the target article.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "ko bi da ra has this form as a variant, but is the target rather than this reference entry.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ko%20ba%20t%C4%81%20ra/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ba%20t%C4%81%20ra/1",
+        "headword": {
+          "loc": "ko ba tā ra",
+          "tibetan": "ཀོ་བ་ཏཱ་ར་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:0ce73fc6cf3af0623a198d0813730ff4623b073c92e8ad1775aa49a2493a4626",
+            "type": "headword",
+            "source_form": "ཀོ་བ་ཏཱ་ར་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:231b4c8b704f9de68ba3115ac8e7dfddec177960919b3716339976fb5d0241d3",
+            "type": "headword",
+            "source_form": "ko ba tā ra",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:234914c05ef16e2686c31aa04f0eed21ee53be2e7d809d9b899ef17586f01043",
+            "type": "cross_reference",
+            "source_form": "↓ko bi da ra",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:2cdd5847af4c86a90a053dd761f2428dc61518ad3a95005cf3a720df08b3091e",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/ko%20ba%20t%C4%81%20ra/1",
+            "label": "BAdW editorial text",
+            "sha256": "f48fc7aba0d3316dded5928707685c3c5b135e89ce68fe46a9b9c518251a03ce"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "The independent ko ba tā ra heading points down to ko bi da ra."
+    },
+    {
+      "cached_row": {
+        "item_id": "119-08",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ru/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a19"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ru/1",
+        "html_sha256": "9e72701d1aa6fa296fb88ef7ab606caa27d07d94f373b373759a7e752b4cf994",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "7ecd044ec7baadb1f0ad477d89c1c31acf2f119bcf76c4a6c361fe0b15ea7cc6",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "119-08",
+          "heading_loc": "ko ru",
+          "heading_tibetan": "ཀོ་རུ་",
+          "printed_homonym": null,
+          "bbox": [
+            2268,
+            1008,
+            2497,
+            1060
+          ],
+          "column": "119 right",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↑ko gru.",
+          "preceding": "ko ra du ṣa.",
+          "following": "ko ru kha.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          681.6000000476837,
+          313.08001708984375,
+          750.3000000476837,
+          328.6800170898438
+        ],
+        "image_crop": {
+          "item_id": "119-08",
+          "path": "article-507912720aa2639d-0027.png",
+          "sha256": "39809d1ca71339665fe8018a83f80530b4e12b10e26bdbe88fe7199b039731a3",
+          "pixels": [
+            724,
+            111
+          ],
+          "parent_bbox": [
+            2243,
+            984,
+            2967,
+            1095
+          ],
+          "pdf_bbox": [
+            674.1000000476837,
+            302.58001708984375,
+            891.3000000476837,
+            335.88001708984376
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "119-08",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ru/1",
+          "component_index": 2,
+          "printed_evidence": "ko ru ↑ko gru.",
+          "html_evidence": "↑ko gru",
+          "boundary_evidence": "An independent cross-reference between ko ra du ṣa and ko ru kha.",
+          "homonym_evidence": "The reference target, not the heading alone, identifies the witness.",
+          "alternatives": "The neighboring ko ru kha refers instead to ku ru kha.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-95",
+        "headword": "ko ru",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a19",
+              "heading_loc": "ko ru",
+              "heading_tibetan": "ཀོ་རུ་",
+              "printed_homonym": null,
+              "bbox": [
+                2270,
+                1009,
+                2412,
+                1055
+              ],
+              "column": "119 right",
+              "classification": "article",
+              "printed_evidence": "Independent reference entry ↑ko gru.",
+              "preceding": "ko ra du ṣa.",
+              "following": "ko ru kha.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a19",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20ru/1",
+              "component_index": 2,
+              "printed_evidence": "The independent entry points upward to ko gru.",
+              "html_evidence": "↑ko gru",
+              "boundary_evidence": "A separate short entry before ko ru kha.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "ko ru kha instead points to ku ru kha.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ko%20ru/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20ru/1",
+        "headword": {
+          "loc": "ko ru",
+          "tibetan": "ཀོ་རུ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:b1eefcecbbbd00360fc8ec3e032a8503b94d384452e5bc7e031c24a53a78744e",
+            "type": "headword",
+            "source_form": "ཀོ་རུ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:0276ebae5224cf3342c608a6c2cceb68dc8e53cd699758156804ccd62f6968d1",
+            "type": "headword",
+            "source_form": "ko ru",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:82879dea059bfaeb62f062f091c0e6175ffb311fad6f058c832c577c5f1987af",
+            "type": "cross_reference",
+            "source_form": "↑ko gru",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:de70e8937a01c89b407f65cc9e83da8a573426872fbbadcd843f48b63f35af03",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/ko%20ru/1",
+            "label": "BAdW editorial text",
+            "sha256": "9e72701d1aa6fa296fb88ef7ab606caa27d07d94f373b373759a7e752b4cf994"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "ko ru ↑ko gru."
+    },
+    {
+      "cached_row": {
+        "item_id": "a23",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/kogs/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a23"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/kogs/1",
+        "html_sha256": "82c0a654614c0e8156c008484fa115a39e78773e0c140845ada5715c7f99db9b",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "1918849e1b0ec8d645ed9af00b621a306abac7bd8d951169d50ce4cf4a30d0dd",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a23",
+          "heading_loc": "kogs",
+          "heading_tibetan": "ཀོགས",
+          "printed_homonym": null,
+          "bbox": [
+            2258,
+            1597,
+            2390,
+            1643
+          ],
+          "column": "121 right",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓skogs.",
+          "preceding": "kog pa.",
+          "following": "¹koṅ.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          677.4,
+          136.38002929687502,
+          717.0,
+          150.18002929687503
+        ],
+        "image_crop": {
+          "item_id": "a23",
+          "path": "article-501498578b897e86-0030.png",
+          "sha256": "59707afc3bc460d3bb6d726c72e721206659996d226ae4ae847f26fe67eef5d1",
+          "pixels": [
+            733,
+            109
+          ],
+          "parent_bbox": [
+            2234,
+            1573,
+            2967,
+            1682
+          ],
+          "pdf_bbox": [
+            670.1999999999999,
+            124.68002929687503,
+            890.1,
+            157.38002929687502
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a23",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kogs/1",
+          "component_index": 2,
+          "printed_evidence": "kogs “↓skogs”.",
+          "html_evidence": "↓skogs",
+          "boundary_evidence": "Independent cross-reference article between kog pa and ¹koṅ.",
+          "homonym_evidence": "Unnumbered; the specific target distinguishes it from nearby references.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-96",
+        "headword": "kogs",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a23",
+              "heading_loc": "kogs",
+              "heading_tibetan": "ཀོགས་",
+              "printed_homonym": null,
+              "bbox": [
+                2258,
+                1597,
+                2392,
+                1643
+              ],
+              "column": "121 right",
+              "classification": "article",
+              "printed_evidence": "Standalone reference ↓skogs.",
+              "preceding": "kog pa.",
+              "following": "¹koṅ.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a23",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/kogs/1",
+              "component_index": 2,
+              "printed_evidence": "The standalone reference points to skogs.",
+              "html_evidence": "↓skogs",
+              "boundary_evidence": "Separate heading between kog pa and ¹koṅ.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "kog/2 points to bkog instead.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/kogs/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/kogs/1",
+        "headword": {
+          "loc": "kogs",
+          "tibetan": "ཀོགས་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:8bae795c93212fbbe888716ead57ccb061f6ff3a0386a61232706e46d5085e78",
+            "type": "headword",
+            "source_form": "ཀོགས་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:124d8bf8def23458aa6eb893ffa8889f128b4dc3a310c297e3d5a0d03d720e1c",
+            "type": "headword",
+            "source_form": "kogs",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:35825517b78f2f47cc5b659f7975768b1b538348134ca4893d02c8846a052c15",
+            "type": "cross_reference",
+            "source_form": "↓skogs",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:de0bc6bc120852d900c9fdc004b40d8d695698be32c270af97eb1bbef9f4d9e9",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/kogs/1",
+            "label": "BAdW editorial text",
+            "sha256": "82c0a654614c0e8156c008484fa115a39e78773e0c140845ada5715c7f99db9b"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "kogs “↓skogs”."
+    },
+    {
+      "cached_row": {
+        "item_id": "122-11",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20jo/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a11"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20jo/1",
+        "html_sha256": "e9d17c32fe7f4c0281eaf23d952dde07d85ac0125945e9116c5b4a8a5f3bae08",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "618396004048ee8c24e2e4e7a822f1872a189aa90f0b04480b05c8254b2d310d",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "122-11",
+          "heading_loc": "koṅ jo",
+          "heading_tibetan": "ཀོང་ཇོ་",
+          "printed_homonym": null,
+          "bbox": [
+            710,
+            1207,
+            864,
+            1257
+          ],
+          "column": "122 right",
+          "classification": "article",
+          "printed_evidence": "Independent cross-reference article, upward arrow to koṅ co.",
+          "preceding": "koṅ chu.",
+          "following": "koṅ rje dkar dmar.",
+          "uncertainty": "No numeral visible."
+        },
+        "pdf_heading_bbox": [
+          213.60000598430634,
+          253.01999511718753,
+          259.8000059843063,
+          268.01999511718753
+        ],
+        "image_crop": {
+          "item_id": "122-11",
+          "path": "article-4ece83d0312bd1f9-0014.png",
+          "sha256": "d695ff62757bfb37dddf85bed80c523539b01013fb12937793bee5c3b8801fde",
+          "pixels": [
+            937,
+            113
+          ],
+          "parent_bbox": [
+            686,
+            1183,
+            1623,
+            1296
+          ],
+          "pdf_bbox": [
+            206.40000598430632,
+            241.3199951171875,
+            487.5000059843063,
+            275.2199951171875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "122-11",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20jo/1",
+          "component_index": 2,
+          "printed_evidence": "koṅ jo has the upward reference ↑koṅ co.",
+          "html_evidence": "↑koṅ co",
+          "boundary_evidence": "Independent short article between koṅ chu and koṅ rje dkar dmar.",
+          "homonym_evidence": "The reference target identifies this variant article.",
+          "alternatives": "The target's full article is 122-08.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-97",
+        "headword": "koṅ jo",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a11",
+              "heading_loc": "koṅ jo",
+              "heading_tibetan": "ཀོང་ཇོ་",
+              "printed_homonym": null,
+              "bbox": [
+                705,
+                1210,
+                975,
+                1260
+              ],
+              "column": "2",
+              "classification": "article",
+              "printed_evidence": "koṅ jo ↑koṅ co.",
+              "preceding": "koṅ chu",
+              "following": "koṅ rje dkar dmar",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a11",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20jo/1",
+              "component_index": 2,
+              "printed_evidence": "koṅ jo points up to koṅ co.",
+              "html_evidence": "↑koṅ co",
+              "boundary_evidence": "Separate heading between koṅ chu and koṅ rje dkar dmar.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "koṅ co is the reference target, not the source article.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ko%E1%B9%85%20jo/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20jo/1",
+        "headword": {
+          "loc": "koṅ jo",
+          "tibetan": "ཀོང་ཇོ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:3af03623eb763eaa47581f27ab6c8c388e1141736eb487febb666977d323ef49",
+            "type": "headword",
+            "source_form": "ཀོང་ཇོ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:a10e77a67c242ffc7c417b2578093997aff3d0e024ba20d4111ec0c39a6d225e",
+            "type": "headword",
+            "source_form": "koṅ jo",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:d502df5ca8a1d378724506c3a45047da31ab07ced63789b60fa064d804a7cdf7",
+            "type": "cross_reference",
+            "source_form": "↑koṅ co",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:b5e688934b964264b5277d2911a3218537385bdc2956aa451d6030c25cce3493",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/ko%E1%B9%85%20jo/1",
+            "label": "BAdW editorial text",
+            "sha256": "e9d17c32fe7f4c0281eaf23d952dde07d85ac0125945e9116c5b4a8a5f3bae08"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "koṅ jo has the upward reference ↑koṅ co."
+    },
+    {
+      "cached_row": {
+        "item_id": "left-3",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20ge%20sar/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "L3"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/padma%E2%80%99i%20ge%20sar/1",
+        "html_sha256": "71b7c7c5434d8c545fa38c337fab1f1f9e2b65294ba798cc2d082204367c2f33",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "e742944b3431a291816fdebe37b4755dbe9030fd4518c47809df08c9f7321345",
+        "historical_anchors": [
+          "wts_35_51:690:14"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "left-3",
+          "heading_loc": "padma’i ge sar",
+          "heading_tibetan": "པདྨའི་གེ་སར",
+          "printed_homonym": null,
+          "bbox": [
+            137,
+            866,
+            479,
+            921
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "Standalone cross-reference: ↑pad ma ge sar.",
+          "preceding": "padma’i skra, including a lexical reference to padma’i ge sar.",
+          "following": "padma’i grogs po.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          41.1,
+          402.7,
+          143.7,
+          419.2
+        ],
+        "image_crop": {
+          "item_id": "left-3",
+          "path": "article-ff792bd044bf5c8f-0005.png",
+          "sha256": "fe344cebb5112da9d9aa5aa0f9c1ed9473c6a0e639578b10845073eded214d50",
+          "pixels": [
+            622,
+            133
+          ],
+          "parent_bbox": [
+            113,
+            842,
+            735,
+            975
+          ],
+          "pdf_bbox": [
+            33.9,
+            386.5,
+            220.5,
+            426.4
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "left-3",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20ge%20sar/1",
+          "component_index": 2,
+          "printed_evidence": "The heading is followed by the standalone reference “↑pad ma ge sar”.",
+          "html_evidence": "↑pad ma ge sar",
+          "boundary_evidence": "This is a new article after padma’i skra, distinct from the same expression embedded in the preceding lexical parallel.",
+          "homonym_evidence": "No printed homonym numeral is visible; the reference target identifies the witness.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-690",
+        "headword": "padma’i ge sar",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "L3",
+              "heading_loc": "padma’i ge sar",
+              "heading_tibetan": "པདྨའི་གེ་སར་",
+              "printed_homonym": null,
+              "bbox": [
+                135,
+                869,
+                683,
+                919
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "Independent bold Tibetan heading followed by ↑pad ma ge sar.",
+              "preceding": "L2.",
+              "following": "L4.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "L3",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20ge%20sar/1",
+              "component_index": 2,
+              "printed_evidence": "The independent heading is followed by the upward reference to pad ma ge sar.",
+              "html_evidence": "↑pad ma ge sar",
+              "boundary_evidence": "New Tibetan heading after L2 and before L4; the arrow is its entire body.",
+              "homonym_evidence": "No printed homonym numeral.",
+              "alternatives": "L2 mentions padma’i ge sar inside a lexical parallel, but that mention is not L3’s article.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20ge%20sar/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/padma%E2%80%99i%20ge%20sar/1",
+        "headword": {
+          "loc": "padma’i ge sar",
+          "tibetan": "པདྨའི་གེ་སར་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:04ad83393a6a461b5f4697eaeb28b9a7ee5c84018feba0b45f0325f06e8a8d6a",
+            "type": "headword",
+            "source_form": "པདྨའི་གེ་སར་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:5d6e4327e87efd7172f54b6470fc852d72ce42c46e313ecd4ee79942474817db",
+            "type": "headword",
+            "source_form": "padma’i ge sar",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:48fb4a62b86fb60f556d632a38e88c9ee5f298ddfa20e2171d3488ffa53a4084",
+            "type": "cross_reference",
+            "source_form": "↑pad ma ge sar",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:ec3c77c4be0d3fef33cdf0527659633eb31ef976b32901c85c438dfa3eebf47f",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/padma%E2%80%99i%20ge%20sar/1",
+            "label": "BAdW editorial text",
+            "sha256": "71b7c7c5434d8c545fa38c337fab1f1f9e2b65294ba798cc2d082204367c2f33"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "The heading is followed by the standalone reference “↑pad ma ge sar”."
+    },
+    {
+      "cached_row": {
+        "item_id": "left-1",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20tshal/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a1"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/padma%E2%80%99i%20tshal/1",
+        "html_sha256": "39792fecc6905bb6f25efc592d751d5775a3652f9ed0867e1a204b0f36439fe6",
+        "already_certified": false,
+        "component_index": 4,
+        "component_sha256": "23d6ec4acd65d5f03cd67cddd83ab27e6dc4358c9de6bb9a7ef22ac870cfee0f",
+        "historical_anchors": [
+          "wts_35_51:692:1",
+          "wts_35_51:692:6"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "left-1",
+          "heading_loc": "padma’i tshal",
+          "heading_tibetan": "པདྨའི་ཚལ་",
+          "printed_homonym": null,
+          "bbox": [
+            132,
+            458,
+            429,
+            513
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "Cross-reference: ↑pad tshal.",
+          "preceding": "Continuation ending (Debm 3a3).",
+          "following": "padma’i rdziṅ bu.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          39.6,
+          525.1,
+          128.7,
+          541.6
+        ],
+        "image_crop": {
+          "item_id": "left-1",
+          "path": "article-a48e341c34151476-0003.png",
+          "sha256": "cd97c1ee163cbdd239cbd2f0747d88ae4558eb0946abe2e848624bb8796d07e9",
+          "pixels": [
+            621,
+            140
+          ],
+          "parent_bbox": [
+            107,
+            434,
+            728,
+            574
+          ],
+          "pdf_bbox": [
+            32.1,
+            506.8,
+            218.4,
+            548.8
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "left-1",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20tshal/1",
+          "component_index": 4,
+          "printed_evidence": "padma’i tshal; ↑pad tshal.",
+          "html_evidence": "↑pad tshal",
+          "boundary_evidence": "A separate heading follows the earlier article’s citation and precedes padma’i rdziṅ bu.",
+          "homonym_evidence": "No printed homonym numeral; identity rests on the reference target.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-692",
+        "headword": "padma’i tshal",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a1",
+              "heading_loc": "padma’i tshal",
+              "heading_tibetan": "པདྨའི་ཚལ་",
+              "printed_homonym": null,
+              "bbox": [
+                130,
+                458,
+                584,
+                508
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "Independent heading followed by ↑pad tshal.",
+              "preceding": "Continuation ending Debm 3a3.",
+              "following": "padma’i rdziṅ bu.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a1",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20tshal/1",
+              "component_index": 4,
+              "printed_evidence": "The independently printed heading points upward to pad tshal.",
+              "html_evidence": "↑pad tshal",
+              "boundary_evidence": "A complete cross-reference article between the preceding continuation and a2.",
+              "homonym_evidence": "No printed homonym numeral; HTML /1 is editorial.",
+              "alternatives": "The padma’i ge sar candidate instead points to pad ma ge sar; other reference candidates have different targets.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20tshal/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/padma%E2%80%99i%20tshal/1",
+        "headword": {
+          "loc": "padma’i tshal",
+          "tibetan": "པདྨའི་ཚལ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:2527e0efd4df84f2bf76b2c5e434b0d1442cc8c4ff9a6ef5334560cd77cdbe9f",
+            "type": "headword",
+            "source_form": "པདྨའི་ཚལ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:7b5f08a1879381f43ae07fc0c9ce04d82fe55db078d70dc86fdf71524c3a2493",
+            "type": "headword",
+            "source_form": "padma’i tshal",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:8332aa0587b02a6330e6920dad2d28cd1efe4c816d76d9ddb077691666f47b08",
+            "type": "definition",
+            "source_form": "\n  ↑pad tshal\r\n.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:defc5a1710d8ac0dfce4a4d07b96b852273aa9978f4e1fefb8f3078145c23a08"
+          },
+          {
+            "id": "span:defc5a1710d8ac0dfce4a4d07b96b852273aa9978f4e1fefb8f3078145c23a08",
+            "type": "source_division",
+            "source_form": "\n  ↑pad tshal\r\n.\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:8884e7e945e7181f2a8eaae287850ffd0939b8a53c679e5b04c460478a10ff69",
+            "type": "cross_reference",
+            "source_form": "↑pad tshal",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/padma%E2%80%99i%20tshal/1",
+            "label": "BAdW editorial text",
+            "sha256": "39792fecc6905bb6f25efc592d751d5775a3652f9ed0867e1a204b0f36439fe6"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "padma’i tshal; ↑pad tshal."
+    },
+    {
+      "cached_row": {
+        "item_id": "article-01",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/par%20ta/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a1"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/par%20ta/1",
+        "html_sha256": "2e064f0f7fa87e523f439d0bc82ecddfe33ed6e9dfb7c9739a5e184f1620ea53",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "ffc3c2ec140d5c1e032d8155b571bc2338ddf9eb45a3a754dae546dcf4cc89b3",
+        "historical_anchors": [
+          "wts_35_51:695:1",
+          "wts_35_51:695:5"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "article-01",
+          "heading_loc": "par ta",
+          "heading_tibetan": "པར་ཏ",
+          "printed_homonym": null,
+          "bbox": [
+            264,
+            406,
+            441,
+            458
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↑par ka ta.",
+          "preceding": "End of frog-movement quotation, TTC.",
+          "following": "par taṅ.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          79.2,
+          539.6,
+          132.29999999999998,
+          555.2
+        ],
+        "image_crop": {
+          "item_id": "article-01",
+          "path": "article-15678e37fe27062a-0003.png",
+          "sha256": "35d7c52b18543d980db1c8816b39647c232fea9a4d5509c64244e6968fcaeb2f",
+          "pixels": [
+            629,
+            114
+          ],
+          "parent_bbox": [
+            214,
+            382,
+            843,
+            496
+          ],
+          "pdf_bbox": [
+            64.2,
+            528.2,
+            252.89999999999998,
+            562.4
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "article-01",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/par%20ta/1",
+          "component_index": 2,
+          "printed_evidence": "The independent par ta article gives “↑par ka ta.”",
+          "html_evidence": "↑par ka ta",
+          "boundary_evidence": "Starts after the frog quotation and ends before par taṅ.",
+          "homonym_evidence": "No homonym numeral is printed; identity rests on the reference target, not the editorial number.",
+          "alternatives": "The running header is not an article start.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-695",
+        "headword": "par ta",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a1",
+              "heading_loc": "par ta",
+              "heading_tibetan": "པར་ཏ་",
+              "printed_homonym": null,
+              "bbox": [
+                264,
+                407,
+                568,
+                457
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "par ta ↑par ka ta.",
+              "preceding": "Frog quotation continuation.",
+              "following": "par taṅ.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a1",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/par%20ta/1",
+              "component_index": 2,
+              "printed_evidence": "par ta directs upward to par ka ta.",
+              "html_evidence": "↑par ka ta",
+              "boundary_evidence": "Independent heading between the preceding continuation and par taṅ.",
+              "homonym_evidence": "No numeral printed; the source ID's 1 is not a printed numeral.",
+              "alternatives": "par taṅ has a distinct carpet definition and is not this reference.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/par%20ta/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/par%20ta/1",
+        "headword": {
+          "loc": "par ta",
+          "tibetan": "པར་ཏ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:187b0cbfb7cd1106f3713c562cd09b33c05b94b695af0629faaab9775e0d373f",
+            "type": "headword",
+            "source_form": "པར་ཏ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:9b42170f2497ea6865a2feab7cfd7ff85805729a5d3b7e3ad18572a44771e74b",
+            "type": "headword",
+            "source_form": "par ta",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:1ee75e5d7942913c5a69959ffb464da52490d5d95fb02c4f4e5180be882ea437",
+            "type": "cross_reference",
+            "source_form": "↑par ka ta",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:fe609815541fe4de803dfd3342f41e11ca075923db5fc8a9fe3193b10058bed1",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/par%20ta/1",
+            "label": "BAdW editorial text",
+            "sha256": "2e064f0f7fa87e523f439d0bc82ecddfe33ed6e9dfb7c9739a5e184f1620ea53"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "The independent par ta article gives “↑par ka ta.”"
+    },
+    {
+      "cached_row": {
+        "item_id": "article-06",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/par%20bu/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a6"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/par%20bu/1",
+        "html_sha256": "e075df8e2fd412e2ab540ffd9223f8c522b92e18a46e6bfb36072eda99403780",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "db0c13b2f5022ef88dc84c64fb469803c2464b04e633edecc050eca224169d7d",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "article-06",
+          "heading_loc": "par bu",
+          "heading_tibetan": "པར་བུ",
+          "printed_homonym": null,
+          "bbox": [
+            883,
+            362,
+            1066,
+            413
+          ],
+          "column": "right",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓spar bu.",
+          "preceding": "End of par ba ta quotation, Tār 85,18.",
+          "following": "par ma.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          264.9,
+          553.1,
+          319.8,
+          568.4
+        ],
+        "image_crop": {
+          "item_id": "article-06",
+          "path": "article-15678e37fe27062a-0010.png",
+          "sha256": "ddecd304dee767c6927077f7f0904d4d208fd0491d7ca8ab9ba2696b91852b69",
+          "pixels": [
+            731,
+            117
+          ],
+          "parent_bbox": [
+            843,
+            338,
+            1574,
+            455
+          ],
+          "pdf_bbox": [
+            252.89999999999998,
+            540.5,
+            472.2,
+            575.6
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "article-06",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/par%20bu/1",
+          "component_index": 2,
+          "printed_evidence": "The independent par bu article gives “↓spar bu.”",
+          "html_evidence": "↓spar bu",
+          "boundary_evidence": "It follows the par ba ta quotation and precedes par ma.",
+          "homonym_evidence": "No printed homonym numeral is visible.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-695",
+        "headword": "par bu",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a6",
+              "heading_loc": "par bu",
+              "heading_tibetan": "པར་བུ་",
+              "printed_homonym": null,
+              "bbox": [
+                881,
+                369,
+                1205,
+                413
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "par bu ↓spar bu.",
+              "preceding": "par ba ta continuation.",
+              "following": "par ma.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a6",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/par%20bu/1",
+              "component_index": 2,
+              "printed_evidence": "par bu directs downward to spar bu.",
+              "html_evidence": "↓spar bu",
+              "boundary_evidence": "Independent short article between the par ba ta continuation and par ma.",
+              "homonym_evidence": "No numeral printed.",
+              "alternatives": "No other supplied par bu competitor.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/par%20bu/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/par%20bu/1",
+        "headword": {
+          "loc": "par bu",
+          "tibetan": "པར་བུ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:f9d4700b05d405960b1c07e8558164bcebab2c7a8989083aed24c67d53d082a2",
+            "type": "headword",
+            "source_form": "པར་བུ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:15508b3d0338367fedeac744add16a90cb45daec349a3695c784fc11a2be0c40",
+            "type": "headword",
+            "source_form": "par bu",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:1684f6474d25bd5e4ee4bfc2c82195a492693db6a4a55294d9a194a3d3ae831a",
+            "type": "cross_reference",
+            "source_form": "↓spar bu",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:4e3d2aaaccd339d94256e39bfd925e8b047b5346e83feea1a01f306505ed8578",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/par%20bu/1",
+            "label": "BAdW editorial text",
+            "sha256": "e075df8e2fd412e2ab540ffd9223f8c522b92e18a46e6bfb36072eda99403780"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "The independent par bu article gives “↓spar bu.”"
+    },
+    {
+      "cached_row": {
+        "item_id": "a8",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20ti/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A08"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/pu%20ti/1",
+        "html_sha256": "ec417215ebfe1bc79d2ef3e376d00872a0343209389cfeaf4338895f528968b5",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "63c9d1806db76c58d0fbd646f2f8ef5b0e9c7e0105364a1b8ec79cfd2e302b6f",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a8",
+          "heading_loc": "pu ti",
+          "heading_tibetan": "པུ་ཏི",
+          "printed_homonym": null,
+          "bbox": [
+            234,
+            1748,
+            361,
+            1796
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓po ti.",
+          "preceding": "pu ñe śva ra.",
+          "following": "pu ti ka.",
+          "uncertainty": "No printed homonym numeral."
+        },
+        "pdf_heading_bbox": [
+          70.2,
+          137.20000000000005,
+          108.3,
+          151.60000000000002
+        ],
+        "image_crop": {
+          "item_id": "a8",
+          "path": "article-231c47222d1d5857-0010.png",
+          "sha256": "b277ac73314431322fa519a5a1305bd208f5b75ad434c2c662d4d1c5d51bbe0c",
+          "pixels": [
+            628,
+            128
+          ],
+          "parent_bbox": [
+            208,
+            1724,
+            836,
+            1852
+          ],
+          "pdf_bbox": [
+            62.4,
+            120.39999999999998,
+            250.79999999999998,
+            158.80000000000007
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a8",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20ti/1",
+          "component_index": 2,
+          "printed_evidence": "pu ti has the reference ↓po ti.",
+          "html_evidence": "↓po ti",
+          "boundary_evidence": "Independent heading immediately before pu ti ka.",
+          "homonym_evidence": "No printed numeral.",
+          "alternatives": "pu sti, pu sta ka and pusta ka also refer to po ti, but have different printed headwords.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-699",
+        "headword": "pu ti",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A08",
+              "heading_loc": "pu ti",
+              "heading_tibetan": "པུ་ཏི་",
+              "printed_homonym": null,
+              "bbox": [
+                232,
+                1740,
+                455,
+                1794
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "↓po ti.",
+              "preceding": "pu ñe śwa ra",
+              "following": "pu ti ka",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A08",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20ti/1",
+              "component_index": 2,
+              "printed_evidence": "Independent pu ti entry redirects to po ti.",
+              "html_evidence": "↓po ti",
+              "boundary_evidence": "Separate from the following pu ti ka definition.",
+              "homonym_evidence": "No printed numeral; /1 is editorial.",
+              "alternatives": "pu sta ka, pu sti and pusta ka share the target but have different printed headings.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/pu%20ti/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/pu%20ti/1",
+        "headword": {
+          "loc": "pu ti",
+          "tibetan": "པུ་ཏི་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:bfd543e16757078a635e8dc8572b486a304471b573cdff39103ba3b7a0c41735",
+            "type": "headword",
+            "source_form": "པུ་ཏི་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:a8353456d02571fadb6a57f9e1bb81b8dd9f2a0e99e60ef7a5e06a860ffb8c04",
+            "type": "headword",
+            "source_form": "pu ti",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:f497c02d1812ec2107ab923fce1bf103e31d3c8d2629280f3c8d8560c2ec4fe1",
+            "type": "cross_reference",
+            "source_form": "↓po ti",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:654802a01b40f3ae5a6cfb80e000e73b3cfa458bb53e7352b3b7e0579b13ced0",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/pu%20ti/1",
+            "label": "BAdW editorial text",
+            "sha256": "ec417215ebfe1bc79d2ef3e376d00872a0343209389cfeaf4338895f528968b5"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "pu ti has the reference ↓po ti."
+    },
+    {
+      "cached_row": {
+        "item_id": "a15",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20sti/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A15"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/pu%20sti/1",
+        "html_sha256": "90dc037b78fc50f50c609156bf4e41848ca5dab4ff2574fb15a4baf4ebf84487",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "dd8abbaf719ba3b935d4d02af485c883f791c978da8c27c076057f179d37ad27",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a15",
+          "heading_loc": "pu sti",
+          "heading_tibetan": "པུ་སྟི",
+          "printed_homonym": null,
+          "bbox": [
+            871,
+            1118,
+            1015,
+            1169
+          ],
+          "column": "right",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓po ti.",
+          "preceding": "pu sta ka.",
+          "following": "pu de guṅ rgyal.",
+          "uncertainty": "No printed homonym numeral."
+        },
+        "pdf_heading_bbox": [
+          261.3,
+          325.3,
+          304.5,
+          340.6
+        ],
+        "image_crop": {
+          "item_id": "a15",
+          "path": "article-231c47222d1d5857-0018.png",
+          "sha256": "455335bce5e02f420e9f6852b8ad25d6746e8a673e3271cab473c6613de57669",
+          "pixels": [
+            731,
+            127
+          ],
+          "parent_bbox": [
+            836,
+            1094,
+            1567,
+            1221
+          ],
+          "pdf_bbox": [
+            250.79999999999998,
+            309.7,
+            470.09999999999997,
+            347.8
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a15",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20sti/1",
+          "component_index": 2,
+          "printed_evidence": "pu sti refers to ↓po ti.",
+          "html_evidence": "↓po ti",
+          "boundary_evidence": "Independent heading between pu sta ka and pu de guṅ rgyal.",
+          "homonym_evidence": "No printed numeral.",
+          "alternatives": "pu ti, pu sta ka and pusta ka share the target but have different headwords.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-699",
+        "headword": "pu sti",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A15",
+              "heading_loc": "pu sti",
+              "heading_tibetan": "པུ་སྟི་",
+              "printed_homonym": null,
+              "bbox": [
+                868,
+                1113,
+                1110,
+                1169
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "↓po ti.",
+              "preceding": "pu sta ka",
+              "following": "pu de guṅ rgyal",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A15",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20sti/1",
+              "component_index": 2,
+              "printed_evidence": "pu sti redirects to po ti.",
+              "html_evidence": "↓po ti",
+              "boundary_evidence": "Independent heading between pu sta ka and pu de guṅ rgyal.",
+              "homonym_evidence": "No printed numeral; /1 is editorial.",
+              "alternatives": "pu ti, pu sta ka and pusta ka share the target but have different headings.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/pu%20sti/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/pu%20sti/1",
+        "headword": {
+          "loc": "pu sti",
+          "tibetan": "པུ་སྟི་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:48e58dd41f85707e4bbdb0a7d7be397c8089d14f20520239f1f23c78af971cf4",
+            "type": "headword",
+            "source_form": "པུ་སྟི་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:89b4cdb432edc1004acda7a13330520775a90b0d58aae53673f09fbcae0f67d1",
+            "type": "headword",
+            "source_form": "pu sti",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:5c76f804832bf1a94bb9db197fb4795ad96b48f49195621dc7592e2a08b05d23",
+            "type": "cross_reference",
+            "source_form": "↓po ti",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:cfff34e43d7833417748baab51b961b9e1acfcde872ea3589c4e7d7925fe3021",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/pu%20sti/1",
+            "label": "BAdW editorial text",
+            "sha256": "90dc037b78fc50f50c609156bf4e41848ca5dab4ff2574fb15a4baf4ebf84487"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "pu sti refers to ↓po ti."
+    },
+    {
+      "cached_row": {
+        "item_id": "a17",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20nu/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A17"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/pu%20nu/1",
+        "html_sha256": "4f0036eaf86d40ad5cd2f43c57a68b0bea6d6236f588f189e9a14196de98303a",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "67c227224cb360c63924762aee31b869af591916a920dc06814de6fc5191e84c",
+        "historical_anchors": [
+          "wts_35_51:699:56"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a17",
+          "heading_loc": "pu nu",
+          "heading_tibetan": "པུ་ནུ",
+          "printed_homonym": null,
+          "bbox": [
+            868,
+            1273,
+            1011,
+            1322
+          ],
+          "column": "right",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓phu nu.",
+          "preceding": "pu de guṅ rgyal.",
+          "following": "pu bur.",
+          "uncertainty": "No printed homonym numeral."
+        },
+        "pdf_heading_bbox": [
+          260.4,
+          279.40000000000003,
+          303.3,
+          294.1
+        ],
+        "image_crop": {
+          "item_id": "a17",
+          "path": "article-231c47222d1d5857-0020.png",
+          "sha256": "3982c5e8472711661722c8b02ed32cf1c8155142bb707d1b55d5f3442e59b59c",
+          "pixels": [
+            731,
+            112
+          ],
+          "parent_bbox": [
+            836,
+            1249,
+            1567,
+            1361
+          ],
+          "pdf_bbox": [
+            250.79999999999998,
+            267.7,
+            470.09999999999997,
+            301.3
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a17",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20nu/1",
+          "component_index": 2,
+          "printed_evidence": "pu nu refers to ↓phu nu.",
+          "html_evidence": "↓phu nu",
+          "boundary_evidence": "Independent heading before pu bur.",
+          "homonym_evidence": "No printed numeral.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-699",
+        "headword": "pu nu",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A17",
+              "heading_loc": "pu nu",
+              "heading_tibetan": "པུ་ནུ་",
+              "printed_homonym": null,
+              "bbox": [
+                865,
+                1267,
+                1140,
+                1321
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "↓phu nu.",
+              "preceding": "pu de guṅ rgyal",
+              "following": "pu bur",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A17",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/pu%20nu/1",
+              "component_index": 2,
+              "printed_evidence": "Reference target is phu nu.",
+              "html_evidence": "↓phu nu",
+              "boundary_evidence": "Independent heading between pu de guṅ rgyal and pu bur.",
+              "homonym_evidence": "No printed numeral; /1 is editorial.",
+              "alternatives": "pu/2 redirects to ²phu, not phu nu.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/pu%20nu/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/pu%20nu/1",
+        "headword": {
+          "loc": "pu nu",
+          "tibetan": "པུ་ནུ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:1715c95b60bc1271b20316038a69a209074b8f9d45cdd7276bb2207a91640d8a",
+            "type": "headword",
+            "source_form": "པུ་ནུ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:7f7cfaa3c500434b708b87ad77b78228c0a06ce2224d795a4f5a2a8ca941b3e3",
+            "type": "headword",
+            "source_form": "pu nu",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:4dc7c30740da37cbe75f956a9e877b78f03aec1a78c37dbc02e8016c32b129fc",
+            "type": "cross_reference",
+            "source_form": "↓phu nu",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:c8b80a50c5103a3133eee85bebc0dfdb4bb6a4d2a9a59fafea12c9fe3316fcc7",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/pu%20nu/1",
+            "label": "BAdW editorial text",
+            "sha256": "4f0036eaf86d40ad5cd2f43c57a68b0bea6d6236f588f189e9a14196de98303a"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "pu nu refers to ↓phu nu."
+    },
+    {
+      "cached_row": {
+        "item_id": "a9",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/pug%20ron/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A9"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/pug%20ron/1",
+        "html_sha256": "d4146ef064d2b0b4d3019e61b99c546a6f69fc94ba4dd604792e967f1cbb2d66",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "b77261325f7260979b433b0eaee044e46563583ca6f2aecfbda44bcf3bb51cf6",
+        "historical_anchors": [
+          "wts_35_51:701:66"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a9",
+          "heading_loc": "pug ron",
+          "heading_tibetan": "པུག་རོན་",
+          "printed_homonym": null,
+          "bbox": [
+            863,
+            1390,
+            1074,
+            1446
+          ],
+          "column": "right",
+          "classification": "article",
+          "printed_evidence": "Cross-reference ↓phug ron.",
+          "preceding": "pug bu chuṅ, ending PT1287 246.",
+          "following": "pugs.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          258.9,
+          247.2,
+          322.2,
+          264.0
+        ],
+        "image_crop": {
+          "item_id": "a9",
+          "path": "article-c75661ba480cf41b-0016.png",
+          "sha256": "87c52e9daebcbb1602f5201c5045d69bd36b48cdfb5a76b19b70477746199e17",
+          "pixels": [
+            724,
+            128
+          ],
+          "parent_bbox": [
+            833,
+            1366,
+            1557,
+            1494
+          ],
+          "pdf_bbox": [
+            249.89999999999998,
+            232.8,
+            467.09999999999997,
+            271.2
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a9",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/pug%20ron/1",
+          "component_index": 2,
+          "printed_evidence": "“pug ron ↓phug ron.”",
+          "html_evidence": "↓phug ron",
+          "boundary_evidence": "Independent cross-reference heading after pug bu chuṅ and before pugs.",
+          "homonym_evidence": "No printed homonym numeral is visible.",
+          "alternatives": "The reference target discriminates it from nearby pug and pugs.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-701",
+        "headword": "pug ron",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A9",
+              "heading_loc": "pug ron",
+              "heading_tibetan": "པུག་རོན་",
+              "printed_homonym": null,
+              "bbox": [
+                861,
+                1392,
+                1224,
+                1445
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "Independent heading followed by ↓phug ron.",
+              "preceding": "pug bu chuṅ.",
+              "following": "pugs.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A9",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/pug%20ron/1",
+              "component_index": 2,
+              "printed_evidence": "The heading has the explicit target ↓phug ron.",
+              "html_evidence": "↓phug ron",
+              "boundary_evidence": "A separate one-line article between pug bu chuṅ and pugs.",
+              "homonym_evidence": "No printed numeral on heading or target.",
+              "alternatives": "pug and pugs have different reference evidence.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/pug%20ron/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/pug%20ron/1",
+        "headword": {
+          "loc": "pug ron",
+          "tibetan": "པུག་རོན་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:ccdcefd7754ee4973da5763be58f0a8b64319d347ff083549610426beed01efd",
+            "type": "headword",
+            "source_form": "པུག་རོན་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:946eb4df9d60e3f473f82d53702196dc14b36047ad40be2521661ab2a46f3a3b",
+            "type": "headword",
+            "source_form": "pug ron",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:66088eb9b1387b860a6b339e1630bb18b5591e26412ab8c3487cacb4bb71d812",
+            "type": "cross_reference",
+            "source_form": "↓phug ron",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:bad6a796c54e9513049d29f06a0f1f3797a510285dedf5d4060a56f3021f48f5",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/pug%20ron/1",
+            "label": "BAdW editorial text",
+            "sha256": "d4146ef064d2b0b4d3019e61b99c546a6f69fc94ba4dd604792e967f1cbb2d66"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "“pug ron ↓phug ron.”"
+    },
+    {
+      "cached_row": {
+        "item_id": "a2",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20chen/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a2"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/bag%20chen/1",
+        "html_sha256": "190938ea34a36cd89b5d6cd5101278ae5d3e1320c7989da03ab3cb5c0a795404",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "0e407d5e3088fc1cdc3975baeae83780d9ee7db9555a643289f8f5264c297338",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a2",
+          "heading_loc": "bag chen",
+          "heading_tibetan": "བག་ཆེན་",
+          "printed_homonym": null,
+          "bbox": [
+            160,
+            537,
+            381,
+            580
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "↓sbag chen.",
+          "preceding": "Lexical citations under bag chal brims.",
+          "following": "bag chod.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          48.0,
+          501.1199951171875,
+          114.3,
+          514.0199951171875
+        ],
+        "image_crop": {
+          "item_id": "a2",
+          "path": "article-10c3d02efbedf3db-0004.png",
+          "sha256": "ead64d60dc8b48368f0759f2c395dd6f8cdc5a8e94dc78d0d6cfb3eb2df29898",
+          "pixels": [
+            621,
+            137
+          ],
+          "parent_bbox": [
+            136,
+            513,
+            757,
+            650
+          ],
+          "pdf_bbox": [
+            40.8,
+            480.1199951171875,
+            227.1,
+            521.2199951171875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a2",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20chen/1",
+          "component_index": 2,
+          "printed_evidence": "bag chen, followed by ↓sbag chen.",
+          "html_evidence": "↓sbag chen",
+          "boundary_evidence": "The separately set heading and its reference precede bag chod.",
+          "homonym_evidence": "No printed numeral; the reference target discriminates the supplied witness.",
+          "alternatives": "The target sbag chen is not the printed article's heading.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_8_b-28",
+        "headword": "bag chen",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a2",
+              "heading_loc": "bag chen",
+              "heading_tibetan": "བག་ཆེན་",
+              "printed_homonym": null,
+              "bbox": [
+                161,
+                534,
+                536,
+                581
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "bag chen ↓sbag chen.",
+              "preceding": "bag chal brims",
+              "following": "bag chod",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a2",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20chen/1",
+              "component_index": 2,
+              "printed_evidence": "The independent entry directs the reader to sbag chen.",
+              "html_evidence": "↓sbag chen",
+              "boundary_evidence": "Its own Tibetan and roman heading, between bag chal brims and bag chod.",
+              "homonym_evidence": "No printed numeral; /1 is not inferred as a printed numeral.",
+              "alternatives": "No other supplied candidate has this heading and reference target.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/bag%20chen/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/bag%20chen/1",
+        "headword": {
+          "loc": "bag chen",
+          "tibetan": "བག་ཆེན་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:3ab225d15a907862e337b07cd161cb69b2396aef7c2c9677043376b6036ecf38",
+            "type": "headword",
+            "source_form": "བག་ཆེན་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:c1ab99856fd42c56ba85564d8bc958521f9947dadf8635d2dfc5524527a7c4b8",
+            "type": "headword",
+            "source_form": "bag chen",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:ca9961882ad9fe9033317bc654b1acf53be9b95120b871283d16b7e0d334cecd",
+            "type": "cross_reference",
+            "source_form": "↓sbag chen",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:42bd4a6de2629a329568645836b3de5cfe859f9a706eb64c229008140e19fc71",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/bag%20chen/1",
+            "label": "BAdW editorial text",
+            "sha256": "190938ea34a36cd89b5d6cd5101278ae5d3e1320c7989da03ab3cb5c0a795404"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "bag chen, followed by ↓sbag chen."
+    },
+    {
+      "cached_row": {
+        "item_id": "a11",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20spro%20mo/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a11"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/bag%20spro%20mo/1",
+        "html_sha256": "62fb2e8347faded5f2a9e9c5f513178d6bc8c6ed9ee95d0b11e7c71999226fe1",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "ea0d166d6141afdf5730104daca177e19b9400a07cb9820d38558b91096f7f95",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a11",
+          "heading_loc": "bag spro mo",
+          "heading_tibetan": "བག་སྤྲོ་མོ་",
+          "printed_homonym": null,
+          "bbox": [
+            782,
+            1628,
+            1059,
+            1680
+          ],
+          "column": "right",
+          "classification": "article",
+          "printed_evidence": "↑bag dro.",
+          "preceding": "Lexical citation under bag ’dab.",
+          "following": "bag phab.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          234.6,
+          171.1199951171875,
+          317.7,
+          186.71999511718752
+        ],
+        "image_crop": {
+          "item_id": "a11",
+          "path": "article-10c3d02efbedf3db-0017.png",
+          "sha256": "308c97862245ad19d289365f1e8037e9d8003bc1b09bc5b5dc11cde8575c25d5",
+          "pixels": [
+            717,
+            124
+          ],
+          "parent_bbox": [
+            757,
+            1604,
+            1474,
+            1728
+          ],
+          "pdf_bbox": [
+            227.1,
+            156.71999511718752,
+            442.2,
+            193.9199951171875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a11",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20spro%20mo/1",
+          "component_index": 2,
+          "printed_evidence": "bag spro mo, followed by ↑bag dro.",
+          "html_evidence": "↑bag dro",
+          "boundary_evidence": "A separately headed reference article follows bag ’dab and precedes bag phab.",
+          "homonym_evidence": "No printed numeral; the exact reference target identifies the witness.",
+          "alternatives": "The same spelling occurs as a variant within bag dro at x3, but that is not this article start.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_8_b-28",
+        "headword": "bag spro mo",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a11",
+              "heading_loc": "bag spro mo",
+              "heading_tibetan": "བག་སྤྲོ་མོ་",
+              "printed_homonym": null,
+              "bbox": [
+                781,
+                1625,
+                1197,
+                1681
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "bag spro mo ↑bag dro.",
+              "preceding": "bag ’dab",
+              "following": "bag phab",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a11",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20spro%20mo/1",
+              "component_index": 2,
+              "printed_evidence": "The entry gives an upward reference to bag dro.",
+              "html_evidence": "↑bag dro",
+              "boundary_evidence": "Independent heading between bag ’dab and bag phab, despite also being a variant within bag dro.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "bag dro is the reference target, not this reference-only article.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/bag%20spro%20mo/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/bag%20spro%20mo/1",
+        "headword": {
+          "loc": "bag spro mo",
+          "tibetan": "བག་སྤྲོ་མོ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:67264f0ee60f68cc31afa5da53804fdf2f9d0f38fe2c7b8646268386c3327cf7",
+            "type": "headword",
+            "source_form": "བག་སྤྲོ་མོ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:a9753a0a3b25dc446d67aae8320252dca70b9e9d13420e22356fe5c7ff81d4dc",
+            "type": "headword",
+            "source_form": "bag spro mo",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:1920120dd4c72a762af630ea1a6a137d419dd8ef3c9f2b0e4b4deccf1e38b26a",
+            "type": "cross_reference",
+            "source_form": "↑bag dro",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:6e748e9be5142647e1c858af82a2e7731c9555f89d0becbacb249a4413014283",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/bag%20spro%20mo/1",
+            "label": "BAdW editorial text",
+            "sha256": "62fb2e8347faded5f2a9e9c5f513178d6bc8c6ed9ee95d0b11e7c71999226fe1"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "bag spro mo, followed by ↑bag dro."
+    },
+    {
+      "cached_row": {
+        "item_id": "p25-a2",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20%E2%80%99dal/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a2"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ma%20%E2%80%99dal/1",
+        "html_sha256": "1048a51d80023a51841b6fce580daf57539d131d36b31dff9522a7b9c593db31",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "65781e2e1e05529eaafeec8f41e5249222cb365d45a82adff55211bd387734d9",
+        "historical_anchors": [
+          "wts_9_m:29:13"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "p25-a2",
+          "heading_loc": "ma ’dal",
+          "heading_tibetan": "མ་འདལ",
+          "printed_homonym": null,
+          "bbox": [
+            105,
+            749,
+            310,
+            792
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "Cross-reference “↓maṇḍal.”",
+          "preceding": "ma gdan, ending with Hipp 140,15.",
+          "following": "ma ’dom na.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          32.700000047683716,
+          434.4,
+          94.20000004768372,
+          447.3
+        ],
+        "image_crop": {
+          "item_id": "p25-a2",
+          "path": "article-ab16e6c5e7d2b80c-0003.png",
+          "sha256": "be1378c1e9b0e8d956489e65565483201565856a0e53b7f511c967e1fcf2468f",
+          "pixels": [
+            612,
+            123
+          ],
+          "parent_bbox": [
+            78,
+            725,
+            690,
+            848
+          ],
+          "pdf_bbox": [
+            24.600000047683714,
+            417.6,
+            208.20000004768372,
+            454.5
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "p25-a2",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20%E2%80%99dal/1",
+          "component_index": 2,
+          "printed_evidence": "The independent ma ’dal entry gives “↓maṇḍal”.",
+          "html_evidence": "↓maṇḍal",
+          "boundary_evidence": "The short entry stands between ma gdan and ma ’dom na.",
+          "homonym_evidence": "No printed homonym numeral is visible.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_9_m-29",
+        "headword": "ma ’dal",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a2",
+              "heading_loc": "ma ’dal",
+              "heading_tibetan": "མ་འདལ་",
+              "printed_homonym": null,
+              "bbox": [
+                106,
+                751,
+                447,
+                793
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "Independent heading followed by ↓maṇḍal.",
+              "preceding": "ma gdan examples.",
+              "following": "ma ’dom na.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a2",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20%E2%80%99dal/1",
+              "component_index": 2,
+              "printed_evidence": "The article explicitly directs ↓maṇḍal.",
+              "html_evidence": "↓maṇḍal",
+              "boundary_evidence": "Separate heading between ma gdan and ma ’dom na.",
+              "homonym_evidence": "No printed homonym numeral.",
+              "alternatives": "No other supplied candidate combines this heading with this reference target.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ma%20%E2%80%99dal/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ma%20%E2%80%99dal/1",
+        "headword": {
+          "loc": "ma ’dal",
+          "tibetan": "མ་འདལ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:180e726e8f8dfcf11e938ee9ce01d02021753e8726bcdb86b1a9fbacdb811256",
+            "type": "headword",
+            "source_form": "མ་འདལ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:143e5bacfb5cf21e69b79caeea13ff433bf6a429737c99ea294cf84f8e18250d",
+            "type": "headword",
+            "source_form": "ma ’dal",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:757dc1c5a3cd2abe1a50be71037a76935e98394df31ac08e96efeccc8589fb9b",
+            "type": "cross_reference",
+            "source_form": "↓maṇḍal",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:d8ef1cd154cb7da8897b80aadd83802f088e98e638d7501352f9f34056b8b7b1",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/ma%20%E2%80%99dal/1",
+            "label": "BAdW editorial text",
+            "sha256": "1048a51d80023a51841b6fce580daf57539d131d36b31dff9522a7b9c593db31"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "The independent ma ’dal entry gives “↓maṇḍal”."
+    },
+    {
+      "cached_row": {
+        "item_id": "a3",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20byan/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a3"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ma%20byan/1",
+        "html_sha256": "4b66891c9400b62f0813d862f35c6b2d5a139845cffbf569d07be7e4c93b89ad",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "1cf07bdaed056f09d2a03e39ff8f0512396de9d48294f10dd7469c3d478c36f6",
+        "historical_anchors": [
+          "wts_9_m:35:28"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a3",
+          "heading_loc": "ma byan",
+          "heading_tibetan": "མ་བྱན",
+          "printed_homonym": null,
+          "bbox": [
+            108,
+            1279,
+            302,
+            1323
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "A short cross-reference entry: “↑ma chen.”",
+          "preceding": "ma bu ’phrad pa, ending (Nagdel 44,3).",
+          "following": "ma byi.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          32.4,
+          274.1399780273438,
+          90.6,
+          287.33997802734376
+        ],
+        "image_crop": {
+          "item_id": "a3",
+          "path": "article-e148f24714cf4e4b-0005.png",
+          "sha256": "c6cf75c617d56ecadcf247da46d4ac06552d28669b14e7abf67503726448e11d",
+          "pixels": [
+            614,
+            120
+          ],
+          "parent_bbox": [
+            83,
+            1255,
+            697,
+            1375
+          ],
+          "pdf_bbox": [
+            24.9,
+            258.53997802734375,
+            209.1,
+            294.53997802734375
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a3",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20byan/1",
+          "component_index": 2,
+          "printed_evidence": "The independent ma byan entry consists of the reference “↑ma chen”.",
+          "html_evidence": "↑ma chen",
+          "boundary_evidence": "The reference occurs on the same line as ma byan, before the next heading ma byi.",
+          "homonym_evidence": "The entry is unnumbered; the reference target identifies the witness.",
+          "alternatives": "ma chen is the target, not the article beginning here.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_9_m-35",
+        "headword": "ma byan",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a3",
+              "heading_loc": "ma byan",
+              "heading_tibetan": "མ་བྱན་",
+              "printed_homonym": null,
+              "bbox": [
+                108,
+                1276,
+                444,
+                1325
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "Independent heading ma byan followed by ↑ma chen.",
+              "preceding": "ma bu ’phrad pa, ending Nagdel 44,3.",
+              "following": "ma byi.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a3",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20byan/1",
+              "component_index": 2,
+              "printed_evidence": "The independent ma byan entry consists of a reference to ma chen, exactly the candidate's cross-reference.",
+              "html_evidence": "↑ma chen",
+              "boundary_evidence": "Separate bold heading after ma bu ’phrad pa and before ma byi; ma chen is its reference target.",
+              "homonym_evidence": "No numeral printed; candidate's editorial 1 is not printed.",
+              "alternatives": "ma chen contains ma byan in lexical evidence, but is the target, not the printed heading of this article.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ma%20byan/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ma%20byan/1",
+        "headword": {
+          "loc": "ma byan",
+          "tibetan": "མ་བྱན་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:98a4db8ef5d454e91fff004f1721fad105b130ca14445c0040eb3bddbb1487e0",
+            "type": "headword",
+            "source_form": "མ་བྱན་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:5f74f3668d9a01c96907c436eb2f7956b5302a028efad4bb6c934af7a67608a7",
+            "type": "headword",
+            "source_form": "ma byan",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:59f85bbb9f13c6ee82fa34f3d7c90165b9e16ee50f13737bb894a8d2a47d850d",
+            "type": "cross_reference",
+            "source_form": "↑ma chen",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:138b9b9c9dfda565799816e91d40cfb7e019664e134c8d241771d5d98ad322bd",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/ma%20byan/1",
+            "label": "BAdW editorial text",
+            "sha256": "4b66891c9400b62f0813d862f35c6b2d5a139845cffbf569d07be7e4c93b89ad"
+          }
+        ]
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_observation": "The independent ma byan entry consists of the reference “↑ma chen”."
+    },
+    {
+      "body": {
+        "id": "badw:entry:d2763efc0134bfd34b93ff4b087c2884952a7eefaaf63e717684db71dc41d69d",
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/bag%20chos/1",
+        "source_kind": "html",
+        "headword": {
+          "loc": "bag chos",
+          "tibetan": "བག་ཆོས་"
+        },
+        "homonym": "1",
+        "sources": [
+          {
+            "url": "https://wts-digital.badw.de/lemma/bag%20chos/1",
+            "label": "BAdW editorial text",
+            "sha256": "217f8e4e1c9c4634efba739d64695e0b000a3bb8b0afa20462f4110da95a228b"
+          }
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/bag%20chos/1",
+        "components": [
+          {
+            "id": "span:968b6c412f4c713222b300a8280fa0bac217bd5ecd835dc78d37908b9346ac70",
+            "type": "headword",
+            "source_form": "བག་ཆོས་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:b91dc961cfe1fdbd7aee0648f78f4930a3fce024883d0f9b684583765d096d50",
+            "type": "headword",
+            "source_form": "bag chos",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:6c97da32debe3e28775af0cb5f165bad8573a4c369027bcc27c31242d30d21b4",
+            "type": "tibetan",
+            "source_form": "bag chol, bag tshos",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:908d62cff948cd29dd5071d6cf8b14db9f20b35579862b3c444edfe88ec0d54f",
+            "type": "definition",
+            "source_form": "\n  eine Speise aus Getreide, Fettgebackenes.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:17c85dccaad1811029d1cb6b2d3bcd3462b26cbb80422f6cdad18d52bb0df9fb"
+          },
+          {
+            "id": "span:17c85dccaad1811029d1cb6b2d3bcd3462b26cbb80422f6cdad18d52bb0df9fb",
+            "type": "source_division",
+            "source_form": "\n  eine Speise aus Getreide, Fettgebackenes.\n\n\nLex. bag chol ≅ zas śig gam mtsho ṭīk tu khur ba źes bya ba ni bag chos rnams so / źes gsuṅs pas ’khur ba’am „eine Speise, oder auch Fettgebackenes, denn im mTsho-Kommentar heißt es: ,Fettgebackenes ist bag chos rnams‘“ (brDa); bag chol, bag chos ≅ bag leb lta bu’i zas te brda rñiṅ „eine Speise wie Brot, ein altes Wort“ (Dagy); bag tshos ≅ khur ba (Dagy).\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:ff0085d303f0c0e1f3d021d6ebf99a7b2c92da61e4a3f63011d3100fda3ba19b",
+            "type": "tibetan",
+            "source_form": "bag chol ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1337ff71d040540cf6628f8e2dff813e4982e5d86537d3ed0de503a51911e8b2"
+          },
+          {
+            "id": "span:1337ff71d040540cf6628f8e2dff813e4982e5d86537d3ed0de503a51911e8b2",
+            "type": "lexical_parallel",
+            "source_form": "bag chol ≅ zas śig gam mtsho ṭīk tu khur ba źes bya ba ni bag chos rnams so / źes gsuṅs pas ’khur ba’am „eine Speise, oder auch Fettgebackenes, denn im mTsho-Kommentar heißt es: ,Fettgebackenes ist bag chos rnams‘“ (brDa)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:17c85dccaad1811029d1cb6b2d3bcd3462b26cbb80422f6cdad18d52bb0df9fb"
+          },
+          {
+            "id": "span:e31405087fdc09382bd137aa3fdaf53141830fd412447d4070a71cce1854f6ab",
+            "type": "tibetan",
+            "source_form": " zas śig gam mtsho ṭīk tu khur ba źes bya ba ni bag chos rnams so / źes gsuṅs pas ’khur ba’am ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1337ff71d040540cf6628f8e2dff813e4982e5d86537d3ed0de503a51911e8b2"
+          },
+          {
+            "id": "span:4b11c6afa190e2a5f6d2644af77e92411fb3b0d29713999146d956d157d68d9e",
+            "type": "translation",
+            "source_form": "„eine Speise, oder auch Fettgebackenes, denn im mTsho-Kommentar heißt es: ,Fettgebackenes ist bag chos rnams‘“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1337ff71d040540cf6628f8e2dff813e4982e5d86537d3ed0de503a51911e8b2"
+          },
+          {
+            "id": "span:31ffd43d1abae62d5cd19528b318704d055c72c2804c1eacf8fd7f49ce76ebbf",
+            "type": "tibetan",
+            "source_form": "bag chos rnams",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1337ff71d040540cf6628f8e2dff813e4982e5d86537d3ed0de503a51911e8b2"
+          },
+          {
+            "id": "span:fdac6ab4965b7e02397fa1813f4cdeee7dc8b8fe64403f4a0ea4c6bd4830fb74",
+            "type": "citation",
+            "source_form": "(brDa)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1337ff71d040540cf6628f8e2dff813e4982e5d86537d3ed0de503a51911e8b2"
+          },
+          {
+            "id": "span:f13bf92dbfa121b3f3b44da40b216347cb53844da84f27368613d61efb0a6873",
+            "type": "tibetan",
+            "source_form": "bag chol",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:bba94ada5c1eafce71c6f9a7b1558b90c56299eda1757630aaffd76841fcfd28"
+          },
+          {
+            "id": "span:bba94ada5c1eafce71c6f9a7b1558b90c56299eda1757630aaffd76841fcfd28",
+            "type": "lexical_parallel",
+            "source_form": "bag chol, bag chos ≅ bag leb lta bu’i zas te brda rñiṅ „eine Speise wie Brot, ein altes Wort“ (Dagy)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:17c85dccaad1811029d1cb6b2d3bcd3462b26cbb80422f6cdad18d52bb0df9fb"
+          },
+          {
+            "id": "span:cb2cc342a2870bc03871ae3662be6e863fc3cbc0dc6117dd8f57e287bbe64548",
+            "type": "tibetan",
+            "source_form": "bag chos",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:bba94ada5c1eafce71c6f9a7b1558b90c56299eda1757630aaffd76841fcfd28"
+          },
+          {
+            "id": "span:f4c9c2b68a3e7ca2d4142a95161b9a640c41e5706e934b0df8fc2ddd8810ad33",
+            "type": "tibetan",
+            "source_form": "bag leb lta bu’i zas te brda rñiṅ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:bba94ada5c1eafce71c6f9a7b1558b90c56299eda1757630aaffd76841fcfd28"
+          },
+          {
+            "id": "span:b26aa307235b9ebfc6eb21487563a2a54bf909920a5ce09c3dcb7c8cab69f0ec",
+            "type": "translation",
+            "source_form": "„eine Speise wie Brot, ein altes Wort“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:bba94ada5c1eafce71c6f9a7b1558b90c56299eda1757630aaffd76841fcfd28"
+          },
+          {
+            "id": "span:b1c7a82ca442a7adde6492667702099bf31343db3078d2754430cba8e8040074",
+            "type": "citation",
+            "source_form": "(Dagy)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:bba94ada5c1eafce71c6f9a7b1558b90c56299eda1757630aaffd76841fcfd28"
+          },
+          {
+            "id": "span:bdbe59b9d9282727b63f592327a1ff4079a6737e01ec6487a8e78bb0ce07ec2e",
+            "type": "tibetan",
+            "source_form": "bag tshos",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:de19716101d42a3bc180be2099c804c3eaa33fbb0a73b9baae38af2d7277d688"
+          },
+          {
+            "id": "span:de19716101d42a3bc180be2099c804c3eaa33fbb0a73b9baae38af2d7277d688",
+            "type": "lexical_parallel",
+            "source_form": "bag tshos ≅ khur ba (Dagy).",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:17c85dccaad1811029d1cb6b2d3bcd3462b26cbb80422f6cdad18d52bb0df9fb"
+          },
+          {
+            "id": "span:611653b0725b0a22c4faba6954c9d3a67763c6c017ed9a6eb2c485e0849a13d3",
+            "type": "tibetan",
+            "source_form": "khur ba",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:de19716101d42a3bc180be2099c804c3eaa33fbb0a73b9baae38af2d7277d688"
+          },
+          {
+            "id": "span:d99cae055590cc604c4531d5efc5056116ac327992ebc9cd4f67522bbba2bb2c",
+            "type": "citation",
+            "source_form": "(Dagy)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:de19716101d42a3bc180be2099c804c3eaa33fbb0a73b9baae38af2d7277d688"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "a4",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20chos/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a4"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/bag%20chos/1",
+        "html_sha256": "217f8e4e1c9c4634efba739d64695e0b000a3bb8b0afa20462f4110da95a228b",
+        "already_certified": false,
+        "component_index": 3,
+        "component_sha256": "1349fd104717c28fca9706523c6b709cc6dd1bb7e72d3f2958a758e266fb7815",
+        "historical_anchors": [
+          "wts_8_b:28:10"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a4",
+          "heading_loc": "left column, below bag chod",
+          "heading_tibetan": "བག་ཆོས་",
+          "printed_homonym": null,
+          "bbox": [
+            162,
+            778,
+            385,
+            828
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "bag chos, auch bag chol, bag tshos: “eine Speise aus Getreide, Fettgebackenes”; lexical evidence cites brDa and Dagy.",
+          "preceding": "bag chod lexical citation.",
+          "following": "bag chos ’grim pa.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          48.6,
+          426.7199951171875,
+          115.5,
+          441.7199951171875
+        ],
+        "image_crop": {
+          "item_id": "a4",
+          "path": "article-e7812c02d63b6360-0006.png",
+          "sha256": "2f024b1e2a42410a8e1c748fcc11e4ca34cf02b12908ae26a418e870ba5c93f2",
+          "pixels": [
+            619,
+            341
+          ],
+          "parent_bbox": [
+            136,
+            754,
+            755,
+            1095
+          ],
+          "pdf_bbox": [
+            40.8,
+            346.6199951171875,
+            226.5,
+            448.9199951171875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a4",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20chos/1",
+          "component_index": 3,
+          "printed_evidence": "bag chos, auch bag chol, bag tshos: “eine Speise aus Getreide, Fettgebackenes.”",
+          "html_evidence": "eine Speise aus Getreide, Fettgebackenes.",
+          "boundary_evidence": "Independent heading after bag chod; lexical evidence continues before the next heading, bag chos ’grim pa.",
+          "homonym_evidence": "No printed homonym number; the food definition and variant forms identify the witness.",
+          "alternatives": "The neighbouring bag chos ’grim pa denotes a food distributor, not the food.",
+          "uncertainty": ""
+        },
+        "risks": [],
+        "page": "wts_8_b-28-printed-4f9d133b82d7b7adb0fbc5ecb0be4b767c925a8ba48674f19eba01b952bfa38f",
+        "headword": "bag chos",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a4",
+              "heading_loc": "bag chos",
+              "heading_tibetan": "བག་ཆོས་",
+              "printed_homonym": null,
+              "bbox": [
+                162,
+                777,
+                749,
+                1184
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "auch bag chol, bag tshos; eine Speise aus Getreide, Fettgebackenes. Lexical parallels include bag leb lta bu’i zas te brda rñiṅ (Dagy) and bag tshos ≅ khur ba (Dagy).",
+              "preceding": "bag chod.",
+              "following": "bag chos ’grim pa.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a4",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/bag%20chos/1",
+              "component_index": 12,
+              "printed_evidence": "The variants bag chol and bag tshos, the mTsho-commentary passage, and the Dagy bread-like food parallel distinguish this article.",
+              "html_evidence": "bag leb lta bu’i zas te brda rñiṅ",
+              "boundary_evidence": "Starts after bag chod; its lexical block ends before bag chos ’grim pa.",
+              "homonym_evidence": "No numeral is printed; editorial 1 is not inferred as print.",
+              "alternatives": "bag chal brims concerns food distribution rather than this food and its lexical variants; the other supplied candidates do not have these parallels.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "competing_pages"
+      },
+      "headword_count": 1,
+      "identity_correct": true,
+      "source_inspection": "Coding agent inspected original checksum-bound physical scan WtS_8-b 28, printed page 18; independent bag chos heading, variants bag chol/bag tshos, food definition and Dagy lexical parallel agree. 2026-11-13."
+    }
+  ]
+}

@@ -167,3 +167,15 @@ def test_reviewed_real_pages_have_source_bound_evidence():
     assert {(r['headword'], r['homonym']) for r in reviewed['witnesses']} >= {('ba', 1), ('ba', 2), ('ba', 3), ('ma', 1), ('ma', 2), ('ma', 5)}
     assert all(r['evidence'] and r['html_sha256'] and r['printed_heading'] for r in reviewed['witnesses'])
     assert not any(r['headword'] == '’gyur' for r in reviewed['witnesses'])  # PDF witness stays outside scope
+
+
+def test_duplicate_geometry_alias_does_not_overwrite_derivative(prepared):
+    root,_,_,reviews,registry=prepared
+    data=json.loads(reviews.read_text())
+    data['pages']['left-alias']=dict(data['pages']['left'],printed_page=999)
+    reviews.write_text(json.dumps(data))
+    manifest=fac.prepare(root,root/'aliased',reviews,registry)
+    first=manifest['pages']['left'];alias=manifest['pages']['left-alias']
+    assert first['filename']==alias['filename']
+    assert first['sha256']==alias['sha256']==fac.sha256(root/'aliased'/first['filename'])
+    assert len(list((root/'aliased').glob('*.pdf')))==3

@@ -10,6 +10,7 @@ from difflib import SequenceMatcher
 from functools import lru_cache
 import hashlib
 import json
+import re
 from pathlib import Path
 
 import badw_html_print_alignment as a
@@ -19,6 +20,7 @@ BASIS = ('Model source-image reading and independent blind source verification; 
          'no human or coding-agent per-article adjudication. Deterministic compiler '
          'checks cached observations, exact HTML identity, lexical evidence and original-page geometry.')
 POLICY = 'unique-unnumbered-lexical-v1'
+FRESH_POLICY = 'independent-source-lexical-reference-v2'
 CONTROLS = a.ROOT/'data/badw_model_certification_controls.json'
 # Closed benign observations, separate from unresolved interpretation. Unknown
 # wording abstains; an absence of a numeral never becomes an inferred numeral 1.
@@ -35,7 +37,7 @@ def readings(row):
     return [row['heading']] + other.get('inventory', []), [row['first_matching']] + other.get('matching', [])
 
 
-def policy_reason(row, body, headword_count):
+def policy_reason(row, body, headword_count, fresh=False):
     """Semantic model judgments plus independent deterministic exclusions.
 
     A length threshold is only a minimum corroborating quotation, never a
@@ -49,11 +51,26 @@ def policy_reason(row, body, headword_count):
     if body['source_kind'] != 'html' or row['source_id'] != body['inspection_id'] or row['source_url'] != body['source_url'] or row['html_sha256'] != body['sources'][0]['sha256']:
         return 'exact HTML identity'
     key = a.proof_key(body['headword']['loc'])
-    if any(h['classification'] != 'article' or a.proof_key(h['heading_loc']) != key for h in hs):
+    def heading_identity(h):
+        if a.proof_key(h['heading_loc']) == key:
+            return True
+        # Some inventories interpret “loc” as location. Preserve that response,
+        # and require its independently transcribed Tibetan heading to match
+        # the exact acquired headword instead. A different lexical reading is
+        # never excused by this narrowly recognised layout description.
+        location = re.fullmatch(r'(?:left|right) column, .+', h.get('heading_loc') or '', re.I)
+        tibetan = body['headword'].get('tibetan')
+        return bool(fresh and location and tibetan and
+                    a.proof_key(h.get('heading_tibetan') or '') == a.proof_key(tibetan))
+    if any(h['classification'] != 'article' or not heading_identity(h) for h in hs):
         return 'independent heading identity'
-    if headword_count != 1 or any(h['printed_homonym'] is not None for h in hs):
+    numbered = all(h['printed_homonym'] is not None and str(h['printed_homonym']) == str(body['homonym']) for h in hs)
+    if (headword_count != 1 or any(h['printed_homonym'] is not None for h in hs)) and not (fresh and numbered):
         return 'numbered or editorially split homonym needs separate policy'
-    if any(a.proof_key(x.get('uncertainty', '')) not in BENIGN for x in hs + ms):
+    def benign(x):
+        text = a.proof_key(x.get('uncertainty', ''))
+        return text in BENIGN or (fresh and numbered and bool(re.fullmatch(r'superscript[1-9][0-9]*isvisiblyprinted', text)))
+    if any(not benign(x) for x in hs + ms):
         return 'unresolved source interpretation'
     overlaps = []
     for h, m in zip(hs, ms):
@@ -68,12 +85,28 @@ def policy_reason(row, body, headword_count):
             return 'component index'
         component = body['components'][index]
         quote = a.proof_key(m['html_evidence'])
-        if component['type'] not in LEXICAL:
+        if component['type'] not in LEXICAL and not (fresh and component['type'] == 'cross_reference'):
             return 'reference or nonlexical component needs separate policy'
         if not quote or quote not in a.proof_key(component['source_form']):
             return 'exact component quotation'
-        overlaps.append(SequenceMatcher(None, a.proof_key(m['printed_evidence']), quote, autojunk=False).find_longest_match().size)
-    if max(overlaps) < 20:
+        if fresh and component['type'] == 'cross_reference':
+            if quote != a.proof_key(component['source_form']):
+                return 'complete reference component required'
+            reference = ' '.join(m['html_evidence'].casefold().split()).rstrip('.')
+            target = reference.lstrip('↑↓→ ').strip()
+            # Complete target and token boundaries, in BOTH independent printed
+            # readings, prevent a short reference being matched by a prefix.
+            if len(target) < 4 or not re.fullmatch(r'[↑↓→]\s*[^↑↓→]+', reference):
+                return 'reference target not explicit'
+            pattern = r'(?<![\w])' + re.escape(target) + r'(?=\s*(?:[.,;:!?…“”"\u0027’)]|$))'
+            if not all(re.search(pattern, ' '.join(x['printed_evidence'].casefold().split())) for x in (h,m)):
+                return 'independent exact reference target missing'
+            overlaps.append(100)
+            continue
+        observations = (h, m) if fresh else (m,)
+        overlaps.append(max(SequenceMatcher(None, a.proof_key(x['printed_evidence']), quote,
+                                            autojunk=False).find_longest_match().size for x in observations))
+    if (min(overlaps) if fresh else max(overlaps)) < 20:
         return 'insufficient discriminating verbatim evidence'
     if row['component_index'] != row['first_matching']['component_index']:
         return 'component index binding'
@@ -83,21 +116,21 @@ def policy_reason(row, body, headword_count):
 
 
 @lru_cache(maxsize=256)
-def source_geometry(campaign, page_key, source_json, image_json):
+def source_geometry(campaign, page_key, source_json, image_json, directory_override=None):
     """Re-render the ORIGINAL physical scan; compare exact cached image bytes.
 
-    Whole media box only: no claim about printed folio, side or complete article.
+    Crops must occur in the shared original-page map. No pagination extrapolation.
     This rejects an image swapped from another scan even if its own hash is valid.
     """
     import pymupdf as fitz
     source, image = json.loads(source_json), json.loads(image_json)
-    directory = Path(campaign)/'pages'/page_key
+    directory = Path(directory_override) if directory_override else Path(campaign)/'pages'/page_key
     original = a.ROOT/source['filename']
     if original_digest(str(original)) != source['sha256']:
         raise ValueError('original source checksum')
     pack = json.loads((directory/'pack.json').read_text())
     if (pack['source'] != source['label'] or pack['source_sha256'] != source['sha256']
-            or pack['image'] != image or page_key != f"{pack['family']}-{pack['physical_page']}"):
+            or pack['image'] != image or not (page_key == f"{pack['family']}-{pack['physical_page']}" or page_key.startswith(f"{pack['family']}-{pack['physical_page']}-"))):
         raise ValueError('source page binding')
     with fitz.open(original) as pdf:
         n = pack['physical_page']
@@ -105,12 +138,18 @@ def source_geometry(campaign, page_key, source_json, image_json):
             raise ValueError('physical page range')
         page = pdf[n-1]
         transform = image['transform']; box = list(page.mediabox)
-        if page.rotation or transform['pdf_crop'] != box or transform['pdf_to_mupdf'] != list(page.transformation_matrix):
+        crop = transform['pdf_crop']
+        if crop != box:
+            import badw_print_page_map as page_map
+            candidates = page_map.load()['pages'].values()
+            if not any(p['source_sha256'] == source['sha256'] and p['physical_page'] == n and p['crop'] == crop for p in candidates):
+                raise ValueError('unresolved original-page geometry')
+        if page.rotation or transform['pdf_to_mupdf'] != list(page.transformation_matrix):
             raise ValueError('unresolved original-page geometry')
         dpi = image['dpi']
         if transform['points_per_pixel'] != [72/dpi,72/dpi]:
             raise ValueError('image scale')
-        pix = page.get_pixmap(matrix=fitz.Matrix(dpi/72,dpi/72), clip=fitz.Rect(box)*page.transformation_matrix, alpha=False)
+        pix = page.get_pixmap(matrix=fitz.Matrix(dpi/72,dpi/72), clip=fitz.Rect(crop)*page.transformation_matrix, alpha=False)
         rendered = hashlib.sha256(pix.tobytes('png')).hexdigest()
         if (rendered != image['sha256'] or a.digest(directory/image['path']) != rendered
                 or image['pixels'] != [pix.width,pix.height]
@@ -121,7 +160,7 @@ def source_geometry(campaign, page_key, source_json, image_json):
     exact_box = original_media_box(str(original), n)
     if any(abs(x-y) > max(1e-6, abs(y)*1.2e-7) for x,y in zip(box, exact_box)):
         raise ValueError('PDF engines disagree on original media box')
-    return exact_box
+    return exact_box if crop == box else crop
 
 
 @lru_cache(maxsize=256)
@@ -177,16 +216,17 @@ def checked_row(row, evidence, resources, campaign):
 
 
 def validate_model(assertion, body, page, resources):
-    if assertion.get('certificate_type') != TYPE or assertion.get('review_basis') != BASIS or assertion.get('policy') != POLICY:
+    if assertion.get('certificate_type') != TYPE or assertion.get('review_basis') != BASIS or assertion.get('policy') not in (POLICY, FRESH_POLICY):
         raise ValueError('unknown model-review provenance/policy')
     if assertion.get('controls_sha256') != a.digest(CONTROLS):
         raise ValueError('changed empirical controls')
     row, evidence = assertion['model_evidence'], assertion['page_observations']
     frozen = json.loads(CONTROLS.read_text())['candidates']
-    if row not in frozen:
+    fresh = assertion['policy'] == FRESH_POLICY
+    if not fresh and row not in frozen:
         raise ValueError('association outside validated production pool')
     count = sum(b['source_kind']=='html' and a.proof_key(b['headword']['loc'])==a.proof_key(body['headword']['loc']) for b in resources[1].values())
-    reason = policy_reason(row,body,count)
+    reason = policy_reason(row,body,count,fresh=fresh)
     if reason:
         raise ValueError(reason)
     if any(d.get('source_id')==row['source_id'] or d.get('source_url')==row['source_url'] for d in resources[0].get('decisions',[])):
@@ -194,7 +234,14 @@ def validate_model(assertion, body, page, resources):
     pack = checked_row(row,evidence,resources,assertion['campaign'])
     source = resources[4][page['source']]
     box = source_geometry(assertion['campaign'],row['page'],json.dumps(source,sort_keys=True),json.dumps(evidence['image'],sort_keys=True))
-    if (page['crop'] != box or page['side'] != 'single' or page['printed_page'] is not None
+    if fresh:
+        import badw_print_page_map as page_map
+        mapped = page_map.load()['pages']
+        key = page_map.assign(row,evidence,mapped)
+        if any(page[k] != mapped[key][k] for k in a.page_binding(page)):
+            raise ValueError('printed page map binding')
+        box = page['crop']
+    if (page['crop'] != box or (not fresh and page['side'] != 'single') or (not fresh and page['printed_page'] is not None)
             or page['physical_page'] != pack['physical_page'] or page['family'] != pack['family']
             or page['source_sha256'] != pack['source_sha256'] or evidence['image'] != pack['image']):
         raise ValueError('whole physical scan geometry binding')
@@ -206,14 +253,14 @@ def validate_model(assertion, body, page, resources):
         pdfbox=w.image_to_pdf(bounds,evidence['image']['transform'])
         if not (box[0] <= pdfbox[0] < pdfbox[2] <= box[2] and box[1] <= pdfbox[1] < pdfbox[3] <= box[3]):
             raise ValueError('heading outside original physical scan')
-    expected = make_assertion(row,evidence,body,page,assertion['campaign'])
+    expected = make_assertion(row,evidence,body,page,assertion['campaign'],fresh=fresh)
     if assertion != expected:
         raise ValueError('model certificate projection differs from source evidence')
 
 
-def make_assertion(row,evidence,body,page,campaign):
+def make_assertion(row,evidence,body,page,campaign,fresh=False):
     m=row['first_matching']; heading=row['heading']
-    return dict(certificate_type=TYPE,policy=POLICY,review_basis=BASIS,controls_sha256=a.digest(CONTROLS),
+    return dict(certificate_type=TYPE,policy=FRESH_POLICY if fresh else POLICY,review_basis=BASIS,controls_sha256=a.digest(CONTROLS),
         source_id=row['source_id'],html_sha256=row['html_sha256'],printed_homonym=heading['printed_homonym'],
         editorial=dict(source_url=body['source_url'],headword=body['headword']['loc'],homonym=body['homonym']),
         heading_id=heading['item_id'],heading_item_sha256=a.object_digest(heading),
@@ -224,28 +271,46 @@ def make_assertion(row,evidence,body,page,campaign):
         model_evidence=copy.deepcopy(row),page_observations=copy.deepcopy(evidence),campaign=campaign)
 
 
-def certify(campaign, bodies_path, output):
+def competing_assignments(rows, evidence, mapped):
+    """Compare source geometry, not cache aliases for the same physical page."""
+    import badw_print_page_map as page_map
+    physical=defaultdict(set); sides=defaultdict(set)
+    for row in rows:
+        page=evidence[row['page']]; url=row['source_url']
+        physical[url].add((page['source_sha256'],page['physical_page']))
+        try:
+            sides[url].add(page_map.assign(row,page,mapped))
+        except (KeyError,ValueError):
+            pass  # This row still must pass its own geometry check to certify.
+    return {url for url in physical if len(physical[url])>1 or len(sides[url])>1}
+
+
+def certify(campaign, bodies_path, output, fresh=False, stage=False):
     import time
     import badw_model_worker as w
     import badw_provisional_print_links as provisional
+    campaign = Path(campaign).resolve().relative_to(a.ROOT)
     started=time.monotonic(); output=w.private(output); output.mkdir(parents=True,exist_ok=True)
     resources=w.authoritative(bodies_path); certificate=copy.deepcopy(resources[0])
     dataset=provisional.export(campaign,output/'rebound-cache.json')
     frozen=w.load(CONTROLS); pool={r['source_id'] for r in frozen['candidates']}
+    if fresh:
+        pool={r['source_id'] for r in dataset['witnesses']+dataset['review_queue']}
+    import badw_print_page_map as page_map
+    mapped=page_map.load()['pages']
     bodies=resources[1]; counts=Counter(a.proof_key(b['headword']['loc']) for b in bodies.values() if b['source_kind']=='html')
     existing={r['source_id'] for p in certificate['pages'] for r in p['accepted']}
     pages={p['key']:p for p in certificate['pages']}; outcomes=[]
     allrows=dataset['witnesses']+dataset['review_queue']
-    assignments=defaultdict(set)
-    for r in allrows: assignments[r['source_url']].add(r['page'])
+    conflicts=competing_assignments(allrows,dataset['pages'],mapped)
     for row in allrows:
         if row['source_id'] not in pool or row['source_id'] in existing: continue
-        body=bodies[row['source_id']]; reason=policy_reason(row,body,counts[a.proof_key(body['headword']['loc'])])
-        if len(assignments[row['source_url']]) != 1: reason='competing physical pages'
+        body=bodies[row['source_id']]; reason=policy_reason(row,body,counts[a.proof_key(body['headword']['loc'])],fresh=fresh)
+        if row['source_url'] in conflicts: reason='competing physical pages or printed sides'
         if reason:
             outcomes.append(dict(source_id=row['source_id'],result='unresolved',reason=reason)); continue
         evidence=dataset['pages'][row['page']]; source=resources[4][evidence['source']]
-        key='model-physical-'+row['page']; family=row['page'].rsplit('-',1)[0]
+        key='model-physical-'+row['page']; family={v:k for k,v in a.FAMILIES.items()}[evidence['source']]
         try:
             box=source_geometry(str(campaign),row['page'],json.dumps(source,sort_keys=True),json.dumps(evidence['image'],sort_keys=True))
             page=pages.get(key) or dict(key=key,family=family,source=evidence['source'],source_sha256=evidence['source_sha256'],
@@ -253,7 +318,10 @@ def certify(campaign, bodies_path, output):
                 printed_page=None,side='single',crop=box,
                 geometry_review='Deterministic original PDF media box and exact source rendering verified; whole physical scan, no folio/side inference.',
                 page_evidence='Registered source checksum and physical page; independently read headings; no asserted printed folio.',accepted=[])
-            assertion=make_assertion(row,evidence,body,page,str(campaign))
+            if fresh:
+                key=page_map.assign(row,evidence,mapped)
+                page=pages.get(key) or dict(copy.deepcopy(mapped[key]),accepted=[])
+            assertion=make_assertion(row,evidence,body,page,str(campaign),fresh=fresh)
             validate_model(assertion,body,page,resources)
         except (ValueError,KeyError) as exc:
             outcomes.append(dict(source_id=row['source_id'],result='unresolved',reason=str(exc)));continue
@@ -267,6 +335,9 @@ def certify(campaign, bodies_path, output):
     summary['already_certified']=len(pool & {r['source_id'] for p in resources[0]['pages'] for r in p['accepted']})
     w.write(output/'outcomes.json',dict(outcomes=outcomes,summary=summary,
         elapsed_seconds=round(time.monotonic()-started,2),new_api_cost_usd=0))
+    if stage:
+        w.write(output/'certificate.json',certificate); w.write(output/'generated.json',expanded)
+        return summary
     w.write(a.CERTIFICATE,certificate);w.write(a.GENERATED,expanded)
     baseline=w.load(a.ROOT/'data/badw_html_print_pages.json')
     w.write(a.ROOT/'data/badw_html_print_review_queue.json',

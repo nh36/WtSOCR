@@ -275,3 +275,37 @@ def test_real_offline_sequence_preserves_regions_and_abstentions(local_work):
     with pytest.raises(ValueError,match='source-bound'):w.evaluate(reference,prediction)
     (local_work/regions[0]['path']).write_bytes(b'changed crop')
     with pytest.raises(ValueError,match='crop changed'):w.execute(spec,p,local_work/'fixtures',fixture=matching)
+
+
+def test_exact_multimodal_count_reservation_and_response_reuse(local_work):
+    (local_work/'page.png').write_bytes(b'image')
+    p=pack();p['image']['sha256']=w.a.digest(local_work/'page.png')
+    spec=w.request_spec('inventory',p,'gpt-6.1-terra','original',100)
+    calls=[]
+    def count(**kwargs):
+        calls.append(('count',kwargs));return SimpleNamespace(input_tokens=1000)
+    response=SimpleNamespace(usage=SimpleNamespace(model_dump=lambda:dict(input_tokens=1000,output_tokens=100)),
+        status='completed',output_text=__import__('json').dumps(p['inventory']),id='fixture-counted-response')
+    def create(**kwargs):
+        calls.append(('generate',kwargs));return response
+    client=SimpleNamespace(responses=SimpleNamespace(input_tokens=SimpleNamespace(count=count),create=create))
+    spending=w.Spending(local_work,.01,'approved')
+    result=w.execute(spec,p,local_work/'cache',spending,client,interval=0)
+    assert [x[0] for x in calls]==['count','generate']
+    assert calls[0][1]['input']==calls[1][1]['input']
+    assert calls[0][1]['text']==calls[1][1]['text']
+    entry=next(iter(w.load(local_work/'spending.json')['requests'].values()))
+    assert entry['reserved']==pytest.approx(w.cost(spec['model'],1306,100,cache_write_tokens=1306))
+    assert w.execute(spec,p,local_work/'cache',spending,client,interval=0)==result
+    assert len(calls)==2 and len(w.load(local_work/'spending.json')['requests'])==1
+
+
+def test_count_network_failure_does_not_reserve_or_generate(local_work):
+    (local_work/'page.png').write_bytes(b'image')
+    p=pack();p['image']['sha256']=w.a.digest(local_work/'page.png')
+    spec=w.request_spec('inventory',p,'gpt-6.1-terra','original',100)
+    def fail(**kwargs):raise ConnectionError('private server message')
+    client=SimpleNamespace(responses=SimpleNamespace(input_tokens=SimpleNamespace(count=fail)))
+    with pytest.raises(RuntimeError,match='preflight failed'):
+        w.execute(spec,p,local_work/'cache',w.Spending(local_work,.01,'approved'),client)
+    assert not (local_work/'spending.json').exists()

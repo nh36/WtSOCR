@@ -73,11 +73,23 @@ SCHEMAS = {
     html_evidence=S, boundary_evidence=S, homonym_evidence=S, alternatives=S, uncertainty=S)))))
 }
 SCHEMAS['source_review'] = obj(dict(inventory=SCHEMAS['inventory'], matching=SCHEMAS['match']))
+SCHEMAS['layout'] = obj(dict(layout=dict(type='string', enum=['single','spread','blank','uncertain']),
+    gutter_x=dict(type=['number','null']), evidence=S, uncertainty=S))
 
 
 def validate(stage, result, pack):
     from jsonschema import validate as schema_validate
     schema_validate(result, SCHEMAS[stage])
+    if stage == 'layout':
+        if result['layout'] == 'spread':
+            x = result['gutter_x']
+            if x is None or not .25*pack['image']['pixels'][0] < x < .75*pack['image']['pixels'][0]:
+                raise ValueError('spread gutter outside central region')
+        elif result['gutter_x'] is not None:
+            raise ValueError('gutter supplied without a spread')
+        if not result['evidence'].strip():
+            raise ValueError('layout observation missing')
+        return
     if stage == 'source_review':
         validate('inventory', result['inventory'], pack)
         validate('match', result['matching'], dict(pack, inventory=result['inventory']))
@@ -160,6 +172,11 @@ def prepare_page(spec, resources, directory, dpi=240):
             raise ValueError('rotated pages require an explicitly reviewed transform')
         # A spec may name a previously reviewed printed-page key, never an invented crop.
         reviewed = [p for p in cert['pages'] if p['key'] == spec.get('page_key')]
+        if not reviewed and spec.get('page_key'):
+            import badw_print_page_map
+            mapped = badw_print_page_map.load()['pages'].get(spec['page_key'])
+            if mapped:
+                reviewed = [mapped]
         if spec.get('page_key') and len(reviewed) != 1:
             raise ValueError('unknown reviewed geometry')
         geometry = reviewed[0] if reviewed else None
@@ -294,7 +311,7 @@ def prepare_match_crops(pack, directory, padding=24):
 def request_spec(stage, pack, model, detail, max_output_tokens):
     prompt = (DATA/f'badw_model_{stage}_prompt.txt').read_text()
     # Inventory is genuinely source-first. No candidates or previous answers.
-    evidence = dict(image_pixels=pack['image']['pixels']) if stage=='inventory' else dict(
+    evidence = dict(image_pixels=pack['image']['pixels']) if stage in ('inventory','layout') else dict(
         candidates=[
             dict({k:v for k,v in row.items() if k in ('source_id','headword','homonym')},
                  # Keep original component indices and all lexical alternatives,
@@ -304,6 +321,8 @@ def request_spec(stage, pack, model, detail, max_output_tokens):
             for row in pack['candidates']])
     if stage == 'match':
         evidence['inventory'] = pack['inventory']
+    if stage == 'layout':
+        evidence['coordinate_layout_proposal'] = pack.get('layout_proposal')
     if stage == 'source_review':
         # Deliberately exclude earlier inventory, matches, confidence, verdicts,
         # source bindings and crop filenames derived from the first decision.
@@ -432,13 +451,39 @@ def execute(spec, pack, directory, spending=None, client=None, fixture=None, int
         raise ValueError('live execution requires client and approved spending ledger')
     if (spending.directory/'STOP').exists():
         raise ValueError('operator stop file present')
-    reservation = cost(spec['model'],MAX_INPUT_TOKENS[spec['model']],spec['max_output_tokens'],
-                       cache_write_tokens=MAX_INPUT_TOKENS[spec['model']])
     content = [dict(type='input_text',text=spec['prompt']+'\n'+json.dumps(spec['evidence'],ensure_ascii=False))]
     for region in images or [dict(path=pack['image']['path'],item_id='entire printed page')]:
         content.append(dict(type='input_text',text='Image for '+region['item_id']))
         content.append(dict(type='input_image',image_url='data:image/png;base64,'+
             base64.b64encode((directory.parent/region['path']).read_bytes()).decode(),detail=spec['detail']))
+    request_input = [dict(role='user',content=content)]
+    request_text = dict(format=dict(type='json_schema',name='wts_'+spec['stage'],strict=True,schema=spec['schema']))
+    # Count the identical multimodal input, including the schema, before making
+    # any billable request. Retain the full-context bound for older SDKs only.
+    # https://developers.openai.com/api/docs/guides/token-counting
+    tokens = MAX_INPUT_TOKENS[spec['model']]
+    counter = getattr(getattr(client.responses if hasattr(client,'responses') else None,
+                              'input_tokens',None),'count',None)
+    if counter is not None:
+        count_path = directory/(key+'-tokens.json')
+        if count_path.exists():
+            counted = load(count_path)
+            if counted['request_sha256'] != key:
+                raise ValueError('token count request binding changed')
+        else:
+            try:
+                count = counter(model=spec['model'],input=request_input,text=request_text)
+            except Exception as exc:
+                raise RuntimeError('token-count preflight failed ('+type(exc).__name__+'); no generation request or reservation made') from None
+            counted = dict(request_sha256=key,input_tokens=count.input_tokens)
+            write(count_path,counted)
+        count = counted['input_tokens']
+        if not isinstance(count,int) or not 0 < count <= tokens:
+            raise ValueError('invalid input token count')
+        # Allow count/usage differences conservatively; reserve the highest
+        # possible cache-write tariff and the entire requested output allowance.
+        tokens = min(tokens,math.ceil(count*1.05)+256)
+    reservation = cost(spec['model'],tokens,spec['max_output_tokens'],cache_write_tokens=tokens)
     start = time.monotonic()
     for attempt in range(attempts):
         if (spending.directory/'STOP').exists():
@@ -451,8 +496,7 @@ def execute(spec, pack, directory, spending=None, client=None, fixture=None, int
             LAST_REQUEST = time.monotonic()
         try:
             response = client.responses.create(model=spec['model'],store=False,service_tier='default',
-                input=[dict(role='user',content=content)],max_output_tokens=spec['max_output_tokens'],
-                text=dict(format=dict(type='json_schema',name='wts_'+spec['stage'],strict=True,schema=spec['schema'])),
+                input=request_input,max_output_tokens=spec['max_output_tokens'],text=request_text,
                 extra_headers={'Idempotency-Key':attempt_key})
         except Exception as exc:
             # SDK retries are disabled. Only explicit rate-limit responses are

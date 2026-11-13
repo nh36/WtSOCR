@@ -263,6 +263,10 @@ def status(root, db=None):
         approved_cap_usd=cfg.get('cap_usd'),stop_requested=(Path(root)/'STOP').exists(),
         recent_errors=[dict(r) for r in db.execute(
             'SELECT id,stage,error FROM views WHERE error IS NOT NULL ORDER BY updated DESC LIMIT 8')])
+    if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='production_scans'").fetchone():
+        result['production_scan_states']={r[0]:r[1] for r in db.execute('SELECT state,count(*) FROM production_scans GROUP BY state')}
+    catalogue_path=Path(root)/'catalogue-progress.json'
+    if catalogue_path.exists():result['html_catalogue_states']=w.load(catalogue_path)['counts']
     w.write(Path(root)/'status.json',result)
     return result
 
@@ -567,7 +571,7 @@ def run(root, max_pages=25, fixtures=None, clear_budget_stop=False, drain=False)
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('command',choices=['plan','run','resume','produce','stop','status','report','review','publish'])
+    p.add_argument('command',choices=['plan','run','resume','produce','complete','stop','status','report','review','publish'])
     p.add_argument('--campaign',type=Path,required=True)
     p.add_argument('--pages',type=Path)
     p.add_argument('--bodies',type=Path)
@@ -584,12 +588,24 @@ def main():
     p.add_argument('--output',type=Path,help='Fresh ignored directory for full reader publication')
     p.add_argument('--resume-build',action='store_true',help='Resume browser checks of an unchanged completed build')
     p.add_argument('--api-key-file',type=Path,help='Read a private API key without printing it or putting it in shell history')
+    p.add_argument('--cache-only',action='store_true',help='Complete: certify and publish paid evidence without API calls')
+    p.add_argument('--production-limit',type=int,help='Optional commissioning bound; complete otherwise drains the corpus')
+    p.add_argument('--stop-after-response',action='store_true',help='Complete: commissioning interruption after persisted first-pass responses')
     p.add_argument('--base-reader',type=Path,help='Reuse a complete reader, updating suggestion sources only at this milestone')
     args=p.parse_args()
     root=w.private(args.campaign)
     if args.api_key_file:
         os.environ['OPENAI_API_KEY']=args.api_key_file.read_text().strip()
-    if args.command=='plan':
+    if args.command=='complete':
+        # Reuse the recovered local SDK and private key without requiring shell
+        # environment setup or embedding credentials in a process argument.
+        sys.path.insert(0,str(w.a.ROOT/'work/badw-model-deps'))
+        if not os.environ.get('OPENAI_API_KEY') and (w.a.ROOT/'work/openai-api-key').exists():
+            os.environ['OPENAI_API_KEY']=(w.a.ROOT/'work/openai-api-key').read_text().strip()
+        import badw_certified_production
+        result=badw_certified_production.complete(root,args.output or root/'certified-publication',
+            args.cache_only,args.production_limit,args.stop_after_response)
+    elif args.command=='plan':
         if not all((args.bodies,args.budget_root)):
             p.error('plan requires --bodies and --budget-root')
         pages=w.load(args.pages) if args.pages else select_pages(args.max_pages,
