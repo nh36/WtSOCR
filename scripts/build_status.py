@@ -1935,6 +1935,21 @@ reservations have saved connection failures without provider request IDs or
 billing outcomes; two lack recoverable response records. None can safely be
 released from the available local evidence. The paid campaign remains stopped.
 
+The frozen twelve-scan verification pilot is prepared for a separately authorised
+Batch submission, not submitted. Its compact requests contain 379,074 counted
+input tokens and retain the five known candidate omissions: 67 linkable starts,
+62 with the correct ID supplied, plus 14 starts without acquired HTML. The
+request-bound conservative global-endpoint Batch ceiling is USD 0.04306925,
+below USD 0.045 and the unchanged USD 0.063592105 available allowance. Read-only
+account checks found model access and no active Batch jobs; queued-token quota,
+Batch model admission and billing eligibility remain submission-time checks.
+The scorer now checks sides even for abstentions and PDF-only starts and counts
+candidate omissions independently of model output. The resumable runner,
+source-first timed audit and fake-client interruption tests are documented in
+`docs/BADW_SOURCE_INTEGRATION.md`. No generation, certification or publication
+occurred during preparation; the reader remains at 818 certified links and zero
+provisional links, and all five old reservations remain intact.
+
 {corpus_section}## Bibliographic Apparatus
 
 The bibliography reconciliation is **complete for the four registered PDFs and

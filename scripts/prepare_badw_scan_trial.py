@@ -328,7 +328,7 @@ def count(args):
         rates_verified='2026-11-13 https://developers.openai.com/api/docs/models/gpt-6-luna'))
 
 
-def validate_result(result,spec):
+def validate_result(result,spec,check_boxes=True):
     if set(result) != {'starts','non_start_regions','layout'}:
         raise ValueError('invalid result fields')
     if not isinstance(result['layout'],str) or not isinstance(result['non_start_regions'],list) or any(
@@ -355,6 +355,7 @@ def validate_result(result,spec):
                 raise ValueError('missing source evidence')
         elif r['source_id']:raise ValueError('abstention cannot assign an identity')
         box=r['heading_box']
+        if not check_boxes: continue  # Geometry quality is audited separately from identity/side.
         if len(box)!=4 or any(type(x) not in (int,float) or not math.isfinite(x) for x in box):raise ValueError('invalid box')
         if not 0<=box[0]<box[2]<=width or not 0<=box[1]<box[3]<=height:raise ValueError('box outside source image')
     return result
@@ -374,7 +375,9 @@ def score_scan(truth, result, supplied, audit):
     if len(mapped)!=len(set(mapped)) or not set(mapped)<=set(expected):
         raise ValueError('invalid or repeated source audit assignment')
     metrics=Counter(eligible=len(expected),linkable=sum(bool(r['html_ids']) for r in expected.values()),
-        supplied=sum(bool(set(r['html_ids'])&set(supplied)) for r in expected.values()))
+        supplied=sum(bool(set(r['html_ids'])&set(supplied)) for r in expected.values()),
+        omitted_correct_id=sum(bool(r['html_ids']) and not bool(set(r['html_ids'])&set(supplied))
+                               for r in expected.values()))
     seen=set()
     for r in result['starts']:
         tid=audit[r['start_id']]
@@ -383,19 +386,24 @@ def score_scan(truth, result, supplied, audit):
             if r['outcome']=='matched': metrics['wrong_assignments']+=1
             continue
         seen.add(tid); t=expected[tid]
+        side_ok=r['side']==t['side'] and r['side']!='unknown'
+        if not side_ok: metrics['wrong_side']+=1
+        if r['side']=='unknown': metrics['unresolved_side']+=1
         if r['outcome']!='matched':
             metrics['abstentions']+=1
-            if t['html_ids']:
-                metrics['missed_supplied' if set(t['html_ids'])&set(supplied) else 'omitted_correct_id']+=1
-            elif r['outcome']=='no_supplied_match': metrics['correct_no_html_dispositions']+=1
-        elif r['source_id'] in t['html_ids'] and r['side']==t['side']:
+            if set(t['html_ids'])&set(supplied): metrics['missed_supplied']+=1
+            if not t['html_ids'] and r['outcome']=='no_supplied_match' and side_ok:
+                metrics['correct_no_html_dispositions']+=1
+        elif r['source_id'] in t['html_ids'] and side_ok:
             metrics['correct_assignments']+=1
+            if set(t['html_ids'])&set(supplied): metrics['correct_supplied_assignments']+=1
         else:
             metrics['wrong_assignments']+=1
-            metrics['wrong_identity' if r['source_id'] not in t['html_ids'] else 'wrong_side']+=1
+            if r['source_id'] not in t['html_ids']: metrics['wrong_identity']+=1
     metrics['missing_starts']=len(set(expected)-seen)
     metrics['complete_scan']=int(not metrics['missing_starts'] and not metrics['false_starts']
-        and not metrics['wrong_assignments'] and metrics['correct_assignments']==metrics['linkable'])
+        and not metrics['wrong_assignments'] and not metrics['wrong_side']
+        and metrics['correct_assignments']==metrics['linkable'])
     metrics['complete_scan']=int(metrics['complete_scan'] and
         metrics['correct_no_html_dispositions']==metrics['eligible']-metrics['linkable'])
     return dict(metrics)

@@ -1477,7 +1477,7 @@ The isolated single-scan experiment is prepared with
 `python3 scripts/prepare_badw_scan_trial.py prepare`; exact request-bound counts
 are obtained with
 `PYTHONPATH=work/badw-model-deps python3 scripts/prepare_badw_scan_trial.py count`.
-It has no generation or publication path. Its private frozen sample and
+The preparation script has no generation or publication path. Its private frozen sample and
 source-first census are in `work/single-scan-trial-20261113`: 12 physical scans,
 three per family, excluding previous comparison pages. All starts are counted,
 including references, numbered homonyms, continuation-only scans and one spread.
@@ -1502,9 +1502,70 @@ With a 6,000-token output ceiling per scan, the exact compact input counts total
 GPT-6 Luna tariffs checked on 2026-11-13, using the worker's 5% plus 256-token
 margin and highest input cache-write tariff, the conservative 12-request caps
 are US$0.0861385 standard or US$0.04306925 Batch. Batch model support is
-documented; account quota/availability is not established. These are proposed
+documented; account queue limits and billing admission are confirmed only at
+submission. These are proposed
 generation costs, not expenditure. No generation was submitted and no campaign
 reservation was changed. Generation awaits a spending decision. Trial output
 has no certification authority; any accepted links must pass the existing
 certified-only publication path. Source-review time was not instrumented for
 this preparation and must not be reported as a measured duration.
+
+The frozen Batch pilot is prepared and verified without submission by:
+
+```bash
+python3 scripts/run_badw_scan_trial_batch.py prepare
+python3 scripts/run_badw_scan_trial_batch.py report
+```
+
+The private `batch/input.jsonl` contains exactly 12 compact Responses requests
+(12,009,292 bytes); full-OCR variants remain count comparisons only. The manifest
+binds the census, selection, pricing, exact payloads, request IDs and upload bytes.
+Its SHA-256 is
+`9634aa413b07ff1fd65712350fca94e52ad30019a3c32096d3257d193fbe3b8a`.
+The five absent correct IDs remain absent. Side scoring includes abstentions
+and PDF-only starts; unknown/wrong sides block complete scans. Candidate omissions
+are counted from the census even when the model omits a start. Missing/false
+starts, wrong identities, wrong sides and abstentions are separate metrics;
+heading boxes never determine identity or side scores.
+
+Read-only account checks on 2026-11-13 retrieved GPT-6 Luna and listed no active
+Batch jobs. The standard API exposes no queued-token quota. The project must
+admit 379,074 queued input tokens; model-specific Batch entitlement and billing
+eligibility remain submission-time checks. The priced global endpoint is pinned:
+no regional/FedRAMP endpoint is allowed, since its 10% surcharge would raise the
+cap to US$0.047376175. Each request has a 6,000-token output ceiling, no tools,
+and no extended-cache option; the cap includes the 30-minute cache-write tariff
+and existing token margin. Available campaign allowance remains US$0.063592105;
+the proposed US$0.04306925 job would leave at least US$0.020522855 at these rates.
+No reservations were added and no generation was sent during preparation.
+
+After a separate spending decision, submit and track the same frozen job with:
+
+```bash
+PYTHONPATH=work/badw-model-deps python3 scripts/run_badw_scan_trial_batch.py run --trial work/single-scan-trial-20261113 --campaign work/linking-campaign-20261112 --authorize-usd 0.045
+```
+
+Repeat the same command to resume. File/job IDs and per-request holds are saved
+in the existing spending system. An interrupted upload is reconciled by filename
+and content hash; an interrupted job creation by file ID and manifest metadata.
+An unclear outcome halts without blind resubmission. Returned rows join by
+request ID, never order. Missing, duplicate, failed, incomplete and invalid rows
+are explicit; absent usage leaves the corresponding reservation intact. Fake
+clients test interruption after upload and after job creation, shuffled output,
+bad boxes, failed rows, binding failures and cache reuse. The five earlier
+unresolved reservations remain untouched.
+
+After collection, run `python3 scripts/run_badw_scan_trial_batch.py audit` and
+open the resulting private `batch/source-audit.html`. Identify each predicted
+heading on the source before proposed HTML IDs are revealed; save the downloaded
+`source-audit.json` beside it and run `report` again. The focused-window timer
+records active source-checking seconds, not elapsed API time or the earlier
+census work. The resulting report gives complete scans/12, article-and-side
+assignments/67 and /62, omissions and other errors, box quality, failed requests
+and returned API cost. Correctness is unmeasured before this audit. Each proposed
+match is screened through the existing certification gate without publication:
+one trial reading does not supply two independent source readings, and an audit
+answer must not be represented as another model call. These sample pages have no
+comparable campaign cache; absent additional independent evidence, the gate
+blocks certification. No trial command writes certificates, the canonical ledger
+or the reader, which remains at 818 certified links and zero provisional links.

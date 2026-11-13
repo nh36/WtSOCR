@@ -72,6 +72,7 @@ FILE_NON_STDLIB_IMPORTS = {
     # Private scan trial reuses existing rasterisation and token-count transport;
     # it has no generation or publication path.
     "scripts/prepare_badw_scan_trial.py": {"openai", "pymupdf"},
+    "scripts/run_badw_scan_trial_batch.py": {"openai"},
     # The detached controller uses the worker's existing optional SDK transport
     # with automatic retries disabled; no additional dependency is introduced.
     "scripts/run_badw_linking_campaign.py": {"openai"},

@@ -113,3 +113,20 @@ def test_streaming_components_preserve_exact_reference_target(tmp_path):
     refs=t.reference_components(path,cache)
     assert refs['html:a'][0]['source_form']=='↑²target'
     assert t.reference_components(path,cache)==refs
+
+
+@pytest.mark.parametrize('side',['left','unknown'])
+def test_review_regression_no_html_abstention_must_locate_printed_side(side):
+    tr=dict(starts=[dict(truth_id='source:1',html_ids=[],side='single')])
+    r=result();r['starts'][0].update(source_id='',outcome='no_supplied_match',side=side)
+    m=t.score_scan(tr,r,set(),{'a':'source:1'})
+    assert m['wrong_side']==1 and m.get('correct_no_html_dispositions',0)==0
+    assert not m['complete_scan'] and m['abstentions']==1
+
+
+def test_review_regression_candidate_omissions_include_skipped_starts():
+    m=t.score_scan(truth(),dict(starts=[]),{'html:a'},{})
+    assert m['omitted_correct_id']==1 and m['missing_starts']==3 and not m['complete_scan']
+    r=result();r['starts'][0].update(source_id='wrong',side='unknown')
+    m=t.score_scan(truth(),r,{'html:a'},{'a':'source:1'})
+    assert m['wrong_side']==1 and m['wrong_identity']==1 and m['omitted_correct_id']==1
