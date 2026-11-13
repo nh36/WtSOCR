@@ -4,7 +4,7 @@
   "label": "Suggested original printed page — automatically matched, not yet verified.",
   "certified": false,
   "registry_sha256": "7b9eb2073d9bffdcec48dc1a15427cf4818f68e29b6576221e26a91e78a3b434",
-  "certified_ledger_sha256": "372ae5e9dd7df3cdcb48416a6521fc5c95db36a7bd6af47acccf0c972f832a26",
+  "certified_ledger_sha256": "bcac77d6764bf2cdc3f3176b9164f39704cb2a9f6aeeb4eab7672dc403559d5d",
   "manual_ledger_sha256": "63c1238bb7a49942cdd3348d95aaed4e240add48bb754e283d0ed948795a897a",
   "pages": {
     "wts_1_34-100": {

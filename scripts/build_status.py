@@ -1772,7 +1772,7 @@ is reported by the reproduction command and is not inferred from either field.
 
 The checked-in ledgers contain **{print_links} certified HTML attachments** to **{print_pages}
 printed-page derivatives**. The original 783 certificates, including the frozen
-92-candidate model production, are preserved. A further 24 associations (20 from paid caches and four from fresh pages)
+92-candidate model production, are preserved. A further 30 associations (26 from paid caches and four from fresh pages)
 have been compiled automatically under
 `independent-source-lexical-reference-v2`. Certificates accurately identify
 model verification; they do not claim human review. Numbered references require
@@ -1799,7 +1799,15 @@ responses, acquires independent page readings when needed, certifies eligible
 cases and records reasons for abstention. All acquired HTML identities are
 accounted for separately from source-page processing completeness.
 
-Source inspection found 24/24 new associations correct across all four
+The paid campaign is stopped. Six saved-response additions were recovered after
+the facsimile exporter fix; all six destinations and source identities were
+checked against the individual printed pages. Continue without new API calls:
+
+```bash
+python3 scripts/run_badw_linking_campaign.py complete --campaign work/linking-campaign-20261112 --cache-only
+```
+
+Source inspection found 30/30 new associations correct across all four
 families. The independent pre-policy eight-identity sample includes seven
 correct identities that still abstain. These small samples measure observed
 accuracy and policy coverage separately; they do not establish corpus accuracy.

@@ -1218,6 +1218,226 @@
             "decision_sha256": "81a2e7e15e110e2a8bba418addb522d997893dd49bbee7f2570b60f41ff0ece3",
             "reason": "Agent reexamined the original image, independently headed reference and exact HTML target. Independent heading between ka rma śa tam and ka tsa ma tsi; printed ↑ka mad matches the exact HTML reference. No printed homonym numeral. The source-bound reference-only pathway now binds the entire arrow/target rather than claiming nonexistent definition evidence. Earlier decision is retained verbatim."
           }
+        },
+        {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rma%20%C5%9Ba%20ta%E1%B9%83/1",
+          "html_sha256": "8db834c328ca144662e442499b1de1661e3ee5a1535d69dd1ad276decb4b2ae4",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20rma%20%C5%9Ba%20ta%E1%B9%83/1",
+            "headword": "ka rma śa taṃ",
+            "homonym": "1"
+          },
+          "heading_id": "article-04",
+          "heading_item_sha256": "3fc16196f7c0071b84048ae691ce538ce3abeae1e996607f270abfb6f3f4049a",
+          "definition_component_sha256": "ed3ab676abe67c2b1086cb23ab3923d2e4434d2b4e506a577322f64f64f77111",
+          "print_observation": {
+            "heading": "left column, approximately y=996",
+            "homonym": null,
+            "evidence": "ka rma śa taṃ ↓karma śa taṃ.",
+            "identity_context": "This heading follows ka rma ba kṣi and precedes ka smad.",
+            "page_sha256": "68f276f97920dca8f252db0e29d40f8508c0b1455dc5ec3e322898787f474d79",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "article-04",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rma%20%C5%9Ba%20ta%E1%B9%83/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A4"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20rma%20%C5%9Ba%20ta%E1%B9%83/1",
+            "html_sha256": "8db834c328ca144662e442499b1de1661e3ee5a1535d69dd1ad276decb4b2ae4",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "ed3ab676abe67c2b1086cb23ab3923d2e4434d2b4e506a577322f64f64f77111",
+            "historical_anchors": [
+              "wts_1_34:42:25"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "article-04",
+              "heading_loc": "left column, approximately y=996",
+              "heading_tibetan": "ཀ་རྨ་ཤ་ཏཾ",
+              "printed_homonym": null,
+              "bbox": [
+                114,
+                989,
+                394,
+                1042
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "ka rma śa taṃ ↓karma śa taṃ.",
+              "preceding": "ka rma ba kṣi.",
+              "following": "ka smad.",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              35.40000004768371,
+              318.4800170898438,
+              119.4000000476837,
+              334.38001708984376
+            ],
+            "image_crop": {
+              "item_id": "article-04",
+              "path": "article-c0b301527dd9e820-0005.png",
+              "sha256": "7477a4754579f33f90ea06694f23b440e353f41bb422bdf8027ecaafcd0fbc46",
+              "pixels": [
+                620,
+                116
+              ],
+              "parent_bbox": [
+                89,
+                965,
+                709,
+                1081
+              ],
+              "pdf_bbox": [
+                27.900000047683715,
+                306.78001708984374,
+                213.9000000476837,
+                341.58001708984375
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "article-04",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rma%20%C5%9Ba%20ta%E1%B9%83/1",
+              "component_index": 2,
+              "printed_evidence": "ka rma śa taṃ ↓karma śa taṃ.",
+              "html_evidence": "↓karma śa taṃ",
+              "boundary_evidence": "This heading follows ka rma ba kṣi and precedes ka smad.",
+              "homonym_evidence": "No numeral is printed; the full reference target distinguishes the article.",
+              "alternatives": "The shorter ka rma article has a different target.",
+              "uncertainty": ""
+            },
+            "risks": [
+              "short lexical evidence",
+              "non-definition component"
+            ],
+            "page": "wts_1_34-42-v1-p18",
+            "headword": "ka rma śa taṃ",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A4",
+                  "heading_loc": "ka rma śa taṃ",
+                  "heading_tibetan": "ཀ་རྨ་ཤ་ཏཾ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    114,
+                    988,
+                    589,
+                    1039
+                  ],
+                  "column": "left",
+                  "classification": "article",
+                  "printed_evidence": "ka rma śa taṃ ↓karma śa taṃ.",
+                  "preceding": "ka rma ba kṣi.",
+                  "following": "ka smad.",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A4",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rma%20%C5%9Ba%20ta%E1%B9%83/1",
+                  "component_index": 2,
+                  "printed_evidence": "The printed target is karma śa taṃ.",
+                  "html_evidence": "↓karma śa taṃ",
+                  "boundary_evidence": "Separate heading after ka rma ba kṣi and before ka smad.",
+                  "homonym_evidence": "No printed numeral; editorial 1 is not printed.",
+                  "alternatives": "ka rma/1 points only to karma.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_1-34",
+            "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+            "physical_page": 42,
+            "image": {
+              "path": "page.png",
+              "sha256": "7de477e70768b8b2f484d71bf886d258e28c97b3a604052a544a1af98afaf379",
+              "pixels": [
+                1460,
+                2098
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  0.0,
+                  0.0,
+                  439,
+                  632.76
+                ],
+                "image_device_origin": [
+                  0,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  -1.2000000476837158,
+                  631.0800170898438
+                ]
+              }
+            },
+            "geometry": {
+              "key": "v1-p18",
+              "volume": 1,
+              "printed_page": 18,
+              "side": "left",
+              "crop": [
+                0.0,
+                0.0,
+                439,
+                632.76
+              ]
+            },
+            "inventory_sha256": "c0b301527dd9e820be2e158bd0da3d3644ea9bfe94f43e9c99cd8f94ba53738d",
+            "match_sha256": "bbb83733dadd7d17003c4e6733935751483651d1dc3b0d0c5827989353bd4e94",
+            "inventory_request_sha256": "82b86911281d1fc947cb069eb7e1cfa30f6f8f777f2e6f84ef3fea494d00f7d9",
+            "match_request_sha256": "1d79d8af65e0a907b0c4d7d37425fdd89d55be7c14329fc4281885f2674ae2ad",
+            "second_observation_sha256": "7238020a8459c6b2390c9ad7527b5c20b21592b2e62c05627d18ac228c23ba04",
+            "second_request_sha256": "b38e113323b0a14f80520b107c730b23c9bee3c7b008b7abe7e3c52516c1d13a",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [],
+            "census": {
+              "running_header": 2,
+              "continuation": 2,
+              "article": 13,
+              "embedded_reference": 2
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
         }
       ]
     },
@@ -1963,6 +2183,443 @@
             "qa_rows_sha256": "0eefdd8cfdcfdbab772384e51808f5fcb11fb00a8f2312019fa1fc8dd9de669b",
             "review_reason": "Visual article-start adjudication; heading and definition/citation are in the same printed article. QA headword_line alone is not proof. Left column after ka reṅ; Liy1 181b2 Vihāra distinguishes place-name predecessor."
           }
+        },
+        {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20la/1",
+          "html_sha256": "568a50e2a62cd4394d8d06bb99ed1181f0f7784360d8a3b31905bf2f6d9c9296",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/k%C4%81%20la/1",
+            "headword": "kā la",
+            "homonym": "1"
+          },
+          "heading_id": "right-02",
+          "heading_item_sha256": "a60d4fcd8c0a2a00f451b3b574162d919fa5dbf2ad73d13b33611f7dee05a9c2",
+          "definition_component_sha256": "6f9418a88bf0550154b913fea8cc41393489697c5949948cf097643ef119eef2",
+          "print_observation": {
+            "heading": "kā la",
+            "homonym": null,
+            "evidence": "kā la is “ein Yakṣa im Gefolge des rNam-sras mduṅ-dmar rta-sṅon-can (Neb 70).”",
+            "identity_context": "A new heading follows ²ka la and precedes kā lā gme.",
+            "page_sha256": "1ee6df841206499aaa65fb653f0f27a6b7c615360bc3e00faa6fa6e93c06d7a7",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "right-02",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20la/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A10"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/k%C4%81%20la/1",
+            "html_sha256": "568a50e2a62cd4394d8d06bb99ed1181f0f7784360d8a3b31905bf2f6d9c9296",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "6f9418a88bf0550154b913fea8cc41393489697c5949948cf097643ef119eef2",
+            "historical_anchors": [],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "right-02",
+              "heading_loc": "kā la",
+              "heading_tibetan": "ཀཱ་ལ",
+              "printed_homonym": null,
+              "bbox": [
+                720,
+                320,
+                849,
+                373
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "ein Yakṣa im Gefolge des rNam-sras mduṅ-dmar rta-sṅon-can (Neb 70). – skt. kāla.",
+              "preceding": "²ka la, unbeweglich.",
+              "following": "kā lā gme.",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              216.60000598430634,
+              518.2199951171875,
+              255.30000598430632,
+              534.1199951171875
+            ],
+            "image_crop": {
+              "item_id": "right-02",
+              "path": "article-69bbeb5cbe7e1130-0014.png",
+              "sha256": "30f45802929e5138bd84fa9b17c58e15b431f40d20a8a3b5e45b5dfb3086b4a1",
+              "pixels": [
+                768,
+                180
+              ],
+              "parent_bbox": [
+                694,
+                296,
+                1462,
+                476
+              ],
+              "pdf_bbox": [
+                208.80000598430632,
+                487.31999511718755,
+                439.2000059843063,
+                541.3199951171875
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "right-02",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20la/1",
+              "component_index": 2,
+              "printed_evidence": "kā la is “ein Yakṣa im Gefolge des rNam-sras mduṅ-dmar rta-sṅon-can (Neb 70).”",
+              "html_evidence": "ein Yakṣa im Gefolge des rNam-sras mduṅ-dmar rta-sṅon-can (Neb 70)",
+              "boundary_evidence": "A new heading follows ²ka la and precedes kā lā gme.",
+              "homonym_evidence": "No printed homonym numeral is visible; the precise entourage and citation distinguish the entry.",
+              "alternatives": "kā la yakṣa nag po is a different deity entry; ka la without the long vowel has different meanings.",
+              "uncertainty": ""
+            },
+            "risks": [
+              "direct-source pathway; no historical anchor"
+            ],
+            "page": "wts_1_34-44-v1-p22",
+            "headword": "kā la",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A10",
+                  "heading_loc": "kā la",
+                  "heading_tibetan": "ཀཱ་ལ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    721,
+                    320,
+                    1298,
+                    433
+                  ],
+                  "column": "right",
+                  "classification": "article",
+                  "printed_evidence": "A Yakṣa in the retinue of rNam-sras mduṅ-dmar rta-sṅon-can (Neb 70); Sanskrit kāla.",
+                  "preceding": "²ka la, unbeweglich.",
+                  "following": "kā lā gme.",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A10",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20la/1",
+                  "component_index": 2,
+                  "printed_evidence": "The Yakṣa belongs to rNam-sras mduṅ-dmar rta-sṅon-can’s retinue, Neb 70.",
+                  "html_evidence": "ein Yakṣa im Gefolge des rNam-sras mduṅ-dmar rta-sṅon-can (Neb 70)",
+                  "boundary_evidence": "Separate start between ²ka la and kā lā gme.",
+                  "homonym_evidence": "No printed numeral; long kā distinguishes the heading from ka la.",
+                  "alternatives": "ka la /1 means black, /2 immovable; kā la yakṣa nag po names a different leader and cites Neb 282.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_1-34",
+            "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+            "physical_page": 44,
+            "image": {
+              "path": "page.png",
+              "sha256": "971114aa5c9e661dd1cc00e67901830debf0f0b66e55a555d1348537238088bd",
+              "pixels": [
+                1462,
+                2098
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  0.0,
+                  0.0,
+                  439,
+                  630.96
+                ],
+                "image_device_origin": [
+                  0,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  -0.6000059843063354,
+                  630.1199951171875
+                ]
+              }
+            },
+            "geometry": {
+              "key": "v1-p22",
+              "volume": 1,
+              "printed_page": 22,
+              "side": "left",
+              "crop": [
+                0.0,
+                0.0,
+                439,
+                630.96
+              ]
+            },
+            "inventory_sha256": "69bbeb5cbe7e1130b7a49206d5ba624632a5a56aaad5142766a53d37e5a495cb",
+            "match_sha256": "2c0e6c57e94bc719fcc187148be5ff4ee2e7eb02bf3fdb73ad00c9c6914f5083",
+            "inventory_request_sha256": "1dca0dcbbf3e1f3c253d91d05a1847d24200b484542c16cc6083f06c3cfacd87",
+            "match_request_sha256": "5aad13a189f135a8e509ec73329f6d64089d98de77923fafcb9a01ad37eb5f68",
+            "second_observation_sha256": "4e50791509b0918cb134d93aeebc294203fd3bc7360ae0aaf71a2d3a9eb7c011",
+            "second_request_sha256": "d3dd225d6ddd8c281dc1b4864ce3c4cced57a1d024891718b566659dd3dfe1ab",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [],
+            "census": {
+              "running_header": 2,
+              "continuation": 2,
+              "article": 15,
+              "embedded_reference": 2
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        },
+        {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20la%20ta/1",
+          "html_sha256": "37f43323b79505b617041f7ee88b50065e5ac45b520676086a9b10a930f2dc34",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20la%20ta/1",
+            "headword": "ka la ta",
+            "homonym": "1"
+          },
+          "heading_id": "right-04",
+          "heading_item_sha256": "ad15c8177ab167be1ccc7e3e37711e8e324877a05b04da8db52fa7f8836358f1",
+          "definition_component_sha256": "afac6851edb72c81a277e5b2ab4f3b152b5c7c0dd58ef8a1c331151bafc246c0",
+          "print_observation": {
+            "heading": "ka la ta",
+            "homonym": null,
+            "evidence": "ka la ta directs the reader to “↑ka nyā.”",
+            "identity_context": "This is a separate heading between kā lā gme and kā la nag po.",
+            "page_sha256": "1ee6df841206499aaa65fb653f0f27a6b7c615360bc3e00faa6fa6e93c06d7a7",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "right-04",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20la%20ta/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A12"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20la%20ta/1",
+            "html_sha256": "37f43323b79505b617041f7ee88b50065e5ac45b520676086a9b10a930f2dc34",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "afac6851edb72c81a277e5b2ab4f3b152b5c7c0dd58ef8a1c331151bafc246c0",
+            "historical_anchors": [
+              "wts_1_34:44:65"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "right-04",
+              "heading_loc": "ka la ta",
+              "heading_tibetan": "ཀ་ལ་ཏ",
+              "printed_homonym": null,
+              "bbox": [
+                721,
+                643,
+                896,
+                690
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "↑ka nyā.",
+              "preceding": "kā lā gme.",
+              "following": "kā la nag po.",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              216.90000598430632,
+              423.1199951171875,
+              269.40000598430635,
+              437.2199951171875
+            ],
+            "image_crop": {
+              "item_id": "right-04",
+              "path": "article-69bbeb5cbe7e1130-0016.png",
+              "sha256": "7287d76653646c95542d3c40af769f5caf6d2d251c1ca82294a284e94e7fce8f",
+              "pixels": [
+                768,
+                108
+              ],
+              "parent_bbox": [
+                694,
+                619,
+                1462,
+                727
+              ],
+              "pdf_bbox": [
+                208.80000598430632,
+                412.0199951171875,
+                439.2000059843063,
+                444.4199951171875
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "right-04",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20la%20ta/1",
+              "component_index": 2,
+              "printed_evidence": "ka la ta directs the reader to “↑ka nyā.”",
+              "html_evidence": "↑ka nyā",
+              "boundary_evidence": "This is a separate heading between kā lā gme and kā la nag po.",
+              "homonym_evidence": "No printed homonym numeral is visible.",
+              "alternatives": "The following cross-reference has a different target.",
+              "uncertainty": ""
+            },
+            "risks": [
+              "short lexical evidence",
+              "non-definition component"
+            ],
+            "page": "wts_1_34-44-v1-p22",
+            "headword": "ka la ta",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A12",
+                  "heading_loc": "ka la ta",
+                  "heading_tibetan": "ཀ་ལ་ཏ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    722,
+                    645,
+                    1007,
+                    690
+                  ],
+                  "column": "right",
+                  "classification": "article",
+                  "printed_evidence": "ka la ta ↑ka nyā.",
+                  "preceding": "kā lā gme.",
+                  "following": "kā la nag po.",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A12",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20la%20ta/1",
+                  "component_index": 2,
+                  "printed_evidence": "The independent heading explicitly points upward to ka nyā.",
+                  "html_evidence": "↑ka nyā",
+                  "boundary_evidence": "A short standalone reference article between kā lā gme and kā la nag po.",
+                  "homonym_evidence": "No printed numeral.",
+                  "alternatives": "Other reference articles on this page have different headings and targets.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_1-34",
+            "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+            "physical_page": 44,
+            "image": {
+              "path": "page.png",
+              "sha256": "971114aa5c9e661dd1cc00e67901830debf0f0b66e55a555d1348537238088bd",
+              "pixels": [
+                1462,
+                2098
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  0.0,
+                  0.0,
+                  439,
+                  630.96
+                ],
+                "image_device_origin": [
+                  0,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  -0.6000059843063354,
+                  630.1199951171875
+                ]
+              }
+            },
+            "geometry": {
+              "key": "v1-p22",
+              "volume": 1,
+              "printed_page": 22,
+              "side": "left",
+              "crop": [
+                0.0,
+                0.0,
+                439,
+                630.96
+              ]
+            },
+            "inventory_sha256": "69bbeb5cbe7e1130b7a49206d5ba624632a5a56aaad5142766a53d37e5a495cb",
+            "match_sha256": "2c0e6c57e94bc719fcc187148be5ff4ee2e7eb02bf3fdb73ad00c9c6914f5083",
+            "inventory_request_sha256": "1dca0dcbbf3e1f3c253d91d05a1847d24200b484542c16cc6083f06c3cfacd87",
+            "match_request_sha256": "5aad13a189f135a8e509ec73329f6d64089d98de77923fafcb9a01ad37eb5f68",
+            "second_observation_sha256": "4e50791509b0918cb134d93aeebc294203fd3bc7360ae0aaf71a2d3a9eb7c011",
+            "second_request_sha256": "d3dd225d6ddd8c281dc1b4864ce3c4cced57a1d024891718b566659dd3dfe1ab",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [],
+            "census": {
+              "running_header": 2,
+              "continuation": 2,
+              "article": 15,
+              "embedded_reference": 2
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
         }
       ]
     },
@@ -60893,6 +61550,770 @@
               "continuation": 2,
               "article": 7,
               "embedded_reference": 1
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        }
+      ]
+    },
+    {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 40,
+      "volume": 1,
+      "printed_page": 15,
+      "side": "right",
+      "crop": [
+        438,
+        0.0,
+        892.44,
+        632.76
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; gutter at x=438 points, displaced from midpoint; no text in cut",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers.",
+      "key": "ka15",
+      "family": "wts_1_34",
+      "accepted": [
+        {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bad/1",
+          "html_sha256": "ce09653f017d698e3ad32a7727f2f4088cb90795bb2b1a6a9a97b3d016c95fca",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20bad/1",
+            "headword": "ka bad",
+            "homonym": "1"
+          },
+          "heading_id": "a3",
+          "heading_item_sha256": "0ba7a2dfd66de9a34c1e445fa0d0d46549d6741b05e3389da6f85054d3cf78b7",
+          "definition_component_sha256": "8d49615a3c0190f88384a7d63ee55044faea6fe6e5c6917a72ab26a7ca3b67dd",
+          "print_observation": {
+            "heading": "ka bad",
+            "homonym": null,
+            "evidence": "“ka bad ↑ka ped.”",
+            "identity_context": "A separate short cross-reference article follows the monk article.",
+            "page_sha256": "2df72d4b6e30c41809fe530e6f737ee08bd84b12238da1a104dfe05a247c5eb9",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "a3",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bad/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A3"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20bad/1",
+            "html_sha256": "ce09653f017d698e3ad32a7727f2f4088cb90795bb2b1a6a9a97b3d016c95fca",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "8d49615a3c0190f88384a7d63ee55044faea6fe6e5c6917a72ab26a7ca3b67dd",
+            "historical_anchors": [
+              "wts_1_34:40:146"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "a3",
+              "heading_loc": "ka bad",
+              "heading_tibetan": "ཀ་བད",
+              "printed_homonym": null,
+              "bbox": [
+                170,
+                1294,
+                334,
+                1344
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "Cross-reference “↑ka ped.”",
+              "preceding": "ka ba śākya dbaṅ phyug",
+              "following": "ka bittha",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              489.00000004768367,
+              227.88001708984376,
+              538.2000000476837,
+              242.88001708984376
+            ],
+            "image_crop": {
+              "item_id": "a3",
+              "path": "article-3abd8526fac47500-0005.png",
+              "sha256": "b9f7db6fa835d7890f1a6cba97a4753bb50445d2cba39038d6d18110034aeec0",
+              "pixels": [
+                616,
+                108
+              ],
+              "parent_bbox": [
+                144,
+                1270,
+                760,
+                1378
+              ],
+              "pdf_bbox": [
+                481.2000000476837,
+                217.68001708984377,
+                666.0000000476837,
+                250.08001708984375
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "a3",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bad/1",
+              "component_index": 2,
+              "printed_evidence": "“ka bad ↑ka ped.”",
+              "html_evidence": "↑ka ped",
+              "boundary_evidence": "A separate short cross-reference article follows the monk article.",
+              "homonym_evidence": "The spelling of the heading and the reference target jointly identify it.",
+              "alternatives": "ka bed also points to ka ped but has a different heading.",
+              "uncertainty": ""
+            },
+            "risks": [
+              "short lexical evidence",
+              "non-definition component"
+            ],
+            "page": "wts_1_34-40-ka15",
+            "headword": "ka bad",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A3",
+                  "heading_loc": "ka bad",
+                  "heading_tibetan": "ཀ་བད་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    169,
+                    1299,
+                    434,
+                    1346
+                  ],
+                  "column": "left",
+                  "classification": "article",
+                  "printed_evidence": "Independent heading followed by ↑ka ped.",
+                  "preceding": "ka ba śākya dbaṅ phyug examples",
+                  "following": "ka bittha",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A3",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bad/1",
+                  "component_index": 2,
+                  "printed_evidence": "ka bad directs upward to ka ped.",
+                  "html_evidence": "↑ka ped",
+                  "boundary_evidence": "Separate bold heading between ka ba śākya dbaṅ phyug and ka bittha.",
+                  "homonym_evidence": "No printed numeral; /1 is editorial.",
+                  "alternatives": "ka bed also points to ka ped, but has a different printed heading.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_1-34",
+            "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+            "physical_page": 40,
+            "image": {
+              "path": "page.png",
+              "sha256": "a25cad6acb92e824a477d07bda75bd24fd8e2d459275efa2109c80f6ee6b4f6f",
+              "pixels": [
+                1511,
+                2098
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  438,
+                  0.0,
+                  892.44,
+                  632.76
+                ],
+                "image_device_origin": [
+                  1456,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  -1.2000000476837158,
+                  631.0800170898438
+                ]
+              }
+            },
+            "geometry": {
+              "key": "ka15",
+              "volume": 1,
+              "printed_page": 15,
+              "side": "right",
+              "crop": [
+                438,
+                0.0,
+                892.44,
+                632.76
+              ]
+            },
+            "inventory_sha256": "3abd8526fac47500579899c314d9d6a3b9b8bcf30a00dabacc75f2905f2f939a",
+            "match_sha256": "2e67a6de57382f9c2fdea9cb35cec93e955105390ac1c3f7971f33573cd969a5",
+            "inventory_request_sha256": "a7cbbf49ebefcd61037d9b85fe34d7c659288d96d9228bfac70b5b4d986ab134",
+            "match_request_sha256": "d63d24654abebb71d8fb96f92a42c8ed70f7715af0b2e14f29ffd1d839809f50",
+            "second_observation_sha256": "746a61b561e8eaa218f365eb4c77ba097ea3394d2fdb6ade333638a81e17454b",
+            "second_request_sha256": "e36904a4b4eecb9fb029e9fb57a0942a3c25141a80f42b61ef9ce9d846ae08ca",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [
+              {
+                "item_id": "a5",
+                "reason": "invalid or ambiguous quotation quarantined",
+                "before": {
+                  "item_id": "a5",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20be%20ko%20be/1",
+                  "component_index": 12,
+                  "printed_evidence": "“Kurzf. kab kob steif, hart”; the brDa explanation compares it with dried animal skin.",
+                  "html_evidence": "kab kob pa ≅ bskams nas ko ba gyoṅ ba",
+                  "boundary_evidence": "An independent heading follows ka bittha.",
+                  "homonym_evidence": "The kab kob variant and distinctive dried-skin lexical explanation establish identity.",
+                  "alternatives": "Not a neighbouring ka be article.",
+                  "uncertainty": "The HTML definition does not reproduce the printed parenthetical ko ba."
+                },
+                "after": {
+                  "item_id": "a5",
+                  "outcome": "insufficient",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20be%20ko%20be/1",
+                  "component_index": 12,
+                  "printed_evidence": "“Kurzf. kab kob steif, hart”; the brDa explanation compares it with dried animal skin.",
+                  "html_evidence": "kab kob pa ≅ bskams nas ko ba gyoṅ ba",
+                  "boundary_evidence": "An independent heading follows ka bittha.",
+                  "homonym_evidence": "The kab kob variant and distinctive dried-skin lexical explanation establish identity.",
+                  "alternatives": "Not a neighbouring ka be article.",
+                  "uncertainty": "The HTML definition does not reproduce the printed parenthetical ko ba.; exact HTML quotation failed; quarantined, not supported"
+                }
+              }
+            ],
+            "census": {
+              "running_header": 2,
+              "continuation": 3,
+              "article": 14
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        },
+        {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bed/1",
+          "html_sha256": "46c0666ce2399cc2389d1546280c81cd3563db056006a456d70deeec2bf2c250",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20bed/1",
+            "headword": "ka bed",
+            "homonym": "1"
+          },
+          "heading_id": "a7",
+          "heading_item_sha256": "d78e89c111600b84941a80282cf458048260663f521622fda90bd82ceb5cf4af",
+          "definition_component_sha256": "4234b251f23ed573e1f24734e2836d6e616820787da25278ffda85643fa2f5dd",
+          "print_observation": {
+            "heading": "ka bed",
+            "homonym": null,
+            "evidence": "“ka bed ↑ka ped.”",
+            "identity_context": "A separate cross-reference article follows the end of the Kabul quotation.",
+            "page_sha256": "2df72d4b6e30c41809fe530e6f737ee08bd84b12238da1a104dfe05a247c5eb9",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "a7",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bed/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A7"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20bed/1",
+            "html_sha256": "46c0666ce2399cc2389d1546280c81cd3563db056006a456d70deeec2bf2c250",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "4234b251f23ed573e1f24734e2836d6e616820787da25278ffda85643fa2f5dd",
+            "historical_anchors": [
+              "wts_1_34:40:172"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "a7",
+              "heading_loc": "ka bed",
+              "heading_tibetan": "ཀ་བེད",
+              "printed_homonym": null,
+              "bbox": [
+                793,
+                301,
+                951,
+                351
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "Cross-reference “↑ka ped.”",
+              "preceding": "End of ka be la quotation.",
+              "following": "ka bo ta",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              675.9000000476836,
+              525.7800170898438,
+              723.3000000476837,
+              540.7800170898438
+            ],
+            "image_crop": {
+              "item_id": "a7",
+              "path": "article-3abd8526fac47500-0010.png",
+              "sha256": "5b3608987e71d57bdf40b09f0c7b0641dab52ab5661451b8b2be81efb5c3eb1c",
+              "pixels": [
+                751,
+                110
+              ],
+              "parent_bbox": [
+                760,
+                277,
+                1511,
+                387
+              ],
+              "pdf_bbox": [
+                666.0000000476837,
+                514.9800170898437,
+                891.3000000476837,
+                547.9800170898437
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "a7",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bed/1",
+              "component_index": 2,
+              "printed_evidence": "“ka bed ↑ka ped.”",
+              "html_evidence": "↑ka ped",
+              "boundary_evidence": "A separate cross-reference article follows the end of the Kabul quotation.",
+              "homonym_evidence": "The heading spelling and reference target jointly identify it.",
+              "alternatives": "ka bad has the same target but a different heading.",
+              "uncertainty": ""
+            },
+            "risks": [
+              "short lexical evidence",
+              "non-definition component"
+            ],
+            "page": "wts_1_34-40-ka15",
+            "headword": "ka bed",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A7",
+                  "heading_loc": "ka bed",
+                  "heading_tibetan": "ཀ་བེད་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    792,
+                    303,
+                    1056,
+                    350
+                  ],
+                  "column": "right",
+                  "classification": "article",
+                  "printed_evidence": "Independent heading followed by ↑ka ped.",
+                  "preceding": "Continuation of ka be la",
+                  "following": "ka bo ta",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A7",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bed/1",
+                  "component_index": 2,
+                  "printed_evidence": "ka bed directs upward to ka ped.",
+                  "html_evidence": "↑ka ped",
+                  "boundary_evidence": "Separate heading after the column continuation and before ka bo ta.",
+                  "homonym_evidence": "No printed numeral; /1 is editorial.",
+                  "alternatives": "ka bad has the same target but a different printed heading.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_1-34",
+            "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+            "physical_page": 40,
+            "image": {
+              "path": "page.png",
+              "sha256": "a25cad6acb92e824a477d07bda75bd24fd8e2d459275efa2109c80f6ee6b4f6f",
+              "pixels": [
+                1511,
+                2098
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  438,
+                  0.0,
+                  892.44,
+                  632.76
+                ],
+                "image_device_origin": [
+                  1456,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  -1.2000000476837158,
+                  631.0800170898438
+                ]
+              }
+            },
+            "geometry": {
+              "key": "ka15",
+              "volume": 1,
+              "printed_page": 15,
+              "side": "right",
+              "crop": [
+                438,
+                0.0,
+                892.44,
+                632.76
+              ]
+            },
+            "inventory_sha256": "3abd8526fac47500579899c314d9d6a3b9b8bcf30a00dabacc75f2905f2f939a",
+            "match_sha256": "2e67a6de57382f9c2fdea9cb35cec93e955105390ac1c3f7971f33573cd969a5",
+            "inventory_request_sha256": "a7cbbf49ebefcd61037d9b85fe34d7c659288d96d9228bfac70b5b4d986ab134",
+            "match_request_sha256": "d63d24654abebb71d8fb96f92a42c8ed70f7715af0b2e14f29ffd1d839809f50",
+            "second_observation_sha256": "746a61b561e8eaa218f365eb4c77ba097ea3394d2fdb6ade333638a81e17454b",
+            "second_request_sha256": "e36904a4b4eecb9fb029e9fb57a0942a3c25141a80f42b61ef9ce9d846ae08ca",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [
+              {
+                "item_id": "a5",
+                "reason": "invalid or ambiguous quotation quarantined",
+                "before": {
+                  "item_id": "a5",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20be%20ko%20be/1",
+                  "component_index": 12,
+                  "printed_evidence": "“Kurzf. kab kob steif, hart”; the brDa explanation compares it with dried animal skin.",
+                  "html_evidence": "kab kob pa ≅ bskams nas ko ba gyoṅ ba",
+                  "boundary_evidence": "An independent heading follows ka bittha.",
+                  "homonym_evidence": "The kab kob variant and distinctive dried-skin lexical explanation establish identity.",
+                  "alternatives": "Not a neighbouring ka be article.",
+                  "uncertainty": "The HTML definition does not reproduce the printed parenthetical ko ba."
+                },
+                "after": {
+                  "item_id": "a5",
+                  "outcome": "insufficient",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20be%20ko%20be/1",
+                  "component_index": 12,
+                  "printed_evidence": "“Kurzf. kab kob steif, hart”; the brDa explanation compares it with dried animal skin.",
+                  "html_evidence": "kab kob pa ≅ bskams nas ko ba gyoṅ ba",
+                  "boundary_evidence": "An independent heading follows ka bittha.",
+                  "homonym_evidence": "The kab kob variant and distinctive dried-skin lexical explanation establish identity.",
+                  "alternatives": "Not a neighbouring ka be article.",
+                  "uncertainty": "The HTML definition does not reproduce the printed parenthetical ko ba.; exact HTML quotation failed; quarantined, not supported"
+                }
+              }
+            ],
+            "census": {
+              "running_header": 2,
+              "continuation": 3,
+              "article": 14
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        },
+        {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bo%20ta/1",
+          "html_sha256": "7eb6becc4cfd82a6867068604b837ec5ed51d9e371a02eec6ffcc2204e4e552c",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20bo%20ta/1",
+            "headword": "ka bo ta",
+            "homonym": "1"
+          },
+          "heading_id": "a8",
+          "heading_item_sha256": "345ff4329f94f24cb2b9032afbb0c3d64ba93c131529c492b872321e9c335d2c",
+          "definition_component_sha256": "236b8c3a699518084f4287b82ad08a16d9601b1651a52e2ea66b86bca3874cc9",
+          "print_observation": {
+            "heading": "ka bo ta",
+            "homonym": null,
+            "evidence": "“ka bo ta ↑ka po ta.”",
+            "identity_context": "A separate cross-reference article follows ka bed.",
+            "page_sha256": "2df72d4b6e30c41809fe530e6f737ee08bd84b12238da1a104dfe05a247c5eb9",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "a8",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bo%20ta/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A8"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/ka%20bo%20ta/1",
+            "html_sha256": "7eb6becc4cfd82a6867068604b837ec5ed51d9e371a02eec6ffcc2204e4e552c",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "236b8c3a699518084f4287b82ad08a16d9601b1651a52e2ea66b86bca3874cc9",
+            "historical_anchors": [
+              "wts_1_34:40:173"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "a8",
+              "heading_loc": "ka bo ta",
+              "heading_tibetan": "ཀ་བོ་ཏ",
+              "printed_homonym": null,
+              "bbox": [
+                792,
+                363,
+                970,
+                413
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "Cross-reference “↑ka po ta.”",
+              "preceding": "ka bed",
+              "following": "ka brag",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              675.6000000476837,
+              507.1800170898438,
+              729.0000000476837,
+              522.1800170898438
+            ],
+            "image_crop": {
+              "item_id": "a8",
+              "path": "article-3abd8526fac47500-0011.png",
+              "sha256": "2772d51ef30c88a4bc5034631e873c2f48677caaacb95da54dfe7a209268ec55",
+              "pixels": [
+                751,
+                111
+              ],
+              "parent_bbox": [
+                760,
+                339,
+                1511,
+                450
+              ],
+              "pdf_bbox": [
+                666.0000000476837,
+                496.08001708984375,
+                891.3000000476837,
+                529.3800170898437
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "a8",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bo%20ta/1",
+              "component_index": 2,
+              "printed_evidence": "“ka bo ta ↑ka po ta.”",
+              "html_evidence": "↑ka po ta",
+              "boundary_evidence": "A separate cross-reference article follows ka bed.",
+              "homonym_evidence": "The printed heading and reference target jointly identify the witness.",
+              "alternatives": "Not ka bittha, which points to ka pittha.",
+              "uncertainty": ""
+            },
+            "risks": [
+              "short lexical evidence",
+              "non-definition component"
+            ],
+            "page": "wts_1_34-40-ka15",
+            "headword": "ka bo ta",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A8",
+                  "heading_loc": "ka bo ta",
+                  "heading_tibetan": "ཀ་བོ་ཏ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    791,
+                    364,
+                    1101,
+                    412
+                  ],
+                  "column": "right",
+                  "classification": "article",
+                  "printed_evidence": "Independent heading followed by ↑ka po ta.",
+                  "preceding": "ka bed",
+                  "following": "ka brag",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A8",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20bo%20ta/1",
+                  "component_index": 2,
+                  "printed_evidence": "ka bo ta directs upward to ka po ta.",
+                  "html_evidence": "↑ka po ta",
+                  "boundary_evidence": "Separate heading between ka bed and ka brag.",
+                  "homonym_evidence": "No printed numeral; /1 is editorial.",
+                  "alternatives": "Other reference-only candidates have different targets.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_1-34",
+            "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+            "physical_page": 40,
+            "image": {
+              "path": "page.png",
+              "sha256": "a25cad6acb92e824a477d07bda75bd24fd8e2d459275efa2109c80f6ee6b4f6f",
+              "pixels": [
+                1511,
+                2098
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  438,
+                  0.0,
+                  892.44,
+                  632.76
+                ],
+                "image_device_origin": [
+                  1456,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  -1.2000000476837158,
+                  631.0800170898438
+                ]
+              }
+            },
+            "geometry": {
+              "key": "ka15",
+              "volume": 1,
+              "printed_page": 15,
+              "side": "right",
+              "crop": [
+                438,
+                0.0,
+                892.44,
+                632.76
+              ]
+            },
+            "inventory_sha256": "3abd8526fac47500579899c314d9d6a3b9b8bcf30a00dabacc75f2905f2f939a",
+            "match_sha256": "2e67a6de57382f9c2fdea9cb35cec93e955105390ac1c3f7971f33573cd969a5",
+            "inventory_request_sha256": "a7cbbf49ebefcd61037d9b85fe34d7c659288d96d9228bfac70b5b4d986ab134",
+            "match_request_sha256": "d63d24654abebb71d8fb96f92a42c8ed70f7715af0b2e14f29ffd1d839809f50",
+            "second_observation_sha256": "746a61b561e8eaa218f365eb4c77ba097ea3394d2fdb6ade333638a81e17454b",
+            "second_request_sha256": "e36904a4b4eecb9fb029e9fb57a0942a3c25141a80f42b61ef9ce9d846ae08ca",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [
+              {
+                "item_id": "a5",
+                "reason": "invalid or ambiguous quotation quarantined",
+                "before": {
+                  "item_id": "a5",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20be%20ko%20be/1",
+                  "component_index": 12,
+                  "printed_evidence": "“Kurzf. kab kob steif, hart”; the brDa explanation compares it with dried animal skin.",
+                  "html_evidence": "kab kob pa ≅ bskams nas ko ba gyoṅ ba",
+                  "boundary_evidence": "An independent heading follows ka bittha.",
+                  "homonym_evidence": "The kab kob variant and distinctive dried-skin lexical explanation establish identity.",
+                  "alternatives": "Not a neighbouring ka be article.",
+                  "uncertainty": "The HTML definition does not reproduce the printed parenthetical ko ba."
+                },
+                "after": {
+                  "item_id": "a5",
+                  "outcome": "insufficient",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20be%20ko%20be/1",
+                  "component_index": 12,
+                  "printed_evidence": "“Kurzf. kab kob steif, hart”; the brDa explanation compares it with dried animal skin.",
+                  "html_evidence": "kab kob pa ≅ bskams nas ko ba gyoṅ ba",
+                  "boundary_evidence": "An independent heading follows ka bittha.",
+                  "homonym_evidence": "The kab kob variant and distinctive dried-skin lexical explanation establish identity.",
+                  "alternatives": "Not a neighbouring ka be article.",
+                  "uncertainty": "The HTML definition does not reproduce the printed parenthetical ko ba.; exact HTML quotation failed; quarantined, not supported"
+                }
+              }
+            ],
+            "census": {
+              "running_header": 2,
+              "continuation": 3,
+              "article": 14
             },
             "inputs": {
               "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",

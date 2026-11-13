@@ -15,7 +15,9 @@
         632.76
       ],
       "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; gutter at x=438 points, displaced from midpoint; no text in cut",
-      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers.",
+      "key": "ka14",
+      "family": "wts_1_34"
     },
     "ka15": {
       "source": "WtS_1-34",
@@ -31,7 +33,9 @@
         632.76
       ],
       "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; gutter at x=438 points, displaced from midpoint; no text in cut",
-      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers.",
+      "key": "ka15",
+      "family": "wts_1_34"
     },
     "v1-p16": {
       "source": "WtS_1-34",
@@ -47,7 +51,9 @@
         634.44
       ],
       "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=441 PDF points; text columns on both sides clear of cut.",
-      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page.",
+      "key": "v1-p16",
+      "family": "wts_1_34"
     },
     "v1-p17": {
       "source": "WtS_1-34",
@@ -63,7 +69,9 @@
         634.44
       ],
       "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=441 PDF points; text columns on both sides clear of cut.",
-      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page.",
+      "key": "v1-p17",
+      "family": "wts_1_34"
     },
     "v1-p18": {
       "source": "WtS_1-34",
@@ -79,7 +87,9 @@
         632.76
       ],
       "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=439 PDF points; text columns on both sides clear of cut.",
-      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page.",
+      "key": "v1-p18",
+      "family": "wts_1_34"
     },
     "v1-p19": {
       "source": "WtS_1-34",
@@ -95,7 +105,9 @@
         632.76
       ],
       "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=439 PDF points; text columns on both sides clear of cut.",
-      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page.",
+      "key": "v1-p19",
+      "family": "wts_1_34"
     },
     "v1-p20": {
       "source": "WtS_1-34",
@@ -111,7 +123,9 @@
         629.28
       ],
       "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=438 PDF points; text columns on both sides clear of cut.",
-      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page.",
+      "key": "v1-p20",
+      "family": "wts_1_34"
     },
     "v1-p22": {
       "source": "WtS_1-34",
@@ -127,7 +141,9 @@
         630.96
       ],
       "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=439 PDF points; text columns on both sides clear of cut.",
-      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page.",
+      "key": "v1-p22",
+      "family": "wts_1_34"
     },
     "v1-p23": {
       "source": "WtS_1-34",
@@ -143,7 +159,9 @@
         630.96
       ],
       "geometry_review": "Full outer margins and visible folio retained; no rotation. Empty gutter inspected at x=439 PDF points; text columns on both sides clear of cut.",
-      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page."
+      "page_evidence": "Visible printed folio checked in registered scan; physical page index counted directly. Heading positions checked below running header, including articles continuing from preceding page.",
+      "key": "v1-p23",
+      "family": "wts_1_34"
     },
     "v1-p100": {
       "source": "WtS_1-34",
@@ -159,7 +177,9 @@
         629.28
       ],
       "geometry_review": "Agent inspected the complete spread, folios 100–101 and central gutter. Split at x=445.02 points in blank gutter; each crop retains both printed columns and folio.",
-      "page_evidence": "Agent image inspection: volume 1, printed page 100, left side of physical page 86. Running headers and continued articles excluded."
+      "page_evidence": "Agent image inspection: volume 1, printed page 100, left side of physical page 86. Running headers and continued articles excluded.",
+      "key": "v1-p100",
+      "family": "wts_1_34"
     },
     "v1-p101": {
       "source": "WtS_1-34",
@@ -175,7 +195,9 @@
         629.28
       ],
       "geometry_review": "Agent inspected the complete spread, folios 100–101 and central gutter. Split at x=445.02 points in blank gutter; each crop retains both printed columns and folio.",
-      "page_evidence": "Agent image inspection: volume 1, printed page 101, right side of physical page 86. Running headers and continued articles excluded."
+      "page_evidence": "Agent image inspection: volume 1, printed page 101, right side of physical page 86. Running headers and continued articles excluded.",
+      "key": "v1-p101",
+      "family": "wts_1_34"
     },
     "v1-p234": {
       "source": "WtS_1-34",
@@ -191,7 +213,9 @@
         632.76
       ],
       "geometry_review": "Agent inspected visible folios 234–235 and all four columns. Vertical gutter at x=446.22 PDF points is clear of text; both page crops retain outer margins and folios.",
-      "page_evidence": "Agent image inspection of registered spread, printed folio 234, volume 1; running headers excluded and intercolumn/page continuations distinguished."
+      "page_evidence": "Agent image inspection of registered spread, printed folio 234, volume 1; running headers excluded and intercolumn/page continuations distinguished.",
+      "key": "v1-p234",
+      "family": "wts_1_34"
     },
     "v1-p235": {
       "source": "WtS_1-34",
@@ -207,7 +231,9 @@
         632.76
       ],
       "geometry_review": "Agent inspected visible folios 234–235 and all four columns. Vertical gutter at x=446.22 PDF points is clear of text; both page crops retain outer margins and folios.",
-      "page_evidence": "Agent image inspection of registered spread, printed folio 235, volume 1; running headers excluded and intercolumn/page continuations distinguished."
+      "page_evidence": "Agent image inspection of registered spread, printed folio 235, volume 1; running headers excluded and intercolumn/page continuations distinguished.",
+      "key": "v1-p235",
+      "family": "wts_1_34"
     },
     "v1-p90": {
       "source": "WtS_1-34",
@@ -223,7 +249,9 @@
         629.28
       ],
       "geometry_review": "Agent inspected visible folios 90–91 and all four columns. Central gutter at x=445.02 PDF points separates the pages without clipping text.",
-      "page_evidence": "Agent image inspection of registered spread, volume 1 printed folio 90; running headers and column continuations excluded."
+      "page_evidence": "Agent image inspection of registered spread, volume 1 printed folio 90; running headers and column continuations excluded.",
+      "key": "v1-p90",
+      "family": "wts_1_34"
     },
     "v1-p91": {
       "source": "WtS_1-34",
@@ -239,7 +267,9 @@
         629.28
       ],
       "geometry_review": "Agent inspected visible folios 90–91 and all four columns. Central gutter at x=445.02 PDF points separates the pages without clipping text.",
-      "page_evidence": "Agent image inspection of registered spread, volume 1 printed folio 91; running headers and column continuations excluded."
+      "page_evidence": "Agent image inspection of registered spread, volume 1 printed folio 91; running headers and column continuations excluded.",
+      "key": "v1-p91",
+      "family": "wts_1_34"
     },
     "v1-p58": {
       "source": "WtS_1-34",
@@ -255,7 +285,9 @@
         630.96
       ],
       "geometry_review": "Agent inspected the complete registered spread, visible folios 58–59 and four text columns. Gutter at x=445.62 PDF points is clear of text. These are measured page sides, not an inferred pagination offset.",
-      "page_evidence": "Agent image inspection of printed volume 1 folio 58; independent headings below running headers. No printed heading homonym numerals observed."
+      "page_evidence": "Agent image inspection of printed volume 1 folio 58; independent headings below running headers. No printed heading homonym numerals observed.",
+      "key": "v1-p58",
+      "family": "wts_1_34"
     },
     "v1-p59": {
       "source": "WtS_1-34",
@@ -271,7 +303,9 @@
         630.96
       ],
       "geometry_review": "Agent inspected the complete registered spread, visible folios 58–59 and four text columns. Gutter at x=445.62 PDF points is clear of text. These are measured page sides, not an inferred pagination offset.",
-      "page_evidence": "Agent image inspection of printed volume 1 folio 59; independent headings below running headers. No printed heading homonym numerals observed."
+      "page_evidence": "Agent image inspection of printed volume 1 folio 59; independent headings below running headers. No printed heading homonym numerals observed.",
+      "key": "v1-p59",
+      "family": "wts_1_34"
     },
     "v1-p126": {
       "source": "WtS_1-34",
@@ -287,7 +321,9 @@
         629.28
       ],
       "geometry_review": "Agent inspected the complete source spread, visible folios 126 and 127 and all four columns. The central gutter at 445.02 PDF points is clear of text.",
-      "page_evidence": "Agent source-image inspection of volume 1 printed folio 126. Independent headings distinguished from running headers and continuations. No printed heading homonym numerals observed."
+      "page_evidence": "Agent source-image inspection of volume 1 printed folio 126. Independent headings distinguished from running headers and continuations. No printed heading homonym numerals observed.",
+      "key": "v1-p126",
+      "family": "wts_1_34"
     },
     "v1-p127": {
       "source": "WtS_1-34",
@@ -303,7 +339,9 @@
         629.28
       ],
       "geometry_review": "Agent inspected the complete source spread, visible folios 126 and 127 and all four columns. The central gutter at 445.02 PDF points is clear of text.",
-      "page_evidence": "Agent source-image inspection of volume 1 printed folio 127. Independent headings distinguished from running headers and continuations. No printed heading homonym numerals observed."
+      "page_evidence": "Agent source-image inspection of volume 1 printed folio 127. Independent headings distinguished from running headers and continuations. No printed heading homonym numerals observed.",
+      "key": "v1-p127",
+      "family": "wts_1_34"
     },
     "v1-p162": {
       "source": "WtS_1-34",
@@ -319,7 +357,9 @@
         629.28
       ],
       "geometry_review": "Agent inspected the complete source spread, visible folios 162 and 163 and all four columns. The central gutter at 445.02 PDF points is clear of text.",
-      "page_evidence": "Source-image inspection distinguishes independent headings from running headers and the continuation of dka’ spyad. No printed heading homonym numerals observed."
+      "page_evidence": "Source-image inspection distinguishes independent headings from running headers and the continuation of dka’ spyad. No printed heading homonym numerals observed.",
+      "key": "v1-p162",
+      "family": "wts_1_34"
     },
     "v1-p163": {
       "source": "WtS_1-34",
@@ -335,7 +375,9 @@
         629.28
       ],
       "geometry_review": "Agent inspected the complete source spread, visible folios 162 and 163 and all four columns. The central gutter at 445.02 PDF points is clear of text.",
-      "page_evidence": "Source-image inspection distinguishes independent headings from running headers and the continuation of dka’ spyad. No printed heading homonym numerals observed."
+      "page_evidence": "Source-image inspection distinguishes independent headings from running headers and the continuation of dka’ spyad. No printed heading homonym numerals observed.",
+      "key": "v1-p163",
+      "family": "wts_1_34"
     },
     "v1-p352": {
       "source": "WtS_1-34",
@@ -351,7 +393,9 @@
         630.96
       ],
       "geometry_review": "Agent inspected the entire four-column registered spread, visible printed folios 352 and 353. Central gutter at445.62 PDF points is clear of printed text.",
-      "page_evidence": "Independent headings read in visual order; running headers, top-of-column continuations and numbered senses distinguished. No printed heading homonym numerals observed."
+      "page_evidence": "Independent headings read in visual order; running headers, top-of-column continuations and numbered senses distinguished. No printed heading homonym numerals observed.",
+      "key": "v1-p352",
+      "family": "wts_1_34"
     },
     "v1-p353": {
       "source": "WtS_1-34",
@@ -367,7 +411,9 @@
         630.96
       ],
       "geometry_review": "Agent inspected the entire four-column registered spread, visible printed folios 352 and 353. Central gutter at445.62 PDF points is clear of printed text.",
-      "page_evidence": "Independent headings read in visual order; running headers, top-of-column continuations and numbered senses distinguished. No printed heading homonym numerals observed."
+      "page_evidence": "Independent headings read in visual order; running headers, top-of-column continuations and numbered senses distinguished. No printed heading homonym numerals observed.",
+      "key": "v1-p353",
+      "family": "wts_1_34"
     },
     "printed-5b6225d4287f4608fbd9e612fa8c35e93700c3f0babdf712fd62eb9d40ace0b2": {
       "key": "printed-5b6225d4287f4608fbd9e612fa8c35e93700c3f0babdf712fd62eb9d40ace0b2",
@@ -944,6 +990,24 @@
       ],
       "geometry_review": "Original source layout visually checked in commissioning contact sheet: one printed page with two text columns, full margins and one central printed folio. No spread cut.",
       "page_evidence": "Printed folio read directly; no volume or pagination offset inferred."
+    },
+    "printed-00d23d01d67a759fd9b89fe23ed8b3cd1252028513e0dba01906d1cbd3f151be": {
+      "key": "printed-00d23d01d67a759fd9b89fe23ed8b3cd1252028513e0dba01906d1cbd3f151be",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 43,
+      "crop": [
+        438,
+        0.0,
+        890.04,
+        629.28
+      ],
+      "side": "right",
+      "volume": null,
+      "printed_page": null,
+      "geometry_review": "Complement of the previously source-reviewed full-height gutter crop: v1-p20",
+      "page_evidence": "Registered physical scan; printed volume and folio not inferred."
     }
   },
   "destinations": {
