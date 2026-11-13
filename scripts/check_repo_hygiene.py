@@ -69,6 +69,9 @@ PROJECT_LOCAL_IMPORTS = {
 # docs/BADW_SOURCE_INTEGRATION.md and requirements-badw-model.txt.
 FILE_NON_STDLIB_IMPORTS = {
     "scripts/badw_model_worker.py": {"openai", "jsonschema", "pymupdf"},
+    # Private scan trial reuses existing rasterisation and token-count transport;
+    # it has no generation or publication path.
+    "scripts/prepare_badw_scan_trial.py": {"openai", "pymupdf"},
     # The detached controller uses the worker's existing optional SDK transport
     # with automatic retries disabled; no additional dependency is introduced.
     "scripts/run_badw_linking_campaign.py": {"openai"},

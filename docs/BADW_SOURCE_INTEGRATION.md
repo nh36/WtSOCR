@@ -1472,3 +1472,39 @@ counting retain their reservations. Fake clients exercise these paths without
 network calls. This does not retrospectively release any old hold: five
 unresolved requests still reserve US$7.6618; returned usage is US$12.274607895,
 leaving US$0.063592105 under the unchanged US$20 cap. The paid campaign is stopped.
+
+The isolated single-scan experiment is prepared with
+`python3 scripts/prepare_badw_scan_trial.py prepare`; exact request-bound counts
+are obtained with
+`PYTHONPATH=work/badw-model-deps python3 scripts/prepare_badw_scan_trial.py count`.
+It has no generation or publication path. Its private frozen sample and
+source-first census are in `work/single-scan-trial-20261113`: 12 physical scans,
+three per family, excluding previous comparison pages. All starts are counted,
+including references, numbered homonyms, continuation-only scans and one spread.
+The 81 starts include 67 acquired HTML counterparts; 62 of those IDs occur in
+the prepared candidate lists. The 14 remaining starts have PDF-only acquisition.
+The sample is fixed; missing IDs must be scored as retrieval failures rather
+than inserted after inspecting the answers. Existing campaign caches cover none
+of these 12 scans, so they provide no paired model comparison on this sample.
+
+The three OCR runs and embedded PDF text are fallible retrieval metadata only.
+No OCR reconciliation or text correction is performed. Requests carry one
+checksum-bound, 240-dpi source image, candidate passages and exact reference
+components. Source-first answers are not included in requests. The model must
+enumerate starts and distinguish printed sides from text columns, continuations
+and reference targets. Output parsing checks supplied IDs, evidence, outcomes
+and coordinates; source-audited scoring checks identity and printed side
+separately from box quality. A complete scan requires every start to have a
+correct disposition, with every linkable identity assigned correctly.
+
+With a 6,000-token output ceiling per scan, the exact compact input counts total
+379,074 tokens, versus 392,872 for all four full text extracts. At the documented
+GPT-6 Luna tariffs checked on 2026-11-13, using the worker's 5% plus 256-token
+margin and highest input cache-write tariff, the conservative 12-request caps
+are US$0.0861385 standard or US$0.04306925 Batch. Batch model support is
+documented; account quota/availability is not established. These are proposed
+generation costs, not expenditure. No generation was submitted and no campaign
+reservation was changed. Generation awaits a spending decision. Trial output
+has no certification authority; any accepted links must pass the existing
+certified-only publication path. Source-review time was not instrumented for
+this preparation and must not be reported as a measured duration.
