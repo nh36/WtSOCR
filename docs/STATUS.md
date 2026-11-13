@@ -37,7 +37,7 @@ are superseded. These counts describe certificates; browser/build validation
 is recorded with each published milestone. Review provenance distinguishes agent
 image inspection from independent human review. The OCR release is unchanged.
 The separate `data/badw_html_print_provisional.generated.json` contains
-**262 additional provisional links on 35 physical scans**.
+**532 additional provisional links on 62 physical scans**.
 These use two model source readings, exact HTML/component evidence and registered
 scan checksums. The reader labels them “Suggested original printed page —
 automatically matched, not yet verified” and permits hiding them. They never

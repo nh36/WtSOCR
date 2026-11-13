@@ -63,6 +63,32 @@ def test_complete_fixture_loop_resume_and_nonpromotion(campaign):
     assert c.status(root)['corpus_physical_scans']==3466
 
 
+def test_status_observes_publication_lock_and_clears_after_exit(campaign):
+    root,_,_=campaign
+    with (root/'publication.lock').open('a') as lock:
+        c.fcntl.flock(lock,c.fcntl.LOCK_EX|c.fcntl.LOCK_NB)
+        state=c.status(root)
+        assert state['process_running']
+        assert state['publication_running']
+        assert state['process_state']=='publishing'
+    assert not c.status(root)['process_running']
+
+
+def test_status_counts_finished_reader_instead_of_unpublished_proposals(campaign):
+    root,_,_=campaign
+    output=root/'finished'
+    (output/'reader').mkdir(parents=True)
+    c.w.write(output/'reader/print_facsimiles.json',dict(witnesses=['certified']))
+    c.w.write(output/'reader/provisional_print_links.json',dict(witnesses=['one','two']))
+    assert c.status(root)['published_reader_provisional_links'] is None
+    with c.database(root) as db:
+        c.event(db,None,'local_reader_published',dict(output=str(output)))
+    state=c.status(root)
+    assert state['published_reader_certified_links']==1
+    assert state['published_reader_provisional_links']==2
+    assert state['model_supported_proposals']==0
+
+
 def test_stop_after_inventory_reuses_paid_equivalent_cache(campaign,monkeypatch):
     root,fixtures,calls=campaign
     execute=c.w.execute

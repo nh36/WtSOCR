@@ -64,6 +64,19 @@ def test_competing_overlapping_heading_is_not_hidden():
     assert r.reconcile(p['inventory'],match(),second)[0]['state']=='exception'
 
 
+def test_nested_reference_abstention_does_not_veto_unique_article():
+    p=pack(); second=observation()
+    second['inventory']['items'].append(item('reference','embedded_reference'))
+    other=copy.deepcopy(second['matching']['matches'][0])
+    other.update(item_id='reference',outcome='insufficient',source_id=None,component_index=None)
+    second['matching']['matches'].append(other)
+    row=r.reconcile(p['inventory'],match(),second)[0]
+    assert row['state']=='model-source-reviewed'
+    assert row['second_item_ids']==['a','reference']
+    other.update(outcome='supported',source_id='competitor')
+    assert r.reconcile(p['inventory'],match(),second)[0]['state']=='exception'
+
+
 def test_strict_combined_review_keeps_exclusions_and_abstentions():
     p=pack(); second=observation()
     second['inventory']['items'].append(item('header','running_header'))
@@ -147,3 +160,38 @@ def test_recovery_cannot_hide_invented_identity_or_missing_inventory_item():
     second['matching']['matches'][0]['html_evidence']='invented'
     spec,cached=rejected_review(p,second)
     with pytest.raises(ValueError,match='omitted'):r.recover_review(cached,spec,p)
+
+
+def test_bad_component_is_quarantined_without_guessing_a_replacement():
+    p=pack(); second=observation()
+    second['inventory']['items'].append(item('bad'))
+    bad=copy.deepcopy(second['matching']['matches'][0])
+    bad.update(item_id='bad',component_index=999)
+    second['matching']['matches'].append(bad)
+    spec,cached=rejected_review(p,second); original=copy.deepcopy(cached)
+    restored=r.recover_review(cached,spec,p)
+    rows=restored['result']['matching']['matches']
+    assert cached==original
+    assert rows[0]==second['matching']['matches'][0]
+    assert rows[1]['outcome']=='insufficient'
+    assert rows[1]['component_index']==999
+    assert rows[1]['html_evidence']==bad['html_evidence']
+
+
+@pytest.mark.parametrize('field',['printed_evidence','boundary_evidence','homonym_evidence'])
+def test_missing_required_testimony_is_excluded_without_inventing_it(field):
+    p=pack(); second=observation()
+    second['matching']['matches'][0][field]=''
+    spec,cached=rejected_review(p,second)
+    restored=r.recover_review(cached,spec,p)
+    row=restored['result']['matching']['matches'][0]
+    assert row['outcome']=='insufficient'
+    assert row[field]==''
+    assert field in row['uncertainty']
+
+
+def test_incomplete_paid_response_is_never_salvaged_as_complete():
+    p=pack(); spec,cached=rejected_review(p,observation())
+    cached['response_status']='incomplete'
+    with pytest.raises(ValueError,match='incomplete model response'):
+        r.recover_review(cached,spec,p)

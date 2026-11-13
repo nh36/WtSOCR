@@ -12,7 +12,9 @@ def test_checked_in_dataset_is_unique_uncertified_and_checksum_bound():
     data=p.w.load(p.DATA)
     p.validate_dataset(data)
     assert len(data['witnesses']) >= 100
-    assert not data['failures']
+    # Failed paid packets remain visible, but cannot supply reader links.
+    assert not ({row['page'] for row in data['failures']} &
+                {row['page'] for row in data['witnesses']})
     for change in [lambda d:d.update(certified=True),
                    lambda d:d.update(registry_sha256='wrong'),
                    lambda d:d['witnesses'].append(copy.deepcopy(d['witnesses'][0])),

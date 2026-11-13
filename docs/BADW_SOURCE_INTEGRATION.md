@@ -1118,6 +1118,47 @@ Some first-pass heading fields contained positional descriptions instead of
 transcription. Publication now requires an explicit matching headword in at
 least one reading. No new automatic certificate type is justified by this sample.
 
+Subsequent source-image checking covered 306 proposed associations source-first,
+plus 47 checked after seeing candidate identities. The selected source-first pages
+include WtS 1–34 physical 87, 91, 93, 94, 96, 97, 100 and 103–106;
+35–51 physical 684, 697–699 and 701; 8-b physical 22 and 34–40; and 9-m physical
+25 and 33–36 and 38. The additional candidate-visible checks covered 1–34 physical
+92 and 95 and 9-m physical 32. No wrong physical-page association was found
+in these selected checks, including short cross-references, numbered homonyms,
+and printed entries whose HTML numbering differs. These are checks of proposals,
+not a claim that every checked proposal was published. For example, physical 87
+remains excluded because its independent reading contains an unknown HTML
+identity. Physical 9-m 37 contains only a continuation; the matcher correctly
+produced no new article association. Neither this selection nor model agreement
+establishes a population accuracy estimate or automatic certification policy.
+
+Cached rejected responses can be recovered without another API request when
+schema, request, source and output hashes remain valid. A unique quotation span
+may receive a whitespace-only repair. Invalid quotations, component locators or
+missing substantive evidence become explicit abstentions, with before/after
+records. Unknown identities and incomplete responses remain excluded. Original
+paid responses are never rewritten. Eight previously rejected matching responses
+contained 131 supported claims: 121 were recovered and ten quarantined; their
+independent checking still controls publication. A nested reference abstention
+no longer vetoes a unique corroborating article observation, while competing
+supported identities of any classification continue to block publication.
+
+The pre-handoff cache contains 454 distinct supported identity/page claims,
+including rejected responses. Offline recovery and independent checking make
+342 usable provisional links. The remaining claims comprise 46 awaiting review,
+38 disputed, three already certified, one previous exclusion, seventeen on a
+page with a failed independent identity binding, and seven invalid quotation or
+component bindings. There are no duplicate claims in that count. It does not
+count newly purchased observations as recovered pre-handoff work.
+
+The first bounded production invocation completed generation, independent
+checking, export, complete-reader refresh and all three browser suites in
+25 minutes 31 seconds. It delivered 48 fresh provisional links and six additional
+cache recoveries, taking the verified reader from 262 to 316 suggestions. That
+is approximately 113 fresh links per wall-clock hour, including browser checks;
+operator time was not instrumented. This run does not establish a thousand-link
+campaign yield or automatic certification accuracy.
+
 The existing ordering benchmark reproduced seven correct held-out identities and
 one abstention out of eight. It can narrow candidates but cannot establish page
 identity or safely extrapolate physical offsets through spreads and editorial
@@ -1132,7 +1173,7 @@ PYTHONPATH=work/badw-model-deps python3 scripts/badw_provisional_print_links.py 
 Bounded production in the same campaign and spending ledger:
 
 ```bash
-PYTHONPATH=work/badw-model-deps NODE_PATH=work/badw_reader_browser_tools/node_modules python3 scripts/run_badw_linking_campaign.py produce --campaign work/linking-campaign-20261112 --api-key-file work/openai-api-key --max-pages 5 --base-reader work/provisional-links-20261112/reader --output work/provisional-production-NEXT
+PYTHONPATH=work/badw-model-deps NODE_PATH=work/badw_reader_browser_tools/node_modules python3 scripts/run_badw_linking_campaign.py produce --campaign work/linking-campaign-20261112 --api-key-file work/openai-api-key --max-pages 5 --base-reader work/provisional-production-40-20261112/reader --output work/provisional-production-NEXT
 ```
 
 Use a fresh output directory each time. `produce` runs generation, unfinished
@@ -1152,3 +1193,45 @@ US$6.478751645, unresolved reservations US$5.2368 and available authorization
 US$8.284448355. These reservations are retained. Status uses held process locks,
 reports last successful progress and separates the 3,466-scan census from link
 and processing counts. These figures are observations, not new spending approval.
+
+The subsequent stopped generation batch drained fourteen independent page reviews
+and exported 123 additional corroborated links. Together with offline backlog
+recovery, the final dataset contains 532 provisional links on 68 physical scans,
+plus the unchanged 691 certified links and 89 certified derivatives. The explicit
+queue contains 50 pending claims, 44 disputed claims, one previous exclusion and
+three already-certified claims; one whole page remains excluded for a failed
+identity binding. These are dataset dispositions, not additional reader links.
+Generation was stopped through the campaign stop file after its current page;
+review and publication continued to completion. Status correctly reports the
+publication lock separately from a stopped controller. Four matched pages remain
+awaiting independent review, including two with uncertain prior billing.
+
+Returned usage after this production is US$10.139691895 cumulatively, an increase
+of US$3.660940250 from the recovered baseline. Four historical unresolved
+reservations still total US$5.2368, leaving US$4.623508105 of the US$20 cumulative
+authorization. No reservations were reset or new spending directory created.
+The thousand-additional-link target is not achieved. At the observed cost and
+with unresolved reservations, the remaining authorization does not support a
+credible commitment to another 468 independently checked associations. The
+cached blind identity error, invalid component quotations and an incomplete
+response demonstrate why automatic promotion into the certified tier is not
+justified by these observations. Complete drafts and source evidence remain
+available for later source adjudication; model agreement alone is insufficient.
+
+The final stopped production invocation completed in 47 minutes 52 seconds,
+including its complete-reader refresh and all three browser suites. The reader
+now exposes 532 suggestions. Comparison against the previous complete reader
+checked all 29,878 witnesses, including 11,840 PDF witnesses: zero changes to
+witness bodies, existing references or certified source attachments. All three
+browser suites exited zero; the final focused suite passed 179 tests, and the
+required text regressions passed 315 tests with 62 subtests. Python compilation
+and repository hygiene passed. Browser success tests navigation and preservation,
+not the lexical correctness of every suggested association.
+
+All 532 suggestions also have non-publishable certificate drafts in ignored
+`work/provisional-links-20261112/certificate-drafts.json`, assembled with the
+existing draft preparer. They bind full HTML components, both source readings,
+registered page provenance and historical evidence. 247 have a unique unassigned
+C6 anchor on the proposed physical source page; the others retain missing or
+ambiguous anchors explicitly. No source acceptance or reviewer identity was
+invented, and every draft still requires source adjudication.

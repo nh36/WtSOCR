@@ -209,9 +209,30 @@ def status(root, db=None):
             fcntl.flock(probe,fcntl.LOCK_UN)
         except BlockingIOError:
             review_alive=True
+    publication_alive=False
+    with (Path(root)/'publication.lock').open('a') as probe:
+        try:
+            fcntl.flock(probe,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            fcntl.flock(probe,fcntl.LOCK_UN)
+        except BlockingIOError:
+            publication_alive=True
+    published=db.execute("SELECT detail FROM events WHERE kind='local_reader_published' ORDER BY id DESC LIMIT 1").fetchone()
+    reader_output=json.loads(published[0])['output'] if published else None
+    reader_counts={}
+    if reader_output:
+        for tier,name in (('certified','print_facsimiles.json'),('provisional','provisional_print_links.json')):
+            manifest=Path(reader_output)/'reader'/name
+            if manifest.exists():
+                reader_counts[tier]=len(w.load(manifest).get('witnesses',[]))
     result = dict(stages=stages,planned_views=sum(stages.values()),
-        process_running=alive,process_state=('running' if alive else ('interrupted' if runtime.get('state')=='running' else runtime.get('state','not_running'))),
+        process_running=alive or review_alive or publication_alive,
+        process_state=('publishing' if publication_alive else 'source_review' if review_alive else 'running' if alive else ('interrupted' if runtime.get('state')=='running' else runtime.get('state','not_running'))),
         source_review_running=review_alive,
+        controller_running=alive,
+        publication_running=publication_alive,
+        published_reader_output=reader_output,
+        published_reader_certified_links=reader_counts.get('certified'),
+        published_reader_provisional_links=reader_counts.get('provisional'),
         process_pid=runtime.get('pid'),last_progress_at=db.execute("SELECT max(at) FROM events WHERE kind IN ('inventoried','awaiting_review','source_reviewed','local_reader_published')").fetchone()[0],
         remaining_authorized_usd=cfg['cap_usd']-actual-reserved,
         pages_awaiting_review=sum(not (p.parent/'source_review.json').exists()
@@ -328,6 +349,12 @@ def review_batch(root, decisions, output):
 
 
 def publish(root, output, resume_build=False, base_reader=None):
+    with (Path(root)/'publication.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        return _publish(root,output,resume_build,base_reader)
+
+
+def _publish(root, output, resume_build=False, base_reader=None):
     """Build and exercise the full reader before recording local publication.
 
     Git publication is a separate, explicit operator step. A failed build or
@@ -501,7 +528,7 @@ def run(root, max_pages=25, fixtures=None, clear_budget_stop=False, drain=False)
             if clear_budget_stop:
                 (budget/'STOP').unlink(missing_ok=True)
             from openai import OpenAI
-            client=OpenAI(max_retries=0,timeout=120)
+            client=OpenAI(max_retries=0,timeout=600)
             spending=w.Spending(budget,cfg['cap_usd'],w.a.object_digest(approval))
         old_handlers={s:signal.signal(s,lambda *_:(root/'STOP').touch())
                       for s in (signal.SIGTERM,signal.SIGINT)}

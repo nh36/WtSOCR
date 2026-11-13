@@ -22,10 +22,12 @@ import run_badw_linking_campaign as c
 def recover_review(cached, spec, pack):
     """Reuse a paid, schema-valid reading without concealing failed quotations.
 
-    Only whitespace may be repaired, at a unique exact component span. Other
-    invalid quotations become abstentions, never supported associations. The
+    Only whitespace may be repaired, at a unique exact component span. Invalid
+    quotations or component locators become abstentions, never associations. The
     original paid response remains immutable in the worker cache.
     """
+    if cached.get('response_status') == 'incomplete':
+        raise ValueError('cached incomplete model response; excluded without a repeated paid request')
     if (cached.get('status') != 'rejected model response; no evidence authority'
             or cached.get('response_status') != 'completed'
             or cached.get('request') != spec
@@ -43,10 +45,28 @@ def recover_review(cached, spec, pack):
     for row in (result['matching']['matches'] if stage == 'source_review' else result['matches']):
         if row['outcome'] != 'supported':
             continue
+        missing = [k for k in ('printed_evidence','boundary_evidence','homonym_evidence')
+                   if not row[k].strip()]
+        if missing:
+            before = copy.deepcopy(row)
+            row['outcome'] = 'insufficient'
+            row['uncertainty'] += '; missing required evidence quarantined: ' + ', '.join(missing)
+            changes.append(dict(item_id=row['item_id'],
+                reason='missing required evidence quarantined without completing model testimony',
+                before=before,after=copy.deepcopy(row)))
+            continue
         body = candidates.get(row['source_id'])
         index = row['component_index']
-        if body is None or index is None or not 0 <= index < len(body['components']):
-            raise ValueError('recovery cannot repair an identity or component binding')
+        if body is None:
+            raise ValueError('recovery cannot repair an identity binding')
+        if index is None or not 0 <= index < len(body['components']):
+            before = copy.deepcopy(row)
+            row['outcome'] = 'insufficient'
+            row['uncertainty'] += '; invalid component locator quarantined, not supported'
+            changes.append(dict(item_id=row['item_id'],
+                reason='invalid component locator quarantined without reassignment',
+                before=before,after=copy.deepcopy(row)))
+            continue
         source = body['components'][index]['source_form']
         quote = row['html_evidence']
         if quote.strip() and quote in source:
@@ -94,9 +114,14 @@ def reconcile(first_inventory, first_match, second):
                      and m['source_id'] == match['source_id']
                      and observed[m['item_id']]['classification'] == 'article'
                      and observed[m['item_id']]['printed_homonym'] == heading['printed_homonym']]
-        # Multiple nearby article readings or a competing supported identity must
-        # never be hidden by finding one agreeable response.
-        corroborated = len(supported) == 1 and len(nearby) == 1
+        # A separately inventoried reference inside the heading region is not
+        # another article. Retain it as evidence, but do not let an abstention
+        # on that reference veto an otherwise unique article reading. A
+        # competing supported identity of any classification still blocks it.
+        articles = [m for m in nearby if observed[m['item_id']]['classification'] == 'article']
+        competitors = [m for m in nearby if m['outcome'] == 'supported'
+                       and m['source_id'] != match['source_id']]
+        corroborated = len(supported) == 1 and len(articles) == 1 and not competitors
         rows.append(dict(item_id=match['item_id'], source_id=match['source_id'],
             state='model-source-reviewed' if corroborated else 'exception',
             reason='two blind source readings; not certification' if corroborated else
@@ -209,7 +234,7 @@ def run(root, live=False, max_pages=None, fixtures=None, page=None):
                     approval.get('rights_basis') and approval.get('transmission_authorized') is True):
                 raise ValueError('source transmission and spending approval required')
             from openai import OpenAI
-            client=OpenAI(max_retries=0,timeout=180)
+            client=OpenAI(max_retries=0,timeout=600)
             spending=w.Spending(budget,cfg['cap_usd'],w.a.object_digest(approval))
         pages=sorted(p.parent for p in root.glob('pages/*/match.json'))
         if page:
@@ -229,7 +254,9 @@ def run(root, live=False, max_pages=None, fixtures=None, page=None):
             if max_pages is not None or live:
                 pages = unfinished_pages(pages,live,fixtures)
             verified_sources = set()
-            for directory in pages[:max_pages]:
+            attempted=0
+            for directory in pages:
+                if max_pages is not None and attempted>=max_pages: break
                 if stopping or (root/'REVIEW_STOP').exists(): break
                 try:
                     pack,inv,match=load_page(directory,resources,cfg['model'],verified_sources)
@@ -248,6 +275,7 @@ def run(root, live=False, max_pages=None, fixtures=None, page=None):
                             errors.append(dict(page=directory.name,error='uncertain prior billing; skipped without retry'))
                             counts['billing_blocked_pages']+=1
                             continue
+                    attempted+=1
                     if live or fixtures or cache.exists():
                         fixture=w.load(Path(fixtures)/directory.name/'source_review.json') if fixtures else None
                         try:
@@ -364,8 +392,11 @@ def main():
     p.add_argument('--report',action='store_true',help='Build a private provisional review desk without paid calls')
     p.add_argument('--max-pages',type=int)
     p.add_argument('--page',help='Process one named existing page, including a cached review')
+    p.add_argument('--api-key-file',type=Path,help='Read a private API key without putting it in shell history')
     p.add_argument('--fixtures',type=Path)
     args=p.parse_args()
+    if args.api_key_file:
+        os.environ['OPENAI_API_KEY']=args.api_key_file.read_text().strip()
     if args.max_pages is not None and args.max_pages<1: p.error('max-pages must be positive')
     if args.report:
         print(json.dumps(report(args.campaign),indent=2))
