@@ -99,6 +99,80 @@ coverage and do not establish general accuracy. Geometry and source readings
 are retained in the shared page map and source-control fixtures. No paid calls
 were made, and the five unresolved reservations were preserved unchanged.
 
+A separate source-first retrieval evaluation froze eight physical scans before
+consulting predictions: WtS_1-34/133,642; WtS_35-51/723,1007;
+WtS_8-b/34,435; WtS_9-m/50,188. SHA-256 selection excluded the earlier eight
+comparison pages and previously exposed scan 87; it selected one campaign-view
+and one other page per family. The first four independent headings per scan,
+plus its first reference if absent, gave 33 source observations. Four chu-prefix
+entries have no acquired HTML counterpart; the remaining **29** form the core
+retrieval denominator. Original scans established headings, lexical identity and
+printed sides before predictions. A separately reported numbered-homonym
+supplement took all three ’bal headings on scan WtS_8-b/438, the first numbered
+headings encountered after 435. This supplement is purposive, not representative.
+
+The existing reconstruction's 2,387 supported candidates have no certification
+authority. Its score-ranked proposals, deduplicated by physical scan and printed
+side, find the correct individual page first for **22/29**, and within the first
+three for **24/29** core entries. Physical-scan results are **23/29** and
+**25/29** respectively. Five first choices are wrong scans, one entry has no
+candidate, and one correct first scan (bkad) has no heading coordinate and hence
+no resolved side. There are no wrong-side first choices. Unreviewed gutters are
+retrieval hypotheses only. The three supplementary numbered homonyms score
+**0/3** both first and top-three; their standalone headings/numerals were lost
+by OCR or heading extraction. Across both strata, references score 2/3 first
+and 3/3 top-three; ordinary entries score 20/26 and 21/26.
+
+Only four sampled identities (WtS_8-b/34) have comparable completed model
+requests: reconstruction retrieval 4/4 first, campaign retrieval 4/4, supported
+and independently reviewed 4/4, certified 1/4. Two of the other three lack
+sufficient discriminating verbatim evidence; one retains unresolved source
+interpretation. The other 28 HTML identities have no completed matching request
+on their true scan, including pages the campaign planned but never processed.
+This small clustered sample measures retrieval, not corpus certification accuracy.
+
+The main failure is damaged or absent heading seeds: ’ba’ la ba has no proposal,
+ma la ya survives as an unclassified Latin line, and mu mthud's heading is absent
+although its definition survives. A reference to ma la ya skyes ranks its target's
+next-page article above its own heading. Existing ordered-alignment bonuses do
+not repair these omissions. For core misses outside the top three, neighbouring
+certified HTML-order anchors bracket intervals 36–70 physical scans wide; these
+are useful search bounds, not verified pagination or three-page shortlists.
+Local full-text citation/example retrieval and recovery of missing heading
+boundaries can address this without changing certification policy. Homonym checks
+must read the printed numeral, boundary and distinctive sense/citation together.
+
+The read-only evaluator is reproducible locally:
+
+```bash
+python3 scripts/evaluate_badw_page_retrieval.py --labels work/retrieval-comparison-20261113/truth.json --run work/html-print-reconstruction-certified --output work/retrieval-comparison-20261113/results.json
+```
+
+Private selection SHA-256: `0cdb92c75ac4d4deb9598b8f3c7deae30407198304886706df098ae189f2a26a`;
+source labels SHA-256: `115b4774db8f303c530926afd7533d9f658c6237a7220e5dee2722fd00cc93b5`.
+Labels are evaluation observations, never certification inputs. Source images,
+HTML and per-entry results remain local. The certified-only reader remains at
+818 links. A fresh offline certification staging replay found zero eligible
+additions (563 unresolved and 183 already-certified observations, with repeats);
+one cached scan-87 recovery also failed its identity binding. No acceptance,
+geometry, token-counting or spending rules changed.
+No new API expenditure; the five holds still reserve USD 7.6618 against returned
+usage USD 12.274607895, leaving USD 0.063592105 under the USD 20 ceiling.
+
+First improve local heading/full-text retrieval and repeat held-out evaluation;
+the present misses do not justify a fresh paid campaign. If retrieval improves,
+a separately authorised, bounded 20-page test could compare cropped
+heading/definition regions plus three plausible
+HTML identities with the current full-page workflow, including references,
+homonyms and retrieval misses. At the configured Terra rates, 40 requests averaging
+10,000 input and 2,000 output tokens cost about USD 0.80 (an estimate, excluding
+cache-write uplift); request-specific counting and output ceilings must bound
+reservations before execution. Measure source-audited correct certified links
+per dollar and retrieval recall on the same pages, counting abstentions and paid
+failures. Scale only with observed accuracy at least 90%, improved recall on the
+failure strata, and yield above the last tranche's six links per about USD 1.91.
+The current allowance cannot fund that comparison; paid execution remains stopped.
+
 Paid generation now requires a positive integer input-token count bound to
 the exact request, obtained from the SDK or a valid count cache. Missing SDK
 support, failed counting and invalid counts stop before reservation/generation.
