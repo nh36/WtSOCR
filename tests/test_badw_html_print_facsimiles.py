@@ -163,10 +163,50 @@ def test_reviewed_real_pages_have_source_bound_evidence():
     assert generated['pages']['ma12']['physical_page'] == 16
     baseline = json.loads((Path(__file__).parent/'fixtures/badw_print_199_baseline.json').read_text())
     assert {r['page'] for r in baseline['generated']} <= set(generated['pages'])
-    assert not set(reviewed['pages']) & set(generated['pages'])
+    from badw_html_print_alignment import page_binding
+    for key in reviewed['pages'].keys() & generated['pages'].keys():
+        assert page_binding(reviewed['pages'][key]) == page_binding(generated['pages'][key])
     assert {(r['headword'], r['homonym']) for r in reviewed['witnesses']} >= {('ba', 1), ('ba', 2), ('ba', 3), ('ma', 1), ('ma', 2), ('ma', 5)}
     assert all(r['evidence'] and r['html_sha256'] and r['printed_heading'] for r in reviewed['witnesses'])
     assert not any(r['headword'] == '’gyur' for r in reviewed['witnesses'])  # PDF witness stays outside scope
+
+
+def test_generated_certificate_can_share_manual_page(prepared):
+    from badw_html_print_alignment import object_digest, witness_record
+
+    root, _, _, reviews, registry = prepared
+    page = json.loads(reviews.read_text())['pages']['left']
+    assertion = dict(editorial=dict(source_url='https://wts-digital.badw.de/lemma/ba-rang/1',
+                                    headword='ba rang', homonym=1),
+                     html_sha256='b'*64, anchor_sha256='c'*64,
+                     definition_component_sha256='d'*64,
+                     print_observation=dict(heading='ba rang', homonym=None))
+    certificate_path = root/'data/badw_html_print_alignment.json'
+    generated_path = root/'data/badw_html_print_alignment.generated.json'
+
+    def write_ledger(generated_page):
+        certificate = dict(pages=[dict(generated_page, key='left', accepted=[assertion])])
+        generated = dict(version=2, certificate_sha256=object_digest(certificate),
+                         pages={'left': generated_page}, witnesses=[witness_record('left', assertion)], inputs={})
+        generated['content_sha256'] = object_digest(generated)
+        certificate_path.write_text(json.dumps(certificate))
+        generated_path.write_text(json.dumps(generated))
+
+    write_ledger(dict(page, geometry_review='Reused the reviewed crop'))
+    manifest = fac.prepare(root, root/'shared', reviews, registry)
+    assert [r['page'] for r in manifest['witnesses']] == ['left', 'left']
+    assert manifest['pages']['left']['geometry_review'] == page['geometry_review']
+    attach = fac.Facsimiles(root/'shared/manifest.json', root/'reader')
+    manual, generated = entry(), entry()
+    generated.update(source_url=assertion['editorial']['source_url'], headword=dict(loc='ba rang'))
+    generated['sources'][0].update(url=generated['source_url'], sha256='b'*64)
+    attach.attach(manual)
+    attach.attach(generated)
+    assert manual['sources'][1]['url'] == generated['sources'][1]['url']
+
+    write_ledger(dict(page, crop=[0, 0, 439, 640]))
+    with pytest.raises(ValueError, match='conflicting alignment page: left'):
+        fac.prepare(root, root/'conflict', reviews, registry)
 
 
 def test_duplicate_geometry_alias_does_not_overwrite_derivative(prepared):

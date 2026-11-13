@@ -53,12 +53,15 @@ def reviewed_records(reviews):
     certificate = ROOT/'data/badw_html_print_alignment.json'
     generated = ROOT/'data/badw_html_print_alignment.generated.json'
     if Path(reviews).resolve() == REVIEWS.resolve() and certificate.exists():
-        from badw_html_print_alignment import validate_expansion
+        from badw_html_print_alignment import page_binding, validate_expansion
         expanded = json.loads(generated.read_text())
         validate_expansion(json.loads(certificate.read_text()), expanded)
-        if set(reviewed['pages']) & set(expanded['pages']):
-            raise ValueError('duplicate alignment page')
-        reviewed['pages'].update(expanded['pages'])
+        for key, page in expanded['pages'].items():
+            # Fresh certificates can reuse a page already in the manual ledger.
+            # Keep its reviewed metadata and require an identical destination.
+            existing = reviewed['pages'].setdefault(key, page)
+            if page_binding(existing) != page_binding(page):
+                raise ValueError(f'conflicting alignment page: {key}')
         reviewed['witnesses'].extend(expanded['witnesses'])
         bindings = dict(alignment_sha256=sha256(generated), certificate_sha256=sha256(certificate))
     if Path(reviews).resolve() == REVIEWS.resolve():
