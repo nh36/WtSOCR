@@ -1236,3 +1236,107 @@ registered page provenance and historical evidence. 247 have a unique unassigned
 C6 anchor on the proposed physical source page; the others retain missing or
 ambiguous anchors explicitly. No source acceptance or reviewer identity was
 invented, and every draft still requires source adjudication.
+
+
+### Offline model-source certification, 2026-11-13
+
+The frozen 92-candidate pool and 32 earlier crop inspection notes are preserved
+in `data/badw_model_certification_controls.json`. The executable
+`scripts/certify_badw_model_links.py` now accepts and compiles the bounded
+`unique-unnumbered-lexical-v1` class as `model-source-verified-v1` certificates.
+This supersedes the earlier blanket statement that model evidence has no
+certification pathway; it does not make every model match certifiable.
+
+Acceptance requires two independently requested source readings, a genuine
+article heading in both, a unique acquired HTML headword, no printed numeral,
+exact HTML URL/raw hash and component bindings, lexical evidence in both
+readings, and observed preceding/following article boundaries. Both match
+readings must support the exact identity and quote its actual lexical
+component. At least one printed/HTML evidence pair must share 20 normalized
+characters; that minimum is a corroboration check, not semantic proof.
+Descriptive observations such as “No printed numeral visible” are accepted;
+unknown uncertainty wording, genuine ambiguity, competing pages, prior
+exclusions, running headers, continuations and numbered/split homonyms abstain.
+Reference-only evidence is outside this initial class.
+
+The compiler reconstructs each observation from its request/response cache,
+checks independent request identities and exact packet contents, rehashes the
+registered original PDF, and re-renders its physical page to reproduce the
+paid source image byte for byte. It verifies image transforms and both heading
+boxes, and publishes the exact original PDF media box. MuPDF float32 coordinate
+roundoff is checked against the original PDF numbers, never used to enlarge a
+crop. A whole physical scan makes no printed folio or spread-side assertion.
+Each finished certificate retains the complete source readings, model/request
+identities, image/HTML/component hashes, policy and empirical-control hash.
+Its provenance explicitly says model reviewed, not human or agent adjudicated.
+
+The initial offline run certified **92/92** candidates in **103.67 seconds**,
+raising the canonical total from **691 to 783** with **131** derivatives.
+No individual acceptance decision was authored. All historical certificates
+and their page bindings remain unchanged. The corresponding 92 suggestions
+were removed; 440 unresolved suggestions remain separately stored, and the
+new complete reader is built without enabling suggestions. No new API calls
+were made. Existing returned usage remains US$10.139691895, unresolved
+reservations US$5.2368 and available authorised budget US$4.623508105.
+
+Quality controls preserve the prior 32 successful crop inspections, without
+pretending their selection was random. A further source-first audit selected
+two identities per scan family from all 532 suggestions by a fixed SHA-256
+ordering before applying the acceptance rules: eight correct identities,
+including seven outside the accepted pool, and no observed identity errors.
+These observations and exact HTML components are in
+`tests/fixtures/badw_model_policy_examples.json`. The existing independent
+ma12 held-out benchmark was replayed from cache: 12 correct links, no false
+positives or homonym errors, and three correct abstentions. These small,
+partly class-conditioned samples do not establish a whole-corpus error rate.
+Tests additionally reject altered source headings, numerals, boundaries,
+identities, hashes, quotations, unsupported matches, generic short evidence,
+prior exclusions, duplicate headwords and a self-consistently hashed image
+from the wrong physical scan. Browser navigation validates delivery, not
+lexical accuracy.
+
+Reproduce or resume entirely offline (the dependencies are already cached):
+
+```bash
+PYTHONPATH=work/badw-model-deps python3 scripts/certify_badw_model_links.py \
+  --campaign work/linking-campaign-20261112 \
+  --bodies work/direct-source-20261111/compact-bodies.json \
+  --output work/model-certified-resume-20261113
+PYTHONPATH=work/badw-model-deps python3 scripts/badw_html_print_facsimiles.py \
+  --scans-root . --output work/model-certified-20261113/facsimiles
+PYTHONPATH=work/badw-model-deps python3 scripts/build_badw_full_reader.py \
+  --output work/model-certified-20261113/reader \
+  --print-facsimiles work/model-certified-20261113/facsimiles/manifest.json
+```
+
+Already certified identities are skipped; the entire canonical ledger is
+validated before replacement. Paid caches and billing reservations are never
+modified. This command intentionally confines publication to the preserved
+pool; it is not a claim that the remaining corpus can yet be certified by the
+same untested rule. Extending to references and split homonyms requires explicit
+source-target/sense controls and source-first validation of those classes.
+
+The repeated offline invocation finished in **79.39 seconds**, skipped the 92
+already certified identities and left both canonical and generated certificate
+files byte-identical. A full reader build contains **29,878 witnesses**. An
+exhaustive comparison against the preceding reader preserved all **18,038 HTML
+bodies and references** and all **11,840 PDF-derived bodies**; only the 92 new
+certified source attachments and removal of 440 displayed suggestions differ.
+The 18,038 reader HTML records include the existing additional record beyond the
+approximately 18,037 acquired witnesses.
+
+Among the 440 remaining cached suggestions, the current policy's first failing
+gate is: 201 unresolved source interpretations, 81 reference/nonlexical
+components, 75 numbered or editorially split homonyms, 56 insufficient verbatim
+lexical corroboration, 20 heading identities and seven missing/disputed independent
+readings. These are abstentions, not established incorrect associations; the
+counts do not imply that every uncertainty description represents real ambiguity.
+No paid request has been made to re-observe these cases.
+
+Validation: 142 focused policy/compiler/facsimile/campaign tests and 65 worker,
+review, draft and reader tests passed. Required repository regressions passed
+315 tests plus 62 subtests. Both browser suites passed: complete-reader search
+and reference navigation over 29,878 witnesses, all 783 certified attachments
+at desktop/mobile widths, all 131 distinct page PDFs opened in Chrome, and zero
+browser errors. Repository hygiene, Python compilation and whitespace checks
+passed. The generated operational status is checked after committing its update.

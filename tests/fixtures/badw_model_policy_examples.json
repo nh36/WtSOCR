@@ -1,0 +1,2145 @@
+{
+  "version": 1,
+  "sampling": "SHA256(independent-source-audit-20261113: + source_id); first two per scan family from all 532 rebound witnesses, before applying acceptance policy.",
+  "reviewer": "Coding agent source-crop inspection before reading corresponding HTML evidence; not human review. Eight identities checked, not a population accuracy estimate.",
+  "audit": [
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20%C5%9Ba%20ta%20ka/1",
+      "page": "wts_1_34-96",
+      "crop_sha256": "d74494cf779ff2d999b6321aafeff3a890f0668e8a8cda23cccec16d56688ecd",
+      "observed_heading": "ko śa ta ka",
+      "source_first_observation": "Independent unnumbered plant heading; kośātaka / kośātakī, Luffa acutangula Roxb.; Siddh 27.19.",
+      "identity_correct": true,
+      "in_initial_pool": false,
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ko%20%C5%9Ba%20ta%20ka/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20%C5%9Ba%20ta%20ka/1",
+        "headword": {
+          "loc": "ko śa ta ka",
+          "tibetan": "ཀོ་ཤ་ཏ་ཀ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:fc0f2c5d88b37fe65e5848b756ef2ae81638a771a5f3890492df52af18151fba",
+            "type": "headword",
+            "source_form": "ཀོ་ཤ་ཏ་ཀ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:0a94f6f54b4eed3a1f1771708a9a854f2363026fe804a3e4c02a330257c8ef30",
+            "type": "headword",
+            "source_form": "ko śa ta ka",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:4f351c74f88e94d810e2e188e85c37d89a75e1576a10d3b703a7f429219bcabe",
+            "type": "definition",
+            "source_form": "\n  eine Heilpflanze und ihre Frucht, vgl. ↓ko ṣṭo kī; skt. kośātaka, kośātakī Luffa acutangula Roxb. u. a. (Das 435).\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:995c283a3198ce26e1921b668d8a19e297e82306473b5c6688e4025d06763193"
+          },
+          {
+            "id": "span:995c283a3198ce26e1921b668d8a19e297e82306473b5c6688e4025d06763193",
+            "type": "source_division",
+            "source_form": "\n  eine Heilpflanze und ihre Frucht, vgl. ↓ko ṣṭo kī; skt. kośātaka, kośātakī Luffa acutangula Roxb. u. a. (Das 435).\n\n\n  \n  ko śa ta ka’i ’bras bu rnams kyi phye ma ba gcin daṅ lhan cig tu btags te / btsags pa ni dug sman gyi mchog yin\n  „das Pulver der Kośātaka-Frucht [u. a.] ist, unter Zugabe von Kuhurin und durchgeseiht, eine ganz vorzügliche Arznei gegen Gift“\n    \n      (Siddh\n      27.19).\n    \n  \n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:f8d3b8bc7458328bbcec0dbb1412ce9e9669bcf4d98e3cc41dfb916d8a7a81f2",
+            "type": "cross_reference",
+            "source_form": "↓ko ṣṭo kī",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:13cddab8c121923abaa6a3b7e667d8ff15aa7678671e493f1dcee372f3d0c4bb",
+            "type": "sanskrit",
+            "source_form": "kośātaka",
+            "language": "sa",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:4f351c74f88e94d810e2e188e85c37d89a75e1576a10d3b703a7f429219bcabe"
+          },
+          {
+            "id": "span:eaee75dd6422d3b9df6a71a77d560e46198049f956760114e99c74d31f5a64cd",
+            "type": "sanskrit",
+            "source_form": "kośātakī",
+            "language": "sa",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:4f351c74f88e94d810e2e188e85c37d89a75e1576a10d3b703a7f429219bcabe"
+          },
+          {
+            "id": "span:a4d22fd64db2068455110a9a90bbbfa641f070897723e2942d8603536351e6c2",
+            "type": "tibetan",
+            "source_form": "kośātakī ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:4f351c74f88e94d810e2e188e85c37d89a75e1576a10d3b703a7f429219bcabe"
+          },
+          {
+            "id": "span:feb4b574694d4ba00a5d3f3f669d15ebf27e65cc2b93574b9ad9e73f65364c0a",
+            "type": "citation",
+            "source_form": "(Das 435)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:995c283a3198ce26e1921b668d8a19e297e82306473b5c6688e4025d06763193"
+          },
+          {
+            "id": "span:18674d0f9e10fca5bd4fa40930adf579d0dfa559ed344699897d1d3f790cd937",
+            "type": "tibetan",
+            "source_form": "ko śa ta ka’i ’bras bu rnams kyi phye ma ba gcin daṅ lhan cig tu btags te / btsags pa ni dug sman gyi mchog yin",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:5dba865e96857dc825a8f1bdd983dbbafd6f531bee34aff3ce848d66f4712068"
+          },
+          {
+            "id": "span:5dba865e96857dc825a8f1bdd983dbbafd6f531bee34aff3ce848d66f4712068",
+            "type": "example",
+            "source_form": "ko śa ta ka’i ’bras bu rnams kyi phye ma ba gcin daṅ lhan cig tu btags te / btsags pa ni dug sman gyi mchog yin\n  „das Pulver der Kośātaka-Frucht [u. a.] ist, unter Zugabe von Kuhurin und durchgeseiht, eine ganz vorzügliche Arznei gegen Gift“\n    \n      (Siddh\n      27.19).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:995c283a3198ce26e1921b668d8a19e297e82306473b5c6688e4025d06763193"
+          },
+          {
+            "id": "span:477cb07509e62542b0c41201e65f8130e3bc5abc53e0a88fd50178cf684c958c",
+            "type": "translation",
+            "source_form": "„das Pulver der Kośātaka-Frucht [u. a.] ist, unter Zugabe von Kuhurin und durchgeseiht, eine ganz vorzügliche Arznei gegen Gift“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:5dba865e96857dc825a8f1bdd983dbbafd6f531bee34aff3ce848d66f4712068"
+          },
+          {
+            "id": "span:a4b33395e5a313f6947f02ce6ca84dc86af04b933434c27d0459314bb3f04b6c",
+            "type": "citation",
+            "source_form": "\n      (Siddh\n      27.19).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:5dba865e96857dc825a8f1bdd983dbbafd6f531bee34aff3ce848d66f4712068"
+          }
+        ],
+        "sources": [
+          {
+            "sha256": "2ec53859d0a80e788a4645a914e55377ff45d44d13a7eb8b20cbd011e571268a"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "a06",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20%C5%9Ba%20ta%20ka/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a06"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ko%20%C5%9Ba%20ta%20ka/1",
+        "html_sha256": "2ec53859d0a80e788a4645a914e55377ff45d44d13a7eb8b20cbd011e571268a",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "892ad3b736c3bdb730189abb9d20b71886513d212bc3aa33e3f464bffe0ee318",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a06",
+          "heading_loc": "ko śa ta ka",
+          "heading_tibetan": "ཀོ་ཤ་ཏ་ཀ",
+          "printed_homonym": null,
+          "bbox": [
+            700,
+            834,
+            947,
+            879
+          ],
+          "column": "120 right",
+          "classification": "article",
+          "printed_evidence": "Eine Heilpflanze und ihre Frucht; Sanskrit kośātaka, kośātakī; Luffa acutangula.",
+          "preceding": "ko śa.",
+          "following": "ko śa ma mra.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          210.0,
+          365.580029296875,
+          284.09999999999997,
+          379.080029296875
+        ],
+        "image_crop": {
+          "item_id": "a06",
+          "path": "article-501498578b897e86-0010.png",
+          "sha256": "d74494cf779ff2d999b6321aafeff3a890f0668e8a8cda23cccec16d56688ecd",
+          "pixels": [
+            944,
+            459
+          ],
+          "parent_bbox": [
+            675,
+            810,
+            1619,
+            1269
+          ],
+          "pdf_bbox": [
+            202.5,
+            248.580029296875,
+            485.7,
+            386.280029296875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a06",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20%C5%9Ba%20ta%20ka/1",
+          "component_index": 2,
+          "printed_evidence": "“eine Heilpflanze und ihre Frucht”; “kośātaka, kośātakī Luffa acutangula”.",
+          "html_evidence": "skt. kośātaka, kośātakī Luffa acutangula Roxb.",
+          "boundary_evidence": "Independent compound between ko śa and ko śa ma mra.",
+          "homonym_evidence": "Unnumbered in print; the Sanskrit names and plant identify the witness.",
+          "alternatives": "ko ṣṭo kī is a separate, cross-referenced article.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor"
+        ],
+        "page": "wts_1_34-96",
+        "headword": "ko śa ta ka",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a06",
+              "heading_loc": "ko śa ta ka",
+              "heading_tibetan": "ཀོ་ཤ་ཏ་ཀ་",
+              "printed_homonym": null,
+              "bbox": [
+                700,
+                830,
+                962,
+                880
+              ],
+              "column": "120 right",
+              "classification": "article",
+              "printed_evidence": "Luffa acutangula; cross-reference ko ṣṭo kī; fruit powder and cow urine, Siddh 27.19.",
+              "preceding": "ko śa.",
+              "following": "ko śa ma mra.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a06",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20%C5%9Ba%20ta%20ka/1",
+              "component_index": 9,
+              "printed_evidence": "Fruit powder with cow urine and the poison remedy identify Siddh 27.19.",
+              "html_evidence": "ko śa ta ka’i ’bras bu rnams kyi phye ma ba gcin daṅ lhan cig tu btags te / btsags pa ni dug sman gyi mchog yin",
+              "boundary_evidence": "Independent start between ko śa and ko śa ma mra.",
+              "homonym_evidence": "No printed numeral.",
+              "alternatives": "ko ṣṭo kī is a related Luffa entry, but its example is Yś 73b.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "headword_count": 1,
+      "expected_policy_reason": "reference or nonlexical component needs separate policy"
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/kyi/2",
+      "page": "wts_1_34-105",
+      "crop_sha256": "57b7f20d57f81c95a5079dda3ce384ed4096e526216e41753ce4af34eda2193e",
+      "observed_heading": "kyi",
+      "source_first_observation": "Printed numeral 2; abbreviation of kyi a tsarya ye śes dbaṅ po; Nel 19a6.",
+      "identity_correct": true,
+      "in_initial_pool": false,
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/kyi/2",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/kyi/2",
+        "headword": {
+          "loc": "kyi",
+          "tibetan": "ཀྱི་"
+        },
+        "homonym": "2",
+        "components": [
+          {
+            "id": "span:a14b53a532290f516db1ec7027bf9bf9a634bff559e859379494727b5bc8fc99",
+            "type": "headword",
+            "source_form": "ཀྱི་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:566f2dc530353e002636c1095b051d8575d14e02c2b8135aa8b9ef9637006d5a",
+            "type": "headword",
+            "source_form": "kyi",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:20bbc3ad0871e2683d31a5e12a234b5520409ca34014642dc28f1c3ad340597b",
+            "type": "definition",
+            "source_form": "\n  Kurzf. f. ↓kyi a tsarya ye śes dbaṅ po.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:fe9d90fec13953369767003470a5999dd6471789416f99a1f88a6c084acc2be2"
+          },
+          {
+            "id": "span:fe9d90fec13953369767003470a5999dd6471789416f99a1f88a6c084acc2be2",
+            "type": "source_division",
+            "source_form": "\n  Kurzf. f. ↓kyi a tsarya ye śes dbaṅ po.\n\n\n  \n  kyi yis ñaṅs smad khri’u gnas bzuṅ ste\n  „Kyi übernahm Ñaṅs-smad Khri’u-gnas“\n    \n      (Nel\n      19a6).\n    \n  \n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:029f034b596413e6720e9a1dcc1b794c7113bd67fb3cca85e7c114e587f42d16",
+            "type": "cross_reference",
+            "source_form": "↓kyi a tsarya ye śes dbaṅ po",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:815f7a4093cf7fe39b6f6649b99af4e2786bc74363be387d0b609b1947250f9a",
+            "type": "tibetan",
+            "source_form": "kyi yis ñaṅs smad khri’u gnas bzuṅ ste",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:0e80c4d0c63db7f0bc45287dbc9d05cf543b88a938ba939b678727280a597dec"
+          },
+          {
+            "id": "span:0e80c4d0c63db7f0bc45287dbc9d05cf543b88a938ba939b678727280a597dec",
+            "type": "example",
+            "source_form": "kyi yis ñaṅs smad khri’u gnas bzuṅ ste\n  „Kyi übernahm Ñaṅs-smad Khri’u-gnas“\n    \n      (Nel\n      19a6).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:fe9d90fec13953369767003470a5999dd6471789416f99a1f88a6c084acc2be2"
+          },
+          {
+            "id": "span:98782d416cf6497183ace585699b05ac7f41213e30e29e9ef292191ab9db1ef1",
+            "type": "translation",
+            "source_form": "„Kyi übernahm Ñaṅs-smad Khri’u-gnas“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:0e80c4d0c63db7f0bc45287dbc9d05cf543b88a938ba939b678727280a597dec"
+          },
+          {
+            "id": "span:b73163966cde7df3ca8de20d8a06bb86498f931439640aeeb39ff8a5ffc819cc",
+            "type": "citation",
+            "source_form": "\n      (Nel\n      19a6).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:0e80c4d0c63db7f0bc45287dbc9d05cf543b88a938ba939b678727280a597dec"
+          }
+        ],
+        "sources": [
+          {
+            "sha256": "ff442815ba7e5c26d58b4c5ba43ff854db8ee01b5e6da3b2a2138afa3abe5748"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "a132-1",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/kyi/2",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a1"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/kyi/2",
+        "html_sha256": "ff442815ba7e5c26d58b4c5ba43ff854db8ee01b5e6da3b2a2138afa3abe5748",
+        "already_certified": false,
+        "component_index": 4,
+        "component_sha256": "67afff11194e1e00148a2703bffbbfb8fb4c8b3ee532886b39af79a39276cc42",
+        "historical_anchors": [
+          "wts_1_34:105:91"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a132-1",
+          "heading_loc": "kyi",
+          "heading_tibetan": "ཀྱི",
+          "printed_homonym": 2,
+          "bbox": [
+            735,
+            1591,
+            812,
+            1637
+          ],
+          "column": "132 right",
+          "classification": "article",
+          "printed_evidence": "Superscript 2; Kurzf. f. ↓kyi a tsarya ye śes dbaṅ po. Example cites Nel 19a6.",
+          "preceding": "End of the preceding kyi article, Lex. ... (Dagy).",
+          "following": "kyi gu.",
+          "uncertainty": "Printed superscript 2 is visible."
+        },
+        "pdf_heading_bbox": [
+          221.10000598430634,
+          139.01999511718753,
+          244.20000598430633,
+          152.81999511718755
+        ],
+        "image_crop": {
+          "item_id": "a132-1",
+          "path": "article-ecffcee8b222a185-0007.png",
+          "sha256": "57b7f20d57f81c95a5079dda3ce384ed4096e526216e41753ce4af34eda2193e",
+          "pixels": [
+            905,
+            240
+          ],
+          "parent_bbox": [
+            711,
+            1567,
+            1616,
+            1807
+          ],
+          "pdf_bbox": [
+            213.90000598430632,
+            88.01999511718748,
+            485.4000059843063,
+            160.01999511718753
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a132-1",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/kyi/2",
+          "component_index": 4,
+          "printed_evidence": "²kyi: Kurzf. f. ↓kyi a tsarya ye śes dbaṅ po; the example cites Nel 19a6.",
+          "html_evidence": "↓kyi a tsarya ye śes dbaṅ po",
+          "boundary_evidence": "A new heading follows the end of the grammatical kyi article and precedes kyi gu.",
+          "homonym_evidence": "The printed superscript 2 and the reference target distinguish this person’s abbreviated name from grammatical kyi.",
+          "alternatives": "The kyi tsho article also uses the Nel 19a6 example, but is a separate compound.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "numbered homonym",
+          "non-definition component"
+        ],
+        "page": "wts_1_34-105",
+        "headword": "kyi",
+        "homonym": "2",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a1",
+              "heading_loc": "kyi",
+              "heading_tibetan": "ཀྱི་",
+              "printed_homonym": 2,
+              "bbox": [
+                735,
+                1589,
+                1325,
+                1765
+              ],
+              "column": "132 right",
+              "classification": "article",
+              "printed_evidence": "²kyi Kurzf. f. ↓kyi a tsarya ye śes dbaṅ po; example ending (Nel 19a6).",
+              "preceding": "End of ¹kyi",
+              "following": "kyi gu",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a1",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/kyi/2",
+              "component_index": 4,
+              "printed_evidence": "Printed abbreviation explicitly points to kyi a tsarya ye śes dbaṅ po and cites Nel 19a6.",
+              "html_evidence": "↓kyi a tsarya ye śes dbaṅ po",
+              "boundary_evidence": "Starts after the grammatical article and ends before kyi gu.",
+              "homonym_evidence": "Printed superscript 2 agrees with candidate 2; grammatical kyi/1 is a different article.",
+              "alternatives": "kyi/1 lacks this abbreviation reference; kyi tsho shares the Nel passage but is a distinct community heading.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "headword_count": 2,
+      "expected_policy_reason": "numbered or editorially split homonym needs separate policy"
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/par%20sig/1",
+      "page": "wts_35_51-695",
+      "crop_sha256": "dcea80e6df1be36b1abfb50c9485ed81a3e60e85522459b7c351c82af92ae668",
+      "observed_heading": "par sig",
+      "source_first_observation": "Independent heading with INTERNAL sense 1 persisch and sense 2 below; Mohammed / Za-lar; ’Dzam 46,16. Not a heading numeral.",
+      "identity_correct": true,
+      "in_initial_pool": false,
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/par%20sig/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/par%20sig/1",
+        "headword": {
+          "loc": "par sig",
+          "tibetan": "པར་སིག་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:fad47aa43810f90e5331ded322ecbbd1b93339c73177f9655c23cfd152d965c7",
+            "type": "headword",
+            "source_form": "པར་སིག་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:76511fa7ea9b89d51063f0ab94014a34bb6f6f8f130c0671bfbcbac3ad4086ca",
+            "type": "headword",
+            "source_form": "par sig",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:e1b24d2a2b4a7d3d5dc557967f44e6d198b82ad5f5cf06c3adff09a76e0193e8",
+            "type": "definition",
+            "source_form": "\n  1.\n  persisch.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:da7d085e1e394651f8a6b919d7efa8de6a55477439257b19b3f58281efaabc54"
+          },
+          {
+            "id": "span:da7d085e1e394651f8a6b919d7efa8de6a55477439257b19b3f58281efaabc54",
+            "type": "sense",
+            "source_form": "\n  1.\n  persisch.\n\n\n  \n   ston pa ma kha ma ti’i rjes ’braṅ kla klo’i sde chen po za lar zer ba par sig gi skad smras pa\n  „es gab auch eine große Schar Muslime, Anhänger des Lehrers Mohammed, sie werden Za-lar genannt und sprechen die persische Sprache“\n    \n      (’Dzam\n      46,16).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:91bd02a8817bb36070724c5bedeb87284c1a81b53766113bf7e05f5bb28dc3d8"
+          },
+          {
+            "id": "span:91bd02a8817bb36070724c5bedeb87284c1a81b53766113bf7e05f5bb28dc3d8",
+            "type": "source_division",
+            "source_form": "\n  1.\n  persisch.\n\n\n  \n   ston pa ma kha ma ti’i rjes ’braṅ kla klo’i sde chen po za lar zer ba par sig gi skad smras pa\n  „es gab auch eine große Schar Muslime, Anhänger des Lehrers Mohammed, sie werden Za-lar genannt und sprechen die persische Sprache“\n    \n      (’Dzam\n      46,16).\n    \n  \n\n\n  2.\n  ein menschenfressendes Tier.\n\n\nLex. par sig pa ≅ mi śa la loṅs spyod mkhan gyi rigs śig (TTC).\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:ea87f36a266461566968afa76a1528609b0162ed26e11d49e219846096b8c3a5",
+            "type": "tibetan",
+            "source_form": " ston pa ma kha ma ti’i rjes ’braṅ kla klo’i sde chen po za lar zer ba par sig gi skad smras pa",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:edbf1a86048e44ba1409afb8062dfe16a6046cf030db970fbb2fc27993fb5506"
+          },
+          {
+            "id": "span:edbf1a86048e44ba1409afb8062dfe16a6046cf030db970fbb2fc27993fb5506",
+            "type": "example",
+            "source_form": " ston pa ma kha ma ti’i rjes ’braṅ kla klo’i sde chen po za lar zer ba par sig gi skad smras pa\n  „es gab auch eine große Schar Muslime, Anhänger des Lehrers Mohammed, sie werden Za-lar genannt und sprechen die persische Sprache“\n    \n      (’Dzam\n      46,16).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:da7d085e1e394651f8a6b919d7efa8de6a55477439257b19b3f58281efaabc54"
+          },
+          {
+            "id": "span:db80ca7af647432cb2a03c35bc77517c9ca9177473e2b4a4164d280d08874a6b",
+            "type": "translation",
+            "source_form": "„es gab auch eine große Schar Muslime, Anhänger des Lehrers Mohammed, sie werden Za-lar genannt und sprechen die persische Sprache“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:edbf1a86048e44ba1409afb8062dfe16a6046cf030db970fbb2fc27993fb5506"
+          },
+          {
+            "id": "span:46cb739abec16c91f668eaa266ac6d5f80bc89daaee83dec583052a259d2b50a",
+            "type": "citation",
+            "source_form": "\n      (’Dzam\n      46,16).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:edbf1a86048e44ba1409afb8062dfe16a6046cf030db970fbb2fc27993fb5506"
+          },
+          {
+            "id": "span:0491d14cb7ca086ae6be5baed98167c72a8d05a6077a5bbe6acb1218ec4c7a5d",
+            "type": "definition",
+            "source_form": "\n  2.\n  ein menschenfressendes Tier.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:9f14f8503daa7035e7c209a62a65f6ae59d5144645e23420f27e570f807cf8ce"
+          },
+          {
+            "id": "span:9f14f8503daa7035e7c209a62a65f6ae59d5144645e23420f27e570f807cf8ce",
+            "type": "sense",
+            "source_form": "\n  2.\n  ein menschenfressendes Tier.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:91bd02a8817bb36070724c5bedeb87284c1a81b53766113bf7e05f5bb28dc3d8"
+          },
+          {
+            "id": "span:4ff00f6bb5ae1f7c90fdf952f770decbf44e3d5c0e617817efb62e52d2903c50",
+            "type": "tibetan",
+            "source_form": "par sig pa ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:91f57093e80a065afa767f8e76d0550b4a2b0b4f75763d153192bf0a937239b1"
+          },
+          {
+            "id": "span:91f57093e80a065afa767f8e76d0550b4a2b0b4f75763d153192bf0a937239b1",
+            "type": "lexical_parallel",
+            "source_form": "par sig pa ≅ mi śa la loṅs spyod mkhan gyi rigs śig (TTC).",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:91bd02a8817bb36070724c5bedeb87284c1a81b53766113bf7e05f5bb28dc3d8"
+          },
+          {
+            "id": "span:b00f1723c90e231d15dfb92384876be9f62583e31d4f97d296432db53adf89a1",
+            "type": "tibetan",
+            "source_form": " mi śa la loṅs spyod mkhan gyi rigs śig ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:91f57093e80a065afa767f8e76d0550b4a2b0b4f75763d153192bf0a937239b1"
+          },
+          {
+            "id": "span:8afbfa410deb704082f2ed47a28089e15568358f2c765a0a2bcfbd0fd2be4505",
+            "type": "citation",
+            "source_form": "(TTC)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:91f57093e80a065afa767f8e76d0550b4a2b0b4f75763d153192bf0a937239b1"
+          }
+        ],
+        "sources": [
+          {
+            "sha256": "defb74cccf127d65f0b99f38fb87572c45e00c7d179262d3b3de45a218b2c890"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "article-09",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/par%20sig/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a9"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/par%20sig/1",
+        "html_sha256": "defb74cccf127d65f0b99f38fb87572c45e00c7d179262d3b3de45a218b2c890",
+        "already_certified": false,
+        "component_index": 7,
+        "component_sha256": "32574dd47acef469994a7b6dcfbc241f11155157969cc9f983be92a6b4bc911d",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "article-09",
+          "heading_loc": "par sig",
+          "heading_tibetan": "པར་སིག",
+          "printed_homonym": null,
+          "bbox": [
+            877,
+            735,
+            1095,
+            789
+          ],
+          "column": "right",
+          "classification": "article",
+          "printed_evidence": "Two numbered senses: 1. persisch, with citation ’Dzam 46,16; 2. ein menschenfressendes Tier, with lexicographical citation TTC.",
+          "preceding": "par rin chen gsal, cross-reference to ²par.",
+          "following": "¹pas.",
+          "uncertainty": "No homonym numeral visible at the heading; the 1 and 2 below it are sense numbers."
+        },
+        "pdf_heading_bbox": [
+          263.09999999999997,
+          440.3,
+          328.5,
+          456.5
+        ],
+        "image_crop": {
+          "item_id": "article-09",
+          "path": "article-15678e37fe27062a-0013.png",
+          "sha256": "dcea80e6df1be36b1abfb50c9485ed81a3e60e85522459b7c351c82af92ae668",
+          "pixels": [
+            731,
+            380
+          ],
+          "parent_bbox": [
+            843,
+            711,
+            1574,
+            1091
+          ],
+          "pdf_bbox": [
+            252.89999999999998,
+            349.7,
+            472.2,
+            463.70000000000005
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "article-09",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/par%20sig/1",
+          "component_index": 7,
+          "printed_evidence": "Sense 1 is “persisch,” with the example about followers of Mohammed speaking Persian and citation ’Dzam 46,16; sense 2 is “ein menschenfressendes Tier.”",
+          "html_evidence": "Anhänger des Lehrers Mohammed, sie werden Za-lar genannt und sprechen die persische Sprache",
+          "boundary_evidence": "One independent par sig heading contains both numbered senses and ends before ¹pas.",
+          "homonym_evidence": "The printed 1 and 2 are sense numbers, not homonym numbers.",
+          "alternatives": "The second sense is not a separate article.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-695",
+        "headword": "par sig",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a9",
+              "heading_loc": "par sig",
+              "heading_tibetan": "པར་སིག་",
+              "printed_homonym": null,
+              "bbox": [
+                875,
+                734,
+                1466,
+                1182
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "Two senses: persisch, with Mohammed and Za-lar example (’Dzam 46,16); a man-eating animal, with TTC lexical parallel.",
+              "preceding": "par rin chen gsal.",
+              "following": "¹pas.",
+              "uncertainty": "The printed 1 and 2 are sense numbers, not homonym numbers."
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a9",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/par%20sig/1",
+              "component_index": 4,
+              "printed_evidence": "Persian-language Mohammed/Za-lar example and a second sense for a man-eating animal.",
+              "html_evidence": "ston pa ma kha ma ti’i rjes ’braṅ kla klo’i sde chen po za lar zer ba par sig gi skad smras pa",
+              "boundary_evidence": "Both numbered senses lie under one heading before ¹pas.",
+              "homonym_evidence": "The printed 1 and 2 number senses, not headword homonyms.",
+              "alternatives": "No other supplied par sig competitor.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "headword_count": 1,
+      "expected_policy_reason": "unresolved source interpretation"
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20mig/1",
+      "page": "wts_35_51-691",
+      "crop_sha256": "03d97955a856dfa6d96ec3daf5709cf2478d82150dce03a6974256274f3122c2",
+      "observed_heading": "padma’i mig",
+      "source_first_observation": "Independent unnumbered heading, also pad ma’i mig; Öffnung, Loch; bu ga’i miṅ la’aṅ (Dagy).",
+      "identity_correct": true,
+      "in_initial_pool": false,
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20mig/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/padma%E2%80%99i%20mig/1",
+        "headword": {
+          "loc": "padma’i mig",
+          "tibetan": "པདྨའི་མིག་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:f43ad2bacfa6e97f18239bda3822e2fdf218b573e0914878209875b39a0e0697",
+            "type": "headword",
+            "source_form": "པདྨའི་མིག་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:75dd60fe2b5f4ed43f28d27f37d3ab081a76ec468e438e84b76af8d95498be9a",
+            "type": "headword",
+            "source_form": "padma’i mig",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:5f7afdb763d52633329038dc2c9af3db8e486997eb6d236479e16b310d32095d",
+            "type": "tibetan",
+            "source_form": "pad ma’i mig",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:1f78f06944fc52156445a1316c51542f33adaf3f8ddbcf680310f26cb769230a",
+            "type": "definition",
+            "source_form": "\n  Bez. für Öffnung, Loch.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:dccd0812522411c353fdd1186acab6f0a10eacad63d6e14dce4205685257567e"
+          },
+          {
+            "id": "span:dccd0812522411c353fdd1186acab6f0a10eacad63d6e14dce4205685257567e",
+            "type": "source_division",
+            "source_form": "\n  Bez. für Öffnung, Loch.\n\n\nLex. bu ga’i miṅ la’aṅ (Dagy); pad ma’i mig ≅ bu ga’i miṅ la’aṅ (brDa).\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:572c514f9902e04fe2adc3e0594edead77886533c3eebb02f2d9aebf27b80ed9",
+            "type": "tibetan",
+            "source_form": "bu ga’i miṅ la’aṅ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:4d3574836813fba57e6a7df17b3a46ef7e7959c679a6ac2a82d383aef9602a42"
+          },
+          {
+            "id": "span:4d3574836813fba57e6a7df17b3a46ef7e7959c679a6ac2a82d383aef9602a42",
+            "type": "lexical_parallel",
+            "source_form": "bu ga’i miṅ la’aṅ (Dagy)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:dccd0812522411c353fdd1186acab6f0a10eacad63d6e14dce4205685257567e"
+          },
+          {
+            "id": "span:918024a9133aebc9d76de16266682d18e6ff87c85b9b4dabdce70ae915e6072a",
+            "type": "citation",
+            "source_form": "(Dagy)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:4d3574836813fba57e6a7df17b3a46ef7e7959c679a6ac2a82d383aef9602a42"
+          },
+          {
+            "id": "span:35f344d3f7263b516fdec0ee29b746e1dfded4d40acf7e05a45ca0382c038c5a",
+            "type": "tibetan",
+            "source_form": "pad ma’i mig",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:2ab7d87ae5d3ab082443602c052056e66432baaaf03ab74d472aa360ca0b3140"
+          },
+          {
+            "id": "span:2ab7d87ae5d3ab082443602c052056e66432baaaf03ab74d472aa360ca0b3140",
+            "type": "lexical_parallel",
+            "source_form": "pad ma’i mig ≅ bu ga’i miṅ la’aṅ (brDa).",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:dccd0812522411c353fdd1186acab6f0a10eacad63d6e14dce4205685257567e"
+          },
+          {
+            "id": "span:462af452a8bea9e1dfe06022eaf48690fd8a5bc31e5d2a37cdd5daa5d3a57ffa",
+            "type": "tibetan",
+            "source_form": "bu ga’i miṅ la’aṅ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:2ab7d87ae5d3ab082443602c052056e66432baaaf03ab74d472aa360ca0b3140"
+          },
+          {
+            "id": "span:730ede6fa21dbe3677a5cd1d715dd0ebcaf0d230c95e14d771007311cde27054",
+            "type": "citation",
+            "source_form": "(brDa)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:2ab7d87ae5d3ab082443602c052056e66432baaaf03ab74d472aa360ca0b3140"
+          }
+        ],
+        "sources": [
+          {
+            "sha256": "957c973ceb33face98e84fdf4c3f22d74b6690d502153b7b868c37bc273a244d"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "article-mig",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20mig/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A4"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/padma%E2%80%99i%20mig/1",
+        "html_sha256": "957c973ceb33face98e84fdf4c3f22d74b6690d502153b7b868c37bc273a244d",
+        "already_certified": false,
+        "component_index": 6,
+        "component_sha256": "d50970f79e1c1b92b128e3171e50ca1b7bce77550030f9b7a267a7336b57cff0",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "article-mig",
+          "heading_loc": "padma’i mig",
+          "heading_tibetan": "པདྨའི་མིག",
+          "printed_homonym": null,
+          "bbox": [
+            314,
+            1818,
+            606,
+            1878
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "Also pad ma’i mig; Bez. für Öffnung, Loch. Lexical references to Dagy and brDa.",
+          "preceding": "padma’i ’byuṅ gnas.",
+          "following": "Top of right column: padma’i miṅ.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          94.2,
+          115.60000000000002,
+          181.79999999999998,
+          133.60000000000002
+        ],
+        "image_crop": {
+          "item_id": "article-mig",
+          "path": "article-fd6e87c019aab745-0006.png",
+          "sha256": "03d97955a856dfa6d96ec3daf5709cf2478d82150dce03a6974256274f3122c2",
+          "pixels": [
+            638,
+            470
+          ],
+          "parent_bbox": [
+            290,
+            1794,
+            928,
+            2264
+          ],
+          "pdf_bbox": [
+            87.0,
+            -0.1999999999999318,
+            278.4,
+            140.80000000000007
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "article-mig",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20mig/1",
+          "component_index": 6,
+          "printed_evidence": "The article gives “Bez. für Öffnung, Loch” and the lexical reference “bu ga’i miṅ la’aṅ (Dagy)”.",
+          "html_evidence": "bu ga’i miṅ la’aṅ (Dagy)",
+          "boundary_evidence": "An independent heading follows padma’i ’byuṅ gnas at the foot of the left column.",
+          "homonym_evidence": "The supplied pa dma’i mig Bodhisattva entry has a different definition and lexical reference; the print does not show a homonym number.",
+          "alternatives": "The pad ma’i mig witness is a cross-reference, not the printed main article.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_35_51-691",
+        "headword": "padma’i mig",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A4",
+              "heading_loc": "padma’i mig",
+              "heading_tibetan": "པདྨའི་མིག་",
+              "printed_homonym": null,
+              "bbox": [
+                309,
+                1821,
+                916,
+                2004
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "Also pad ma’i mig; Bez. für Öffnung, Loch; bu ga’i miṅ la’aṅ (Dagy, brDa).",
+              "preceding": "A3 ends with brDa.",
+              "following": "End of left column; padma’i miṅ starts the right column.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A4",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/padma%E2%80%99i%20mig/1",
+              "component_index": 6,
+              "printed_evidence": "Opening or hole, with bu ga’i miṅ la’aṅ and Dagy, distinguishes this article.",
+              "html_evidence": "bu ga’i miṅ la’aṅ (Dagy)",
+              "boundary_evidence": "Separate heading after A3; pad ma’i mig is an alternative spelling within the article.",
+              "homonym_evidence": "No printed homonym numeral; /1 is editorial.",
+              "alternatives": "The pad ma’i mig candidate is a reference form; pa dma’i mig denotes a Bodhisattva with padmanetraḥ (Mvy 676), unlike the printed article.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "headword_count": 3,
+      "expected_policy_reason": "numbered or editorially split homonym needs separate policy"
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/b%C4%81%20s%C4%81/1",
+      "page": "wts_8_b-25",
+      "crop_sha256": "e2ed96f74c4d65a2cf5da6c7f6be24793713303e05acd1f93f957f1d75efe0f3",
+      "observed_heading": "bā sā",
+      "source_first_observation": "Independent unnumbered reference heading; upward arrow to bā śa, NOT this target as the article identity.",
+      "identity_correct": true,
+      "in_initial_pool": false,
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/b%C4%81%20s%C4%81/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/b%C4%81%20s%C4%81/1",
+        "headword": {
+          "loc": "bā sā",
+          "tibetan": "བཱ་སཱ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:e8d724e95ad7a8507d9099d6d586f86550e16aa00f465d1f0a5ed1051ba3784d",
+            "type": "headword",
+            "source_form": "བཱ་སཱ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:d274fc974db2a61ba4c6e6dd0b47e7628054d5d08e58915e74a6ff48b8786b85",
+            "type": "headword",
+            "source_form": "bā sā",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:ad6e9f64a939e519023944831a01155e6f6af112734c99df6310b2dc692aabb9",
+            "type": "cross_reference",
+            "source_form": "↑bā śa",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:820059541581aeda0140a2d94647e0b7b91105e9b635b46b9d52a98699d873e5",
+            "type": "source_division",
+            "source_form": "\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          }
+        ],
+        "sources": [
+          {
+            "sha256": "6ea5d3825aeaff78dbec9a30e02c0303cb04761caa59e14fb49bebb63d5ff5fb"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "left-1",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/b%C4%81%20s%C4%81/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A1"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/b%C4%81%20s%C4%81/1",
+        "html_sha256": "6ea5d3825aeaff78dbec9a30e02c0303cb04761caa59e14fb49bebb63d5ff5fb",
+        "already_certified": false,
+        "component_index": 2,
+        "component_sha256": "046c9a5b4b44ccef197607a128bca62762e7e86bc3cd2d044282117de8cb7800",
+        "historical_anchors": [
+          "wts_8_b:25:1",
+          "wts_8_b:25:7"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "left-1",
+          "heading_loc": "bā sā",
+          "heading_tibetan": "བཱ་སཱ",
+          "printed_homonym": null,
+          "bbox": [
+            136,
+            507,
+            275,
+            560
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "A short cross-reference entry: '↑bā śa.'",
+          "preceding": "Continuation ending with the Lex. reference to brDa, Dagy.",
+          "following": "ba sa da ni.",
+          "uncertainty": "No printed homonym numeral visible; the arrow is a cross-reference, not a numeral."
+        },
+        "pdf_heading_bbox": [
+          41.27999599575996,
+          510.47998046875,
+          82.97999599575996,
+          526.37998046875
+        ],
+        "image_crop": {
+          "item_id": "left-1",
+          "path": "article-42dd410713d2af96-0003.png",
+          "sha256": "e2ed96f74c4d65a2cf5da6c7f6be24793713303e05acd1f93f957f1d75efe0f3",
+          "pixels": [
+            615,
+            134
+          ],
+          "parent_bbox": [
+            109,
+            483,
+            724,
+            617
+          ],
+          "pdf_bbox": [
+            33.17999599575996,
+            493.37998046875,
+            217.67999599575995,
+            533.57998046875
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "left-1",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/b%C4%81%20s%C4%81/1",
+          "component_index": 2,
+          "printed_evidence": "bā sā is followed by the cross-reference ↑bā śa.",
+          "html_evidence": "↑bā śa",
+          "boundary_evidence": "An independent heading follows the preceding continuation and precedes ba sa da ni.",
+          "homonym_evidence": "No printed numeral; the witness identity rests on the exact reference target.",
+          "alternatives": "bā śa is the target, not this article's headword.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "short lexical evidence",
+          "non-definition component"
+        ],
+        "page": "wts_8_b-25",
+        "headword": "bā sā",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A1",
+              "heading_loc": "bā sā",
+              "heading_tibetan": "བཱ་སཱ་",
+              "printed_homonym": null,
+              "bbox": [
+                136,
+                510,
+                371,
+                559
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "bā sā ↑bā śa.",
+              "preceding": "End of prior article, including its lexical note.",
+              "following": "ba sa da ni.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A1",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/b%C4%81%20s%C4%81/1",
+              "component_index": 2,
+              "printed_evidence": "The independent bā sā entry consists of the upward reference to bā śa.",
+              "html_evidence": "↑bā śa",
+              "boundary_evidence": "Starts after the preceding lexical note and ends before ba sa da ni.",
+              "homonym_evidence": "No numeral is printed; the HTML /1 is not a printed numeral.",
+              "alternatives": "bā śa is the reference target, not the heading of this entry.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "headword_count": 1,
+      "expected_policy_reason": "unresolved source interpretation"
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20su%20ne%20tra/1",
+      "page": "wts_8_b-25",
+      "crop_sha256": "66c38f37651e23046750654520cfad38503aa5c8b2294d4e533c381416441bb4",
+      "observed_heading": "ba su ne tra",
+      "source_first_observation": "Independent unnumbered minister Vasunetra heading; de’i blon po bram ze ...; Tār 74,3.",
+      "identity_correct": true,
+      "in_initial_pool": false,
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ba%20su%20ne%20tra/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ba%20su%20ne%20tra/1",
+        "headword": {
+          "loc": "ba su ne tra",
+          "tibetan": "བ་སུ་ནེ་ཏྲ་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:a37658b2dd58dd5c809680b74f248aea33bf72f5854e2010831dc2988be8cfb1",
+            "type": "headword",
+            "source_form": "བ་སུ་ནེ་ཏྲ་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:e4ebeb93d5820e29fefdef385a9848b57b4652916965a4a598e1c3cc7b0f9492",
+            "type": "headword",
+            "source_form": "ba su ne tra",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:c39e50aea9925892442ef3a204bcdafab777df975fb4d8ad1d1e2f4fb32b4669",
+            "type": "definition",
+            "source_form": "\n  npr. ein Minister.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:cf966eaf3c7a09dd671245ff4d4f94a288dcbf93765abc639fa157a5ca6f3cc7"
+          },
+          {
+            "id": "span:cf966eaf3c7a09dd671245ff4d4f94a288dcbf93765abc639fa157a5ca6f3cc7",
+            "type": "source_division",
+            "source_form": "\n  npr. ein Minister.\n\n\n  \n  de’i blon po bram ze ba su ne tra źes bya ba\n  „sein Minister, der Brahmane namens Vasunetra“\n    \n      (Tār\n      74,3).\n    \n  \n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:72fbb212db36575245ab45738e1cb7ed6e668b282f35d488a96dc4608f91b12e",
+            "type": "tibetan",
+            "source_form": "de’i blon po bram ze ba su ne tra źes bya ba",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:7f4ce5e30b8462821b76bc2fdfdf8c686762722338c46f494dd7dd2600b0c594"
+          },
+          {
+            "id": "span:7f4ce5e30b8462821b76bc2fdfdf8c686762722338c46f494dd7dd2600b0c594",
+            "type": "example",
+            "source_form": "de’i blon po bram ze ba su ne tra źes bya ba\n  „sein Minister, der Brahmane namens Vasunetra“\n    \n      (Tār\n      74,3).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:cf966eaf3c7a09dd671245ff4d4f94a288dcbf93765abc639fa157a5ca6f3cc7"
+          },
+          {
+            "id": "span:9af2418212cba4c2686bc33d72dfb1f95e4279fd050beaed06f1aea6a1644650",
+            "type": "translation",
+            "source_form": "„sein Minister, der Brahmane namens Vasunetra“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:7f4ce5e30b8462821b76bc2fdfdf8c686762722338c46f494dd7dd2600b0c594"
+          },
+          {
+            "id": "span:62ba599dc1e417b7dc5b90c038dbec785fa24562357221639fd8bea1750b1d90",
+            "type": "citation",
+            "source_form": "\n      (Tār\n      74,3).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:7f4ce5e30b8462821b76bc2fdfdf8c686762722338c46f494dd7dd2600b0c594"
+          }
+        ],
+        "sources": [
+          {
+            "sha256": "eb0ac4a4fe568be966ecbe7ed2bed9d9a216a18f9eccd6257f34d3decc59e1c3"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "left-6",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20su%20ne%20tra/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A6"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ba%20su%20ne%20tra/1",
+        "html_sha256": "eb0ac4a4fe568be966ecbe7ed2bed9d9a216a18f9eccd6257f34d3decc59e1c3",
+        "already_certified": false,
+        "component_index": 6,
+        "component_sha256": "29e459c0dd8c065d6a96cc6fd49b2a3130df6908ed1888fde9046495fcf2289b",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "left-6",
+          "heading_loc": "ba su ne tra",
+          "heading_tibetan": "བ་སུ་ནེ་ཏྲ",
+          "printed_homonym": null,
+          "bbox": [
+            133,
+            1828,
+            398,
+            1881
+          ],
+          "column": "left",
+          "classification": "article",
+          "printed_evidence": "Npr. ein Minister; quotation identifies the Brahman Vasunetra, Tār 74,3.",
+          "preceding": "bā su nā ga, ending Tār 3,11.",
+          "following": "End of left column; right column begins with ba su bandhu.",
+          "uncertainty": "No printed homonym numeral visible; Tibetan reading provisional."
+        },
+        "pdf_heading_bbox": [
+          40.37999599575996,
+          114.17998046875005,
+          119.87999599575996,
+          130.07998046875002
+        ],
+        "image_crop": {
+          "item_id": "left-6",
+          "path": "article-42dd410713d2af96-0009.png",
+          "sha256": "66c38f37651e23046750654520cfad38503aa5c8b2294d4e533c381416441bb4",
+          "pixels": [
+            615,
+            456
+          ],
+          "parent_bbox": [
+            109,
+            1804,
+            724,
+            2260
+          ],
+          "pdf_bbox": [
+            33.17999599575996,
+            0.47998046875,
+            217.67999599575995,
+            137.27998046875007
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "left-6",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20su%20ne%20tra/1",
+          "component_index": 6,
+          "printed_evidence": "npr. ein Minister; “sein Minister, der Brahmane namens Vasunetra” (Tār 74,3).",
+          "html_evidence": "sein Minister, der Brahmane namens Vasunetra",
+          "boundary_evidence": "A separate heading follows bā su nā ga at the end of the left column.",
+          "homonym_evidence": "No printed numeral; the named minister in the example discriminates the witness.",
+          "alternatives": "Not the preceding Brahman Vāsunāga.",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "non-definition component"
+        ],
+        "page": "wts_8_b-25",
+        "headword": "ba su ne tra",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A6",
+              "heading_loc": "ba su ne tra",
+              "heading_tibetan": "བ་སུ་ནེ་ཏྲ་",
+              "printed_homonym": null,
+              "bbox": [
+                132,
+                1830,
+                719,
+                2004
+              ],
+              "column": "left",
+              "classification": "article",
+              "printed_evidence": "A minister; his minister, the Brahman Vasunetra, Tār 74,3.",
+              "preceding": "bā su nā ga.",
+              "following": "Column ends; ba su bandhu begins the right column.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A6",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20su%20ne%20tra/1",
+              "component_index": 4,
+              "printed_evidence": "A minister, specifically the Brahman named Vasunetra; Tār 74,3.",
+              "html_evidence": "de’i blon po bram ze ba su ne tra źes bya ba",
+              "boundary_evidence": "Last independent entry in the left column; ba su bandhu follows in the right column.",
+              "homonym_evidence": "No numeral is printed.",
+              "alternatives": "bā su nā ga is a Brahman but has a different role, wording and citation.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "headword_count": 1,
+      "expected_policy_reason": "unresolved source interpretation"
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+      "page": "wts_9_m-36",
+      "crop_sha256": "024a127c88c3e4b0b874c2c77e818d77b0cc15967f047cba5ff0e2ec7bc3d4ed",
+      "observed_heading": "mā ma kī",
+      "source_first_observation": "Independent unnumbered Māmakī heading; Hev 2.4.65 and Mvyup 4.38a; named deity companions.",
+      "identity_correct": true,
+      "in_initial_pool": false,
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+        "headword": {
+          "loc": "mā ma kī",
+          "tibetan": "མཱ་མ་ཀཱི་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:f5c593c3f68e922f13d23f3d968517adcf7639e8ee7cd47c797600ea8dc85dee",
+            "type": "headword",
+            "source_form": "མཱ་མ་ཀཱི་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:23af02f189859f54942bf3ce794be227f1bddc080af2d6f36c6e3f63245973cc",
+            "type": "headword",
+            "source_form": "mā ma kī",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:6c77f3dcff6fda698999a6c9dcf35a5556c19ffe3e53f0d47282ab24fe61075d",
+            "type": "definition",
+            "source_form": "\n  npr. eine weibliche Gottheit, skt. Māmakī.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:86cecf250c36d9d9d676785c9deeba0e038f619e9fdbcee2b1a19da3ed6601ca"
+          },
+          {
+            "id": "span:86cecf250c36d9d9d676785c9deeba0e038f619e9fdbcee2b1a19da3ed6601ca",
+            "type": "source_division",
+            "source_form": "\n  npr. eine weibliche Gottheit, skt. Māmakī.\n\n\n  \n  lha mo thams cad la / ’di lta ste spyan daṅ / mā ma kī daṅ / gos dkar mo daṅ ... de dag la sogs pa\n  „all diese Göttinnen, nämlich Locanā, Māmakī, Pāṇḍurā und andere“\n    \n      (Hev\n      2.4.65);\n    \n  \n  \n   spyan daṅ skul byed mā ma kī ... bsgoms na ’chi bas mi tshugs so\n  (metr.)\n  „wenn man über Locanā, Cundā, Māmakī [usw.]  meditiert hat, kann der Tod ihm nichts anhaben“\n    \n      (Mvup\n      4.38a).\n    \n  \n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:e3d9564bae6deec7f882c055eb7c965b30c750b490409955bf95b72a41cd290f",
+            "type": "tibetan",
+            "source_form": "lha mo thams cad la / ’di lta ste spyan daṅ / mā ma kī daṅ / gos dkar mo daṅ ... de dag la sogs pa",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:6e1ff4bfdb5490d206bf2068c2e879d6e6004f2fa72814de7bec5ebe0d8c2422"
+          },
+          {
+            "id": "span:6e1ff4bfdb5490d206bf2068c2e879d6e6004f2fa72814de7bec5ebe0d8c2422",
+            "type": "example",
+            "source_form": "lha mo thams cad la / ’di lta ste spyan daṅ / mā ma kī daṅ / gos dkar mo daṅ ... de dag la sogs pa\n  „all diese Göttinnen, nämlich Locanā, Māmakī, Pāṇḍurā und andere“\n    \n      (Hev\n      2.4.65);\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:86cecf250c36d9d9d676785c9deeba0e038f619e9fdbcee2b1a19da3ed6601ca"
+          },
+          {
+            "id": "span:2a3174346d2d8ed006498faa3059689039610697887e178cea7ab440240435a2",
+            "type": "translation",
+            "source_form": "„all diese Göttinnen, nämlich Locanā, Māmakī, Pāṇḍurā und andere“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:6e1ff4bfdb5490d206bf2068c2e879d6e6004f2fa72814de7bec5ebe0d8c2422"
+          },
+          {
+            "id": "span:c01a2570e0078841bd926f05a343ee160f8492b776ade4a336fad80ccc3091bb",
+            "type": "citation",
+            "source_form": "\n      (Hev\n      2.4.65);\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:6e1ff4bfdb5490d206bf2068c2e879d6e6004f2fa72814de7bec5ebe0d8c2422"
+          },
+          {
+            "id": "span:e398593b81b1a7b47bd875cb1f076acd388db2575b559356b2d0bbfb3e00a340",
+            "type": "tibetan",
+            "source_form": " spyan daṅ skul byed mā ma kī ... bsgoms na ’chi bas mi tshugs so",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1f099edfebb68a8bffbe86fc480c74460c41504bd6eeca2f59df89c081af1e81"
+          },
+          {
+            "id": "span:1f099edfebb68a8bffbe86fc480c74460c41504bd6eeca2f59df89c081af1e81",
+            "type": "example",
+            "source_form": " spyan daṅ skul byed mā ma kī ... bsgoms na ’chi bas mi tshugs so\n  (metr.)\n  „wenn man über Locanā, Cundā, Māmakī [usw.]  meditiert hat, kann der Tod ihm nichts anhaben“\n    \n      (Mvup\n      4.38a).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:86cecf250c36d9d9d676785c9deeba0e038f619e9fdbcee2b1a19da3ed6601ca"
+          },
+          {
+            "id": "span:5a84403990fe9fc95dd9c12861e01e4b8dec66863a908b81bd91c093158d4bd3",
+            "type": "qualifier",
+            "source_form": "(metr.)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1f099edfebb68a8bffbe86fc480c74460c41504bd6eeca2f59df89c081af1e81"
+          },
+          {
+            "id": "span:a810c09fe3953c0c823cfe00669acf895f67c5ed9bb0ca51764833185675749a",
+            "type": "translation",
+            "source_form": "„wenn man über Locanā, Cundā, Māmakī [usw.]  meditiert hat, kann der Tod ihm nichts anhaben“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1f099edfebb68a8bffbe86fc480c74460c41504bd6eeca2f59df89c081af1e81"
+          },
+          {
+            "id": "span:9038851ddaad47aff885994a4f455edeb8e5431b75aec009ba7462426bf456f7",
+            "type": "citation",
+            "source_form": "\n      (Mvup\n      4.38a).\n    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:1f099edfebb68a8bffbe86fc480c74460c41504bd6eeca2f59df89c081af1e81"
+          }
+        ],
+        "sources": [
+          {
+            "sha256": "67db358b023289c7a032fd07d3050d06704b841b3cc201d739fb8531f426c46b"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "03",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "a03"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+        "html_sha256": "67db358b023289c7a032fd07d3050d06704b841b3cc201d739fb8531f426c46b",
+        "already_certified": false,
+        "component_index": 6,
+        "component_sha256": "5d629b6f2b61222377e251582073cb2e2876c104bb3c0f33b035c29d0d2b967b",
+        "historical_anchors": [],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "03",
+          "heading_loc": "mā ma kī",
+          "heading_tibetan": "མཱ་མ་ཀཱི་",
+          "printed_homonym": null,
+          "bbox": [
+            890,
+            372,
+            1128,
+            432
+          ],
+          "column": "right",
+          "classification": "article",
+          "printed_evidence": "npr. eine weibliche Gottheit, skt. Māmakī; citations include Hev 2.4.65 and Mvup 4.38a.",
+          "preceding": "End of ma ma, brDa citation.",
+          "following": "Article mā ma thar.",
+          "uncertainty": "No printed homonym numeral visible; Tibetan vowel marks are provisionally read."
+        },
+        "pdf_heading_bbox": [
+          267.47999599575996,
+          541.92001953125,
+          338.87999599575994,
+          559.92001953125
+        ],
+        "image_crop": {
+          "item_id": "03",
+          "path": "article-8eabaa55d7f5b900-0005.png",
+          "sha256": "024a127c88c3e4b0b874c2c77e818d77b0cc15967f047cba5ff0e2ec7bc3d4ed",
+          "pixels": [
+            671,
+            476
+          ],
+          "parent_bbox": [
+            866,
+            348,
+            1537,
+            824
+          ],
+          "pdf_bbox": [
+            260.27999599576,
+            424.32001953125,
+            461.57999599575993,
+            567.12001953125
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "03",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+          "component_index": 6,
+          "printed_evidence": "mā ma kī is a female deity, Sanskrit Māmakī; the Hev 2.4.65 example names Locanā, Māmakī and Pāṇḍurā.",
+          "html_evidence": "„all diese Göttinnen, nämlich Locanā, Māmakī, Pāṇḍurā und andere“",
+          "boundary_evidence": "The heading begins after the final brDa citation of ma ma; mā ma thar follows.",
+          "homonym_evidence": "No printed homonym numeral is visible; the deity and example discriminate the witness.",
+          "alternatives": "The neighboring ma ma and mā ma thar are separate articles.",
+          "uncertainty": "The inventory’s Tibetan vowel-mark reading is provisional; the romanized heading and citation support the match."
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "direct-source pathway; no historical anchor",
+          "non-definition component"
+        ],
+        "page": "wts_9_m-36",
+        "headword": "mā ma kī",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "a03",
+              "heading_loc": "mā ma kī",
+              "heading_tibetan": "མཱ་མ་ཀཱི་",
+              "printed_homonym": null,
+              "bbox": [
+                893,
+                375,
+                1479,
+                767
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "A female deity, Sanskrit Māmakī; examples cite Hev 2.4.65 and Mvup 4.38a.",
+              "preceding": "ma ma continuation.",
+              "following": "mā ma thar.",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "a03",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+              "component_index": 4,
+              "printed_evidence": "The first example lists Locanā, Māmakī and Pāṇḍurā and is cited to Hev 2.4.65.",
+              "html_evidence": "lha mo thams cad la / ’di lta ste spyan daṅ / mā ma kī daṅ / gos dkar mo daṅ ... de dag la sogs pa",
+              "boundary_evidence": "Begins after the ma ma continuation and ends before mā ma thar.",
+              "homonym_evidence": "No printed homonym numeral.",
+              "alternatives": "ma mo also concerns female deities in one sense, but does not have this headword or this example.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "headword_count": 1,
+      "expected_policy_reason": "unresolved source interpretation"
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20gnas/1",
+      "page": "wts_9_m-32",
+      "crop_sha256": "ed20b0bb9d2e76bb9cb8f3991ad955338f16155bad35de01ef827c85bd4736d9",
+      "observed_heading": "ma gnas",
+      "source_first_observation": "Independent unnumbered heading; Selbstkostenpreis, Einkaufspreis; ma rtsa’i rin thaṅ gi gnas goṅ (Dagy).",
+      "identity_correct": true,
+      "in_initial_pool": true,
+      "body": {
+        "inspection_id": "badw:https://wts-digital.badw.de/lemma/ma%20gnas/1",
+        "source_kind": "html",
+        "source_url": "https://wts-digital.badw.de/lemma/ma%20gnas/1",
+        "headword": {
+          "loc": "ma gnas",
+          "tibetan": "མ་གནས་"
+        },
+        "homonym": "1",
+        "components": [
+          {
+            "id": "span:6b0b6281ec2708b4bea5eb8f2846f7a4e1c8f25768f954a580614c0d23cee2a7",
+            "type": "headword",
+            "source_form": "མ་གནས་",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:07f15ac2a09880d271c316caeb730dba44f5d9af4e1b8ac4e5a73e1a164d6448",
+            "type": "headword",
+            "source_form": "ma gnas",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:a4cd16222b2719b79a337f26a43ce3692afc4a4ce277d9ed8383e66bd388ec69",
+            "type": "definition",
+            "source_form": "\n  Selbstkostenpreis, Einkaufspreis.\n",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:6bb56358a72e11c7f5ec2f0b060aacc2efd21050e6098223d56d3d3d6c4ed1d0"
+          },
+          {
+            "id": "span:6bb56358a72e11c7f5ec2f0b060aacc2efd21050e6098223d56d3d3d6c4ed1d0",
+            "type": "source_division",
+            "source_form": "\n  Selbstkostenpreis, Einkaufspreis.\n\n\nLex. ma rtsa’i rin thaṅ gi gnas goṅ „Höhe des grundlegenden Preises“ (Dagy).\n\n\n\t    ",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null
+          },
+          {
+            "id": "span:07747f424bd7f11bf51e775428f5fc9fb1dab01a41e34384df39c90cddcf93f8",
+            "type": "tibetan",
+            "source_form": "ma rtsa’i rin thaṅ gi gnas goṅ ",
+            "language": "bo",
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:6d7ab87646dc313ec5cbeeb4b1ccd01e687808737b4228416ef8365c2a20415a"
+          },
+          {
+            "id": "span:6d7ab87646dc313ec5cbeeb4b1ccd01e687808737b4228416ef8365c2a20415a",
+            "type": "lexical_parallel",
+            "source_form": "ma rtsa’i rin thaṅ gi gnas goṅ „Höhe des grundlegenden Preises“ (Dagy).",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:6bb56358a72e11c7f5ec2f0b060aacc2efd21050e6098223d56d3d3d6c4ed1d0"
+          },
+          {
+            "id": "span:9ccb0f6b11b2646f9eae3eb9749d6d43c016ac52fe643132285aa78db6d4392f",
+            "type": "translation",
+            "source_form": "„Höhe des grundlegenden Preises“",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:6d7ab87646dc313ec5cbeeb4b1ccd01e687808737b4228416ef8365c2a20415a"
+          },
+          {
+            "id": "span:fe4b7cf3de7ef451d7f8d5e1fd8659232aeb681810b775ab6e89aa565ca00953",
+            "type": "citation",
+            "source_form": "(Dagy)",
+            "language": null,
+            "normalized_wylie": null,
+            "tibetan_script": null,
+            "source_parent_id": "span:6d7ab87646dc313ec5cbeeb4b1ccd01e687808737b4228416ef8365c2a20415a"
+          }
+        ],
+        "sources": [
+          {
+            "sha256": "a688dacb4b345d289c233696b75e464ea834838c91a47bc7a737c85eb644f74a"
+          }
+        ]
+      },
+      "cached_row": {
+        "item_id": "a14",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20gnas/1",
+        "state": "model-source-reviewed",
+        "reason": "two blind source readings; not certification",
+        "second_item_ids": [
+          "A14"
+        ],
+        "source_url": "https://wts-digital.badw.de/lemma/ma%20gnas/1",
+        "html_sha256": "a688dacb4b345d289c233696b75e464ea834838c91a47bc7a737c85eb644f74a",
+        "already_certified": false,
+        "component_index": 5,
+        "component_sha256": "4a700c614434e19c8916bf60d6862270592d8b18a8f4d1e8037b0417902e2185",
+        "historical_anchors": [
+          "wts_9_m:32:74"
+        ],
+        "previous_decisions": [],
+        "heading": {
+          "item_id": "a14",
+          "heading_loc": "ma gnas",
+          "heading_tibetan": "མ་གནས",
+          "printed_homonym": null,
+          "bbox": [
+            888,
+            1743,
+            1132,
+            1789
+          ],
+          "column": "right",
+          "classification": "article",
+          "printed_evidence": "Selbstkostenpreis, Einkaufspreis; Lex. ma rtsa’i rin thaṅ gi gnas goṅ.",
+          "preceding": "ma ṇḍal.",
+          "following": "¹ma paṅ.",
+          "uncertainty": "No printed homonym numeral visible."
+        },
+        "pdf_heading_bbox": [
+          268.31999995708463,
+          139.85999755859382,
+          341.5199999570846,
+          153.65999755859377
+        ],
+        "image_crop": {
+          "item_id": "a14",
+          "path": "article-00f48196b95805fc-0019.png",
+          "sha256": "ed20b0bb9d2e76bb9cb8f3991ad955338f16155bad35de01ef827c85bd4736d9",
+          "pixels": [
+            663,
+            243
+          ],
+          "parent_bbox": [
+            857,
+            1719,
+            1520,
+            1962
+          ],
+          "pdf_bbox": [
+            259.0199999570846,
+            87.95999755859373,
+            457.91999995708466,
+            160.85999755859382
+          ],
+          "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+        },
+        "first_matching": {
+          "item_id": "a14",
+          "outcome": "supported",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20gnas/1",
+          "component_index": 5,
+          "printed_evidence": "ma gnas: “Selbstkostenpreis, Einkaufspreis”; Lex. ma rtsa’i rin thaṅ gi gnas goṅ, “Höhe des grundlegenden Preises” (Dagy).",
+          "html_evidence": "ma rtsa’i rin thaṅ gi gnas goṅ „Höhe des grundlegenden Preises“ (Dagy).",
+          "boundary_evidence": "A distinct article follows ma ṇḍal and precedes ¹ma paṅ.",
+          "homonym_evidence": "The unnumbered heading is supported by its definition and lexical parallel.",
+          "alternatives": "",
+          "uncertainty": ""
+        },
+        "risks": [
+          "printed folio and geometry need review",
+          "non-definition component"
+        ],
+        "page": "wts_9_m-32",
+        "headword": "ma gnas",
+        "homonym": "1",
+        "second_reading": {
+          "inventory": [
+            {
+              "item_id": "A14",
+              "heading_loc": "ma gnas",
+              "heading_tibetan": "མ་གནས་",
+              "printed_homonym": null,
+              "bbox": [
+                886,
+                1738,
+                1130,
+                1791
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "Selbstkostenpreis, Einkaufspreis; Lex. ma rtsa’i rin thaṅ gi gnas goṅ (Dagy).",
+              "preceding": "ma ṇḍal",
+              "following": "¹ma paṅ",
+              "uncertainty": ""
+            }
+          ],
+          "matching": [
+            {
+              "item_id": "A14",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20gnas/1",
+              "component_index": 5,
+              "printed_evidence": "Cost or purchase price and the Dagy lexical explanation ma rtsa’i rin thaṅ gi gnas goṅ match.",
+              "html_evidence": "ma rtsa’i rin thaṅ gi gnas goṅ „Höhe des grundlegenden Preises“ (Dagy).",
+              "boundary_evidence": "Separate heading between ma ṇḍal and ¹ma paṅ.",
+              "homonym_evidence": "No homonym numeral is printed.",
+              "alternatives": "No other supplied candidate has this price explanation.",
+              "uncertainty": ""
+            }
+          ]
+        },
+        "disposition": "published_provisional"
+      },
+      "headword_count": 1,
+      "expected_policy_reason": null
+    }
+  ],
+  "positive_body": {
+    "inspection_id": "badw:https://wts-digital.badw.de/lemma/kos%20thag%20pa/1",
+    "source_kind": "html",
+    "source_url": "https://wts-digital.badw.de/lemma/kos%20thag%20pa/1",
+    "headword": {
+      "loc": "kos thag pa",
+      "tibetan": "ཀོས་ཐག་པ་"
+    },
+    "homonym": "1",
+    "components": [
+      {
+        "id": "span:7d0f53a35e0e335294dfb0be118d84820b44132b6ba9c0ed2582db2f3eaeb455",
+        "type": "headword",
+        "source_form": "ཀོས་ཐག་པ་",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null
+      },
+      {
+        "id": "span:af94652ea04cf08f3d4b8994454f66f64ed537a607be121ea752f86673ce2371",
+        "type": "headword",
+        "source_form": "kos thag pa",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null
+      },
+      {
+        "id": "span:4b65ddf15da05d0f8059d4979b054b951f9c187ba63452d67dc2536a5e55f866",
+        "type": "tibetan",
+        "source_form": "dkos thag pa",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null
+      },
+      {
+        "id": "span:029149e62cc7e403d799d0fc3284b2805629d7058ccbccb09e84e159d1fd3607",
+        "type": "definition",
+        "source_form": "\n  „mit dem Kiefer mahlen“, leiden, gequält, erschöpft sein.\n",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:21bcb96e1d564cb1cc165fde6106b1c71c72762f03937bd02ff421ed6b12b5ce"
+      },
+      {
+        "id": "span:21bcb96e1d564cb1cc165fde6106b1c71c72762f03937bd02ff421ed6b12b5ce",
+        "type": "source_division",
+        "source_form": "\n  „mit dem Kiefer mahlen“, leiden, gequält, erschöpft sein.\n\n\n  \n  kos thag so ’tham skra daṅ spu rnams g.yeṅs gyur pa\n  (metr.)\n  „mit dem Kiefer mahlend, die Zähne zusammenbeißend, die Kopf- und Barthaare raufend“\n    \n      (2CK\n      1: 20,2,5).\n    \n  \n\n\nLex. kos thag ≅ ñam thag „betroffen, getroffen, erschöpft sein“ (Liś 18,6); kos thag pa, dkos thag pa ≅ ñam thag pa „gequält“ (brDa); dkos thag pa ≅ kos thag pa ste ñam thag pa (Dagy).\n\n\n\t    ",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null
+      },
+      {
+        "id": "span:137cadd80a536a0df8ecb4fc93720536aad58e3b7e676524aa0eb5c115fe4f34",
+        "type": "tibetan",
+        "source_form": "kos thag so ’tham skra daṅ spu rnams g.yeṅs gyur pa",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:da3260b0e44d8b1a80a9235b5f7e91fbf2320d56326ceacd8f9fa92d58cadf0e"
+      },
+      {
+        "id": "span:da3260b0e44d8b1a80a9235b5f7e91fbf2320d56326ceacd8f9fa92d58cadf0e",
+        "type": "example",
+        "source_form": "kos thag so ’tham skra daṅ spu rnams g.yeṅs gyur pa\n  (metr.)\n  „mit dem Kiefer mahlend, die Zähne zusammenbeißend, die Kopf- und Barthaare raufend“\n    \n      (2CK\n      1: 20,2,5).\n    ",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:21bcb96e1d564cb1cc165fde6106b1c71c72762f03937bd02ff421ed6b12b5ce"
+      },
+      {
+        "id": "span:936d1767de35a4d97cd5142b00466c42021e168976bce9f47f176400948c988a",
+        "type": "qualifier",
+        "source_form": "(metr.)",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:da3260b0e44d8b1a80a9235b5f7e91fbf2320d56326ceacd8f9fa92d58cadf0e"
+      },
+      {
+        "id": "span:2d030a8879b408b74e248fc0f32f1da9bd87a4bcfc8fcde1d54d62c0a2703644",
+        "type": "translation",
+        "source_form": "„mit dem Kiefer mahlend, die Zähne zusammenbeißend, die Kopf- und Barthaare raufend“",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:da3260b0e44d8b1a80a9235b5f7e91fbf2320d56326ceacd8f9fa92d58cadf0e"
+      },
+      {
+        "id": "span:4e0ebfb858e7e2efdff5220450296abeacb17f6192aae0fd5a67230f7e802747",
+        "type": "citation",
+        "source_form": "\n      (2CK\n      1: 20,2,5).\n    ",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:da3260b0e44d8b1a80a9235b5f7e91fbf2320d56326ceacd8f9fa92d58cadf0e"
+      },
+      {
+        "id": "span:b9f121a9e6423eeeb610785b556b7871b6524f0b99c86d8c994daef37411665f",
+        "type": "tibetan",
+        "source_form": "kos thag",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:6c7e2272556a7e9d4259d23b6c11580c48d424eaa93f4235ce4dceff2a54c167"
+      },
+      {
+        "id": "span:6c7e2272556a7e9d4259d23b6c11580c48d424eaa93f4235ce4dceff2a54c167",
+        "type": "lexical_parallel",
+        "source_form": "kos thag ≅ ñam thag „betroffen, getroffen, erschöpft sein“ (Liś 18,6)",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:21bcb96e1d564cb1cc165fde6106b1c71c72762f03937bd02ff421ed6b12b5ce"
+      },
+      {
+        "id": "span:039340168d9e5316ca2f46939737f41bf903ad5aa3a4090aef26d0ca556ecc67",
+        "type": "tibetan",
+        "source_form": "ñam thag",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:6c7e2272556a7e9d4259d23b6c11580c48d424eaa93f4235ce4dceff2a54c167"
+      },
+      {
+        "id": "span:bdd9d781f1978a9cedea8c7365e4ac040c608c93d181c40903413d688a200d81",
+        "type": "translation",
+        "source_form": "„betroffen, getroffen, erschöpft sein“",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:6c7e2272556a7e9d4259d23b6c11580c48d424eaa93f4235ce4dceff2a54c167"
+      },
+      {
+        "id": "span:d4d5904d3145afe58e6a2e1926060fe8145903b89f3a40589a0bdeee0d85743a",
+        "type": "citation",
+        "source_form": "(Liś 18,6)",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:6c7e2272556a7e9d4259d23b6c11580c48d424eaa93f4235ce4dceff2a54c167"
+      },
+      {
+        "id": "span:fb73861854bd9332fef9d66e9b5a8b5d1e21e140b0683fd0b196b050ab98b082",
+        "type": "tibetan",
+        "source_form": "kos thag pa",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:01c6b206574549c2c31b8c1ee60b559debb6b4a56e7f8128ad18792326bed139"
+      },
+      {
+        "id": "span:01c6b206574549c2c31b8c1ee60b559debb6b4a56e7f8128ad18792326bed139",
+        "type": "lexical_parallel",
+        "source_form": "kos thag pa, dkos thag pa ≅ ñam thag pa „gequält“ (brDa)",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:21bcb96e1d564cb1cc165fde6106b1c71c72762f03937bd02ff421ed6b12b5ce"
+      },
+      {
+        "id": "span:395e2c2b9a4ac71249b252ea39ae578fbcfd0c9c5735664ec6c108b8f3c6c8d4",
+        "type": "tibetan",
+        "source_form": "dkos thag pa",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:01c6b206574549c2c31b8c1ee60b559debb6b4a56e7f8128ad18792326bed139"
+      },
+      {
+        "id": "span:c3739b521e41997d741b428dca5d1f09e465afaa7551a5789e8d70762aee5c0a",
+        "type": "tibetan",
+        "source_form": " ñam thag pa",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:01c6b206574549c2c31b8c1ee60b559debb6b4a56e7f8128ad18792326bed139"
+      },
+      {
+        "id": "span:941b5fdf23cc7ed57c4399d6866c6ffcd36c3da38bb820de66a751263ade0201",
+        "type": "translation",
+        "source_form": "„gequält“",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:01c6b206574549c2c31b8c1ee60b559debb6b4a56e7f8128ad18792326bed139"
+      },
+      {
+        "id": "span:f21e3c93be5dd216ec0304ebccb7fc92d8d27086c2796aadd182fe8327ded11b",
+        "type": "citation",
+        "source_form": "(brDa)",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:01c6b206574549c2c31b8c1ee60b559debb6b4a56e7f8128ad18792326bed139"
+      },
+      {
+        "id": "span:0c34c19351d558bb273e7cd3a9a88eb4167ece60a6aab604c58af73ad72e3c9f",
+        "type": "tibetan",
+        "source_form": "dkos thag pa",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:589c5b79bddc18a6210e3e6312e211e614ae1040d9860cda460716b0727f3c2d"
+      },
+      {
+        "id": "span:589c5b79bddc18a6210e3e6312e211e614ae1040d9860cda460716b0727f3c2d",
+        "type": "lexical_parallel",
+        "source_form": "dkos thag pa ≅ kos thag pa ste ñam thag pa (Dagy).",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:21bcb96e1d564cb1cc165fde6106b1c71c72762f03937bd02ff421ed6b12b5ce"
+      },
+      {
+        "id": "span:0ab732d55107b7448ac8bde3a3f849c92e9f254b5d66f1a6c6b13356a603dc57",
+        "type": "tibetan",
+        "source_form": "kos thag pa ste ñam thag pa",
+        "language": "bo",
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:589c5b79bddc18a6210e3e6312e211e614ae1040d9860cda460716b0727f3c2d"
+      },
+      {
+        "id": "span:9db2d51a93ec2e2d0796bbae350cf4040aec9accc7abe76ea670837c2256647f",
+        "type": "citation",
+        "source_form": "(Dagy)",
+        "language": null,
+        "normalized_wylie": null,
+        "tibetan_script": null,
+        "source_parent_id": "span:589c5b79bddc18a6210e3e6312e211e614ae1040d9860cda460716b0727f3c2d"
+      }
+    ],
+    "sources": [
+      {
+        "sha256": "a9978dc2e2c13132740eaca5478f6a454c9dbc89d02363481d9359bdeedd2075"
+      }
+    ]
+  },
+  "heldout": {
+    "reference": "data/badw_model_heldout_ma12_reference.json",
+    "reference_sha256": "7cbf80549fb8d57509c2eb9da47c086f5c54e9fe497e38339c7bcb0f157e0a72",
+    "correct_links": 12,
+    "false_positive_links": 0,
+    "correct_abstentions": 3,
+    "precision_95_lower": 0.7575059933447693
+  }
+}

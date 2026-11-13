@@ -74,6 +74,9 @@ FILE_NON_STDLIB_IMPORTS = {
     "scripts/run_badw_linking_campaign.py": {"openai"},
     # Reuses the same optional SDK in requirements-badw-model.txt for blind review.
     "scripts/badw_campaign_review.py": {"openai", "jsonschema"},
+    # Offline certification re-renders cached scans with the worker's existing
+    # optional dependency; it never instantiates API transport.
+    "scripts/certify_badw_model_links.py": {"pymupdf"},
     # Exercise the worker's real PDF/image coordinate transforms end to end.
     "tests/test_badw_model_worker.py": {"pymupdf"},
 }

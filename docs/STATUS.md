@@ -29,26 +29,32 @@ is reported by the reproduction command and is not inferred from either field.
 
 ## HTML Links to Original Print
 
-The checked-in reviewed ledgers contain **691 certified HTML attachments**
-to **89 printed-page derivatives**. Current evidence is in
-`data/badw_html_print_alignment.json`, its checked generated expansion, and
-`data/badw_html_print_pages.json`. Historical pilot reports with zero new links
-are superseded. These counts describe certificates; browser/build validation
-is recorded with each published milestone. Review provenance distinguishes agent
-image inspection from independent human review. The OCR release is unchanged.
-The separate `data/badw_html_print_provisional.generated.json` contains
-**532 additional provisional links on 62 physical scans**.
-These use two model source readings, exact HTML/component evidence and registered
-scan checksums. The reader labels them “Suggested original printed page —
-automatically matched, not yet verified” and permits hiding them. They never
-replace certificates or claim printed folios on unresolved spreads. Conflicts,
-unfinished reviews and prior decisions remain in the explicit review queue.
-No automatic certification policy has been validated.
-The persistent controller is `scripts/run_badw_linking_campaign.py`; private live
-state remains in `work/linking-campaign-20261112`. Its `produce` command connects
-bounded generation, blind review, provisional export and reader verification;
-`--base-reader` reuses complete witness bodies at subsequent milestones.
-See `docs/BADW_SOURCE_INTEGRATION.md` for commands, source checking and limits.
+The checked-in ledgers contain **783 certified HTML attachments** to **131
+printed-page derivatives**, including **92 newly compiled model-verified links**
+from the frozen 92-candidate pool. All previous 691 certificates are preserved.
+The new `model-source-verified-v1` certificates explicitly identify their two
+source readings and deterministic checks; they do not claim human review.
+`unique-unnumbered-lexical-v1` admits unique, unnumbered printed headings with
+exact HTML identity, lexical component quotations, boundary observations, no
+competing assignments or prior exclusions, and a re-rendered original physical
+scan. Whole scans can be linked without inventing a printed folio or spread side.
+
+`python3 scripts/certify_badw_model_links.py` performs offline acceptance,
+certificate generation, full compilation and canonical ledger updates without
+per-article authored decisions or API calls. The initial production certified
+92 in 103.67 seconds. The 32 prior crop inspections and eight additional
+source-first audit observations are preserved as controls. They found no
+identity errors but do not establish a corpus-wide accuracy estimate.
+Numbered/editorially split homonyms and reference-only articles require a
+separately tested policy and are not automatically accepted by this class.
+
+The remaining **440 cached suggestions** are retained separately, not counted as
+finished links. The current complete reader build omits suggestions. Witness
+bodies, references, the original 691 certificates and `release/current` remain
+unchanged. No new API expenditure was incurred; the existing campaign ledger
+retains US$10.139691895 returned usage and US$5.2368 unresolved reservations
+against its US$20 ceiling (US$4.623508105 available).
+See `docs/BADW_SOURCE_INTEGRATION.md` for reproducible commands and policy limits.
 
 ## Corpus Structural Health
 

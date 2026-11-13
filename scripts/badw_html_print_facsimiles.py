@@ -94,7 +94,9 @@ def prepare(scans_root, output, reviews=REVIEWS, registry=ROOT/'data/source_pdfs
         # printed page at normal scale. Image XObjects are copied, not resampled.
         writer.pages[0].mediabox = RectangleObject(row['crop'])
         writer.pages[0].cropbox = RectangleObject(row['crop'])
-        writer.add_metadata({'/Title': f"WTS {row['volume']}, p. {row['printed_page']}",
+        title = (f"WTS {row['volume']}, p. {row['printed_page']}" if row['printed_page'] is not None
+                 else f"WTS {row['source']}, physical scan {row['physical_page']}")
+        writer.add_metadata({'/Title': title,
                              '/Producer': METHOD})
         with dest.open('wb') as stream:
             writer.write(stream)
@@ -158,7 +160,9 @@ class Facsimiles:
             self.used.add(page['id'])
         editorial['label'] = 'BAdW editorial text'
         entry['sources'].append(dict(url='sources/print/'+page['filename']+'#page=1&view=Fit',
-            label=f"Original printed edition · {page['volume']}, p. {page['printed_page']}",
+            label=(f"Original printed edition · {page['volume']}, p. {page['printed_page']}"
+                   if page['printed_page'] is not None else
+                   f"Original printed edition · {page['source']}, physical scan {page['physical_page']} · model source verified"),
             sha256=page['sha256'], print_provenance=dict(page, evidence=row['evidence'],
                 printed_heading=row['printed_heading'])))
 

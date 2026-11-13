@@ -33,7 +33,9 @@ const {chromium}=require('playwright-core');
   assert.deepEqual(provenance.evidence,reviewedWitness.evidence);
   if(provenance.evidence.certificate){
    const observation=provenance.evidence.certificate.print_observation;
-   assert.equal(observation.verification,'visual transcription; not machine-verified');
+   const certificate=provenance.evidence.certificate;
+   assert.equal(observation.verification,certificate.certificate_type==='model-source-verified-v1'?
+    'model source verified; not human reviewed':'visual transcription; not machine-verified');
    assert.equal(observation.heading,provenance.printed_heading);
    if(provenance.evidence.certificate.certificate_type==='direct-source-heading-v1'){
     const certificate=provenance.evidence.certificate;
@@ -41,6 +43,11 @@ const {chromium}=require('playwright-core');
     assert.equal(certificate.source_review.decision,'accept');
     assert(certificate.heading_id);
     assert(!('anchor' in certificate));
+   }else if(certificate.certificate_type==='model-source-verified-v1'){
+    assert.equal(certificate.policy,'unique-unnumbered-lexical-v1');
+    assert.equal(certificate.model_evidence.second_reading.inventory.length,1);
+    assert.equal(certificate.model_evidence.second_reading.matching.length,1);
+    assert.equal(provenance.printed_page,null);
    }else{
     assert.equal(observation.heading_anchor,observation.evidence_anchor);
    }

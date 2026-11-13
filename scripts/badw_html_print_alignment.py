@@ -1,9 +1,10 @@
-"""Compile page-reviewed HTML alignment certificates; never accept candidates automatically.
+"""Compile source-reviewed HTML alignment certificates under closed review policies.
 
 Candidate edges and OCR anchors are locators, not identity assertions. Acceptance
 requires a reviewed heading position, explicit printed homonym (including null),
 and a distinguishing definition checked in both the scan and editorial witness.
-The compact certificates are manual; the expanded, checksum-bound ledger is generated.
+Certificates retain their human, agent or model review provenance; the expanded,
+checksum-bound ledger is generated.
 """
 import argparse
 import collections
@@ -52,12 +53,14 @@ def review_basis(assertion):
     """Closed provenance vocabulary; absent labels preserve legacy certificates.
 
     A label describes the reviewer, never supplies article or identity evidence.
-    Both modes pass precisely the same certificate gates.
+    Each certificate type enforces its source and identity gates.
     """
     basis = assertion.get('review_basis', REVIEW_BASIS)
-    allowed = (DIRECT_REVIEW_BASIS,) if assertion.get('certificate_type') == DIRECT_TYPE else (REVIEW_BASIS, AGENT_REVIEW_BASIS)
+    from certify_badw_model_links import TYPE, BASIS
+    allowed = ((BASIS,) if assertion.get('certificate_type') == TYPE else
+               (DIRECT_REVIEW_BASIS,) if assertion.get('certificate_type') == DIRECT_TYPE else (REVIEW_BASIS, AGENT_REVIEW_BASIS))
     if basis not in allowed:
-        raise ValueError('unknown review basis; use a fixed human or agent visual review label')
+        raise ValueError('unknown review basis; use the fixed label for the certificate type')
     return basis
 
 
@@ -67,7 +70,7 @@ def witness_record(page_key, assertion):
     component_key = ('cross_reference_component_sha256' if assertion.get('evidence_kind') == 'cross_reference_only'
                      else 'definition_component_sha256')
     location = (dict(heading_item_sha256=assertion['heading_item_sha256'])
-                if assertion.get('certificate_type') == DIRECT_TYPE else dict(anchor_sha256=assertion['anchor_sha256']))
+                if assertion.get('certificate_type') in (DIRECT_TYPE, 'model-source-verified-v1') else dict(anchor_sha256=assertion['anchor_sha256']))
     return dict(source_url=editorial['source_url'], html_sha256=assertion['html_sha256'],
         headword=editorial['headword'], homonym=editorial['homonym'], page=page_key,
         printed_heading=observed['heading'], printed_homonym=observed['homonym'],
@@ -307,6 +310,15 @@ def compile_records(certificate, bodies, anchors, edges, registry, qa_rows=None)
             if sid in seen:
                 raise ValueError('witness assigned twice')
             seen.add(sid)
+            if assertion.get('certificate_type') == 'model-source-verified-v1':
+                from certify_badw_model_links import validate_model
+                validate_model(assertion, bodies[sid], page, (certificate,bodies,anchors,edges,registry,qa_rows))
+                location = (page['source'], page['physical_page'], assertion['heading_id'])
+                if location in used_anchors:
+                    raise ValueError('model heading assigned twice')
+                used_anchors[location] = assertion
+                witnesses.append(witness_record(key, assertion))
+                continue
             if assertion.get('certificate_type') == DIRECT_TYPE:
                 validate_direct(assertion, bodies[sid], page, anchors, edges, certificate.get('decisions', []))
                 location = (key, assertion['heading_id'])

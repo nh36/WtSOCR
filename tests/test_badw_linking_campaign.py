@@ -87,6 +87,8 @@ def test_status_counts_finished_reader_instead_of_unpublished_proposals(campaign
     assert state['published_reader_certified_links']==1
     assert state['published_reader_provisional_links']==2
     assert state['model_supported_proposals']==0
+    (output/'reader/provisional_print_links.json').unlink()
+    assert c.status(root)['published_reader_provisional_links']==0
 
 
 def test_stop_after_inventory_reuses_paid_equivalent_cache(campaign,monkeypatch):

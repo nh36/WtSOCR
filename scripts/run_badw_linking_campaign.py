@@ -224,6 +224,8 @@ def status(root, db=None):
             manifest=Path(reader_output)/'reader'/name
             if manifest.exists():
                 reader_counts[tier]=len(w.load(manifest).get('witnesses',[]))
+        if 'certified' in reader_counts:
+            reader_counts.setdefault('provisional',0)
     result = dict(stages=stages,planned_views=sum(stages.values()),
         process_running=alive or review_alive or publication_alive,
         process_state=('publishing' if publication_alive else 'source_review' if review_alive else 'running' if alive else ('interrupted' if runtime.get('state')=='running' else runtime.get('state','not_running'))),
@@ -244,7 +246,7 @@ def status(root, db=None):
         independent_headings_provisional=observed,model_supported_proposals=supported,
         source_reviewed_acceptances=db.execute('SELECT count(*) FROM reviewed').fetchone()[0],
         published_additional_links=db.execute('SELECT count(*) FROM reviewed WHERE published=1').fetchone()[0],
-        publication_policy='certificates require source adjudication; corroborated model links use a separate provisional dataset',
+        publication_policy='finished source certificates include validated model-source policies; unaccepted suggestions remain separate',
         api_actual_usd=actual,api_unresolved_reservations_usd=reserved,
         campaign_returned_usage_usd=campaign_actual,
         campaign_completed_requests=campaign_requests,
