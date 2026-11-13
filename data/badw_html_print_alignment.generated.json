@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "certificate_sha256": "bf5e07809a27b6c6e10ec4bc0985b9c4d499e0b4b4c2ab89ade0df48e63a94c7",
+  "certificate_sha256": "0939a68e7d4593795d9545bdcc0042f1d5e30d79489d5c4f12fb2597e6e5afce",
   "pages": {
     "v1-p16": {
       "source": "WtS_1-34",
@@ -2225,6 +2225,54 @@
       ],
       "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; gutter at x=438 points, displaced from midpoint; no text in cut",
       "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "printed-0082acd4821c0de9e92c57c14cf2fbf5bf6d49259b9058713726981ffd18c387": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 91,
+      "volume": null,
+      "printed_page": 110,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        437.0,
+        629.28
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: two printed pages, folios 110 and 111; gutter at x=437 PDF points separates all four text columns without clipping text.",
+      "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
+    },
+    "printed-ddd805f2a766f485e50bafd47d7c90380d82d20d87d76f89bc13fcd21d8dc506": {
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 689,
+      "volume": null,
+      "printed_page": 340,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        492.0,
+        679.0
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: a single printed page with two text columns; all margins and the printed folio retained. No spread cut.",
+      "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
+    },
+    "printed-a0257c9cefbd831353836d07e2e96df141ea21645cf9e5424403a2634d1bb369": {
+      "source": "WtS_9-m",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "physical_page": 32,
+      "volume": null,
+      "printed_page": 28,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        459.84,
+        677.76
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: a single printed page with two text columns; all margins and the printed folio retained. No spread cut.",
+      "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
     }
   },
   "witnesses": [
@@ -67993,6 +68041,926 @@
         "definition_component_sha256": "236b8c3a699518084f4287b82ad08a16d9601b1651a52e2ea66b86bca3874cc9"
       },
       "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ke%E2%80%99u%20ka/1",
+      "html_sha256": "27c29306ff1798bafd6df96133bdd742730e291af1330fc74f42e2440b7fb649",
+      "headword": "ke’u ka",
+      "homonym": "1",
+      "page": "printed-0082acd4821c0de9e92c57c14cf2fbf5bf6d49259b9058713726981ffd18c387",
+      "printed_heading": "ke’u ka",
+      "printed_homonym": null,
+      "evidence": {
+        "certificate": {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ke%E2%80%99u%20ka/1",
+          "html_sha256": "27c29306ff1798bafd6df96133bdd742730e291af1330fc74f42e2440b7fb649",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ke%E2%80%99u%20ka/1",
+            "headword": "ke’u ka",
+            "homonym": "1"
+          },
+          "heading_id": "110b07",
+          "heading_item_sha256": "faf16cc3990f65dc4f9ed2a9e9abb7609b9458e4b9f7e225d03015107dd2b864",
+          "definition_component_sha256": "b9bda74ade9853f0423dc25ecc91f934dd83a1cdd3eaeafb77172df49edb9bf4",
+          "print_observation": {
+            "heading": "ke’u ka",
+            "homonym": null,
+            "evidence": "ke’u ka points to ke bu ka.",
+            "identity_context": "Separate reference article between ke’u and ke’u tse.",
+            "page_sha256": "15bfa1f3ff890fb9cb1c2a95f51777d434286f1a1f8d803ed8387fdc48c319f9",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "110b07",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ke%E2%80%99u%20ka/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "a10"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/ke%E2%80%99u%20ka/1",
+            "html_sha256": "27c29306ff1798bafd6df96133bdd742730e291af1330fc74f42e2440b7fb649",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "b9bda74ade9853f0423dc25ecc91f934dd83a1cdd3eaeafb77172df49edb9bf4",
+            "historical_anchors": [
+              "wts_1_34:91:98"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "110b07",
+              "heading_loc": "ke’u ka",
+              "heading_tibetan": "ཀེའུ་ཀ་",
+              "printed_homonym": null,
+              "bbox": [
+                712,
+                1587,
+                883,
+                1635
+              ],
+              "column": "110 right",
+              "classification": "article",
+              "printed_evidence": "Cross-reference to ke bu ka.",
+              "preceding": "End of ke’u, including Tibetan clan sense.",
+              "following": "ke’u tse.",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              213.6,
+              138.780029296875,
+              264.9,
+              153.18002929687503
+            ],
+            "image_crop": {
+              "item_id": "110b07",
+              "path": "article-ab0fad106d9e3de8-0012.png",
+              "sha256": "b2022f5d93cdef05dda5fc90f553359a4ddc684b52a8914395b0721ea02df74c",
+              "pixels": [
+                916,
+                110
+              ],
+              "parent_bbox": [
+                687,
+                1563,
+                1603,
+                1673
+              ],
+              "pdf_bbox": [
+                206.1,
+                127.38002929687502,
+                480.9,
+                160.38002929687502
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "110b07",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ke%E2%80%99u%20ka/1",
+              "component_index": 2,
+              "printed_evidence": "ke’u ka points to ke bu ka.",
+              "html_evidence": "↑ke bu ka",
+              "boundary_evidence": "Separate reference article between ke’u and ke’u tse.",
+              "homonym_evidence": "No printed homonym numeral; the reference target supplies the lexical identification.",
+              "alternatives": "",
+              "uncertainty": ""
+            },
+            "risks": [
+              "printed folio and geometry need review",
+              "short lexical evidence",
+              "non-definition component"
+            ],
+            "page": "wts_1_34-91",
+            "headword": "ke’u ka",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "a10",
+                  "heading_loc": "ke’u ka",
+                  "heading_tibetan": "ཀེའུ་ཀ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    714,
+                    1590,
+                    1018,
+                    1634
+                  ],
+                  "column": "110 right",
+                  "classification": "article",
+                  "printed_evidence": "Independent heading followed by ↑ke bu ka.",
+                  "preceding": "ke’u.",
+                  "following": "ke’u tse.",
+                  "uncertainty": "None material."
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "a10",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ke%E2%80%99u%20ka/1",
+                  "component_index": 2,
+                  "printed_evidence": "The printed target is ↑ke bu ka.",
+                  "html_evidence": "↑ke bu ka",
+                  "boundary_evidence": "Separate heading between ke’u and ke’u tse.",
+                  "homonym_evidence": "No printed homonym numeral.",
+                  "alternatives": "Other ke’u compounds have different reference targets or definitions.",
+                  "uncertainty": "None material."
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_1-34",
+            "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+            "physical_page": 91,
+            "image": {
+              "path": "page.png",
+              "sha256": "196afd876e80d51705ed504878d4f12e1bcc7418eeb5d05924081f1febf67082",
+              "pixels": [
+                2967,
+                2098
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  0.0,
+                  0.0,
+                  890.0399780273438,
+                  629.280029296875
+                ],
+                "image_device_origin": [
+                  0,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  0.0,
+                  629.280029296875
+                ]
+              }
+            },
+            "geometry": null,
+            "inventory_sha256": "ab0fad106d9e3de8eb5246240470e7d3b47c04ac5d2f75bc021f3949e1bd0eb4",
+            "match_sha256": "60866e7c72f18fb34489a9c3fbf93979511466d14db5997155440319ae30be05",
+            "inventory_request_sha256": "f5c4584d6e19dc58748e4b1c9c52ffc27ab4fca31cda4730d343cd2fba8ff992",
+            "match_request_sha256": "4255a37e127d5d639a1202f55acd3f97961ed6bef0679d6e3dfc6033fb87be43",
+            "second_observation_sha256": "59afa313e00c04aff8a4b654a53c7608da170c30386f4a6af33b032391515bd1",
+            "second_request_sha256": "cbc30ac07d7fa25ab711b0f282da54697299cc6be9a8aaf154d7792802152eb1",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [],
+            "census": {
+              "running_header": 4,
+              "article": 21,
+              "embedded_reference": 1,
+              "continuation": 2
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        },
+        "heading_item_sha256": "faf16cc3990f65dc4f9ed2a9e9abb7609b9458e4b9f7e225d03015107dd2b864",
+        "definition_component_sha256": "b9bda74ade9853f0423dc25ecc91f934dd83a1cdd3eaeafb77172df49edb9bf4"
+      },
+      "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/padma%20rigs%20kyi%20la%E1%B9%85%20ka/1",
+      "html_sha256": "53c051d5095995ed978d8f483bf3925a1ec5279534e057932443ad05e183effd",
+      "headword": "padma rigs kyi laṅ ka",
+      "homonym": "1",
+      "page": "printed-ddd805f2a766f485e50bafd47d7c90380d82d20d87d76f89bc13fcd21d8dc506",
+      "printed_heading": "padma rigs kyi laṅ ka",
+      "printed_homonym": null,
+      "evidence": {
+        "certificate": {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20rigs%20kyi%20la%E1%B9%85%20ka/1",
+          "html_sha256": "53c051d5095995ed978d8f483bf3925a1ec5279534e057932443ad05e183effd",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/padma%20rigs%20kyi%20la%E1%B9%85%20ka/1",
+            "headword": "padma rigs kyi laṅ ka",
+            "homonym": "1"
+          },
+          "heading_id": "article-07",
+          "heading_item_sha256": "f8ea12e5d812e7a2e44489f0d3152ce090bece7e7b23a4c0c8869adc27fb693c",
+          "definition_component_sha256": "d4226083bdf6c2234be3f56bfda017d3352aaf91ea1f0b2372d77a41bcb9bee6",
+          "print_observation": {
+            "heading": "padma rigs kyi laṅ ka",
+            "homonym": null,
+            "evidence": "A group of deities belonging to the laṅ ka bźi, cited Neb 308.",
+            "identity_context": "Independent start after the right-column continuation and before padma śugs ldan.",
+            "page_sha256": "20810d59de82b63f260024b45f8dd8e0e8b7bcb1a624c5bd2fbd99dbbdb1d2e7",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "article-07",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20rigs%20kyi%20la%E1%B9%85%20ka/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A7"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/padma%20rigs%20kyi%20la%E1%B9%85%20ka/1",
+            "html_sha256": "53c051d5095995ed978d8f483bf3925a1ec5279534e057932443ad05e183effd",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "d4226083bdf6c2234be3f56bfda017d3352aaf91ea1f0b2372d77a41bcb9bee6",
+            "historical_anchors": [
+              "wts_35_51:689:47"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "article-07",
+              "heading_loc": "padma rigs kyi laṅ ka",
+              "heading_tibetan": "པདྨ་རིགས་ཀྱི་ལང་ཀ",
+              "printed_homonym": null,
+              "bbox": [
+                960,
+                380,
+                1488,
+                438
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "eine Gruppe von Gottheiten, gehört zu den laṅ ka bži (Neb 308).",
+              "preceding": "Continuation of padma rigs kyi tshe lha yab yum.",
+              "following": "padma śugs ldan.",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              288.0,
+              547.6,
+              446.4,
+              565.0
+            ],
+            "image_crop": {
+              "item_id": "article-07",
+              "path": "article-f337620f7e8aca5f-0011.png",
+              "sha256": "44fe97f5087c22063920c4c061a51717629efef1e450737d26f67bf9c1c067d2",
+              "pixels": [
+                719,
+                193
+              ],
+              "parent_bbox": [
+                921,
+                356,
+                1640,
+                549
+              ],
+              "pdf_bbox": [
+                276.3,
+                514.3,
+                492.0,
+                572.2
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "article-07",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20rigs%20kyi%20la%E1%B9%85%20ka/1",
+              "component_index": 2,
+              "printed_evidence": "A group of deities belonging to the laṅ ka bźi, cited Neb 308.",
+              "html_evidence": "eine Gruppe von Gottheiten, gehört zu den laṅ ka bźi (Neb 308).",
+              "boundary_evidence": "Independent start after the right-column continuation and before padma śugs ldan.",
+              "homonym_evidence": "The laṅ ka bźi affiliation and citation distinguish it from other deity groups.",
+              "alternatives": "",
+              "uncertainty": ""
+            },
+            "risks": [
+              "printed folio and geometry need review"
+            ],
+            "page": "wts_35_51-689",
+            "headword": "padma rigs kyi laṅ ka",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A7",
+                  "heading_loc": "padma rigs kyi laṅ ka",
+                  "heading_tibetan": "པདྨ་རིགས་ཀྱི་ལང་ཀ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    958,
+                    379,
+                    1552,
+                    500
+                  ],
+                  "column": "right",
+                  "classification": "article",
+                  "printed_evidence": "Gruppe von Gottheiten, gehört zu den laṅ ka bźi (Neb 308)",
+                  "preceding": "C2 continuation of A6",
+                  "following": "A8 padma śugs ldan",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A7",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20rigs%20kyi%20la%E1%B9%85%20ka/1",
+                  "component_index": 2,
+                  "printed_evidence": "Group of deities belonging to laṅ ka bźi, Neb 308.",
+                  "html_evidence": "eine Gruppe von Gottheiten, gehört zu den laṅ ka bźi (Neb 308).",
+                  "boundary_evidence": "New heading after C2 and before A8.",
+                  "homonym_evidence": "No printed numeral; membership and citation discriminate.",
+                  "alternatives": "The giṅ subgroup candidate has Neb 279, not Neb 308.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_35-51",
+            "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+            "physical_page": 689,
+            "image": {
+              "path": "page.png",
+              "sha256": "807ca95a11cbe3555a6e1d3cdc5f656c4dcb027c5927189b11a887877d508ab9",
+              "pixels": [
+                1640,
+                2264
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  0.0,
+                  0.0,
+                  492.0,
+                  679.0
+                ],
+                "image_device_origin": [
+                  0,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  0.0,
+                  679.0
+                ]
+              }
+            },
+            "geometry": null,
+            "inventory_sha256": "f337620f7e8aca5f43e28363acb02ba6a241065c205c3302e7846e908cda7da3",
+            "match_sha256": "9c379cd948d4d68f9a51a48983ad5bc7ec31321e24b0f4791c8ae0143a21162f",
+            "inventory_request_sha256": "d9d7b88d922c39285d801c98556a88270d0198da46294dff623fb32b27fdfe04",
+            "match_request_sha256": "21e9e7740bdf07d6ec04424664e60fa2d67a29e5c96409d5c29f22d255190f4e",
+            "second_observation_sha256": "fce0127c883c44f2644553a810eb5ecc6e91d114007d023b0838e1ddb0a201da",
+            "second_request_sha256": "de90481cad3239ab2641edc1278541c51313cd7992fa706c6828c9e87a1ac1f2",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [],
+            "census": {
+              "running_header": 2,
+              "continuation": 2,
+              "article": 12,
+              "embedded_reference": 2
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        },
+        "heading_item_sha256": "f8ea12e5d812e7a2e44489f0d3152ce090bece7e7b23a4c0c8869adc27fb693c",
+        "definition_component_sha256": "d4226083bdf6c2234be3f56bfda017d3352aaf91ea1f0b2372d77a41bcb9bee6"
+      },
+      "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/padma%20sam%20bha%20wa/1",
+      "html_sha256": "cdb9bbbe232ee76fa2862947fbb330f006f3c961a9723c057edbd2914e42378b",
+      "headword": "padma sam bha wa",
+      "homonym": "1",
+      "page": "printed-ddd805f2a766f485e50bafd47d7c90380d82d20d87d76f89bc13fcd21d8dc506",
+      "printed_heading": "padma sam bha wa",
+      "printed_homonym": null,
+      "evidence": {
+        "certificate": {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20sam%20bha%20wa/1",
+          "html_sha256": "cdb9bbbe232ee76fa2862947fbb330f006f3c961a9723c057edbd2914e42378b",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/padma%20sam%20bha%20wa/1",
+            "headword": "padma sam bha wa",
+            "homonym": "1"
+          },
+          "heading_id": "article-09",
+          "heading_item_sha256": "a24d9fa5cb22bba671fda4f2bcd73bded55f4a19527813fcef01ca2276bade15",
+          "definition_component_sha256": "ab893828743105782b9897c06d71fe05b47c4f1ef7f483aee4c076229a154156",
+          "print_observation": {
+            "heading": "padma sam bha wa",
+            "homonym": null,
+            "evidence": "The heading and variants padma sambha and padma sambha wa introduce the tantric teacher Padmasaṃbhava, with a reference to padma ’byuṅ gnas.",
+            "identity_context": "The article starts after padma śugs ldan and continues through examples and a Lex. reference.",
+            "page_sha256": "20810d59de82b63f260024b45f8dd8e0e8b7bcb1a624c5bd2fbd99dbbdb1d2e7",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "article-09",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20sam%20bha%20wa/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A9"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/padma%20sam%20bha%20wa/1",
+            "html_sha256": "cdb9bbbe232ee76fa2862947fbb330f006f3c961a9723c057edbd2914e42378b",
+            "already_certified": false,
+            "component_index": 4,
+            "component_sha256": "ab893828743105782b9897c06d71fe05b47c4f1ef7f483aee4c076229a154156",
+            "historical_anchors": [
+              "wts_35_51:689:53"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "article-09",
+              "heading_loc": "padma sam bha wa",
+              "heading_tibetan": "པདྨ་སམ་བྷ་ཝ",
+              "printed_homonym": null,
+              "bbox": [
+                956,
+                664,
+                1386,
+                721
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "auch padma sambha, padma sambha wa; npr. ein tantrischer Lehrer, skt. Padmasambhava.",
+              "preceding": "padma śugs ldan.",
+              "following": "padma gsuṅ.",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              286.8,
+              462.70000000000005,
+              415.8,
+              479.8
+            ],
+            "image_crop": {
+              "item_id": "article-09",
+              "path": "article-f337620f7e8aca5f-0013.png",
+              "sha256": "03febe0c69802b901efb50e11c65bc43c451384a48dd090e1a8df3d25c5db89a",
+              "pixels": [
+                719,
+                169
+              ],
+              "parent_bbox": [
+                921,
+                640,
+                1640,
+                809
+              ],
+              "pdf_bbox": [
+                276.3,
+                436.3,
+                492.0,
+                487.0
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "article-09",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20sam%20bha%20wa/1",
+              "component_index": 4,
+              "printed_evidence": "The heading and variants padma sambha and padma sambha wa introduce the tantric teacher Padmasaṃbhava, with a reference to padma ’byuṅ gnas.",
+              "html_evidence": "npr. ein tantrischer Lehrer, skt. Padmasaṃbhava, vgl. ↑padma ’byuṅ gnas.",
+              "boundary_evidence": "The article starts after padma śugs ldan and continues through examples and a Lex. reference.",
+              "homonym_evidence": "The variants and direction of the reference distinguish this article from the supplied padma ’byuṅ gnas entry.",
+              "alternatives": "padma ’byuṅ gnas is the referenced entry, not this printed heading.",
+              "uncertainty": ""
+            },
+            "risks": [
+              "printed folio and geometry need review"
+            ],
+            "page": "wts_35_51-689",
+            "headword": "padma sam bha wa",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A9",
+                  "heading_loc": "padma sam bha wa",
+                  "heading_tibetan": "པདྨ་སམ་བྷ་ཝ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    952,
+                    662,
+                    1551,
+                    1308
+                  ],
+                  "column": "right",
+                  "classification": "article",
+                  "printed_evidence": "auch padma sambha, padma sambha wa; tantrischer Lehrer, skt. Padmasaṃbhava, vgl. ↑padma ’byuṅ gnas; Padm 127b5 and sBa 64,5",
+                  "preceding": "A8 ends with Neb 139",
+                  "following": "A10 padma gsuṅ",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A9",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20sam%20bha%20wa/1",
+                  "component_index": 4,
+                  "printed_evidence": "Tantric teacher Padmasaṃbhava with reference to ↑padma ’byuṅ gnas; examples include Padm 127b5 and sBa 64,5.",
+                  "html_evidence": "npr. ein tantrischer Lehrer, skt. Padmasaṃbhava, vgl. ↑padma ’byuṅ gnas.",
+                  "boundary_evidence": "New heading after A8; examples and lexical parallel end before A10.",
+                  "homonym_evidence": "No printed numeral. The reciprocal padma ’byuṅ gnas candidate refers in the opposite direction and has different examples.",
+                  "alternatives": "padma ’byuṅ gnas is an embedded reference here, not this heading.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_35-51",
+            "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+            "physical_page": 689,
+            "image": {
+              "path": "page.png",
+              "sha256": "807ca95a11cbe3555a6e1d3cdc5f656c4dcb027c5927189b11a887877d508ab9",
+              "pixels": [
+                1640,
+                2264
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  0.0,
+                  0.0,
+                  492.0,
+                  679.0
+                ],
+                "image_device_origin": [
+                  0,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  0.0,
+                  679.0
+                ]
+              }
+            },
+            "geometry": null,
+            "inventory_sha256": "f337620f7e8aca5f43e28363acb02ba6a241065c205c3302e7846e908cda7da3",
+            "match_sha256": "9c379cd948d4d68f9a51a48983ad5bc7ec31321e24b0f4791c8ae0143a21162f",
+            "inventory_request_sha256": "d9d7b88d922c39285d801c98556a88270d0198da46294dff623fb32b27fdfe04",
+            "match_request_sha256": "21e9e7740bdf07d6ec04424664e60fa2d67a29e5c96409d5c29f22d255190f4e",
+            "second_observation_sha256": "fce0127c883c44f2644553a810eb5ecc6e91d114007d023b0838e1ddb0a201da",
+            "second_request_sha256": "de90481cad3239ab2641edc1278541c51313cd7992fa706c6828c9e87a1ac1f2",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [],
+            "census": {
+              "running_header": 2,
+              "continuation": 2,
+              "article": 12,
+              "embedded_reference": 2
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        },
+        "heading_item_sha256": "a24d9fa5cb22bba671fda4f2bcd73bded55f4a19527813fcef01ca2276bade15",
+        "definition_component_sha256": "ab893828743105782b9897c06d71fe05b47c4f1ef7f483aee4c076229a154156"
+      },
+      "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20ne%20ne/1",
+      "html_sha256": "7e0cabd5a07d8524bc5f1181a7aa1876144c97bb0437fc929e96aabf7ad28211",
+      "headword": "ma ne ne",
+      "homonym": "1",
+      "page": "printed-a0257c9cefbd831353836d07e2e96df141ea21645cf9e5424403a2634d1bb369",
+      "printed_heading": "ma ne ne",
+      "printed_homonym": null,
+      "evidence": {
+        "certificate": {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ne%20ne/1",
+          "html_sha256": "7e0cabd5a07d8524bc5f1181a7aa1876144c97bb0437fc929e96aabf7ad28211",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ma%20ne%20ne/1",
+            "headword": "ma ne ne",
+            "homonym": "1"
+          },
+          "heading_id": "a10",
+          "heading_item_sha256": "66b1b52739dfff8c9ecfc66f6f09654287cf6f1d6ae99798ea2f6c46abc26d65",
+          "definition_component_sha256": "79a895c00c5e587ee0c1be88cf3e234bb25f597b550e7a58df0d614b981e92c7",
+          "print_observation": {
+            "heading": "ma ne ne",
+            "homonym": null,
+            "evidence": "ma ne ne, also ~ gnam sman dkar mo: a deity, mother of Ge-sar; Neb 200.",
+            "identity_context": "A separate heading follows ma ne ta and precedes ma no sa ra.",
+            "page_sha256": "b89233328b734a0593a026c63b2c275959aaa3dbadae0201d451dca636095a7f",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "a10",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ne%20ne/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A10"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/ma%20ne%20ne/1",
+            "html_sha256": "7e0cabd5a07d8524bc5f1181a7aa1876144c97bb0437fc929e96aabf7ad28211",
+            "already_certified": false,
+            "component_index": 3,
+            "component_sha256": "79a895c00c5e587ee0c1be88cf3e234bb25f597b550e7a58df0d614b981e92c7",
+            "historical_anchors": [
+              "wts_9_m:32:59"
+            ],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "a10",
+              "heading_loc": "ma ne ne",
+              "heading_tibetan": "མ་ནེ་ནེ",
+              "printed_homonym": null,
+              "bbox": [
+                885,
+                1077,
+                1101,
+                1126
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "auch ~ gnam sman dkar mo; npr. eine Gottheit, Mutter des Ge-sar; Neb 200.",
+              "preceding": "ma ne ta.",
+              "following": "ma no sa ra.",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              267.41999995708466,
+              338.75999755859374,
+              332.21999995708467,
+              353.4599975585938
+            ],
+            "image_crop": {
+              "item_id": "a10",
+              "path": "article-00f48196b95805fc-0014.png",
+              "sha256": "3849bd7a7cd5f2ab7fdc8a00d332c3c08d6a42173f49db542d6c87bb14ecf562",
+              "pixels": [
+                663,
+                201
+              ],
+              "parent_bbox": [
+                857,
+                1053,
+                1520,
+                1254
+              ],
+              "pdf_bbox": [
+                259.0199999570846,
+                300.35999755859376,
+                457.91999995708466,
+                360.6599975585938
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "a10",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ne%20ne/1",
+              "component_index": 3,
+              "printed_evidence": "ma ne ne, also ~ gnam sman dkar mo: a deity, mother of Ge-sar; Neb 200.",
+              "html_evidence": "npr. eine Gottheit, Mutter des Ge-sar (Neb 200).",
+              "boundary_evidence": "A separate heading follows ma ne ta and precedes ma no sa ra.",
+              "homonym_evidence": "The deity and citation distinguish it from the neighbouring teacher article.",
+              "alternatives": "",
+              "uncertainty": ""
+            },
+            "risks": [
+              "printed folio and geometry need review"
+            ],
+            "page": "wts_9_m-32",
+            "headword": "ma ne ne",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A10",
+                  "heading_loc": "ma ne ne",
+                  "heading_tibetan": "མ་ནེ་ནེ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    884,
+                    1074,
+                    1108,
+                    1129
+                  ],
+                  "column": "right",
+                  "classification": "article",
+                  "printed_evidence": "auch ~ gnam sman dkar mo; npr. eine Gottheit, Mutter des Ge-sar (Neb 200).",
+                  "preceding": "ma ne ta",
+                  "following": "ma no sa ra",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A10",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ne%20ne/1",
+                  "component_index": 3,
+                  "printed_evidence": "A deity, Ge-sar’s mother, Neb 200; variant extends the name with gnam sman dkar mo.",
+                  "html_evidence": "npr. eine Gottheit, Mutter des Ge-sar (Neb 200).",
+                  "boundary_evidence": "Separate heading between ma ne ta and ma no sa ra.",
+                  "homonym_evidence": "No homonym numeral is printed.",
+                  "alternatives": "ma nu sbyin byed is the sun god’s wife, not Ge-sar’s mother.",
+                  "uncertainty": ""
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_9-m",
+            "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+            "physical_page": 32,
+            "image": {
+              "path": "page.png",
+              "sha256": "28e9b11ae2b8ac591b9c9bf137df673b86211549d81ab1956d7edd5df4d7392b",
+              "pixels": [
+                1520,
+                2251
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  0.0,
+                  0.0,
+                  459.8399963378906,
+                  677.760009765625
+                ],
+                "image_device_origin": [
+                  0,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  -1.9199999570846558,
+                  676.5599975585938
+                ]
+              }
+            },
+            "geometry": null,
+            "inventory_sha256": "00f48196b95805fc968339c3320afc927f200a5f05a09abd96f563a5956f9f9d",
+            "match_sha256": "5c225a946fa4ae458ac3c436edefecd61608954cbec19acb7cd36012c6db0628",
+            "inventory_request_sha256": "033e69afce63786f010923385a9835d6907e6146bf07367acbacb39573890e13",
+            "match_request_sha256": "a58f0d453aeeb0b32a302bce8e1a2d470339982964469b25111a334a991cb75b",
+            "second_observation_sha256": "79e58e833f310b1b3c04702beff4fd4ca21e8f1c705aa8875390959fec27e578",
+            "second_request_sha256": "3c3dc65130b2437446caa18ee54e2290189ec603833325c50054d9250f1e1d01",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [
+              {
+                "item_id": "a4",
+                "reason": "invalid or ambiguous quotation quarantined",
+                "before": {
+                  "item_id": "a4",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20nu%20sbyin%20byed/1",
+                  "component_index": 4,
+                  "printed_evidence": "ma nu sbyin byed: “die Gattin des Sonnengottes”; Lex. ñi ma’i chuṅ ma’aṅ zer (brDa, ähnl. Dagy).",
+                  "html_evidence": "ñi ma’i chuṅ ma’aṅ zer (brDa, ähnl. Dagy).",
+                  "boundary_evidence": "An independent heading follows ma nu bhaṅ ga and precedes ma nu ru rta.",
+                  "homonym_evidence": "No printed homonym numeral is visible; the definition and lexical parallel identify the witness.",
+                  "alternatives": "",
+                  "uncertainty": ""
+                },
+                "after": {
+                  "item_id": "a4",
+                  "outcome": "insufficient",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20nu%20sbyin%20byed/1",
+                  "component_index": 4,
+                  "printed_evidence": "ma nu sbyin byed: “die Gattin des Sonnengottes”; Lex. ñi ma’i chuṅ ma’aṅ zer (brDa, ähnl. Dagy).",
+                  "html_evidence": "ñi ma’i chuṅ ma’aṅ zer (brDa, ähnl. Dagy).",
+                  "boundary_evidence": "An independent heading follows ma nu bhaṅ ga and precedes ma nu ru rta.",
+                  "homonym_evidence": "No printed homonym numeral is visible; the definition and lexical parallel identify the witness.",
+                  "alternatives": "",
+                  "uncertainty": "; exact HTML quotation failed; quarantined, not supported"
+                }
+              }
+            ],
+            "census": {
+              "running_header": 2,
+              "continuation": 1,
+              "article": 15,
+              "quotation": 1,
+              "embedded_reference": 2
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        },
+        "heading_item_sha256": "66b1b52739dfff8c9ecfc66f6f09654287cf6f1d6ae99798ea2f6c46abc26d65",
+        "definition_component_sha256": "79a895c00c5e587ee0c1be88cf3e234bb25f597b550e7a58df0d614b981e92c7"
+      },
+      "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry."
     }
   ],
   "inputs": {
@@ -68004,5 +68972,5 @@
     "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
     "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
   },
-  "content_sha256": "00ab36bbc0f4ffd1dcf3d65355dfb2ea01ecd33006ec1e89f1ac351f9fcbbf92"
+  "content_sha256": "0bd4018708cc76db308493eb1368f1ea28fb73b0005b08b24ec0f8110ea9d6f4"
 }

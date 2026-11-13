@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "Review preparation only; no new acceptances",
-  "certificate_sha256": "bf5e07809a27b6c6e10ec4bc0985b9c4d499e0b4b4c2ab89ade0df48e63a94c7",
+  "certificate_sha256": "0939a68e7d4593795d9545bdcc0042f1d5e30d79489d5c4f12fb2597e6e5afce",
   "inputs": {
     "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
     "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",

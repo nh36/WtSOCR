@@ -1008,6 +1008,78 @@
       "printed_page": null,
       "geometry_review": "Complement of the previously source-reviewed full-height gutter crop: v1-p20",
       "page_evidence": "Registered physical scan; printed volume and folio not inferred."
+    },
+    "printed-0082acd4821c0de9e92c57c14cf2fbf5bf6d49259b9058713726981ffd18c387": {
+      "key": "printed-0082acd4821c0de9e92c57c14cf2fbf5bf6d49259b9058713726981ffd18c387",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 91,
+      "volume": null,
+      "printed_page": 110,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        437.0,
+        629.28
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: two printed pages, folios 110 and 111; gutter at x=437 PDF points separates all four text columns without clipping text.",
+      "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
+    },
+    "printed-ac64a57d9d4e968d034b896e4f5ee36c0e25438ad28339fa529b44e7d9145996": {
+      "key": "printed-ac64a57d9d4e968d034b896e4f5ee36c0e25438ad28339fa529b44e7d9145996",
+      "family": "wts_1_34",
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 91,
+      "volume": null,
+      "printed_page": 111,
+      "side": "right",
+      "crop": [
+        437.0,
+        0.0,
+        890.04,
+        629.28
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: two printed pages, folios 110 and 111; gutter at x=437 PDF points separates all four text columns without clipping text.",
+      "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
+    },
+    "printed-ddd805f2a766f485e50bafd47d7c90380d82d20d87d76f89bc13fcd21d8dc506": {
+      "key": "printed-ddd805f2a766f485e50bafd47d7c90380d82d20d87d76f89bc13fcd21d8dc506",
+      "family": "wts_35_51",
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 689,
+      "volume": null,
+      "printed_page": 340,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        492.0,
+        679.0
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: a single printed page with two text columns; all margins and the printed folio retained. No spread cut.",
+      "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
+    },
+    "printed-a0257c9cefbd831353836d07e2e96df141ea21645cf9e5424403a2634d1bb369": {
+      "key": "printed-a0257c9cefbd831353836d07e2e96df141ea21645cf9e5424403a2634d1bb369",
+      "family": "wts_9_m",
+      "source": "WtS_9-m",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "physical_page": 32,
+      "volume": null,
+      "printed_page": 28,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        459.84,
+        677.76
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: a single printed page with two text columns; all margins and the printed folio retained. No spread cut.",
+      "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
     }
   },
   "destinations": {

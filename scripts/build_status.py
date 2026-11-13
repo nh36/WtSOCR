@@ -1772,7 +1772,7 @@ is reported by the reproduction command and is not inferred from either field.
 
 The checked-in ledgers contain **{print_links} certified HTML attachments** to **{print_pages}
 printed-page derivatives**. The original 783 certificates, including the frozen
-92-candidate model production, are preserved. A further 30 associations (26 from paid caches and four from fresh pages)
+92-candidate model production, are preserved. A further 34 associations (30 from paid caches and four from fresh pages)
 have been compiled automatically under
 `independent-source-lexical-reference-v2`. Certificates accurately identify
 model verification; they do not claim human review. Numbered references require
@@ -1807,7 +1807,24 @@ checked against the individual printed pages. Continue without new API calls:
 python3 scripts/run_badw_linking_campaign.py complete --campaign work/linking-campaign-20261112 --cache-only
 ```
 
-Source inspection found 30/30 new associations correct across all four
+The offline replay recovered four more certificates without changing acceptance
+rules: ke’u ka, padma rigs kyi laṅ ka, padma sam bha wa and ma ne ne. Their
+independent readings already passed; source inspection established the missing
+printed-side geometry (one spread and two genuine single pages). The prior 813
+certificates and destinations are preserved. Repeating the cache-only command
+adds no duplicates. The six latest-tranche additions remain six; all four offline
+recoveries reuse older responses.
+
+After deduplication, 448 active unlinked HTML identities have source-reviewed
+records: 277 stop at unresolved source interpretation, 65 at reference/nonlexical
+components, 54 at insufficient discriminating verbatim evidence, 26 at homonym
+distinctions, 17 at heading identity, seven at missing/disputed independent
+verification, and two at exact reference-target checks. Seven further identities
+retain prior decisions. Fourteen repeated observations are not competing page
+assignments. Short quotations and extent comments alone do not establish identity
+or resolve homonym distinctions; the existing safeguards remain in force.
+
+Source inspection found 34/34 new associations correct across all four
 families. The independent pre-policy eight-identity sample includes seven
 correct identities that still abstain. These small samples measure observed
 accuracy and policy coverage separately; they do not establish corpus accuracy.
@@ -1815,6 +1832,11 @@ The original frozen controls and their checksums are preserved. `release/current
 is unchanged. Live costs, unresolved reservations and remaining authorisation
 are reported by `run_badw_linking_campaign.py status`; the cumulative ceiling
 remains US$20. See `docs/BADW_SOURCE_INTEGRATION.md` for policy and recovery details.
+The offline replay cost US$0. Recorded usage remains US$12.274607895, with five
+unresolved reservations totalling US$7.6618 and US$0.063592105 available. Three
+reservations have saved connection failures without provider request IDs or
+billing outcomes; two lack recoverable response records. None can safely be
+released from the available local evidence. The paid campaign remains stopped.
 
 {corpus_section}## Bibliographic Apparatus
 
