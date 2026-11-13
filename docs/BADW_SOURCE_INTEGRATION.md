@@ -1196,8 +1196,9 @@ and processing counts. These figures are observations, not new spending approval
 
 The subsequent stopped generation batch drained fourteen independent page reviews
 and exported 123 additional corroborated links. Together with offline backlog
-recovery, the final dataset contains 532 provisional links on 68 physical scans,
-plus the unchanged 691 certified links and 89 certified derivatives. The explicit
+recovery, the final dataset contains 532 provisional links on 62 physical scans,
+plus the unchanged 691 certified links and 89 certified derivatives. Evidence
+is retained for 68 scans, including six without published suggestions. The explicit
 queue contains 50 pending claims, 44 disputed claims, one previous exclusion and
 three already-certified claims; one whole page remains excluded for a failed
 identity binding. These are dataset dispositions, not additional reader links.
