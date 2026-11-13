@@ -84,3 +84,50 @@ def test_cache_aliases_are_not_competing_physical_pages(monkeypatch):
     assert c.competing_assignments(rows,evidence,{})=={'url'}
     evidence['crop']['side']='left';evidence['crop']['physical_page']=2
     assert c.competing_assignments(rows,evidence,{})=={'url'}
+
+
+SCOPE_CONTROL=json.loads((Path(__file__).parent/'fixtures/badw_model_fresh_policy_examples.json').read_text())['reference_scope_control']
+
+@pytest.mark.parametrize('wording',sorted(c.REFERENCE_SCOPE))
+def test_reference_scope_is_not_identity_uncertainty(wording):
+    e=copy.deepcopy(SCOPE_CONTROL)
+    e['cached_row']['second_reading']['matching'][0]['uncertainty']=wording
+    assert e['identity_correct']
+    assert c.policy_reason(e['cached_row'],e['body'],e['headword_count'],fresh=True) is None
+
+
+@pytest.mark.parametrize('change',['heading_scope','unknown_target','wrong_target','nearby_heading','homonym','lexical_scope','uncertain_identity'])
+def test_reference_scope_does_not_excuse_missing_identity_evidence(change):
+    e=copy.deepcopy(SCOPE_CONTROL); row=e['cached_row']; body=e['body']
+    h=row['second_reading']['inventory'][0]; match=row['second_reading']['matching'][0]
+    if change=='heading_scope':h['uncertainty']=match['uncertainty']
+    if change=='unknown_target':h['printed_evidence']='Target unreadable'
+    if change=='wrong_target':h['printed_evidence']='↓ bal glaṅ'
+    if change=='nearby_heading':h['heading_loc']='ban glaṅ ri źon';h['heading_tibetan']='བན་གླང་རི་ཞོན་'
+    if change=='homonym':h['printed_homonym']=2
+    if change=='lexical_scope':body['components'][match['component_index']]['type']='definition'
+    if change=='uncertain_identity':match['uncertainty']='The target article is not supplied; this may be the adjacent article.'
+    assert c.policy_reason(row,body,e['headword_count'],fresh=True)
+
+
+def test_reference_scope_does_not_change_frozen_replay_policy():
+    e=SCOPE_CONTROL
+    assert c.policy_reason(e['cached_row'],e['body'],e['headword_count'],fresh=False)
+
+
+@pytest.mark.parametrize('example',EXAMPLES,ids=lambda x:x['body']['headword']['loc']+str(x['body']['homonym']))
+def test_reference_scope_on_separate_source_checked_controls(example):
+    e=copy.deepcopy(example)
+    match=e['cached_row']['second_reading']['matching'][0]
+    match['uncertainty']='The match identifies the reference article, not the target article.'
+    reason=c.policy_reason(e['cached_row'],e['body'],e['headword_count'],fresh=True)
+    if e['body']['components'][match['component_index']]['type']=='cross_reference':
+        assert reason is None
+    else:
+        assert reason=='unresolved source interpretation'
+
+
+def test_outside_sample_reference_retains_unresolved_heading_observation():
+    e=json.loads((Path(__file__).parent/'fixtures/badw_model_fresh_policy_examples.json').read_text())['reference_scope_development']
+    assert e['identity_correct']
+    assert c.policy_reason(e['cached_row'],e['body'],e['headword_count'],fresh=True)=='unresolved source interpretation'

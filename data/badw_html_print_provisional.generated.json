@@ -4,7 +4,7 @@
   "label": "Suggested original printed page — automatically matched, not yet verified.",
   "certified": false,
   "registry_sha256": "7b9eb2073d9bffdcec48dc1a15427cf4818f68e29b6576221e26a91e78a3b434",
-  "certified_ledger_sha256": "a2c789a442ab41b355129314ebb7dfdb85a5713defe29314a1f263b6b6f4d165",
+  "certified_ledger_sha256": "faeba60a4e929462c6f38a60d0f33a35040011adc7cda9dfc03db94229c096d6",
   "manual_ledger_sha256": "63c1238bb7a49942cdd3348d95aaed4e240add48bb754e283d0ed948795a897a",
   "pages": {
     "wts_1_34-100": {
@@ -45681,126 +45681,6 @@
       "disposition": "published_provisional"
     },
     {
-      "item_id": "right-3",
-      "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
-      "state": "model-source-reviewed",
-      "reason": "two blind source readings; not certification",
-      "second_item_ids": [
-        "A7"
-      ],
-      "source_url": "https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
-      "html_sha256": "8c39cf3f921c5044a4282cb2861940b3e575676de2b1cfcb6ee16115fb79c9a5",
-      "already_certified": false,
-      "component_index": 2,
-      "component_sha256": "3d5becdd9e8b576c19b69eee8cc639b306255ab06868c1b92efaf8a5ea4155ad",
-      "historical_anchors": [],
-      "previous_decisions": [],
-      "heading": {
-        "item_id": "right-3",
-        "heading_loc": "ban glaṅ mo",
-        "heading_tibetan": "བན་གླང་མོ་",
-        "printed_homonym": null,
-        "bbox": [
-          747,
-          653,
-          1039,
-          702
-        ],
-        "column": "right",
-        "classification": "article",
-        "printed_evidence": "Short cross-reference entry: ban glaṅ mo ↓bal glaṅ mo.",
-        "preceding": "ban glaṅ.",
-        "following": "ban glaṅ ri źon.",
-        "uncertainty": "No printed homonym numeral visible."
-      },
-      "pdf_heading_bbox": [
-        224.1,
-        463.5599731445312,
-        311.7,
-        478.2599731445313
-      ],
-      "image_crop": {
-        "item_id": "right-3",
-        "path": "article-67c166cc8e41e103-0012.png",
-        "sha256": "288975fa1633d15572e8a717374fe6e165e8468e5ea2a5607084c9d9eb7b4dfb",
-        "pixels": [
-          853,
-          136
-        ],
-        "parent_bbox": [
-          721,
-          629,
-          1574,
-          765
-        ],
-        "pdf_bbox": [
-          216.29999999999998,
-          444.65997314453125,
-          472.2,
-          485.45997314453126
-        ],
-        "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
-      },
-      "first_matching": {
-        "item_id": "right-3",
-        "outcome": "supported",
-        "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
-        "component_index": 2,
-        "printed_evidence": "ban glaṅ mo points to ↓bal glaṅ mo.",
-        "html_evidence": "↓bal glaṅ mo",
-        "boundary_evidence": "This is a separate heading between ban glaṅ and ban glaṅ ri źon.",
-        "homonym_evidence": "The full headword and reference target distinguish it from the neighbouring compounds.",
-        "alternatives": "ban glaṅ points to ↑ba laṅ instead.",
-        "uncertainty": ""
-      },
-      "risks": [
-        "printed folio and geometry need review",
-        "direct-source pathway; no historical anchor",
-        "short lexical evidence",
-        "non-definition component"
-      ],
-      "page": "wts_8_b-39",
-      "headword": "ban glaṅ mo",
-      "homonym": "1",
-      "second_reading": {
-        "inventory": [
-          {
-            "item_id": "A7",
-            "heading_loc": "ban glaṅ mo",
-            "heading_tibetan": "བན་གླང་མོ་",
-            "printed_homonym": null,
-            "bbox": [
-              748,
-              654,
-              1212,
-              702
-            ],
-            "column": "right",
-            "classification": "article",
-            "printed_evidence": "ban glaṅ mo ↓bal glaṅ mo.",
-            "preceding": "ban glaṅ",
-            "following": "ban glaṅ ri źon",
-            "uncertainty": ""
-          }
-        ],
-        "matching": [
-          {
-            "item_id": "A7",
-            "outcome": "supported",
-            "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
-            "component_index": 2,
-            "printed_evidence": "The independent heading has the specific downward reference bal glaṅ mo.",
-            "html_evidence": "↓bal glaṅ mo",
-            "boundary_evidence": "Separate start between ban glaṅ and ban glaṅ ri źon.",
-            "homonym_evidence": "No printed numeral; editorial 1 is not inferred as printed.",
-            "alternatives": "ban glaṅ/1 instead points to ba laṅ; ban glaṅ ri źon/1 is a deity article.",
-            "uncertainty": "The target article is not supplied; the supported identity is the reference article, not its target."
-          }
-        ]
-      },
-      "disposition": "published_provisional"
-    },
-    {
       "item_id": "right-4",
       "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20ri%20%C5%BAon/1",
       "state": "model-source-reviewed",
@@ -64400,7 +64280,7 @@
     }
   ],
   "summary": {
-    "published_provisional": 413,
+    "published_provisional": 412,
     "disputed": 44,
     "review_pending": 50,
     "previous_decision": 1,

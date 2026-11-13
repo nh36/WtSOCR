@@ -1772,7 +1772,7 @@ is reported by the reproduction command and is not inferred from either field.
 
 The checked-in ledgers contain **{print_links} certified HTML attachments** to **{print_pages}
 printed-page derivatives**. The original 783 certificates, including the frozen
-92-candidate model production, are preserved. A further 34 associations (30 from paid caches and four from fresh pages)
+92-candidate model production, are preserved. A further 35 associations (31 from paid caches and four from fresh pages)
 have been compiled automatically under
 `independent-source-lexical-reference-v2`. Certificates accurately identify
 model verification; they do not claim human review. Numbered references require
@@ -1815,7 +1815,7 @@ certificates and destinations are preserved. Repeating the cache-only command
 adds no duplicates. The six latest-tranche additions remain six; all four offline
 recoveries reuse older responses.
 
-After deduplication, 448 active unlinked HTML identities have source-reviewed
+At the 817-link checkpoint, 448 active unlinked HTML identities had source-reviewed
 records: 277 stop at unresolved source interpretation, 65 at reference/nonlexical
 components, 54 at insufficient discriminating verbatim evidence, 26 at homonym
 distinctions, 17 at heading identity, seven at missing/disputed independent
@@ -1824,7 +1824,30 @@ retain prior decisions. Fourteen repeated observations are not competing page
 assignments. Short quotations and extent comments alone do not establish identity
 or resolve homonym distinctions; the existing safeguards remain in force.
 
-Source inspection found 34/34 new associations correct across all four
+The next bounded offline comparison selected two cached pages per scan family
+by SHA-256 before evaluating acceptance (eight pages, 78 distinct unlinked
+identities). Current rules admitted none; supplying reviewed geometry alone
+admitted none. One narrow change admits matching observations that explicitly
+identify a reference article rather than its unsupplied target. The complete
+reference target must still occur in both independent source readings, with
+all heading, homonym, conflict and geometry checks intact. This certifies
+ban glaṅ mo on original scan WtS_8-b/39, single printed page 29. All 817 previous
+certificates and reader destinations remain unchanged. Unknown heading wording
+and unresolved target identities still abstain. A source check found the sole
+addition correct (1/1); seven remaining identities selected independently of
+acceptance were also correct (7/7 missed). These denominators expose low
+coverage and do not establish general accuracy. Geometry and source readings
+are retained in the shared page map and source-control fixtures. No paid calls
+were made, and the five unresolved reservations were preserved unchanged.
+
+Paid generation now requires a positive integer input-token count bound to
+the exact request, obtained from the SDK or a valid count cache. Missing SDK
+support, failed counting and invalid counts stop before reservation/generation.
+The reservation uses that count plus the existing safety margin and configured
+output ceiling. Fake-client tests check all failure paths and cache reuse;
+a connection failure after counting retains its request-specific reservation.
+
+Earlier commissioning found 34/34 new associations correct across all four
 families. The independent pre-policy eight-identity sample includes seven
 correct identities that still abstain. These small samples measure observed
 accuracy and policy coverage separately; they do not establish corpus accuracy.

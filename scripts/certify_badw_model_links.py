@@ -29,6 +29,15 @@ BENIGN = {a.proof_key(x) for x in ('', 'None', 'None material',
     'No numeral visible', 'No printed homonym numeral', 'No homonym numeral visible',
     'No printed homonym number', 'No printed numeral visible')}
 LEXICAL = {'definition', 'example', 'lexical_parallel', 'translation', 'citation'}
+# These describe the scope of a reference match, not an uncertain identity.
+# Only matching observations on exact reference components may use them. The
+# complete target must still occur in both independent source readings below.
+REFERENCE_SCOPE = {a.proof_key(x) for x in (
+    'The target article itself is not supplied.',
+    'Association is to the reference article, not to its target.',
+    'The match identifies the reference article, not the target article.',
+    'The target article is not supplied; the supported identity is the reference article, not its target.',
+)}
 _VERIFIED_SOURCES = set()
 
 
@@ -70,7 +79,12 @@ def policy_reason(row, body, headword_count, fresh=False):
     def benign(x):
         text = a.proof_key(x.get('uncertainty', ''))
         return text in BENIGN or (fresh and numbered and bool(re.fullmatch(r'superscript[1-9][0-9]*isvisiblyprinted', text)))
-    if any(not benign(x) for x in hs + ms):
+    def reference_scope(m):
+        index = m.get('component_index')
+        return (fresh and type(index) is int and 0 <= index < len(body['components'])
+                and body['components'][index]['type'] == 'cross_reference'
+                and a.proof_key(m.get('uncertainty', '')) in REFERENCE_SCOPE)
+    if any(not benign(h) for h in hs) or any(not (benign(m) or reference_scope(m)) for m in ms):
         return 'unresolved source interpretation'
     overlaps = []
     for h, m in zip(hs, ms):

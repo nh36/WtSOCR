@@ -1434,3 +1434,41 @@ US$1.975728855 available under US$20 at that checkpoint. These are historical
 checkpoint figures; use `status` for live spending. Reservations were retained,
 including a failed network request. Private commissioning evidence is stored in
 `work/complete-commission/commissioning.json`.
+
+The subsequent offline comparison selected eight cached pages before evaluating
+acceptance: the two smallest SHA-256 values of
+`offline-bounded-20261113-v1:<page-key>` in each scan family. Its 78 unlinked
+identities yielded zero under the existing rules, zero from geometry alone,
+and one after a narrowly defined reference-scope correction. A matching
+observation may say that the supplied identity is the reference article rather
+than its target; this applies only to an exact cross-reference component.
+The full target must still occur in both independent source readings.
+The closed wording set is executable in `REFERENCE_SCOPE`; unknown heading
+uncertainty, target disagreement, homonyms and competing page assignments
+remain exclusions. The frozen 92 replay policy is unchanged. Separate existing
+source-checked reference controls and altered targets, adjacent headings,
+numerals and lexical components test the change; a source-checked reference
+outside the eight pages still abstains on its additional heading uncertainty.
+
+The addition, ban glaṅ mo, is independently visible on WtS_8-b physical scan 39,
+printed folio 29, with target bal glaṅ mo. The original is a single page with
+two text columns. Both saved heading boxes are bound to its reviewed full-page
+crop. The published-link audit is 1/1 correct; among seven remaining abstentions
+selected by SHA-256 before this rule change, 7/7 are correct article/page
+identities missed by the policy. This is a bounded comparison and source check,
+not a blind validation or corpus accuracy estimate. It raises 817 to 818 with
+zero provisional reader links. All prior certificates/destinations and witness
+texts are preserved. The private selection, three-run results and source-audit
+sample are in `work/bounded-comparison-20261113`.
+
+Before any paid generation, `badw_model_worker.py` now requires a valid positive
+integer count for that exact request. It reuses only a count cache bound to the
+request hash; otherwise the SDK must count the actual model, image/text input
+and structured-output schema. Missing support, counting failures and invalid
+counts stop before money is reserved or generation is sent. Reservations use
+the counted input with the existing 5% plus 256-token margin, highest input
+cache-write tariff and configured output ceiling. Connection failures after
+counting retain their reservations. Fake clients exercise these paths without
+network calls. This does not retrospectively release any old hold: five
+unresolved requests still reserve US$7.6618; returned usage is US$12.274607895,
+leaving US$0.063592105 under the unchanged US$20 cap. The paid campaign is stopped.

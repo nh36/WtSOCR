@@ -4232,5 +4232,359 @@
       "identity_correct": true,
       "source_inspection": "Coding agent inspected original checksum-bound physical scan WtS_8-b 28, printed page 18; independent bag chos heading, variants bag chol/bag tshos, food definition and Dagy lexical parallel agree. 2026-11-13."
     }
-  ]
+  ],
+  "reference_scope_control": {
+    "body": {
+      "id": "badw:entry:ba9dc1298c92a1324addb20c345217524cb91fee5dadf88b39684f5ac0561e15",
+      "inspection_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+      "source_kind": "html",
+      "headword": {
+        "loc": "ban glaṅ mo",
+        "tibetan": "བན་གླང་མོ་"
+      },
+      "homonym": "1",
+      "sources": [
+        {
+          "url": "https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+          "label": "BAdW editorial text",
+          "sha256": "8c39cf3f921c5044a4282cb2861940b3e575676de2b1cfcb6ee16115fb79c9a5"
+        }
+      ],
+      "source_url": "https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+      "components": [
+        {
+          "id": "span:f8ed34ab8f54e0793db0422347a866cb516af1fb62e32db801ffa5c1fe6aab47",
+          "type": "headword",
+          "source_form": "བན་གླང་མོ་",
+          "language": null,
+          "normalized_wylie": null,
+          "tibetan_script": null
+        },
+        {
+          "id": "span:ac92a4736bae1220c1c94688179d951db02ce5a478552458de6e1cf208e7e41f",
+          "type": "headword",
+          "source_form": "ban glaṅ mo",
+          "language": null,
+          "normalized_wylie": null,
+          "tibetan_script": null
+        },
+        {
+          "id": "span:0911dc0978a4217a9495f2f872190281289d17e85894ff30a60043aa434694b1",
+          "type": "cross_reference",
+          "source_form": "↓bal glaṅ mo",
+          "language": null,
+          "normalized_wylie": null,
+          "tibetan_script": null
+        },
+        {
+          "id": "span:b0e9f6d2c7b8935c6072f0646c7cc85e994a601a75e465ccd2b280e7a1eafa4e",
+          "type": "source_division",
+          "source_form": "\n\n\n\t    ",
+          "language": null,
+          "normalized_wylie": null,
+          "tibetan_script": null
+        }
+      ]
+    },
+    "cached_row": {
+      "item_id": "right-3",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+      "state": "model-source-reviewed",
+      "reason": "two blind source readings; not certification",
+      "second_item_ids": [
+        "A7"
+      ],
+      "source_url": "https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+      "html_sha256": "8c39cf3f921c5044a4282cb2861940b3e575676de2b1cfcb6ee16115fb79c9a5",
+      "already_certified": false,
+      "component_index": 2,
+      "component_sha256": "3d5becdd9e8b576c19b69eee8cc639b306255ab06868c1b92efaf8a5ea4155ad",
+      "historical_anchors": [],
+      "previous_decisions": [],
+      "heading": {
+        "item_id": "right-3",
+        "heading_loc": "ban glaṅ mo",
+        "heading_tibetan": "བན་གླང་མོ་",
+        "printed_homonym": null,
+        "bbox": [
+          747,
+          653,
+          1039,
+          702
+        ],
+        "column": "right",
+        "classification": "article",
+        "printed_evidence": "Short cross-reference entry: ban glaṅ mo ↓bal glaṅ mo.",
+        "preceding": "ban glaṅ.",
+        "following": "ban glaṅ ri źon.",
+        "uncertainty": "No printed homonym numeral visible."
+      },
+      "pdf_heading_bbox": [
+        224.1,
+        463.5599731445312,
+        311.7,
+        478.2599731445313
+      ],
+      "image_crop": {
+        "item_id": "right-3",
+        "path": "article-67c166cc8e41e103-0012.png",
+        "sha256": "288975fa1633d15572e8a717374fe6e165e8468e5ea2a5607084c9d9eb7b4dfb",
+        "pixels": [
+          853,
+          136
+        ],
+        "parent_bbox": [
+          721,
+          629,
+          1574,
+          765
+        ],
+        "pdf_bbox": [
+          216.29999999999998,
+          444.65997314453125,
+          472.2,
+          485.45997314453126
+        ],
+        "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+      },
+      "first_matching": {
+        "item_id": "right-3",
+        "outcome": "supported",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+        "component_index": 2,
+        "printed_evidence": "ban glaṅ mo points to ↓bal glaṅ mo.",
+        "html_evidence": "↓bal glaṅ mo",
+        "boundary_evidence": "This is a separate heading between ban glaṅ and ban glaṅ ri źon.",
+        "homonym_evidence": "The full headword and reference target distinguish it from the neighbouring compounds.",
+        "alternatives": "ban glaṅ points to ↑ba laṅ instead.",
+        "uncertainty": ""
+      },
+      "risks": [
+        "printed folio and geometry need review",
+        "direct-source pathway; no historical anchor",
+        "short lexical evidence",
+        "non-definition component"
+      ],
+      "page": "wts_8_b-39",
+      "headword": "ban glaṅ mo",
+      "homonym": "1",
+      "second_reading": {
+        "inventory": [
+          {
+            "item_id": "A7",
+            "heading_loc": "ban glaṅ mo",
+            "heading_tibetan": "བན་གླང་མོ་",
+            "printed_homonym": null,
+            "bbox": [
+              748,
+              654,
+              1212,
+              702
+            ],
+            "column": "right",
+            "classification": "article",
+            "printed_evidence": "ban glaṅ mo ↓bal glaṅ mo.",
+            "preceding": "ban glaṅ",
+            "following": "ban glaṅ ri źon",
+            "uncertainty": ""
+          }
+        ],
+        "matching": [
+          {
+            "item_id": "A7",
+            "outcome": "supported",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+            "component_index": 2,
+            "printed_evidence": "The independent heading has the specific downward reference bal glaṅ mo.",
+            "html_evidence": "↓bal glaṅ mo",
+            "boundary_evidence": "Separate start between ban glaṅ and ban glaṅ ri źon.",
+            "homonym_evidence": "No printed numeral; editorial 1 is not inferred as printed.",
+            "alternatives": "ban glaṅ/1 instead points to ba laṅ; ban glaṅ ri źon/1 is a deity article.",
+            "uncertainty": "The target article is not supplied; the supported identity is the reference article, not its target."
+          }
+        ]
+      },
+      "disposition": "published_provisional"
+    },
+    "headword_count": 1,
+    "identity_correct": true,
+    "source_audit": "Original WtS_8-b physical scan 39, visible folio 29: standalone unnumbered ban glaṅ mo between ban glaṅ and ban glaṅ ri źon; complete downward reference bal glaṅ mo. Single printed page, two columns. Inspected offline 2026-11-13."
+  },
+  "reference_scope_development": {
+    "cached_row": {
+      "item_id": "article-7",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/pi%20ba%E1%B9%85/1",
+      "state": "model-source-reviewed",
+      "reason": "two blind source readings; not certification",
+      "second_item_ids": [
+        "a7"
+      ],
+      "source_url": "https://wts-digital.badw.de/lemma/pi%20ba%E1%B9%85/1",
+      "html_sha256": "e5a43ce28e81bacf9be5e3321b8221ecb0cba407eca4ce9f84b5301e16bba1bd",
+      "already_certified": false,
+      "component_index": 2,
+      "component_sha256": "b4084fef8f61bb8c9e33b5e174aa9ea71caa8fe71283f29df38a79be29cc59bc",
+      "historical_anchors": [],
+      "previous_decisions": [],
+      "heading": {
+        "item_id": "article-7",
+        "heading_loc": "pi baṅ",
+        "heading_tibetan": "པི་བང",
+        "printed_homonym": null,
+        "bbox": [
+          864,
+          1762,
+          1041,
+          1804
+        ],
+        "column": "right",
+        "classification": "article",
+        "printed_evidence": "A cross-reference directs the reader to pi waṅ.",
+        "preceding": "pi spal.",
+        "following": "pi tsi.",
+        "uncertainty": "No printed homonym numeral visible; the heading is a standalone cross-reference article."
+      },
+      "pdf_heading_bbox": [
+        259.2,
+        137.80000000000007,
+        312.3,
+        150.39999999999998
+      ],
+      "image_crop": {
+        "item_id": "article-7",
+        "path": "article-b44e78f5dad3f080-0015.png",
+        "sha256": "02fac343226dd7e179f83671e750a0f227a94e3962d2fb65ee8ab9c81c4c6a77",
+        "pixels": [
+          729,
+          137
+        ],
+        "parent_bbox": [
+          838,
+          1738,
+          1567,
+          1875
+        ],
+        "pdf_bbox": [
+          251.39999999999998,
+          116.5,
+          470.09999999999997,
+          157.60000000000002
+        ],
+        "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+      },
+      "first_matching": {
+        "item_id": "article-7",
+        "outcome": "supported",
+        "source_id": "badw:https://wts-digital.badw.de/lemma/pi%20ba%E1%B9%85/1",
+        "component_index": 2,
+        "printed_evidence": "pi baṅ followed by “↓pi waṅ”.",
+        "html_evidence": "↓pi waṅ",
+        "boundary_evidence": "Standalone cross-reference article between pi spal and pi tsi.",
+        "homonym_evidence": "The reference target discriminates the identity beyond the heading.",
+        "alternatives": "",
+        "uncertainty": ""
+      },
+      "risks": [
+        "printed folio and geometry need review",
+        "direct-source pathway; no historical anchor",
+        "short lexical evidence",
+        "non-definition component"
+      ],
+      "page": "wts_35_51-697",
+      "headword": "pi baṅ",
+      "homonym": "1",
+      "second_reading": {
+        "inventory": [
+          {
+            "item_id": "a7",
+            "heading_loc": "pi baṅ",
+            "heading_tibetan": "པི་བང་",
+            "printed_homonym": null,
+            "bbox": [
+              864,
+              1760,
+              1040,
+              1804
+            ],
+            "column": "right",
+            "classification": "article",
+            "printed_evidence": "Independent bold heading followed by downward reference to pi waṅ.",
+            "preceding": "pi spal article.",
+            "following": "pi tsi article.",
+            "uncertainty": ""
+          }
+        ],
+        "matching": [
+          {
+            "item_id": "a7",
+            "outcome": "supported",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/pi%20ba%E1%B9%85/1",
+            "component_index": 2,
+            "printed_evidence": "The independent pi baṅ heading has the discriminating downward reference to pi waṅ.",
+            "html_evidence": "↓pi waṅ",
+            "boundary_evidence": "Bold heading after pi spal and before pi tsi; the arrow is its article content.",
+            "homonym_evidence": "No printed numeral.",
+            "alternatives": "pi liṅ /1 also has an arrow reference, but its target is pi pi liṅ, not pi waṅ.",
+            "uncertainty": "The match identifies the reference article, not the target article."
+          }
+        ]
+      },
+      "disposition": "published_provisional"
+    },
+    "body": {
+      "id": "badw:entry:5014a477d7a5cc4224065e2daae0b0a39ce95296403816231249bdc1d79be023",
+      "inspection_id": "badw:https://wts-digital.badw.de/lemma/pi%20ba%E1%B9%85/1",
+      "source_kind": "html",
+      "headword": {
+        "loc": "pi baṅ",
+        "tibetan": "པི་བང་"
+      },
+      "homonym": "1",
+      "sources": [
+        {
+          "url": "https://wts-digital.badw.de/lemma/pi%20ba%E1%B9%85/1",
+          "label": "BAdW editorial text",
+          "sha256": "e5a43ce28e81bacf9be5e3321b8221ecb0cba407eca4ce9f84b5301e16bba1bd"
+        }
+      ],
+      "source_url": "https://wts-digital.badw.de/lemma/pi%20ba%E1%B9%85/1",
+      "components": [
+        {
+          "id": "span:05735ad23bb62ca3f66493bb2ca07e45bd93c1880229ac88c3f4540067734791",
+          "type": "headword",
+          "source_form": "པི་བང་",
+          "language": null,
+          "normalized_wylie": null,
+          "tibetan_script": null
+        },
+        {
+          "id": "span:134ea116072ffa7f087fb1df8c5326df961e6d3afb45d66d59bb691611f5737d",
+          "type": "headword",
+          "source_form": "pi baṅ",
+          "language": null,
+          "normalized_wylie": null,
+          "tibetan_script": null
+        },
+        {
+          "id": "span:8f6c4ed6a83a7b688e1428e7786ec159d07149ca3815c55e6a36b61d80af2ac8",
+          "type": "cross_reference",
+          "source_form": "↓pi waṅ",
+          "language": null,
+          "normalized_wylie": null,
+          "tibetan_script": null
+        },
+        {
+          "id": "span:3c732fcab5aff0a451db01955c19c81202be103e781a71572348dbfad7390546",
+          "type": "source_division",
+          "source_form": "\n\n\n\t    ",
+          "language": null,
+          "normalized_wylie": null,
+          "tibetan_script": null
+        }
+      ]
+    },
+    "headword_count": 1,
+    "identity_correct": true,
+    "source_audit": "Original scan 697, printed folio 348, right column: independent pi baṅ reference to pi waṅ, distinct from neighbouring pi pi liṅ. Source inspected outside the fixed comparison pages. Its additional heading uncertainty remains outside the closed policy."
+  }
 }

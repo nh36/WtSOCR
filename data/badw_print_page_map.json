@@ -1080,6 +1080,24 @@
       ],
       "geometry_review": "Coding agent inspected the original full scan offline: a single printed page with two text columns; all margins and the printed folio retained. No spread cut.",
       "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
+    },
+    "printed-607b40edebf598ef4332d0d8e55a4283f7fad5488272edf571ba8ea191796117": {
+      "key": "printed-607b40edebf598ef4332d0d8e55a4283f7fad5488272edf571ba8ea191796117",
+      "family": "wts_8_b",
+      "source": "WtS_8-b",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "physical_page": 39,
+      "volume": null,
+      "printed_page": 29,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        472.08,
+        674.16
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: a single printed page with two text columns, not a spread. Full margins and visible folio 29 retained.",
+      "page_evidence": "Printed folio 29 observed directly; volume not inferred. Both independently saved heading coordinates must fall within this original PDF crop."
     }
   },
   "destinations": {

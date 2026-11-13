@@ -98,7 +98,7 @@ def test_live_response_cache_write_usage_is_recorded_before_validation(local_wor
                input_tokens_details=dict(cached_tokens=200,cache_write_tokens=300))
     response=SimpleNamespace(usage=SimpleNamespace(model_dump=lambda:usage),status='completed',
         output_text=__import__('json').dumps(p['inventory']),id='fixture-response')
-    client=SimpleNamespace(responses=SimpleNamespace(create=lambda **kwargs:response))
+    client=SimpleNamespace(responses=SimpleNamespace(input_tokens=SimpleNamespace(count=lambda **kw:SimpleNamespace(input_tokens=1000)),create=lambda **kwargs:response))
     result=w.execute(spec,p,local_work/'cache',w.Spending(local_work,1,'approved'),client,interval=0)
     assert result['usd']==pytest.approx(.0001395)
     entry=next(iter(w.load(local_work/'spending.json')['requests'].values()))
@@ -127,11 +127,11 @@ def test_rejected_paid_response_is_preserved_without_another_request(local_work)
         calls.append(kwargs)
         return SimpleNamespace(usage=SimpleNamespace(model_dump=lambda:usage),
             status='completed',output_text=raw,id='rejected-fixture')
-    client=SimpleNamespace(responses=SimpleNamespace(create=respond))
+    client=SimpleNamespace(responses=SimpleNamespace(input_tokens=SimpleNamespace(count=lambda **kw:SimpleNamespace(input_tokens=1000)),create=respond))
     spending=w.Spending(local_work,1,'approved')
     with pytest.raises(ValueError,match='exact supplied component quote'):
         w.execute(spec,p,local_work/'cache',spending,client,interval=0)
-    saved=w.load(next((local_work/'cache').glob('*.json')))
+    saved=w.load(local_work/'cache'/(w.a.object_digest(spec)+'.json'))
     assert saved['output_text']==raw and saved['usd']>0
     with pytest.raises(ValueError,match='cached rejected'):
         w.execute(spec,p,local_work/'cache',spending,client,interval=0)
@@ -146,7 +146,7 @@ def test_timeout_is_not_reissued(local_work,monkeypatch):
     calls=[]
     def fail(**kwargs):
         calls.append(kwargs);raise TimeoutError('secret must not appear in diagnostic')
-    client=SimpleNamespace(responses=SimpleNamespace(create=fail))
+    client=SimpleNamespace(responses=SimpleNamespace(input_tokens=SimpleNamespace(count=lambda **kw:SimpleNamespace(input_tokens=1000)),create=fail))
     with pytest.raises(RuntimeError,match='reservation retained') as exc:
         w.execute(spec,p,local_work/'cache',w.Spending(local_work,1,'approved'),client,interval=0)
     assert 'secret' not in str(exc.value) and len(calls)==1
@@ -165,7 +165,7 @@ def test_billing_rejection_is_not_retried_or_logged_as_uncertain(local_work):
     calls=[]
     def fail(**kwargs):
         calls.append(kwargs);raise QuotaError('secret credential')
-    client=SimpleNamespace(responses=SimpleNamespace(create=fail))
+    client=SimpleNamespace(responses=SimpleNamespace(input_tokens=SimpleNamespace(count=lambda **kw:SimpleNamespace(input_tokens=1000)),create=fail))
     with pytest.raises(RuntimeError,match='credit_balance_exhausted'):
         w.execute(spec,p,local_work/'cache',w.Spending(local_work,1,'approved'),client,interval=0)
     assert len(calls)==1
@@ -201,12 +201,12 @@ def test_frozen_evaluation_has_disjoint_development_and_holdout():
     assert all('accepted' not in r and 'answers' not in r for r in rows)
 
 
-def test_maximum_input_reservation_blocks_unaffordable_live_calls(local_work):
+def test_counted_reservation_blocks_unaffordable_live_calls(local_work):
     (local_work/'page.png').write_bytes(b'image')
     p=pack();p['image']['sha256']=w.a.digest(local_work/'page.png')
     spec=w.request_spec('inventory',p,'gpt-6.1-terra','original',100)
     with pytest.raises(ValueError,match='cap'):
-        w.execute(spec,p,local_work/'cache',w.Spending(local_work,.01,'approved'),object())
+        w.execute(spec,p,local_work/'cache',w.Spending(local_work,.0001,'approved'),SimpleNamespace(responses=SimpleNamespace(input_tokens=SimpleNamespace(count=lambda **kw:SimpleNamespace(input_tokens=1000)))))
     assert w.cost('gpt-6.1-terra',922000,100)==pytest.approx(1.84475)
     assert w.cost('gpt-6-luna',272001,100)==pytest.approx(.0544752)
 
@@ -309,3 +309,56 @@ def test_count_network_failure_does_not_reserve_or_generate(local_work):
     with pytest.raises(RuntimeError,match='preflight failed'):
         w.execute(spec,p,local_work/'cache',w.Spending(local_work,.01,'approved'),client)
     assert not (local_work/'spending.json').exists()
+
+
+@pytest.mark.parametrize('value', [None, True, 0, -1, 1.5, '1000', 922001])
+@pytest.mark.parametrize('cached', [False, True])
+def test_invalid_count_never_reserves_or_generates(local_work, value, cached):
+    (local_work/'page.png').write_bytes(b'image')
+    p=pack();p['image']['sha256']=w.a.digest(local_work/'page.png')
+    spec=w.request_spec('inventory',p,'gpt-6.1-terra','original',100)
+    cache=local_work/'cache';cache.mkdir();key=w.a.object_digest(spec);calls=[]
+    if cached:w.write(cache/(key+'-tokens.json'),dict(request_sha256=key,input_tokens=value))
+    client=SimpleNamespace(responses=SimpleNamespace(
+        input_tokens=SimpleNamespace(count=lambda **kw:SimpleNamespace(input_tokens=value)),
+        create=lambda **kw:calls.append(kw)))
+    with pytest.raises(ValueError,match='invalid input token count'):
+        w.execute(spec,p,cache,w.Spending(local_work,1,'approved'),client,interval=0)
+    assert calls==[] and not (local_work/'spending.json').exists()
+    if not cached:assert not (cache/(key+'-tokens.json')).exists()
+
+
+def test_missing_counter_and_wrong_binding_fail_closed(local_work):
+    (local_work/'page.png').write_bytes(b'image')
+    p=pack();p['image']['sha256']=w.a.digest(local_work/'page.png')
+    spec=w.request_spec('inventory',p,'gpt-6.1-terra','original',100)
+    cache=local_work/'cache';cache.mkdir();key=w.a.object_digest(spec);calls=[]
+    client=SimpleNamespace(responses=SimpleNamespace(create=lambda **kw:calls.append(kw)))
+    with pytest.raises(RuntimeError,match='unavailable in SDK'):
+        w.execute(spec,p,cache,w.Spending(local_work,1,'approved'),client,interval=0)
+    w.write(cache/(key+'-tokens.json'),dict(request_sha256='another request',input_tokens=1000))
+    with pytest.raises(ValueError,match='binding changed'):
+        w.execute(spec,p,cache,w.Spending(local_work,1,'approved'),client,interval=0)
+    (cache/(key+'-tokens.json')).write_text('{invalid')
+    with pytest.raises(ValueError,match='unreadable cached token count'):
+        w.execute(spec,p,cache,w.Spending(local_work,1,'approved'),client,interval=0)
+    assert calls==[] and not (local_work/'spending.json').exists()
+
+
+@pytest.mark.parametrize('cached', [False, True])
+def test_connection_failure_retains_counted_request_reservation(local_work, cached):
+    (local_work/'page.png').write_bytes(b'image')
+    p=pack();p['image']['sha256']=w.a.digest(local_work/'page.png')
+    spec=w.request_spec('inventory',p,'gpt-6.1-terra','original',100)
+    cache=local_work/'cache';cache.mkdir();key=w.a.object_digest(spec);calls=[]
+    def fail(**kw):calls.append(kw);raise ConnectionError('private')
+    responses=SimpleNamespace(create=fail)
+    if cached:w.write(cache/(key+'-tokens.json'),dict(request_sha256=key,input_tokens=1000))
+    else:responses.input_tokens=SimpleNamespace(count=lambda **kw:SimpleNamespace(input_tokens=1000))
+    client=SimpleNamespace(responses=responses)
+    with pytest.raises(RuntimeError,match='reservation retained'):
+        w.execute(spec,p,cache,w.Spending(local_work,1,'approved'),client,interval=0)
+    entry=w.load(local_work/'spending.json')['requests'][key+':0']
+    assert entry['reserved']==pytest.approx(w.cost(spec['model'],1306,100,cache_write_tokens=1306))
+    assert 'actual' not in entry and len(calls)==1
+    assert w.load(cache/(key+'-tokens.json'))['input_tokens']==1000

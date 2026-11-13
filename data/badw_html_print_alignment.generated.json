@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "certificate_sha256": "0939a68e7d4593795d9545bdcc0042f1d5e30d79489d5c4f12fb2597e6e5afce",
+  "certificate_sha256": "e93f34060f23a7286faced1ed84b121861a6201ae88b70a26c81682fdb9d9ea9",
   "pages": {
     "v1-p16": {
       "source": "WtS_1-34",
@@ -2273,6 +2273,22 @@
       ],
       "geometry_review": "Coding agent inspected the original full scan offline: a single printed page with two text columns; all margins and the printed folio retained. No spread cut.",
       "page_evidence": "Visible printed folio inspected directly; volume not inferred. Physical scan number and original PDF checksum preserved. Independent cached heading coordinates must agree within this crop."
+    },
+    "printed-607b40edebf598ef4332d0d8e55a4283f7fad5488272edf571ba8ea191796117": {
+      "source": "WtS_8-b",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "physical_page": 39,
+      "volume": null,
+      "printed_page": 29,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        472.08,
+        674.16
+      ],
+      "geometry_review": "Coding agent inspected the original full scan offline: a single printed page with two text columns, not a spread. Full margins and visible folio 29 retained.",
+      "page_evidence": "Printed folio 29 observed directly; volume not inferred. Both independently saved heading coordinates must fall within this original PDF crop."
     }
   },
   "witnesses": [
@@ -68961,6 +68977,229 @@
         "definition_component_sha256": "79a895c00c5e587ee0c1be88cf3e234bb25f597b550e7a58df0d614b981e92c7"
       },
       "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+      "html_sha256": "8c39cf3f921c5044a4282cb2861940b3e575676de2b1cfcb6ee16115fb79c9a5",
+      "headword": "ban glaṅ mo",
+      "homonym": "1",
+      "page": "printed-607b40edebf598ef4332d0d8e55a4283f7fad5488272edf571ba8ea191796117",
+      "printed_heading": "ban glaṅ mo",
+      "printed_homonym": null,
+      "evidence": {
+        "certificate": {
+          "certificate_type": "model-source-verified-v1",
+          "policy": "independent-source-lexical-reference-v2",
+          "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry.",
+          "controls_sha256": "15c7bab2f93734fa12ae5659874437f0afe5d471b8e39f82650e53728f9878e4",
+          "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+          "html_sha256": "8c39cf3f921c5044a4282cb2861940b3e575676de2b1cfcb6ee16115fb79c9a5",
+          "printed_homonym": null,
+          "editorial": {
+            "source_url": "https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+            "headword": "ban glaṅ mo",
+            "homonym": "1"
+          },
+          "heading_id": "right-3",
+          "heading_item_sha256": "8a5b6065adeaf228b6ce126d68f8b5ecc1a0b231c48280881bc4e3c5ea403f31",
+          "definition_component_sha256": "3d5becdd9e8b576c19b69eee8cc639b306255ab06868c1b92efaf8a5ea4155ad",
+          "print_observation": {
+            "heading": "ban glaṅ mo",
+            "homonym": null,
+            "evidence": "ban glaṅ mo points to ↓bal glaṅ mo.",
+            "identity_context": "This is a separate heading between ban glaṅ and ban glaṅ ri źon.",
+            "page_sha256": "dc9c3c1cd01d547aaf6cba98e9eae9881cb178b8af14c99a6db0f06e8537267a",
+            "verification": "model source verified; not human reviewed"
+          },
+          "model_evidence": {
+            "item_id": "right-3",
+            "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+            "state": "model-source-reviewed",
+            "reason": "two blind source readings; not certification",
+            "second_item_ids": [
+              "A7"
+            ],
+            "source_url": "https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+            "html_sha256": "8c39cf3f921c5044a4282cb2861940b3e575676de2b1cfcb6ee16115fb79c9a5",
+            "already_certified": false,
+            "component_index": 2,
+            "component_sha256": "3d5becdd9e8b576c19b69eee8cc639b306255ab06868c1b92efaf8a5ea4155ad",
+            "historical_anchors": [],
+            "previous_decisions": [],
+            "heading": {
+              "item_id": "right-3",
+              "heading_loc": "ban glaṅ mo",
+              "heading_tibetan": "བན་གླང་མོ་",
+              "printed_homonym": null,
+              "bbox": [
+                747,
+                653,
+                1039,
+                702
+              ],
+              "column": "right",
+              "classification": "article",
+              "printed_evidence": "Short cross-reference entry: ban glaṅ mo ↓bal glaṅ mo.",
+              "preceding": "ban glaṅ.",
+              "following": "ban glaṅ ri źon.",
+              "uncertainty": "No printed homonym numeral visible."
+            },
+            "pdf_heading_bbox": [
+              224.1,
+              463.5599731445312,
+              311.7,
+              478.2599731445313
+            ],
+            "image_crop": {
+              "item_id": "right-3",
+              "path": "article-67c166cc8e41e103-0012.png",
+              "sha256": "288975fa1633d15572e8a717374fe6e165e8468e5ea2a5607084c9d9eb7b4dfb",
+              "pixels": [
+                853,
+                136
+              ],
+              "parent_bbox": [
+                721,
+                629,
+                1574,
+                765
+              ],
+              "pdf_bbox": [
+                216.29999999999998,
+                444.65997314453125,
+                472.2,
+                485.45997314453126
+              ],
+              "coordinate_note": "Crop pixel (x,y) = parent pixel (x+parent_bbox[0],y+parent_bbox[1]); provisional reading region"
+            },
+            "first_matching": {
+              "item_id": "right-3",
+              "outcome": "supported",
+              "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+              "component_index": 2,
+              "printed_evidence": "ban glaṅ mo points to ↓bal glaṅ mo.",
+              "html_evidence": "↓bal glaṅ mo",
+              "boundary_evidence": "This is a separate heading between ban glaṅ and ban glaṅ ri źon.",
+              "homonym_evidence": "The full headword and reference target distinguish it from the neighbouring compounds.",
+              "alternatives": "ban glaṅ points to ↑ba laṅ instead.",
+              "uncertainty": ""
+            },
+            "risks": [
+              "printed folio and geometry need review",
+              "direct-source pathway; no historical anchor",
+              "short lexical evidence",
+              "non-definition component"
+            ],
+            "page": "wts_8_b-39",
+            "headword": "ban glaṅ mo",
+            "homonym": "1",
+            "second_reading": {
+              "inventory": [
+                {
+                  "item_id": "A7",
+                  "heading_loc": "ban glaṅ mo",
+                  "heading_tibetan": "བན་གླང་མོ་",
+                  "printed_homonym": null,
+                  "bbox": [
+                    748,
+                    654,
+                    1212,
+                    702
+                  ],
+                  "column": "right",
+                  "classification": "article",
+                  "printed_evidence": "ban glaṅ mo ↓bal glaṅ mo.",
+                  "preceding": "ban glaṅ",
+                  "following": "ban glaṅ ri źon",
+                  "uncertainty": ""
+                }
+              ],
+              "matching": [
+                {
+                  "item_id": "A7",
+                  "outcome": "supported",
+                  "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20gla%E1%B9%85%20mo/1",
+                  "component_index": 2,
+                  "printed_evidence": "The independent heading has the specific downward reference bal glaṅ mo.",
+                  "html_evidence": "↓bal glaṅ mo",
+                  "boundary_evidence": "Separate start between ban glaṅ and ban glaṅ ri źon.",
+                  "homonym_evidence": "No printed numeral; editorial 1 is not inferred as printed.",
+                  "alternatives": "ban glaṅ/1 instead points to ba laṅ; ban glaṅ ri źon/1 is a deity article.",
+                  "uncertainty": "The target article is not supplied; the supported identity is the reference article, not its target."
+                }
+              ]
+            },
+            "disposition": "published_provisional"
+          },
+          "page_observations": {
+            "source": "WtS_8-b",
+            "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+            "physical_page": 39,
+            "image": {
+              "path": "page.png",
+              "sha256": "df16fa365847d3ca83a32995f739fb3a389e4eb75dfdb001f3b6eea1e9472c38",
+              "pixels": [
+                1574,
+                2248
+              ],
+              "dpi": 240,
+              "transform": {
+                "pdf_crop": [
+                  0.0,
+                  0.0,
+                  472.0799865722656,
+                  674.1599731445312
+                ],
+                "image_device_origin": [
+                  0,
+                  0
+                ],
+                "points_per_pixel": [
+                  0.3,
+                  0.3
+                ],
+                "pdf_coordinate_system": "bottom-left; image top-left; use page transformation matrix",
+                "pdf_to_mupdf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  -1.0,
+                  0.0,
+                  674.1599731445312
+                ]
+              }
+            },
+            "geometry": null,
+            "inventory_sha256": "67c166cc8e41e10311b7b6cfc5399291b15f113d48577427e9b9b8cdc9e092ab",
+            "match_sha256": "6b06803a1664b7544b81e57f5b43a9ec428485f0b93a4dea54f36e14fbf5bb98",
+            "inventory_request_sha256": "ac22a5512bec3f157a5a512bc09ec6bdcc7833e1ced223db0bbcb7e6b8ba5a27",
+            "match_request_sha256": "4033313896d0ae9b18384089224ec0982ec1f549b8ba172f9bf82abeb69f6465",
+            "second_observation_sha256": "9a6f518c1b6b85c9e3cab5489387e62b1d42fd8f3cc4c0fecf409788532cf196",
+            "second_request_sha256": "76f87e11a89dd3d370381fbfd73352220fa78b1b7446966e870fca2a0030d577",
+            "model": "gpt-6.1-terra",
+            "first_recovery": [],
+            "census": {
+              "running_header": 2,
+              "continuation": 1,
+              "article": 11,
+              "embedded_reference": 3
+            },
+            "inputs": {
+              "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
+              "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
+              "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+              "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+              "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+              "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+              "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
+            }
+          },
+          "campaign": "work/linking-campaign-20261112"
+        },
+        "heading_item_sha256": "8a5b6065adeaf228b6ce126d68f8b5ecc1a0b231c48280881bc4e3c5ea403f31",
+        "definition_component_sha256": "3d5becdd9e8b576c19b69eee8cc639b306255ab06868c1b92efaf8a5ea4155ad"
+      },
+      "review_basis": "Model source-image reading and independent blind source verification; no human or coding-agent per-article adjudication. Deterministic compiler checks cached observations, exact HTML identity, lexical evidence and original-page geometry."
     }
   ],
   "inputs": {
@@ -68972,5 +69211,5 @@
     "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
     "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
   },
-  "content_sha256": "0bd4018708cc76db308493eb1368f1ea28fb73b0005b08b24ec0f8110ea9d6f4"
+  "content_sha256": "5d067c58558f70f9e678ffc4ba4880fd2d3f1392120f9b972221c41033359d9a"
 }

@@ -458,31 +458,36 @@ def execute(spec, pack, directory, spending=None, client=None, fixture=None, int
             base64.b64encode((directory.parent/region['path']).read_bytes()).decode(),detail=spec['detail']))
     request_input = [dict(role='user',content=content)]
     request_text = dict(format=dict(type='json_schema',name='wts_'+spec['stage'],strict=True,schema=spec['schema']))
-    # Count the identical multimodal input, including the schema, before making
-    # any billable request. Retain the full-context bound for older SDKs only.
-    # https://developers.openai.com/api/docs/guides/token-counting
+    # A request-bound count is mandatory, including on older SDKs. Cached
+    # responses and offline fixtures return above without reaching this gate.
     tokens = MAX_INPUT_TOKENS[spec['model']]
-    counter = getattr(getattr(client.responses if hasattr(client,'responses') else None,
-                              'input_tokens',None),'count',None)
-    if counter is not None:
-        count_path = directory/(key+'-tokens.json')
-        if count_path.exists():
+    count_path = directory/(key+'-tokens.json')
+    if count_path.exists():
+        try:
             counted = load(count_path)
-            if counted['request_sha256'] != key:
-                raise ValueError('token count request binding changed')
-        else:
-            try:
-                count = counter(model=spec['model'],input=request_input,text=request_text)
-            except Exception as exc:
-                raise RuntimeError('token-count preflight failed ('+type(exc).__name__+'); no generation request or reservation made') from None
-            counted = dict(request_sha256=key,input_tokens=count.input_tokens)
-            write(count_path,counted)
-        count = counted['input_tokens']
-        if not isinstance(count,int) or not 0 < count <= tokens:
-            raise ValueError('invalid input token count')
-        # Allow count/usage differences conservatively; reserve the highest
-        # possible cache-write tariff and the entire requested output allowance.
-        tokens = min(tokens,math.ceil(count*1.05)+256)
+        except (OSError, ValueError):
+            raise ValueError('unreadable cached token count; no generation request or reservation made') from None
+        if not isinstance(counted, dict) or counted.get('request_sha256') != key:
+            raise ValueError('token count request binding changed; no generation request or reservation made')
+        count = counted.get('input_tokens')
+    else:
+        counter = getattr(getattr(getattr(client, 'responses', None),
+                                  'input_tokens', None), 'count', None)
+        if not callable(counter):
+            raise RuntimeError('token-count preflight unavailable in SDK and no request-bound cached count; '
+                               'no generation request or reservation made')
+        try:
+            counted = counter(model=spec['model'],input=request_input,text=request_text)
+            count = getattr(counted, 'input_tokens', None)
+        except Exception as exc:
+            raise RuntimeError('token-count preflight failed ('+type(exc).__name__+'); no generation request or reservation made') from None
+    if type(count) is not int or not 0 < count <= tokens:
+        raise ValueError('invalid input token count; no generation request or reservation made')
+    if not count_path.exists():
+        write(count_path, dict(request_sha256=key,input_tokens=count))
+    # Reserve the existing safety margin, highest cache-write tariff and the
+    # entire configured output ceiling, using this exact request's input count.
+    tokens = min(tokens,math.ceil(count*1.05)+256)
     reservation = cost(spec['model'],tokens,spec['max_output_tokens'],cache_write_tokens=tokens)
     start = time.monotonic()
     for attempt in range(attempts):
